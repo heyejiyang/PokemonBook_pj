@@ -12,6 +12,7 @@ out/
 .springBeans
 .sts4-cache
 bin/
+dbeaver/
 !**/src/main/**/bin/
 !**/src/test/**/bin/
 
@@ -21,7 +22,7 @@ bin/
 /dist/
 /nbdist/
 /.nb-gradle/
-/dbeaver/
+
 
 ### VS Code ###
 .vscode/
