@@ -15,7 +15,7 @@ public class ArrayList_Student {
 
         for (Student student : qwer) {
             student.studentShowInfo();
-        }
+        } // 복습하면서 배운 향상된 포문 활용, 쓰긴 싫다.
     }
 }
 

@@ -10,7 +10,6 @@ public class StudentArray {
             students[i] = new Student(names[i]);
         }
 
-        // 각 학생의 정보를 출력
         for (Student student : students) {
             student.studentShowInfo();
         }
