@@ -5,27 +5,13 @@ public class Student {
     private int studentID;
     private String name;
 
-    public Student() {
-        idIndex++;
-        studentID = idIndex;
-    }
 
-    public int getStudentID() {
-        return studentID;
-    }
-
-    public void setStudentID(int studentID) {
-        this.studentID = studentID;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-
-    public void setName(String name) {
+    public Student(String name) {
+        this.studentID = ++idIndex;
+//        this.studentID = idIndex++;
         this.name = name;
     }
+
 
     public void studentShowInfo() {
         System.out.println(studentID + "," + name);
