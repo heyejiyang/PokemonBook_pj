@@ -1,7 +1,7 @@
 Hi
 ```
     public static void main(String[] args) {
-        int lotto[] = new int[6];
+        int lotto[] = new int[5];
 
         for(int i = 0 ; i < lotto.length ; i++){
             int lottoNum = (int)(Math.random() * 45)+1;
