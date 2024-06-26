@@ -18,7 +18,7 @@ public class MemberUtil {
 
     // 관리자 여부
     public boolean isAdmin() {
-        if (isLogin()) {
+        if(isLogin()) {
             Member member = getMember();
 
             return member.getUserType() == UserType.ADMIN;
@@ -28,10 +28,11 @@ public class MemberUtil {
     }
 
     /**
-     * 로그인한 회원 정보
+     * 로그인 한 회원 정보
      *
      * @return
      */
+
     public Member getMember() {
         Member member = (Member)session.getAttribute("member");
 
