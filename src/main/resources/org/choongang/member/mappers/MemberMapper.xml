@@ -5,10 +5,10 @@
 <mapper namespace="org.choongang.member.mappers.MemberMapper">
     <resultMap id="memberMap" type="org.choongang.member.entities.Member">
         <result column="USER_NO" property="userNo" />
-        <result column="EMAIL" property="email" />
-        <result column="PASSWORD" property="password" />
-        <result column="USER_TYPE" property="userType" />
+        <result column="USER_ID" property="userId" />
+        <result column="USER_PW" property="userPw" />
         <result column="USER_NAME" property="userName" />
+        <result column="USER_TYPE" property="userType" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
@@ -22,7 +22,7 @@
     </select>
 
     <insert id="register">
-        INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_TYPE, USER_NAME)
-            VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userType}, #{userName})
+        INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NAME, USER_TYPE)
+            VALUES (SEQ_MEMBER.NEXTVAL, #{id}, #{password}, #{userType}, #{userName})
     </insert>
 </mapper>

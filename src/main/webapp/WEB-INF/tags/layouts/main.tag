@@ -9,7 +9,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/M.ball3.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -62,7 +62,7 @@
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
-            메인 레이아웃 하단 영역!
+
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
