@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
@@ -22,14 +23,35 @@
                     </a>
                 </div>
                 <div class="right">
-                    <a href="<c:url value='/member/join' />">
-                        <i class="xi-user-plus-o"></i>
-                        <fmt:message key="회원가입" />
-                    </a>
-                    <a href="<c:url value='/member/login' />">
-                        <i class="xi-log-in"></i>
-                        <fmt:message key="로그인" />
-                    </a>
+                    <util:guestOnly>
+                        <a href="<c:url value='/member/join' />">
+                            <i class="xi-user-plus-o"></i>
+                            <fmt:message key="회원가입" />
+                        </a>
+                        <a href="<c:url value='/member/login' />">
+                            <i class="xi-log-in"></i>
+                            <fmt:message key="로그인" />
+                        </a>
+                    </util:guestOnly>
+                    <util:memberOnly>
+                        <fmt:message key="LOGIN_MSG">
+                            <fmt:param>${loggedMember.userName}</fmt:param>
+                            <fmt:param>${loggedMember.email}</fmt:param>
+                        </fmt:message>
+                        <a href="<c:url value='/mypage' />">
+                            <fmt:message key="마이페이지" />
+                        </a>
+                        <a href="<c:url value='/member/logout' />">
+                            <fmt:message key="로그아웃" />
+                        </a>
+
+                        <c:if test="${isAdmin}">
+                            <a href="<c:url value='/admin' />" target="_blank">
+                                <fmt:message key="사이트_관리" />
+                            </a>
+                        </c:if>
+
+                    </util:memberOnly>
                 </div>
             </div>
         </section>
