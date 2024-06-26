@@ -6,6 +6,8 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/pokemon")
 @RequiredArgsConstructor
@@ -15,7 +17,10 @@ public class PokemonController {
     @GetMapping
     public String index() {
         String uri = request.getRequestURI();
-        System.out.println(uri);
+        request.setAttribute("addCss", List.of("pokebook"));
         return "pokemon/index";
     }
 }
+
+
+
