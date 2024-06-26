@@ -21,7 +21,13 @@
                     </a>
                 </div>
                 <div class="layout-width inner">
+                    <div class="dropdown">
                     <a href="#">게시판</a>
+                        <ul class="dropdown-content">
+                            <li><a href="#">공지사항</a></li>
+                            <li><a href="#">QnA</a></li>
+                        </ul>
+                    </div>
                     <a href="#">도감</a>
                     <a href="<c:url value='/member/login' />">
                         <fmt:message key="로그인" />
@@ -37,8 +43,8 @@
         <section class="layout-width inner">
             <div class="bottom-bar">
                 포켓몬 도감 프로젝트
-            </div>>
-            <div class="bottom-bar2">
+            </div>
+            <div class="bottom-bar">
                 pokebook@pokemonkorea.co.kr
             </div>
         </section>

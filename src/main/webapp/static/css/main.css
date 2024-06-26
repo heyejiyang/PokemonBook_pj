@@ -1,6 +1,6 @@
 /* 메인 레이아웃 공통 */
 .layout-width {
-    min-width: 1100px;
+    min-width: 800px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -53,45 +53,8 @@ header .site-top .right a {
     margin-left: 10px;
 }
 
-header .logo-search {
-    padding: 50px 0;
-}
-
 header img {
     height: 100px;
-}
-
-header .logo-search > .inner {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-grow: 1;
-}
-
-header .search-box {
-    display: flex;
-    width: 300px;
-    height: 45px;
-}
-
-header .search-box input[type='text'] {
-    flex-grow: 1;
-    height: 45px;
-    border: 3px solid #000;
-    border-right: 0;
-    border-radius: 0;
-}
-
-header .search-box button {
-    width: 45px;
-    background: #000;
-    border: 0;
-    cursor: pointer;
-}
-
-header .search-box button i {
-    color: #fff;
-    font-size: 1.5rem;
 }
 
 nav {
@@ -112,14 +75,55 @@ nav > .inner a {
     font-size: 1.5rem;
     font-weight: bold;
     color: #000;
-    padding: 0 25px;
+    padding : 12px 20px;
     line-height: 45px;
+    display : block;
+    min-width : 200px;
 }
 
 nav > .inner a:hover {
     background: #EDD200;
 }
+
+.dropdown{
+    position : relative;
+    display : inline-block;
+}
+
+.dropdown-content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    font-weight: 400;
+    background-color: #fff;
+    min-width : 200px;
+}
+
+.dropdown-content a{
+    display : block;
+    text-decoration: none;
+    font-size: 12px;
+    padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+    background-color : #ececec
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
 /* 사이트 헤더 영역 E */
+
+/* 사이트 메인 영역 S */
+main {
+    height: 500px;
+}
+
+main img {
+    display: block;
+}
+
 
 /* 사이트 푸터 영역 S */
 footer {
@@ -127,11 +131,10 @@ footer {
     min-height: 150px;
     background: #000;
     border-top: 1px solid #ccc;
-    display: flex;
-    align-items: center;
 }
 
 footer .bottom-bar {
-    color: white;
+    color: #fff;
+    display: flex;
 }
 /* 사이트 푸터 영역 E */
