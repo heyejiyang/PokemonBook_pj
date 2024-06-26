@@ -1,0 +1,36 @@
+
+.boardTitle {
+    text-align: center; /* 텍스트를 가운데 정렬 */
+}
+
+.boardTitle img {
+    display: inline-block; /* 이미지를 인라인 블록 요소로 처리하여 텍스트와 같은 줄에 배치 */
+    vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.boardTitle h1 {
+    display: inline-block; /* 텍스트가 블록 요소로 처리되도록 함 */
+    vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
+    margin-bottom: 60px;
+}
+
+
+.location_cont{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.page-container {
+    max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
+    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    background-color: #ffffff; /* 바탕색 지정 */
+}
+
+.q-list{
+    background-color: #ffffff; /* 공지사항 목록의 바탕색 지정 */
+    border: 1px solid #ccc; /* 테두리 설정 */
+    padding: 20px; /* 내부 패딩 설정 */
+    margin-top: 20px; /* 위쪽 여백 설정 */
+}
