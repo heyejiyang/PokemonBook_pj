@@ -13,7 +13,7 @@ public class MypageController {
 
     private final MypageService mypageService;
 
-    @GetMapping("/mypage")
+    @GetMapping
     public String mypage() {
         return "member/mypage";
     }

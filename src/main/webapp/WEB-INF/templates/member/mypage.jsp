@@ -43,6 +43,5 @@
                     <fmt:message key="작성글_조회하기" />
                 </button>
             </div>
-        </form>
     </section>
 </layout:main>
