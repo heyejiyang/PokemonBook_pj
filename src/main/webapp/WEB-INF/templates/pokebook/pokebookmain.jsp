@@ -10,7 +10,7 @@
 <layout:main title="${pageTitle}">
 
     <div class="bookMain">
-        <c:forEach var="i" begin="1" end="24">
+        <c:forEach var="i" begin="1" end="100">
             <div class="pokemonBox">
                 <section class="main-section">
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" class="pokemon">
