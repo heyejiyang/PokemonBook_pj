@@ -17,4 +17,6 @@ public class PokemonDetail extends AbstractPokemonDetail {
     private String rawData;
     private String nameKr;
     private String description;
+
+    //타입, 분류 가져오기
 }

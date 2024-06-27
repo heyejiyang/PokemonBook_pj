@@ -122,4 +122,13 @@ public class PokemonInfoServiceTest {
             System.out.println(description);
         }
     }
+
+    @Test
+    void getRegExTest3() {
+        ApiRequestService service = new ApiRequestService();
+        HttpResponse<String> response = service.request("https://pokeapi.co/api/v2/pokemon/1");
+        String text = response.body();
+        text = text.split("\"slot\":1,\"type\":\"name\":\"")[0];
+        System.out.println(text);
+    }
 }

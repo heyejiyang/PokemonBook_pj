@@ -12,10 +12,11 @@
                 <li>
                     <a href="<c:url value='/pokemon/${item.seq}' />">
                         <img src="${item.frontImage}" alt="${item.nameKr}">
-                        <div class="p-name">
-                            ${item.nameKr}(${item.name})
-                        </div>
                     </a>
+                    <div class="p-name">
+                         No.${item.seq}<br>
+                         ${item.nameKr}
+                    </div>
                 </li>
             </c:forEach>
         </c:if>

@@ -2,10 +2,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<layout:main title="${data.nameKr}(${data.name})">
+<layout:main title="${data.nameKr}">
     <section class="pokemon-view">
         <img src="${data.frontImage}" alt="프론트">
-        <img src="${data.backImage}" alt="백">
 
         <div class="p-name">
             ${data.nameKr}(${data.name})
