@@ -1,4 +1,5 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+<%@ page import="java.util.*"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
@@ -6,6 +7,7 @@
 <fmt:message var="pageTitle" key="공지사항" />
 <c:url var="homeUrl" value="/" />
 <c:url var="logoUrl" value="/images/ball.png" />
+<c:set var="date" value="<%=new Date()%>" />
 
 <layout:main title="${pageTitle}">
 
@@ -34,8 +36,8 @@
                         <td>제목 ${item}</td>
                         <td>내용 ${item}</td>
                         <td>user ${item}</td>
-                        <td>2024-06-27</td>
-                        <td>100</td>
+                        <td><fmt:formatDate type="date" value="${date}" pattern="yyyy.MM.dd" dateStyle="short" timeStyle="short"/></td>
+                        <td>${item+100}</td>
                     </tr>
                 </c:forEach>
         </table>
