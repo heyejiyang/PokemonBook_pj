@@ -47,13 +47,13 @@
         <th>분류</th>
         <td>
             <textarea name="category"></textarea>
-            <div class="message">분류가 여러개이면 줄개행을 통해 입력</div>
+            <div class="message">※분류가 여러개이면 줄개행을 통해 입력</div>
         </td>
     </tr>
 </table>
 
 <h2>권한 설정</h2>
-<table class="table-cols">
+<table id="authority-table" class="table-cols">
     <tr>
         <th width="150">글쓰기/글수정</th>
         <td>

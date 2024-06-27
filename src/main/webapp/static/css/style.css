@@ -3,8 +3,9 @@
     --blue: #21209C;
     --yellow: #FDB827;
     --white: #ffffff;
+    --black: #000000;
+    --gray: #cccccc;
 }
-
 
 /* 태그 기본 스타일 초기화 */
 * {

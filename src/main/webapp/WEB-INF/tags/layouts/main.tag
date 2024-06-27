@@ -10,34 +10,44 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/book_logo1.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <section class="site-top">
-            <div class="layout-width inner">
+            <nav>
                 <div class="left">
                     <a href="${homeUrl}">
-                        <i class="xi-home-o"></i>
-                        <fmt:message key="홈" />
+                        <img src="${logoUrl}" alt="<fmt:message key='홈' />">
                     </a>
                 </div>
-                <div class="right">
+                <div class="layout-width inner">
+                    <div class="dropdown">
+                        <a href="#">게시판</a>
+                        <ul class="dropdown-content">
+                            <li><a href="<c:url value="/board/notice"/>">공지사항</a></li>
+                            <li><a href="<c:url value="/board/question"/>">QnA</a></li>
+                        </ul>
+                    </div>
+                    <a href="<c:url value='/member/login' />">도감</a>
                     <util:guestOnly>
-                        <a href="<c:url value='/member/join' />">
-                            <i class="xi-user-plus-o"></i>
-                            <fmt:message key="회원가입" />
-                        </a>
                         <a href="<c:url value='/member/login' />">
-                            <i class="xi-log-in"></i>
                             <fmt:message key="로그인" />
                         </a>
+                        <a href="<c:url value='/member/join' />">
+                            <fmt:message key="회원가입" />
+                        </a>
                     </util:guestOnly>
+                        <%--
+                   <fmt:message key="LOGIN_MSG">
+                       <fmt:param>${loggedMember.userName}</fmt:param>
+                       <fmt:param>${loggedMember.email}</fmt:param>
+                   </fmt:message>
+                   --%>
+                    <%--
+                    <c:if test="${isLogin}">
+                    --%>
                     <util:memberOnly>
-                        <fmt:message key="LOGIN_MSG">
-                            <fmt:param>${loggedMember.userName}</fmt:param>
-                            <fmt:param>${loggedMember.email}</fmt:param>
-                        </fmt:message>
                         <a href="<c:url value='/mypage' />">
                             <fmt:message key="마이페이지" />
                         </a>
@@ -50,65 +60,19 @@
                                 <fmt:message key="사이트_관리" />
                             </a>
                         </c:if>
-
-                    </util:memberOnly>
+                        </util:memberOnly>
+                    <%--
+                    </c:if>
+                    --%>
                 </div>
-            </div>
+            </nav>
         </section>
-        <section class="logo-search">
-            <div class="layout-width inner">
-                <div class="left">
-                    <a href="${homeUrl}" class="logo">
-                        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-                    </a>
-                </div>
-                <div class="right">
-                    <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
-                        <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
-                        <button type="submit">
-                            <i class="xi-search"></i>
-                        </button>
-                    </form>
-                </div>
-            </div>
-        </section>
-        <nav>
-            <div class="layout-width inner">
-                <a href="#">메뉴1</a>
-                <a href="#">메뉴2</a>
-                <div class="dropdown">
-                    <a href="#" id="menu3">메뉴3 <i class="xi-caret-down"></i></a>
-                    <div class="dropdown-content">
-                        <a href="<c:url value="/board/notice"/>">공지사항</a>
-                        <a href="<c:url value="/board/question"/>">Q&A</a>
-                    </div>
-                </div>
-                <a href="#">메뉴4</a>
-                <a href="#">메뉴5</a>
-            </div>
-        </nav>
-            <script>
-                document.addEventListener('DOMContentLoaded', function() {
-                    var menu3 = document.getElementById('menu3');
-                    var dropdownContent = menu3.nextElementSibling; // .dropdown-content
-
-                    menu3.addEventListener('click', function(event) {
-                        event.preventDefault();
-                        dropdownContent.classList.toggle('show');
-                    });
-
-                    // 바깥쪽 누르면 드롭다운 닫힘
-                    document.addEventListener('click', function(event) {
-                        if (!menu3.contains(event.target)) {
-                            dropdownContent.classList.remove('show');
-                        }
-                    });
-                });
-            </script>
     </jsp:attribute>
     <jsp:attribute name="footer">
         <section class="layout-width inner">
-            메인 레이아웃 하단 영역!
+            <div class="bottom-bar">
+                포켓몬 도감 프로젝트
+            </div>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
