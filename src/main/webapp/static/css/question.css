@@ -1,21 +1,14 @@
-.sub-container {
-    text-align: center; /* 컨텐츠를 가운데 정렬 */
-}
 
 .boardTitle {
-    display: inline-block; /* .boardTitle을 인라인 블록으로 설정하여 가운데 정렬 */
-    text-align: left; /* 내부 텍스트를 왼쪽 정렬 */
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .boardTitle img {
     vertical-align: middle; /* 이미지를 가운데 정렬 */
     margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
-}
-
-.boardTitle h1 {
-    display: inline; /* h1을 인라인 요소로 설정하여 한 줄에 표시 */
-    vertical-align: middle; /* 텍스트를 가운데 정렬 */
-    margin: 0; /* 기본 여백 제거 */
 }
 
 .location_cont {
@@ -31,8 +24,41 @@
 }
 
 .q-list {
-    background-color: #ffffff; /* 공지사항 목록의 배경색 설정 */
+    background-color: #ffffff; /* 목록의 배경색 설정 */
     border: 1px solid #ccc; /* 테두리 설정 */
     padding: 20px; /* 내부 패딩 설정 */
     margin-top: 20px; /* 위쪽 여백 설정 */
+}
+
+.search-container {
+    margin-top: 20px; /* 상단 여백 추가 */
+    display: flex;
+    justify-content: center; /* 가운데 정렬 */
+}
+
+.board_search_box {
+    width: 40%; /* 너비를 80%로 설정하여 꽉 차지 않게 함 */
+    max-width: 600px; /* 최대 너비를 600px로 설정 */
+    background-color: #f9f9f9; /* 배경색 설정 */
+    padding: 10px; /* 내부 패딩 설정 */
+    border: 1px solid #ddd; /* 테두리 설정 */
+    border-radius: 4px; /* 모서리 둥글게 설정 */
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* 요소들 사이에 공간 배분 */
+}
+
+.board_search_box select,
+.board_search_box input,
+.board_search_box button {
+    margin-right: 10px; /* 요소들 사이에 간격 추가 */
+}
+
+.board_search_box button {
+    background-color: #3c3c3c;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
 }
