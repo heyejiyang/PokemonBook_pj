@@ -42,5 +42,18 @@
                 </c:forEach>
         </table>
     </div>
+    <div class="search">
+        <select name="searchType">
+            <option value="TITLE">제목</option>
+            <option value="CONTENT">내용</option>
+            <option value="WRITER">작성자</option>
+        </select>
+        <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+            <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
+            <button type="submit">
+                <i class="xi-search"></i>
+            </button>
+        </form>
+    </div>
 
 </layout:main>
