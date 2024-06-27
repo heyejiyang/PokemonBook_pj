@@ -9,8 +9,10 @@
     <c:set var="date" value="<%=new Date()%>" />
     <%@ page import="java.util.*"%>
 
-    <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-    <h1>회원 관리</h1>
+    <div class="admin_title">
+        <div class="admin_title_img"><img src="${logoUrl}" alt="<fmt:message key='로고' />"></div>
+        <div class="admin_title_text"><h1>회원 관리</h1></div>
+    </div>
     <div class="member_list" >
         <table class="member_list_table">
             <thead class="member_list_thead">
