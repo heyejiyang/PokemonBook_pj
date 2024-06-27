@@ -89,6 +89,7 @@
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
+        <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/pokebookmain.css">
     </jsp:attribute>
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>

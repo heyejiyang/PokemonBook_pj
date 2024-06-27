@@ -18,7 +18,7 @@ public class PokemonController {
     public String index() {
         String uri = request.getRequestURI();
         request.setAttribute("addCss", List.of("pokebook"));
-        return "pokebook/main";
+        return "pokebook/pokebookmain";
     }
 }
 

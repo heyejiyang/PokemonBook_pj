@@ -1,0 +1,23 @@
+.bookMain {
+    display: flex;
+    flex-wrap: wrap;
+    width:1300px;
+    margin: 50px auto;
+}
+.pokemonStatus{
+}
+
+.pokemonBox {
+    width: 200px;
+    margin: 10px;
+    text-align: center;
+    margin: 0 auto 20;
+    border: 1px solid #E2E2E2;
+    border-radius: 10px;
+}
+
+.pokemon {
+    margin: 20px auto 20px;
+    width: 150px;
+    height: 150px;
+}
