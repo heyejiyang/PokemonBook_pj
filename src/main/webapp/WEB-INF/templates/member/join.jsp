@@ -23,12 +23,12 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 10vh;
+            height: 30vh;
             text-align: center;
         }
     </style>
  <div class="center-image">
-   <img src="${pageContext.request.contextPath}/images/poke2.png" />
+   <img src="${pageContext.request.contextPath}/images/poke3.png" />
             </div>
     <div class="content-box small">
 

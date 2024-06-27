@@ -7,6 +7,33 @@
 <c:url var="actionUrl" value="/member/login" />
 
 <layout:main title="${pageTitle}">
+  <style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh; /* 필요한 경우 높이를 조정하세요 */
+        }
+        .center-image img {
+            max-width: 13%; /* 이미지를 화면에 맞게 조정 */
+            height: auto;    /* 비율 유지 */
+        }
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 30vh;
+            text-align: center; /* 필요한 경우 텍스트를 가운데 정렬 */
+        }
+    </style>
+
+    <!-- 이미지 추가 및 가운데 정렬 -->
+    <div class="center-image">
+        <img src="${pageContext.request.contextPath}/images/poke3.png" alt="Poke Image"/>
+    </div>
+
+
     <div class="content-box small">
         <h1>${pageTitle}</h1>
 

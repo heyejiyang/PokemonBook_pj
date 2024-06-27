@@ -127,16 +127,5 @@ main img {
 
 
 /* 사이트 푸터 영역 S */
-footer {
-    margin-top: 100px;
-    min-height: 150px;
-    background: #000;
-    border-top: 1px solid #ccc;
-}
 
-footer .bottom-bar {
-    color: #fff;
-    display: flex;
-    justify-content: center;
-}
 /* 사이트 푸터 영역 E */

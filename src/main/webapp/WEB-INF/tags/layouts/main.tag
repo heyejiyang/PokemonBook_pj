@@ -10,7 +10,7 @@
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/" />
 <c:url var="searchUrl" value="/board/search" />
-<c:url var="logoUrl" value="/images/book_logo1.png" />
+<c:url var="logoUrl" value="/images/Mball2.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -71,7 +71,7 @@
     <jsp:attribute name="footer">
         <section class="layout-width inner">
             <div class="bottom-bar">
-                포켓몬 도감 프로젝트
+
             </div>
         </section>
     </jsp:attribute>
