@@ -16,10 +16,16 @@ public class PokemonController {
 
     @GetMapping
     public String index() {
-        String uri = request.getRequestURI();
-        request.setAttribute("addCss", List.of("pokebook"));
+       // String uri = request.getRequestURI();
+       // request.setAttribute("addCss", List.of("pokebook"));
         return "pokebook/pokebookmain";
     }
+
+    @GetMapping("/pokebooksub")
+    public String pokebooksub() {
+        return "pokebook/pokebooksub";
+    }
+
 }
 
 
