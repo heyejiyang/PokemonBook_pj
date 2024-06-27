@@ -1,0 +1,52 @@
+.board_area {
+    padding: 20px;
+}
+
+.notice-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+    display: flex;
+    justify-content: center; /* 수평 가운데 정렬 */
+}
+
+.notice-table th, .notice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.notice-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    background: #228B22;
+    color: #fff;
+}
+
+.table-cols td {
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px
+}
+
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td {
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea {
+    width: 100%;
+}
