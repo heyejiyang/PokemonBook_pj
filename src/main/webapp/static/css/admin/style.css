@@ -125,6 +125,23 @@ main > .main-content h1 {
     text-align: center;
 }
 
+.member_list_table{
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.member_list_table th{
+    background: #424242;
+    color: #fff;
+}
+
+.member_list_table th,
+.member_list_table td{
+    border-bottom: 1px solid #555;
+    padding: 15px;
+}
+
 /* 내용 영역 E */
 
 /* 서브 메뉴 S */
