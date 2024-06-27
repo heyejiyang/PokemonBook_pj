@@ -19,7 +19,9 @@
             </a>
         </div>
         <div class="right">
-
+            <a href="<c:url value='/member/logout' />">
+                <fmt:message key="로그아웃" />
+            </a>
         </div>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
@@ -31,7 +33,7 @@
     <jsp:body>
         <!-- 주 메뉴 -->
         <aside class="side-menu">
-            <a href="${homeUrl}" class="menu${' on'}">회원 목록</a>
+            <a href="${homeUrl}" class="menu${' on'}">회원 관리</a>
             <a href="${homeUrl}/board" class="menu${menuCode == 'board' ? ' on':''}">게시판 관리</a>
             <a href="${homeUrl}/adminMypage" class="menu${menuCode == 'adminMypage' ? ' on':''}">관리자 정보</a>
         </aside>
