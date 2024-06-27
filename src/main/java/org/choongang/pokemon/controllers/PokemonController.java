@@ -15,7 +15,7 @@ import org.choongang.pokemon.services.PokemonInfoService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/style.css")
+@RequestMapping("/pokemon")
 @RequiredArgsConstructor
 public class PokemonController {
 
@@ -33,7 +33,7 @@ public class PokemonController {
         request.setAttribute("items", items);
         request.setAttribute("pagination", pagination);
 
-        return "style.css/index";
+        return "pokemon/index";
     }
 
     @GetMapping("/{seq}")
@@ -44,11 +44,11 @@ public class PokemonController {
 
         request.setAttribute("data", data);
 
-        return "style.css/view";
+        return "pokemon/view";
     }
 
     private void commonProcess() {
-        request.setAttribute("addCss", new String[] {"style.css/style"});
-        request.setAttribute("addScript", List.of("style.css/wishlist"));
+        request.setAttribute("addCss", new String[] {"pokemon/style"});
+        request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
 }
