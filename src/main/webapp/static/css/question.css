@@ -1,16 +1,19 @@
 
+.sub-container {
+    text-align: center; /* Center-align the content inside this container */
+}
 .boardTitle {
-    text-align: center; /* 텍스트를 가운데 정렬 */
+    display: inline-block; /* 이미지를 인라인 블록 요소로 처리하여 텍스트와 같은 줄에 배치 */
+    text-align: left;
 }
 
 .boardTitle img {
-    display: inline-block; /* 이미지를 인라인 블록 요소로 처리하여 텍스트와 같은 줄에 배치 */
     vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
     margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
 }
 
 .boardTitle h1 {
-    display: inline-block; /* 텍스트가 블록 요소로 처리되도록 함 */
+    display: inline; /* h1을 인라인 요소로 설정하여 한 줄에 표시 */
     vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
     margin-bottom: 60px;
 }

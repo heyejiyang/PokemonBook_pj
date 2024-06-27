@@ -11,10 +11,10 @@
 
 <layout:main title="${pageTitle}">
     <div class="page-container">
+        <div class="location_cont">
+            <em><a href="${homeUrl}" class="local_home">HOME</a> &gt; 질문과답변</em>
+        </div>
         <div class="sub-container">
-            <div class="location_cont">
-                <em><a href="${homeUrl}" class="local_home">HOME</a> &gt; 질문과답변</em>
-            </div>
             <div class="boardTitle">
                 <img src="${logoUrl}" alt="<fmt:message key='로고' />">
                 <h1>질문과답변</h1>
