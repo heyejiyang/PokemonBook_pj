@@ -10,8 +10,16 @@
 <link rel="stylesheet" type="text/css" href="${pageContext.request.contextPath}/css/pokebookmain.css">
 <layout:main title="${pageTitle}">
 
+    <div class="searchbar">
+        <form class="search-box" method="GET" action="${searchUrl}" autocomplete="off">
+            <input type="text" name="keyword" placeholder="<fmt:message key='검색어를_입력하세요.' />">
+            <button type="submit">
+            <i class="xi-search"></i>
+            </button>
+    </div>
+
     <div class="bookMain">
-        <c:forEach var="i" begin="1" end="100">
+        <c:forEach var="i" begin="1" end="24">
             <div class="pokemonBox">
                     <a href="${pokebooksubUrl}">
                     <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" class="pokemon">
