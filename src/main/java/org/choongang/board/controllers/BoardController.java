@@ -24,16 +24,13 @@ public class BoardController {
 
     @GetMapping("/question")
     public String question(){
-        commonProcess();
+        request.setAttribute("addCss", List.of("question"));
         return "board/question";
     }
 
     @PostMapping("/question")
     public String questionPost() {
         return null;
-    }
-    private void commonProcess() {
-        request.setAttribute("addCss", List.of("question"));
     }
 
 }
