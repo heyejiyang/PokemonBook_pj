@@ -61,7 +61,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #FDB827;
+    background: var(--yellow);
 }
 
 nav > .inner {
@@ -77,13 +77,13 @@ nav > .inner a {
     color: #000;
     padding : 12px 20px;
     line-height: 45px;
-    display : block;
+    display : inline-block;
     min-width : 200px;
 }
 
 nav > .inner a:hover {
-    background: #21209C;
-    color: #fff;
+    background: var(--blue);
+    color: var(--white);
 }
 
 .dropdown{
@@ -96,7 +96,7 @@ nav > .inner a:hover {
     position : absolute;
     z-index : 1; /*다른 요소들보다 앞에 배치*/
     font-weight: 400;
-    background-color: #fff;
+    background-color: var(--white);
     min-width : 200px;
 }
 
@@ -136,5 +136,7 @@ footer {
 
 footer .bottom-bar {
     color: #fff;
+    display: flex;
+    justify-content: center;
 }
 /* 사이트 푸터 영역 E */

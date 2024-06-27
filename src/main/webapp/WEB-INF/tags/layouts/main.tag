@@ -3,6 +3,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
@@ -28,7 +29,7 @@
                             <li><a href="<c:url value="/board/question"/>">QnA</a></li>
                         </ul>
                     </div>
-                    <a href="#">도감</a>
+                    <a href="<c:url value='/member/login' />">도감</a>
                     <util:guestOnly>
                         <a href="<c:url value='/member/login' />">
                             <fmt:message key="로그인" />
@@ -43,7 +44,10 @@
                        <fmt:param>${loggedMember.email}</fmt:param>
                    </fmt:message>
                    --%>
+                    <%--
                     <c:if test="${isLogin}">
+                    --%>
+                    <util:memberOnly>
                         <a href="<c:url value='/mypage' />">
                             <fmt:message key="마이페이지" />
                         </a>
@@ -56,8 +60,10 @@
                                 <fmt:message key="사이트_관리" />
                             </a>
                         </c:if>
-
+                        </util:memberOnly>
+                    <%--
                     </c:if>
+                    --%>
                 </div>
             </nav>
         </section>
