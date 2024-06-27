@@ -5,6 +5,11 @@
     background-color: #ffffff; /* 바탕색 지정 */
 }
 
+.location_cont{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
 .boardTitle {
     text-align: center;
     display: flex;
