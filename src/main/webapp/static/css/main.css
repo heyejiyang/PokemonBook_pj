@@ -1,6 +1,6 @@
 /* 메인 레이아웃 공통 */
 .layout-width {
-    min-width: 800px;
+    min-width: 1100px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -53,88 +53,95 @@ header .site-top .right a {
     margin-left: 10px;
 }
 
-header img {
-    height: 100px;
+header .logo-search {
+    padding: 50px 0;
 }
 
-nav {
+header .logo-search > .inner {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #FDB827;
+}
+
+header .search-box {
+    display: flex;
+    width: 300px;
+    height: 45px;
+}
+
+header .search-box input[type='text'] {
+    flex-grow: 1;
+    height: 45px;
+    border: 3px solid #000;
+    border-right: 0;
+    border-radius: 0;
+}
+
+header .search-box button {
+    width: 45px;
+    background: #000;
+    border: 0;
+    cursor: pointer;
+}
+
+header .search-box button i {
+    color: #fff;
+    font-size: 1.5rem;
+}
+
+nav {
+    background: #000;
 }
 
 nav > .inner {
     display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
     height: 45px;
 }
 
 nav > .inner a {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #000;
-    padding : 12px 20px;
+    font-size: 1.35rem;
+    color: #fff;
+    padding: 0 25px;
     line-height: 45px;
-    display : block;
-    min-width : 200px;
 }
 
 nav > .inner a:hover {
-    background: #21209C;
-    color: #fff;
-}
-
-.dropdown{
-    position : relative;
-    display : inline-block;
-}
-
-.dropdown-content{
-    display : none;
-    position : absolute;
-    z-index : 1; /*다른 요소들보다 앞에 배치*/
-    font-weight: 400;
-    background-color: #fff;
-    min-width : 200px;
-}
-
-.dropdown-content a{
-    display : block;
-    text-decoration: none;
-    font-size: 12px;
-    padding : 12px 20px;
-}
-
-.dropdown-content a:hover{
-    background-color : #ececec
-}
-
-.dropdown:hover .dropdown-content {
-    display: block;
+    background: #414141;
 }
 /* 사이트 헤더 영역 E */
-
-/* 사이트 메인 영역 S */
-main {
-    height: 500px;
-}
-
-main img {
-    display: block;
-}
-
 
 /* 사이트 푸터 영역 S */
 footer {
     margin-top: 100px;
-    min-height: 150px;
-    background: #000;
+    min-height: 250px;
+    background: #f8f8f8;
     border-top: 1px solid #ccc;
 }
-
-footer .bottom-bar {
-    color: #fff;
-}
 /* 사이트 푸터 영역 E */
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #93bf85;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 8px 6px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #93bf85;
+}
+.dropdown-content.show {
+    display: block;
+}
