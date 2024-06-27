@@ -1,10 +1,18 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+:root {
+    --blue: #21209C;
+    --yellow: #FDB827;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #cccccc;
+}
 
 /* 태그 기본 스타일 초기화 */
 * {
     box-sizing: border-box;
     font-family: "Nanum Gothic", sans-serif;
     color: #000;
+    outline: none;
 }
 
 html {
