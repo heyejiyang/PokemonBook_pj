@@ -26,6 +26,18 @@
             height: 30vh;
             text-align: center;
         }
+
+        .center-image2 {
+                   display: flex;
+                   justify-content: center;
+                   align-items: center;
+                   height: 20vh; /* 회원가입 이메일,비밀번호 박스 높이 조정  */
+               }
+               .center-image2 img {
+                   max-width: 30%; /* 이미지를 화면에 맞게 조정 */
+                   height: auto;   /* 비율 유지 */
+               }
+           </style>
     </style>
  <div class="center-image">
    <img src="${pageContext.request.contextPath}/images/poke3.png" />
@@ -89,4 +101,9 @@
             </div>
         </form>
     </section>
+      <!-- 두 번째 이미지 추가 및 가운데 정렬 -->
+                <div class="center-image2">
+                    <img src="${pageContext.request.contextPath}/images/bee.png" />
+                </div>
+
 </layout:main>

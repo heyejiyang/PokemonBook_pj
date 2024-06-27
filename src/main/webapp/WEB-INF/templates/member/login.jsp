@@ -7,7 +7,7 @@
 <c:url var="actionUrl" value="/member/login" />
 
 <layout:main title="${pageTitle}">
-  <style>
+    <style>
         .center-image {
             display: flex;
             justify-content: center;
@@ -16,19 +16,29 @@
         }
         .center-image img {
             max-width: 13%; /* 이미지를 화면에 맞게 조정 */
-            height: auto;    /* 비율 유지 */
+            height: auto;   /* 비율 유지 */
         }
         .content-box {
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 30vh;
+            height: 50vh;
             text-align: center; /* 필요한 경우 텍스트를 가운데 정렬 */
+        }
+        .center-image2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh; /* 로그인,비밀번호 박스 높이 조정  */
+        }
+        .center-image2 img {
+            max-width: 70%; /* 이미지를 화면에 맞게 조정 */
+            height: auto;   /* 비율 유지 */
         }
     </style>
 
-    <!-- 이미지 추가 및 가운데 정렬 -->
+    <!-- 첫 번째 이미지 추가 및 가운데 정렬 -->
     <div class="center-image">
         <img src="${pageContext.request.contextPath}/images/poke3.png" alt="Poke Image"/>
     </div>
@@ -54,5 +64,11 @@
                 <fmt:message key="로그인" />
             </button>
         </form>
+         <!-- 두 번째 이미지 추가 및 가운데 정렬 -->
+            <div class="center-image2">
+                <img src="${pageContext.request.contextPath}/images/Jirachi2.png" />
+            </div>
     </div>
+
+
 </layout:main>
