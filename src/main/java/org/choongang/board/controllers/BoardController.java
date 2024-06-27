@@ -18,13 +18,13 @@ public class BoardController {
 
     @GetMapping("/notice")
     public String notice(){
-        request.setAttribute("addCss", List.of("question"));
+        request.setAttribute("addCss", List.of("notice"));
         return "board/notice";
     }
 
     @GetMapping("/question")
     public String question(){
-       // commonProcess();
+        commonProcess();
         return "board/question";
     }
 
@@ -32,8 +32,8 @@ public class BoardController {
     public String questionPost() {
         return null;
     }
-//    private void commonProcess() {
-//        request.setAttribute("addCss", List.of("question"));
-//    }
+    private void commonProcess() {
+        request.setAttribute("addCss", List.of("question"));
+    }
 
 }
