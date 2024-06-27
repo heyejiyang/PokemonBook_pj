@@ -1,6 +1,7 @@
 package org.choongang.member.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Controller;
@@ -9,6 +10,7 @@ import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
+import org.choongang.member.services.MypageService;
 
 @Controller
 @RequestMapping("/member")
@@ -17,6 +19,7 @@ public class MemberController {
 
     private final JoinService joinService;
     private final LoginService loginService;
+    private final MypageService mypageService;
 
     // 회원 가입 양식
     @GetMapping("/join")
@@ -66,6 +69,15 @@ public class MemberController {
     public String logout(HttpSession session) {
         session.invalidate(); // 세션 비우기 : 로그 아웃
 
-        return "redirect:/member/login"; // 페이지 이동 response.sendRedirect(...)
+        return "redirect:/"; // 페이지 이동 response.sendRedirect(...)
     }
+
+    //마이페이지
+    @GetMapping("/mypage")
+    public String mypage(HttpServletRequest request, HttpServletResponse response) {
+
+        mypageService.process();
+
+        return "member/mypage";
+        }
 }
