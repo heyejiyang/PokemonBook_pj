@@ -16,6 +16,12 @@ import java.util.List;
 public class BoardController {
     private final HttpServletRequest request;
 
+    @GetMapping("/notice")
+    public String notice(){
+        request.setAttribute("addCss", List.of("question"));
+        return "board/notice";
+    }
+
     @GetMapping("/question")
     public String question(){
         commonProcess();
