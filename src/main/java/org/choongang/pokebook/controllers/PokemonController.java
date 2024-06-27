@@ -9,7 +9,7 @@ import org.choongang.global.config.annotations.RequestMapping;
 import java.util.List;
 
 @Controller
-@RequestMapping("/pokemon")
+@RequestMapping("/pokebook")
 @RequiredArgsConstructor
 public class PokemonController {
     private final HttpServletRequest request;
@@ -18,7 +18,7 @@ public class PokemonController {
     public String index() {
         String uri = request.getRequestURI();
         request.setAttribute("addCss", List.of("pokebook"));
-        return "pokemon/index";
+        return "pokebook/main";
     }
 }
 

@@ -7,5 +7,13 @@
 <c:url var="pokebook" value="/main" />
 
 <layout:main title="${pageTitle}">
-    <section class=""
+    <div class="bookMain">
+    <c:forEach var="i" begin="1" end="800">
+        <div class="pokemonBox" >
+            <section class="main-section">
+                <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/${i}.png" class="pokemon">
+            </section>
+        </div>
+    </c:forEach>
+    </div>
 </layout:main>
