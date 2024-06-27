@@ -23,15 +23,17 @@
                 <tr>
                     <th>번호</th>
                     <th>제목</th>
+                    <th>내용</th>
                     <th>작성자</th>
                     <th>날짜</th>
                     <th>조회</th>
                 </tr>
-                <c:forEach var="item" begin="1" end="3">
+                <c:forEach var="item" begin="1" end="10">
                     <tr>
                         <td>${item}</td>
                         <td>제목 ${item}</td>
-                        <td>작성자 ${item}</td>
+                        <td>내용 ${item}</td>
+                        <td>user ${item}</td>
                         <td>2024-06-27</td>
                         <td>100</td>
                     </tr>
