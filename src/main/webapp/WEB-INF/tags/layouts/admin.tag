@@ -9,16 +9,24 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/admin" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/book_logo2.png" />
+<c:url var="logo2Url" value="/images/mini_logo1.jpg" />
+<c:url var="logo3Url" value="/images/mini_logo2.jpg" />
+<c:url var="logo4Url" value="/images/ball.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
         <div class="left">
             <a href="${homeUrl}">
-                <img src="${logoUrl}" alt="로고">
+                <img class="book_logo" src="${logoUrl}" alt="로고">
             </a>
         </div>
+        <div class="center">
+            <img class="mini_logo1" src="${logo2Url}" alt="미니로고1">
+            <img class="mini_logo2" src="${logo3Url}" alt="미니로고2">
+        </div>
         <div class="right">
+            <img src="${logo4Url}" alt="<fmt:message key='로고' />">
             <a href="<c:url value='/member/logout' />">
                 <fmt:message key="로그아웃" />
             </a>

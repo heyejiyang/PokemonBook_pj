@@ -4,7 +4,31 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="회원 관리" />
-<c:url var="actionUrl" value="/member/login" />
+<c:url var="logoUrl" value="/images/ball.png" />
 <layout:admin title="관리자 페이지">
+    <c:set var="date" value="<%=new Date()%>" />
+    <%@ page import="java.util.*"%>
+
+    <img src="${logoUrl}" alt="<fmt:message key='로고' />">
     <h1>회원 관리</h1>
+    <div class="member_list" >
+        <table class="member_list_table">
+            <thead class="member_list_thead">
+            <th>이메일</th>
+            <th>이름</th>
+            <th>등급</th>
+            <th>가입날짜</th>
+            </thead>
+            <tbody>
+            <c:forEach var="item" begin="1" end="10">
+                <tr>
+                    <td>user${item}@</td>
+                    <td>이름 ${item}</td>
+                    <td>USER</td>
+                    <td><fmt:formatDate type="date" value="${date}" pattern="yyyy.MM.dd" dateStyle="short" timeStyle="short"/></td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
+    </div>
 </layout:admin>

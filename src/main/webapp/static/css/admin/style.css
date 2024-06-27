@@ -2,10 +2,41 @@
 header {
     display: flex;
     justify-content: space-between;
-    height: 75px;
+    height: 120px;
     background: #fff;
     align-items: center;
-    padding: 10px 15px;
+    padding: 10px 0;
+}
+
+/* 사이트 로고 */
+.book_logo {
+    width: 250px;
+}
+
+/* 중간 로고 */
+.mini_logo1,
+.mini_logo2 {
+    margin-top: 20px;
+    height: 120px;
+}
+
+/* 로그아웃 버튼 */
+.right {
+    width: 120px;
+    height: 100px;
+    background-color: #FFDE00;
+    margin-right: 50px;
+    border-radius: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.right > a {
+    color: #403813;
+    font-size: 15px;
+    font-weight: bold;
 }
 
 /* 내용 배치 */
