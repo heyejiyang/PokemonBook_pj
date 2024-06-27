@@ -61,7 +61,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background: #FFE400;
+    background: #FDB827;
 }
 
 nav > .inner {
@@ -82,7 +82,8 @@ nav > .inner a {
 }
 
 nav > .inner a:hover {
-    background: #EDD200;
+    background: #21209C;
+    color: #fff;
 }
 
 .dropdown{
@@ -135,6 +136,5 @@ footer {
 
 footer .bottom-bar {
     color: #fff;
-    display: flex;
 }
 /* 사이트 푸터 영역 E */
