@@ -7,7 +7,32 @@
 <c:url var="actionUrl" value="/member/join" />
 
 <layout:main title="${pageTitle}">
-    <section class="content-box">
+<style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+        }
+        .center-image img {
+            max-width: 13%;
+            height: auto;
+        }
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 10vh;
+            text-align: center;
+        }
+    </style>
+ <div class="center-image">
+   <img src="${pageContext.request.contextPath}/images/poke2.png" />
+            </div>
+    <div class="content-box small">
+
+
         <h1>${pageTitle}</h1>
         <form name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>

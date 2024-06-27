@@ -6,22 +6,48 @@
 <fmt:message var="pageTitle" key="로그인" />
 <c:url var="actionUrl" value="/member/login" />
 
+
+
 <layout:main title="${pageTitle}">
+
+<style>
+        .center-image {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 20vh;
+        }
+        .center-image img {
+            max-width: 13%;
+            height: auto;
+        }
+        .content-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 5vh;
+            text-align: center;
+        }
+    </style>
+ <div class="center-image">
+   <img src="${pageContext.request.contextPath}/images/poke2.png" />
+            </div>
     <div class="content-box small">
+
         <h1>${pageTitle}</h1>
 
-        <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess"
-        autocomplete="off">
-             <c:if test= "${! empty param.redirectUrl}">
-                 <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
-             </c:if>
+        <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
+            <c:if test="${! empty param.redirectUrl}">
+                <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
+            </c:if>
 
             <input type="text" name="email" placeholder="<fmt:message key='이메일' />">
             <input type="password" name="password" placeholder="<fmt:message key='비밀번호' />">
             <div class="save-email">
                 <input type="checkbox" name="saveEmail" value="true" id="saveEmail">
                 <label for="saveEmail">
-                    <fmt:message key="이메일 기억하기" />
+                    <fmt:message key="이메일_기억하기" />
                 </label>
             </div>
             <button type="submit">

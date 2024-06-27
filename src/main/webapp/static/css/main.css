@@ -10,9 +10,10 @@
     max-width: 700px;
     min-height: 650px;
     margin: 50px auto;
-    box-shadow: 2px 2px 10px #414141;
+    box-shadow: 2px 2px 10px #6a6c26;
     border-radius: 20px;
     padding: 30px;
+
 }
 
 .content-box h1 {
@@ -20,13 +21,13 @@
     line-height: 1;
     padding: 0 10px 15px;
     margin 0 0 20px;
-    border-bottom: 2px solid #000;
+    border-bottom: 2px solid #d7cb68;
 }
 
 /* 사이트 헤더 영역 S */
 header .site-top {
-    background: #f8f8f8;
-    border-bottom: 1px solid #ccc;
+    background: #ffb706;
+    border-bottom: 1px solid #9f985e ;
 }
 
 header .site-top > .inner {
@@ -72,7 +73,7 @@ header .search-box {
 header .search-box input[type='text'] {
     flex-grow: 1;
     height: 45px;
-    border: 3px solid #000;
+    border: 3px solid #ccc;
     border-right: 0;
     border-radius: 0;
 }
@@ -90,7 +91,7 @@ header .search-box button i {
 }
 
 nav {
-    background: #000;
+    background:#0e4794;
 }
 
 nav > .inner {
@@ -106,7 +107,7 @@ nav > .inner a {
 }
 
 nav > .inner a:hover {
-    background: #414141;
+    background: #422d2d;
 }
 /* 사이트 헤더 영역 E */
 
@@ -114,7 +115,7 @@ nav > .inner a:hover {
 footer {
     margin-top: 100px;
     min-height: 250px;
-    background: #f8f8f8;
-    border-top: 1px solid #ccc;
+    background: #ccc;
+    border-top: 1px solid #d7cb68;
 }
 /* 사이트 푸터 영역 E */

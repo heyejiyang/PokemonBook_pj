@@ -52,12 +52,15 @@
         </section>
         <nav>
             <div class="layout-width inner">
-                <a href="#">메뉴1</a>
-                <a href="#">메뉴2</a>
-                <a href="#">메뉴3</a>
-                <a href="#">메뉴4</a>
-                <a href="#">메뉴5</a>
+
+                <a href="#">게시판</a>
+                <a href="#">게임소식</a>
+                <a href="#">이미지</a>
+                <a href="#">게시판</a>
+                <a href="#">업데이트</a>
+
             </div>
+
         </nav>
     </jsp:attribute>
     <jsp:attribute name="footer">
