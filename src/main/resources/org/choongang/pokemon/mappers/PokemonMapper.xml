@@ -18,7 +18,7 @@
     </resultMap>
 
     <insert id="register">
-        INSERT INTO POKEMON
+        INSERT INTO POKEMON (SEQ, NAME, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, RAW_DATA, NAME_KR, DESCRIPTION)
         VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{rawData}, #{nameKr}, #{description})
     </insert>
 

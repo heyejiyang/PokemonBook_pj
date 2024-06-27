@@ -24,16 +24,22 @@ public class PokemonController {
 
     @GetMapping
     public String index(PokemonSearch search) {
-        commonProcess();
+        try {
 
-        ListData<PokemonDetail> listData = infoService.getList(search);
-        List<PokemonDetail> items = listData.getItems();
-        Pagination pagination = listData.getPagination();
+            commonProcess();
 
-        request.setAttribute("items", items);
-        request.setAttribute("pagination", pagination);
+            ListData<PokemonDetail> listData = infoService.getList(search);
+            List<PokemonDetail> items = listData.getItems();
+            Pagination pagination = listData.getPagination();
 
-        return "pokemon/index";
+            request.setAttribute("items", items);
+            request.setAttribute("pagination", pagination);
+
+            return "pokemon/index";
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return "";
     }
 
     @GetMapping("/{seq}")
@@ -51,4 +57,5 @@ public class PokemonController {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
+
 }
