@@ -24,7 +24,7 @@
                 <dd>
                     <div class="userInfo" alt="<fmt:message key="비밀번호" />" >
 
-                    </div>>
+                    </div>
                 </dd>
             </dl>
             <dl>
@@ -32,15 +32,18 @@
                     <fmt:message key="회원명" />
                 </dt>
                 <dd>
-                    <input type="text" name="userName">
+                    <div >
+
+                    </div>
                 </dd>
             </dl>
             <div class="button-group">
                 <button type="button">
-                    <fmt:message key="회원정보_수정하기" />
+                    <a href="#" alt="<fmt:message key="회원정보_수정하기" />"></a>
                 </button>
                 <button type="button">
-                    <fmt:message key="작성글_조회하기" />
+                    <a href="#" alt="<fmt:message key="작성글_조회하기" />"></a>
+
                 </button>
             </div>
     </section>
