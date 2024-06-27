@@ -18,7 +18,7 @@ public class BoardController {
 
     @GetMapping("/notice")
     public String notice(){
-        request.setAttribute("addCss", List.of("question"));
+        request.setAttribute("addCss", List.of("notice"));
         return "board/notice";
     }
 

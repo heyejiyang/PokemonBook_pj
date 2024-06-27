@@ -9,11 +9,16 @@
 
 <layout:main title="${pageTitle}">
 
-    <div class="board_area">
+    <div class="board-area">
         <div class="location_cont">
             <em><a href="${homeUrl}" class="local_home">HOME</a> &gt; NOTICE</em>
         </div>
-        <h1>${pageTitle}</h1>
+
+        <div class="boardTitle">
+            <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+            <h1>${pageTitle}</h1>
+        </div>
+
         <table class="notice-table">
                 <tr>
                     <th>번호</th>
