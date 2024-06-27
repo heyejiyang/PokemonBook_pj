@@ -121,9 +121,9 @@ public class HandlerMappingImpl implements HandlerMapping{
      * @return
      */
     private List<Object> getControllers() {
-       return BeanContainer.getInstance().getBeans().entrySet()
-                    .stream()
-                    .map(s -> s.getValue())
+        return BeanContainer.getInstance().getBeans().entrySet()
+                .stream()
+                .map(s -> s.getValue())
                 .filter(b -> Arrays.stream(b.getClass().getDeclaredAnnotations()).anyMatch(a -> a instanceof Controller || a instanceof RestController))
                 .toList();
     }

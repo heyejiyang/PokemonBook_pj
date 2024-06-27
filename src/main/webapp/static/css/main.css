@@ -1,6 +1,6 @@
- /* 메인 레이아웃 공통 */
+/* 메인 레이아웃 공통 */
 .layout-width {
-    min-width: 700px;
+    min-width: 800px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -128,10 +128,10 @@ main img {
 
 /* 사이트 푸터 영역 S */
 footer {
-    margin-top: 200px;
-    min-height: 50px;
-    background: #21209c;
-    border-top: 0px solid #ccc;
+    margin-top: 100px;
+    min-height: 150px;
+    background: #000;
+    border-top: 1px solid #ccc;
 }
 
 footer .bottom-bar {

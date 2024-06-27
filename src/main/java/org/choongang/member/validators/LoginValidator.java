@@ -11,7 +11,6 @@ import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
 import org.mindrot.jbcrypt.BCrypt;
 
-
 @Component
 @RequiredArgsConstructor
 public class LoginValidator implements Validator<RequestLogin>, RequiredValidator {
@@ -35,7 +34,6 @@ public class LoginValidator implements Validator<RequestLogin>, RequiredValidato
         checkTrue(member != null, new AlertException(message, status));
 
         // 비밀번호 일치 여부 체크
-        checkTrue(BCrypt.checkpw(password, member.getPassword()), new AlertException
-                (message, status));
+        checkTrue(BCrypt.checkpw(password, member.getPassword()), new AlertException(message, status));
     }
 }
