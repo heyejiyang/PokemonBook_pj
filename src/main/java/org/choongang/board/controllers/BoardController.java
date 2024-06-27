@@ -18,7 +18,7 @@ public class BoardController {
 
     @GetMapping("/question")
     public String question(){
-       // commonProcess();
+        commonProcess();
         return "board/question";
     }
 
@@ -26,8 +26,8 @@ public class BoardController {
     public String questionPost() {
         return null;
     }
-//    private void commonProcess() {
-//        request.setAttribute("addCss", List.of("question"));
-//    }
+    private void commonProcess() {
+        request.setAttribute("addCss", List.of("question"));
+    }
 
 }
