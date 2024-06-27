@@ -3,32 +3,36 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.choongang.board.mappers.BoardMapper">
-    <resultMap id="board" type="org.choongang.board.entities.Board">
-        <result column="BID" property="bId"/>
-        <result column="BNAME" property="bName"/>
-        <result column="ROWS_PER_PAGE" property="rowsPerPage"/>
-        <result column="ACTIVE" property="active"/>
-        <result column="ACTIVE_CATEGORY" property="activeCategory"/>
-        <result column="AUTHORITY" property="authority"/>
+    <resultMap id="boardMap" type="org.choongang.board.entities.Board">
+        <result column="BID" property="bId" />
+        <result column="BNAME" property="bName" />
+        <result column="ROWS_PER_PAGE" property="rowsPerPage" />
+        <result column="ACTIVE" property="active" />
+        <result column="ACTIVE_CATEGORY" property="activeCategory" />
+        <result column="AUTHORITY" property="authority" />
     </resultMap>
 
     <insert id="register">
         INSERT INTO BOARD
-            VALUES (#{bId}, #{bName}, #{rowsPerPage}, #{active}, #{activeCategory},
-            #{authority})
+        (BID, BNAME, ROWS_PER_PAGE, ACTIVE, ACTIVE_CATEGORY, AUTHORITY)
+        VALUES (#{bId}, #{bName}, #{rowsPerPage}, #{active}, #{activeCategory}, #{authority})
     </insert>
+
     <update id="modify">
         UPDATE BOARD
-            <set>
-                <if test="bName != null">
-                    BNAME=#{bName},
-                </if>
-                <if test="rowsPerPage"> 0">
-                    ROWS_PER_PAGE=#{rowsPerPage},
-                </if>
-                ACTIVE=#{active},
-                ACTIVE_CATEGORY=#{activeCategory}
-            </set>
+        <set>
+            <if test="bName != null">
+                BNAME=#{bName},
+            </if>
+            <if test="rowsPerPage > 0">
+                ROWS_PER_PAGE=#{rowsPerPage},
+            </if>
+            <if test="authority != null">
+                AUTHORITY=#{authority},
+            </if>
+            ACTIVE=#{active},
+            ACTIVE_CATEGORY=#{activeCategory}
+        </set>
         WHERE BID=#{bId}
     </update>
 
@@ -42,5 +46,9 @@
 
     <select id="getList" resultMap="boardMap">
         SELECT * FROM BOARD ORDER BY BID
+    </select>
+
+    <select id="exists" resultType="int">
+        SELECT COUNT(*) FROM BOARD WHERE BID=#{bId}
     </select>
 </mapper>
