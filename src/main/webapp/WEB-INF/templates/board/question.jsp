@@ -7,8 +7,6 @@
 <c:url var="homeUrl" value="/" />
 <c:url var="logoUrl" value="/images/ball.png" />
 
-<link rel="stylesheet" type="text/css" href="<c:url value='/css/question.css'/>" />
-
 <layout:main title="${pageTitle}">
     <div class="page-container">
         <div class="location_cont">

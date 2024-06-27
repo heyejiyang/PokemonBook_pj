@@ -1,6 +1,6 @@
 /* 메인 레이아웃 공통 */
 .layout-width {
-    min-width: 1100px;
+    min-width: 800px;
     max-width: 1300px;
     margin: 0 auto;
 }
@@ -144,10 +144,4 @@ footer {
 }
 .dropdown-content.show {
     display: block;
-}
-
-.search {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
