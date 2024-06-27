@@ -28,27 +28,27 @@
 - 회원 조회
 - 회원 탈퇴
 ### 게시판 관리
-- 게시판을 생성, 수정, 삭제 하는 게시판 관리용 테이블 "BOARD" 생성
-  - 게시판 아이디
-  - 게시판 이름
-  - 1페이지 행수
-  - 게시판 사용 여부
-  - 게시판 분류
-  - 게시판 권한 설정(글쓰기/글수정 권한)
-  - 게시판 별 게시글은 게시판 아이디로 구분
-    ex) notice -> 공지사항
-```
-CREATE TABLE BOARD{
-	BID VARCHAR2(30) PRIMARY KEY,
-	BNAME VARCHAR2(60) NOT NULL,
-	ROWS_PER_PAGE NUMBER(4) DEFAULT 20,
-	ACTIVE NUMBER(1) DEFAULT 0,
-	ACTIVE_CATEGORY NUMBER(1) DEFAULT 0, 
-	CATEGORY CLOB,
-	AUTHORITY VARCHAR2(10) DEFAULT 'ALL' 
-		CHECK(AUTHORITY IN ('ALL', 'USER', 'ADMIN'))
-};
-```
+  - 게시판을 생성, 수정, 삭제 하는 게시판 관리용 테이블 "BOARD" 생성
+    - 게시판 아이디
+    - 게시판 이름
+    - 1페이지 행수
+    - 게시판 사용 여부
+    - 게시판 분류
+    - 게시판 권한 설정(글쓰기/글수정 권한)
+    - 게시판 별 게시글은 게시판 아이디로 구분
+      ex) notice -> 공지사항
+    ```
+    CREATE TABLE BOARD{
+        BID VARCHAR2(30) PRIMARY KEY,
+        BNAME VARCHAR2(60) NOT NULL,
+        ROWS_PER_PAGE NUMBER(4) DEFAULT 20,
+        ACTIVE NUMBER(1) DEFAULT 0,
+        ACTIVE_CATEGORY NUMBER(1) DEFAULT 0, 
+        CATEGORY CLOB,
+        AUTHORITY VARCHAR2(10) DEFAULT 'ALL' 
+            CHECK(AUTHORITY IN ('ALL', 'USER', 'ADMIN'))
+    };
+    ```
 ### 게시글 관리
 - 게시글 작성 폼(?)
 - 게시글 삭제
