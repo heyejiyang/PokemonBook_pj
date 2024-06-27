@@ -15,7 +15,7 @@
             height: 20vh; /* 필요한 경우 높이를 조정하세요 */
         }
         .center-image img {
-            max-width: 13%; /* 이미지를 화면에 맞게 조정 */
+            max-width: 30%; /* 이미지를 화면에 맞게 조정 */
             height: auto;   /* 비율 유지 */
         }
         .content-box {
@@ -23,7 +23,7 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 50vh;
+            height: 30vh;
             text-align: center; /* 필요한 경우 텍스트를 가운데 정렬 */
         }
         .center-image2 {
