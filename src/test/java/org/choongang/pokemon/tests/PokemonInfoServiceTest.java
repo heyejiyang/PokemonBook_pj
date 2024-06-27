@@ -66,7 +66,7 @@ public class PokemonInfoServiceTest {
     @Test
     @DisplayName("포켓몬 데이터 일괄 업데이트 테스트")
     void updateAllTest() {
-        service.updateAll();
+         service.updateAll();
     }
 
     @Test
@@ -97,7 +97,6 @@ public class PokemonInfoServiceTest {
         text = text.split("\"name\":\"ko\"")[1];
         text = text.split("\"language\"")[0];
         text = text.split("\"name\":")[1];
-
 
         Pattern p = Pattern.compile("\"([^\"]+)\"");
         Matcher matcher = p.matcher(text);

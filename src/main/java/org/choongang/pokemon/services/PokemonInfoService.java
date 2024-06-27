@@ -73,7 +73,7 @@ public class PokemonInfoService {
 
         List<Item> items = null;
 
-        String url = String.format(apiUrl + "/style.css?offset=%d&limit=%d", offset, limit);
+        String url = String.format(apiUrl + "/pokemon?offset=%d&limit=%d", offset, limit);
         System.out.println(url);
         HttpResponse<String> response = service.request(url);
         if (response.statusCode() == HttpServletResponse.SC_OK) {
@@ -98,7 +98,7 @@ public class PokemonInfoService {
      */
     public Optional<Pokemon> update(long seq) {
 
-        String url = apiUrl + "/style.css/" + seq;
+        String url = apiUrl + "/pokemon/" + seq;
 
         Pokemon pokemon = null;
         HttpResponse<String> response = service.request(url);
