@@ -64,8 +64,6 @@ main {
     width: 100%;
 }
 
-
-
 /* 사이드 주 메뉴 S */
 main > .side-menu {
     width: 210px;
@@ -121,6 +119,10 @@ main > .main-content h1 {
     margin : 10px 0 25px;
     padding: 0 0 15px;
     border-bottom: 3px solid #000;
+}
+
+.member_list {
+    text-align: center;
 }
 
 /* 내용 영역 E */

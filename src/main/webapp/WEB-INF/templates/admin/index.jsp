@@ -14,8 +14,8 @@
         <div class="admin_title_text"><h1>회원 관리</h1></div>
     </div>
     <div class="member_list" >
-        <table class="member_list_table">
-            <thead class="member_list_thead">
+        <table class="table-cols">
+            <thead>
             <th>이메일</th>
             <th>이름</th>
             <th>등급</th>
