@@ -1,4 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+:root {
+    --blue: #21209C;
+    --yellow: #FDB827;
+    --white: #ffffff;
+}
+
 
 /* 태그 기본 스타일 초기화 */
 * {
