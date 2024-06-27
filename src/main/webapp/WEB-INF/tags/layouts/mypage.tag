@@ -9,7 +9,12 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/member/mypage" />
+<c:url var="logoUrl" value="/images/book_logo1.png" />
 
 <layout:common title="${title}">
-    <h1>마이페이지</h1>
+    <jsp:body>
+        <section class="userinfo-box">
+            <jsp:doBody />
+        </section>
+    </jsp:body>
 </layout:common>

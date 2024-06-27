@@ -74,9 +74,7 @@ public class MemberController {
 
     //마이페이지
     @GetMapping("/mypage")
-    public String mypage(HttpServletRequest request, HttpServletResponse response) {
-
-        mypageService.process();
+    public String mypage() {
 
         return "member/mypage";
         }

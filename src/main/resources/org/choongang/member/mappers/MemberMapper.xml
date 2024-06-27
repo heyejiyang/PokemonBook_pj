@@ -21,6 +21,10 @@
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
+    <update id="modify">
+
+    </update>
+
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_TYPE, USER_NAME)
             VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userType}, #{userName})
