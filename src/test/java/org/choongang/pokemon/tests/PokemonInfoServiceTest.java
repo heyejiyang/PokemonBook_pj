@@ -59,7 +59,7 @@ public class PokemonInfoServiceTest {
     @DisplayName("포켓몬 개별 조회 및 업데이트 테스트")
     void getTest() {
         assertDoesNotThrow(() -> {
-            service.update(1);
+            service.update(2);
         });
     }
 
