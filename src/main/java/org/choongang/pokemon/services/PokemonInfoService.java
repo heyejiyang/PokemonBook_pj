@@ -2,6 +2,7 @@ package org.choongang.pokemon.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
+import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
@@ -234,4 +235,7 @@ public class PokemonInfoService {
 
         return Optional.ofNullable(data);
     }
+
+
+
 }
