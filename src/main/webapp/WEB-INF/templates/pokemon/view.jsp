@@ -12,7 +12,7 @@
             <img src="${data.frontImage}" alt="프론트">
         </div>
         <div class="content_wrap">
-            <div class="p-name">
+            <div class="p-name-v">
                 No.${data.seq}<br>
                 <span style="font-size: 50px; color: #000; font-weight: bold;">
                        ${data.nameKr}

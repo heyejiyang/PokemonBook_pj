@@ -31,14 +31,12 @@
      padding-top: 20px;
 }
 
-.p-name {
+.p-name-v {
     font-size: 15pt;
     margin-bottom: 10px;
     color: #808080;
     font-weight: bold;
 }
-
-
 
 .p-desc {
     margin-top: 30px;
