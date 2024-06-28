@@ -1,6 +1,7 @@
 package org.choongang.member.services;
 
 import lombok.RequiredArgsConstructor;
+import org.choongang.board.entities.Board;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.member.controllers.RequestMypage;
 import org.choongang.member.entities.Member;
@@ -11,10 +12,15 @@ import org.choongang.member.mappers.MemberMapper;
 public class MypageService {
     private final MemberMapper mapper;
 
-    public void getInfo(String email) {
+    public RequestMypage getInfo(String email) {
 
         Member member = mapper.get(email);
         RequestMypage form = new RequestMypage();
-    }
 
+        form.getEmail();
+        form.getPassword();
+        form.getUserName();
+
+        return form;
+    }
 }

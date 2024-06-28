@@ -8,9 +8,12 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.member.entities.Member;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
 import org.choongang.member.services.MypageService;
+
+import java.util.List;
 
 @Controller
 @RequestMapping("/member")
@@ -74,7 +77,8 @@ public class MemberController {
 
     //마이페이지
     @GetMapping("/mypage")
-    public String mypage() {
+    public String mypage(RequestMypage form, HttpServletRequest request) {
+        request.setAttribute("form", form);
 
         return "member/mypage";
         }
