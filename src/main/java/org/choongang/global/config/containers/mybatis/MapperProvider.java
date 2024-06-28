@@ -7,7 +7,7 @@ import java.util.Arrays;
 
 @MapperScan({
         "org.choongang.member.mappers",
-        "org.choongang.pokebook.mappers",
+        "org.choongang.pokemon.mappers",
         "org.choongang.board.mappers"
 })
 public class MapperProvider {
