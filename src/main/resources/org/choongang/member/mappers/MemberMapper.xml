@@ -28,13 +28,13 @@
                 EMAIL=#{email},
             </if>
             <if test="password != null">
-                PASSWORD = #{password}
+                PASSWORD = #{password},
             </if>
             <if test="userName != null">
-                USER_NAME = #{userName}
+                USER_NAME = #{userName},
             </if>
+            MOD_DT=SYSDATE
         </set>
-        MOD_DT=now()
         WHERE EMAIL=#{email}
     </update>
 

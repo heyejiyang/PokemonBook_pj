@@ -6,6 +6,7 @@ import org.choongang.global.config.annotations.Service;
 import org.choongang.member.controllers.RequestMypage;
 import org.choongang.member.entities.Member;
 import org.choongang.member.mappers.MemberMapper;
+import org.mindrot.jbcrypt.BCrypt;
 
 @Service
 @RequiredArgsConstructor

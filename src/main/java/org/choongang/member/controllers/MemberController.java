@@ -1,19 +1,16 @@
 package org.choongang.member.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
-import org.choongang.member.entities.Member;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
+import org.choongang.member.services.ModifyService;
 import org.choongang.member.services.MypageService;
-
-import java.util.List;
 
 @Controller
 @RequestMapping("/member")
@@ -23,6 +20,7 @@ public class MemberController {
     private final JoinService joinService;
     private final LoginService loginService;
     private final MypageService mypageService;
+    private final ModifyService modifyService;
 
     // 회원 가입 양식
     @GetMapping("/join")
@@ -81,5 +79,27 @@ public class MemberController {
         request.setAttribute("form", form);
 
         return "member/mypage";
-        }
+    }
+
+    // 회원정보 수정 양식
+    @GetMapping("/modify")
+    public String modify() {
+        
+        return "member/modify";
+    }
+
+    // 회원정보 수정 처리
+    @PostMapping("/modify")
+    public String modifyPs(RequestModify form, HttpServletRequest request) {
+
+        modifyService.process(form);
+
+        String url = request.getContextPath() + "/member/mypage";
+        //정보 수정이 완료되면 마이페이지 화면으로 돌아가서 정보가 잘 수정되었는지 확인할 수 있게 하기
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
+    }
 }
