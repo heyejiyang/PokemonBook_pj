@@ -72,5 +72,6 @@ public class BoardController {
         Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
         request.setAttribute("board", board);
+        request.setAttribute("addCss", List.of("list"));
     }
 }
