@@ -24,17 +24,17 @@ public class BoardController {
         return "board/notice";
     }
 
-    //질문과답변
-    @GetMapping("/question")
-    public String question(){
-        request.setAttribute("addCss", List.of("question"));
-        return "board/question";
-    }
-
-    @PostMapping("/question")
-    public String questionPost() {
-        return null;
-    }
+//    //질문과답변
+//    @GetMapping("/question")
+//    public String question(){
+//        request.setAttribute("addCss", List.of("question"));
+//        return "board/question";
+//    }
+//
+//    @PostMapping("/question")
+//    public String questionPost() {
+//        return null;
+//    }
 
     //게시글 목록
     @GetMapping("/list/{bId}")
@@ -70,7 +70,7 @@ public class BoardController {
     //bId가 있을때마다 처리
     private void commonProcess(String bId){
         Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
-
+        request.setAttribute("addCss", List.of("list"));
         request.setAttribute("board", board);
     }
 }
