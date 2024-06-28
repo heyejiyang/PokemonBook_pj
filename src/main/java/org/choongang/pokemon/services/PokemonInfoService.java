@@ -67,7 +67,7 @@ public class PokemonInfoService {
      */
     public List<Item> getApiList(PokemonSearch search) {
         int page = search.getPage() < 1 ? 1 : search.getPage();
-        int limit = search.getLimit() < 1 ? 20 : search.getLimit();
+        int limit = search.getLimit() < 1 ? 25 : search.getLimit();
         int offset = (page - 1) * limit;
 
 
