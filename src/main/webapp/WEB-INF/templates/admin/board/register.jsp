@@ -4,7 +4,7 @@
 <c:url var="actionUrl" value="/admin/board/save"/>
 
 <%--mode에 따라서 등록인지 수정인지 구분
-<jsp:include page="_form.jsp"/> -> 공유 할 부분
+<jsp:include page="_form.jsp"/> -> 공유 할 부분임
 --%>
 
 <layout:admin title="게시판 등록">
