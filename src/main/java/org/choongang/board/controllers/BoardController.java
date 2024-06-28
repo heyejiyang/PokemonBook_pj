@@ -71,6 +71,7 @@ public class BoardController {
     private void commonProcess(String bId){
         Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
+        request.setAttribute("addCss", List.of("list"));
         request.setAttribute("board", board);
     }
 }

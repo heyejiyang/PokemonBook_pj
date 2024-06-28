@@ -49,6 +49,7 @@
             CHECK(AUTHORITY IN ('ALL', 'USER', 'ADMIN'))
     };
     ```
+    
 ### 게시글 관리
 - 게시글 작성 폼(?)
 - 게시글 삭제
@@ -74,6 +75,20 @@
 
 ## 🔹 포켓몬 도감
 ### 포켓몬 조회하기
+포켓몬 테이블
+```
+CREATE TABLE POKEMON (
+   SEQ NUMBER(10) PRIMARY KEY,
+   NAME VARCHAR2(60) NOT NULL,
+   WEIGHT NUMBER(7) DEFAULT 0,
+   HEIGHT NUMBER(7) DEFAULT 0,
+   BASE_EXPERIENCE NUMBER(10) DEFAULT 0,
+   FRONT_IMAGE VARCHAR2(150),
+   BACK_IMAGE VARCHAR2(150),
+   RAW_DATA CLOB,
+   NAME_KR VARCHAR2(60),
+   DESCRIPTION VARCHAR2 (1000));
+```
 
 <BR>
 
