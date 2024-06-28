@@ -8,9 +8,9 @@ import org.choongang.global.config.annotations.RequestMapping;
 @RequestMapping("/admin/adminMypage")
 public class adminMypageController {
 
-    // 게시판 목록
     @GetMapping
     public String boardList() {
+
         return "admin/adminMypage/index";
     }
 }
