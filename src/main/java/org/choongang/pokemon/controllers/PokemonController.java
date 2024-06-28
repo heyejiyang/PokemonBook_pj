@@ -35,7 +35,7 @@ public class PokemonController {
 
         return "pokemon/index";
     }
-
+    //마스터 병합을 위한 약간의 주석
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq) {
         commonProcess();
