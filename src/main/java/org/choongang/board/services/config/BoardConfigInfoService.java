@@ -15,14 +15,15 @@ import java.util.Optional;
 public class BoardConfigInfoService {
     private final BoardMapper mapper;
 
-    public Optional<Board> get(String bId){
+    public Optional<Board> get(String bId) {
         Board board = mapper.get(bId);
 
         return Optional.ofNullable(board);
     }
 
-    public RequestBoard getForm(String bId){
+    public RequestBoard getForm(String bId) {
         Board board = get(bId).orElseThrow(BoardConfigNotFoundException::new);
+
         RequestBoard form = new RequestBoard();
         form.setMode("update");
         form.setBId(board.getBId());
@@ -30,13 +31,14 @@ public class BoardConfigInfoService {
         form.setRowsPerPage(board.getRowsPerPage());
         form.setActive(board.getActive() == 1);
         form.setActiveCategory(board.getActiveCategory() == 1);
-        //form.setCategory(board.getCategory());
+        form.setCategory(board.getCategory());
         form.setAuthority(board.getAuthority().name());
+
         return form;
     }
 
-    public List<Board> getList(){
+    public List<Board> getList() {
+
         return mapper.getList();
     }
-
 }

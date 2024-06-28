@@ -3,10 +3,7 @@ package org.choongang.board.controllers;
 
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
-import org.choongang.global.config.annotations.Controller;
-import org.choongang.global.config.annotations.GetMapping;
-import org.choongang.global.config.annotations.PostMapping;
-import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.global.config.annotations.*;
 
 import java.util.List;
 
@@ -31,6 +28,16 @@ public class BoardController {
     @PostMapping("/question")
     public String questionPost() {
         return null;
+    }
+
+    @GetMapping("/list/{bId}")
+    public String list(@PathVariable("bId") String bId){ //게시글 목록
+        return "board/list";
+    }
+
+    @GetMapping("/view/{seq}")
+    public String view(@PathVariable("seq") long seq){ //게시글 보기
+        return "board/view";
     }
 
 }

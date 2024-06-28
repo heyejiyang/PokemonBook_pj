@@ -14,19 +14,19 @@
         <jsp:include page="_form.jsp"/>
 
         <div class="button-group">
-            <div class="button">
+            <button type="submit" class="button">
                 <p class="btnText">등록하기</p>
                 <div class="btnTwo">
                     <p class="btnText2"> ✔ </p>
                 </div>
-            </div>
+            </button>
 
-            <div class="button">
+            <button type="reset" class="button">
                 <p class="btnText">다시입력</p>
                 <div class="btnTwo">
                     <p class="btnText2"> ↺ </p>
                 </div>
-            </div>
+            </button>
         </div>
     </form>
 </layout:admin>
