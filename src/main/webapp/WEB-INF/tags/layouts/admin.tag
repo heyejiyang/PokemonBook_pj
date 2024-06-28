@@ -33,7 +33,6 @@
         </div>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
-        <link rel="stylesheet" type="text/css" href="${cssUrl}admin/style.css">
         <link rel="stylesheet" type="text/css" href="${cssUrl}admin/admin.css">
     </jsp:attribute>
     <jsp:attribute name="commonJs">
