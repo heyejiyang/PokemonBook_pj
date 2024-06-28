@@ -25,4 +25,8 @@
         INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NAME, USER_TYPE)
             VALUES (SEQ_MEMBER.NEXTVAL, #{id}, #{password}, #{userType}, #{userName})
     </insert>
+
+    <select id="memberList">
+        SELECT * FROM MEMBER WHERE EMAIL=#{email}, USER_NAME=#{userName}, USER_TYPE=#{userType}, REG_DT=#{regDt}
+    </select>
 </mapper>
