@@ -11,10 +11,11 @@
 <c:url var="homeUrl" value="/member/mypage" />
 <c:url var="logoUrl" value="/images/book_logo1.png" />
 
-<layout:common title="${title}">
+<layout:mypage title="${title}">
+    <h1>${pageTitle}</h1>
     <jsp:body>
         <section class="userinfo-box">
             <jsp:doBody />
         </section>
     </jsp:body>
-</layout:common>
+</layout:mypage>

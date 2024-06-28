@@ -9,7 +9,7 @@
 <%@ page import="java.time.format.DateTimeFormatter" %>
 
 <layout:main title="${pageTitle}">
-<h1>${pageTitle}</h1>
+
 <table class="userinfo-table">
     <tr>
         <th>이메일</th>
