@@ -25,8 +25,8 @@
                     <div class="dropdown">
                         <a href="#">게시판</a>
                         <ul class="dropdown-content">
-                            <li><a href="<c:url value="/board/notice"/>">공지사항</a></li>
-                            <li><a href="<c:url value="/board/question"/>">QnA</a></li>
+                            <li><a href="<c:url value="/board/list/notice"/>">공지사항</a></li>
+                            <li><a href="<c:url value="/board/list/QnA"/>">QnA</a></li>
                         </ul>
                     </div>
                     <a href="<c:url value='/pokemon' />">도감</a>

@@ -24,17 +24,17 @@ public class BoardController {
         return "board/notice";
     }
 
-    //질문과답변
-    @GetMapping("/question")
-    public String question(){
-        request.setAttribute("addCss", List.of("question"));
-        return "board/question";
-    }
-
-    @PostMapping("/question")
-    public String questionPost() {
-        return null;
-    }
+//    //질문과답변
+//    @GetMapping("/question")
+//    public String question(){
+//        request.setAttribute("addCss", List.of("question"));
+//        return "board/question";
+//    }
+//
+//    @PostMapping("/question")
+//    public String questionPost() {
+//        return null;
+//    }
 
     //게시글 목록
     @GetMapping("/list/{bId}")
@@ -72,5 +72,6 @@ public class BoardController {
         Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
         request.setAttribute("board", board);
+        request.setAttribute("addCss", List.of("list"));
     }
 }
