@@ -14,4 +14,5 @@ public class BoardEx {
     private String content; // 내용
     private LocalDateTime regDt;
     private LocalDateTime modDt;
+    private String bId;
 }
