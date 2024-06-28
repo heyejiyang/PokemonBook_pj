@@ -29,7 +29,7 @@ public class BoardConfigSaveService {
                 .rowsPerPage(form.getRowsPerPage())
                 .authority(Authority.valueOf(form.getAuthority()))
                 .build();
-
+        System.out.println(board);
         String mode = form.getMode();
         mode = mode == null || mode.isBlank() ? "register" : mode;
 

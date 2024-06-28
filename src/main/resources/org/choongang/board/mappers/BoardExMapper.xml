@@ -8,6 +8,7 @@
         <result column="POSTER" property="poster" />
         <result column="SUBJECT" property="subject" />
         <result column="CONTENT" property="content" />
+        <result column="BID" property="bId" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
