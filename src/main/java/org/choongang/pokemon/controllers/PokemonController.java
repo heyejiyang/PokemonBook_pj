@@ -15,7 +15,7 @@ import org.choongang.pokemon.services.PokemonInfoService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/pokemon")
+@RequestMapping("/pokemon/index")
 @RequiredArgsConstructor
 public class PokemonController {
 
