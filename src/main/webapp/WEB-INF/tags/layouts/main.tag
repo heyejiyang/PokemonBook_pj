@@ -29,7 +29,7 @@
                             <li><a href="<c:url value="/board/question"/>">QnA</a></li>
                         </ul>
                     </div>
-                    <a href="<c:url value='/member/login' />">도감</a>
+                    <a href="<c:url value='/pokemon' />">도감</a>
                     <util:guestOnly>
                         <a href="<c:url value='/member/login' />">
                             <fmt:message key="로그인" />
