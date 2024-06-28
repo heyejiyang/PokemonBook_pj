@@ -1,5 +1,6 @@
 /* 사이트 헤더 */
 header {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     height: 120px;
