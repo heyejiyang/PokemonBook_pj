@@ -15,7 +15,7 @@ import org.choongang.pokemon.services.PokemonInfoService;
 import java.util.List;
 
 @Controller
-@RequestMapping("/pokemon/index")
+@RequestMapping("/pokemon")
 @RequiredArgsConstructor
 public class PokemonController {
 
@@ -36,7 +36,7 @@ public class PokemonController {
         return "pokemon/index";
     }
 
-    @GetMapping("/{seq}")
+    @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq) {
         commonProcess();
 
