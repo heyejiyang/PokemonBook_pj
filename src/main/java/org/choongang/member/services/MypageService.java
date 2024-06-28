@@ -11,9 +11,10 @@ import org.choongang.member.mappers.MemberMapper;
 public class MypageService {
     private final MemberMapper mapper;
 
-    public void getInfo(RequestMypage form) {
+    public void getInfo(String email) {
 
-        Member member = mapper.get(form.getEmail()); //?
+        Member member = mapper.get(email);
+        RequestMypage form = new RequestMypage();
     }
 
 }

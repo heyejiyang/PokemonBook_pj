@@ -1,0 +1,14 @@
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    background: var(--yellow);
+    color: #fff;
+}
+
+.table-cols td {
+    background: #fff;
+}

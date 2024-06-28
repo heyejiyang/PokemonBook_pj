@@ -22,7 +22,20 @@
     </select>
 
     <update id="modify">
-
+        UPDATE MEMBER
+        <set>
+            <if test="email != null">
+                EMAIL=#{email},
+            </if>
+            <if test="password != null">
+                PASSWORD = #{password}
+            </if>
+            <if test="userName != null">
+                USER_NAME = #{userName}
+            </if>
+        </set>
+        MOD_DT=now()
+        WHERE EMAIL=#{email}
     </update>
 
     <insert id="register">
