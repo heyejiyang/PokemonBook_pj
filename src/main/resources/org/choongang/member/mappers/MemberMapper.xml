@@ -21,6 +21,26 @@
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
+    <update id="modify">
+        UPDATE MEMBER
+        <set>
+            <if test="email != null and !email.equals('')">
+                EMAIL=#{email},
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME = #{userName},
+            </if>
+            <if test="userType != null and userType.equals('')">
+                USER_TYPE = #{userType},
+            </if>
+            <if test="regDt != null and !redDt.equals('')">
+                REG_DT = #{regDt},
+            </if>
+            MOD_DT=SYSDATE
+        </set>
+        WHERE EMAIL=#{email}
+    </update>
+
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_TYPE, USER_NAME)
             VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userType}, #{userName})

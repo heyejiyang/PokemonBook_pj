@@ -1,0 +1,27 @@
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    color: #000;
+}
+
+.table-cols td {
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td {
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
+
+button {
+    border: 1px solid #ccc; /*옅은 회색*/
+    padding: 0 10px; /*좌우 패팅*/
+    height: 30px;
+    width: 100px;
+    background: #f8f8f8;
+}
