@@ -7,13 +7,13 @@
         <result column="SEQ" property="seq" />
         <result column="NUM" property="num" />
         <result column="NAME" property="name" />
-        <result column="NAME_KR" property="nameKr" />
         <result column="WEIGHT" property="weight" />
         <result column="HEIGHT" property="height" />
         <result column="BASE_EXPERIENCE" property="baseExperience" />
         <result column="FRONT_IMAGE" property="frontImage" />
         <result column="BACK_IMAGE" property="backImage" />
         <result column="RAW_DATA" property="rawData" />
+        <result column="NAME_KR" property="nameKr" />
         <result column="DESCRIPTION" property="description" />
     </resultMap>
 

@@ -199,9 +199,7 @@ public class PokemonInfoService {
 
         List<PokemonDetail> items = mapper.getList(search);
 
-
         Pagination pagination = new Pagination();
-
 
         return new ListData<>(items, pagination);
     }
