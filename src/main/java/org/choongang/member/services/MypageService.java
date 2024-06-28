@@ -19,8 +19,9 @@ public class MypageService {
         RequestMypage form = new RequestMypage();
 
         form.getEmail();
-        form.getPassword();
         form.getUserName();
+        form.getUserType();
+        form.getRegDt();
 
         return form;
     }

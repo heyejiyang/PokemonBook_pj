@@ -95,7 +95,7 @@ public class MemberController {
         modifyService.process(form);
 
         String url = request.getContextPath() + "/member/mypage";
-        //정보 수정이 완료되면 마이페이지 화면으로 돌아가서 정보가 잘 수정되었는지 확인할 수 있게 하기
+        //정보 수정이 완료되면 마이페이지 화면으로 돌아가서 수정 정보 확인할 수 있게 함
         String script = String.format("parent.location.replace('%s');", url);
 
         request.setAttribute("script", script);

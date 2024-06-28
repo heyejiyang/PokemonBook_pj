@@ -6,6 +6,7 @@
 <fmt:message var="pageTitle" key='마이페이지' />
 <c:url var="actionUrl" value="/member/mypage" />
 <c:url var="modUrl" value="/member/modify" />
+<%@ page import="java.time.format.DateTimeFormatter" %>
 
 <layout:main title="${pageTitle}">
 <h1>${pageTitle}</h1>
@@ -15,12 +16,16 @@
         <td>${member.email}</td>
     </tr>
     <tr>
-        <th>비밀번호</th>
-        <td>${member.password}</td>
-    </tr>
-    <tr>
         <th>회원명</th>
         <td>${member.userName}</td>
+    </tr>
+    <tr>
+        <th>회원 등급</th>
+        <td>${member.userType}</td>
+    </tr>
+    <tr>
+        <th>가입일</th>
+        <td><c:out value="${member.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
     </tr>
 </table>
 <div class="button-group">

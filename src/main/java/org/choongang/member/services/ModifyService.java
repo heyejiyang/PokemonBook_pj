@@ -1,6 +1,5 @@
 package org.choongang.member.services;
 
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.global.exceptions.AlertException;
@@ -32,11 +31,12 @@ public class ModifyService {
                 .modDt(LocalDateTime.now())
                 .build();
 
-        //System.out.println(member); //member에 데이터가 제대로 들어가는지 확인용
-
         int result = mapper.modify(member); //DB row 수
-//        if (result < 1) {
-//            throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
-//        }
+
+        //수정일 경우 result=0
+
+        //if (result < 1) {
+          //  throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
+        //}
     }
 }

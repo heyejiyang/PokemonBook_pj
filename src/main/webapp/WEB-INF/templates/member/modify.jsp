@@ -44,9 +44,9 @@
     </dl>
         <div class="button-group">
             <button type="reset">
-                <fmt:message key="다시입력" />
+                <fmt:message key="다시_입력하기" />
             </button>
-            <button type="submit" onclick="alert('회원정보 수정이 완료되었습니다')">
+            <button type="submit">
                 <fmt:message key="수정하기" />
             </button>
         </div>
