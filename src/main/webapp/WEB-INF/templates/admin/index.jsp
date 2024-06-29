@@ -3,8 +3,10 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
-<fmt:message var="pageTitle" key="회원 관리" />
+<fmt:message var="pageTitle" key="관리자 페이지" />
 <c:url var="logoUrl" value="/images/ball.png" />
+<%@ page import="java.time.format.DateTimeFormatter" %>
+
 <layout:admin title="관리자 페이지">
 
     <div class="admin_title">
@@ -26,7 +28,7 @@
                         <td>${item.email}</td>
                         <td>${item.userName}</td>
                         <td>${item.userType}</td>
-                        <td>${item.regDt}</td>
+                        <td><c:out value="${item.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
                     </tr>
                 </c:forEach>
             </c:if>

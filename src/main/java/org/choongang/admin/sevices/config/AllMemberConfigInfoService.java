@@ -19,18 +19,6 @@ public class AllMemberConfigInfoService {
         return Optional.ofNullable(member);
     }
 
-//    public RequestMember getForm(String email) {
-//        Member member = get(email).orElseThrow();
-//
-//        RequestMember form = new RequestMember();
-//        form.setEmail(member.getEmail());
-//        form.setUserName(member.getUserName());
-//        form.setUserType(member.getUserType());
-//        form.setRegDt(member.getRegDt());
-//
-//        return form;
-//    }
-
     public List<Member> getList() {
         return mapper.getList();
     }
