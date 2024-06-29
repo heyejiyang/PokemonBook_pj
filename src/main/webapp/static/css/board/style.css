@@ -1,0 +1,24 @@
+.boardTitle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTitle img {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.location{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.page-container {
+    max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+    margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    background-color: #ffffff; /* 배경색 설정 */
+}
+
