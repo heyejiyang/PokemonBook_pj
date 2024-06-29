@@ -116,22 +116,51 @@ nav > .inner a:hover {
 }
 /* 사이트 헤더 영역 E */
 
-/* 사이트 메인 영역 S */
-main {
+/* 사이트 배너 영역 S */
+.banner img{
+    width: 100%;
+}
+/* 사이트 배너 영역 E */
 
+/* 메인 페이지 내용 배치 S */
+.container {
+    width: 100%;
+    margin: 20px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ /* 메인 페이지 내용 배치 E */
+
+/* 콘텐츠 영역 S */
+.content_list {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
 }
 
-main img {
-    display: block;
+.content_list img {
+    width: 300px;
 }
+
+.container h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.do-hyeon-regular {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+/* 콘텐츠 영역 E*/
+
 
 
 /* 사이트 푸터 영역 S */
 footer {
-    margin-top: 100px;
     min-height: 150px;
     background: #000;
-    border-top: 1px solid #ccc;
 }
 
 footer .bottom-bar {

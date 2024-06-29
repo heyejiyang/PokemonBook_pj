@@ -3,11 +3,11 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
-<fmt:message var="pageTitle" key="관리자 페이지" />
+<fmt:message var="pageTitle" key="관리자_페이지" />
 <c:url var="logoUrl" value="/images/ball.png" />
 <%@ page import="java.time.format.DateTimeFormatter" %>
 
-<layout:admin title="관리자 페이지">
+<layout:admin title="${pageTitle}">
 
     <div class="admin_title">
         <div class="admin_title_img"><img src="${logoUrl}" alt="<fmt:message key='로고' />"></div>
