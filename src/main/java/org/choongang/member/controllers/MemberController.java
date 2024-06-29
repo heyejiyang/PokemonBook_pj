@@ -12,6 +12,8 @@ import org.choongang.member.services.LoginService;
 import org.choongang.member.services.ModifyService;
 import org.choongang.member.services.MypageService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -77,6 +79,7 @@ public class MemberController {
     @GetMapping("/mypage")
     public String mypage(RequestMypage form, HttpServletRequest request) {
         request.setAttribute("form", form);
+        request.setAttribute("addCss", List.of("mypage"));
 
         return "member/mypage";
     }

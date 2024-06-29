@@ -7,10 +7,17 @@
 <c:url var="actionUrl" value="/member/mypage" />
 <c:url var="modUrl" value="/member/modify" />
 <%@ page import="java.time.format.DateTimeFormatter" %>
+<c:url var="logoUrl" value="/images/ball.png" />
 
 <layout:main title="${pageTitle}">
-
-<table class="userinfo-table">
+    <section class="layout-width">
+    <div class="mypage-title">
+        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+        <h1>${pageTitle}</h1>
+    </div>
+<body>
+<section class="mypage-box">
+<table class="mypage-table">
     <tr>
         <th>이메일</th>
         <td>${member.email}</td>
@@ -28,6 +35,9 @@
         <td><c:out value="${member.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
     </tr>
 </table>
+</section>
+<body>
+
 <div class="button-group">
     <button type="button">
         <a href="${modUrl}" alt="<fmt:message key="회원정보_수정하기" />">회원정보 수정하기</a>
@@ -36,4 +46,5 @@
         <a href="#" alt="<fmt:message key="작성글_조회하기" />">작성글 조회하기</a>
     </button>
 </div>
+</section>
 </layout:main>
