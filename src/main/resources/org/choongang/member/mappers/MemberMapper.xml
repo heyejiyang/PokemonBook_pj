@@ -29,8 +29,4 @@
     <select id="memberList">
         SELECT * FROM MEMBER WHERE EMAIL=#{email}, USER_NAME=#{userName}, USER_TYPE=#{userType}, REG_DT=#{regDt}
     </select>
-
-    <select id="getList" resultMap="memberMap">
-        SELECT * FROM MEMBER ORDER BY EMAIL
-    </select>
 </mapper>
