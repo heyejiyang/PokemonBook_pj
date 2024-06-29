@@ -6,8 +6,6 @@
 <fmt:message var="pageTitle" key="회원 관리" />
 <c:url var="logoUrl" value="/images/ball.png" />
 <layout:admin title="관리자 페이지">
-    <c:set var="date" value="<%=new Date()%>" />
-    <%@ page import="java.util.*"%>
 
     <div class="admin_title">
         <div class="admin_title_img"><img src="${logoUrl}" alt="<fmt:message key='로고' />"></div>
@@ -22,14 +20,16 @@
             <th>가입날짜</th>
             </thead>
             <tbody>
-            <c:forEach var="item" begin="1" end="10">
-                <tr>
-                    <td>user${item}@</td>
-                    <td>이름 ${item}</td>
-                    <td>USER</td>
-                    <td><fmt:formatDate type="date" value="${date}" pattern="yyyy.MM.dd" dateStyle="short" timeStyle="short"/></td>
-                </tr>
-            </c:forEach>
+            <c:if test="${items != null && !items.isEmpty()}">
+                <c:forEach var="item" items="${items}">
+                    <tr>
+                        <td>${item.email}</td>
+                        <td>${item.userName}</td>
+                        <td>${item.userType}</td>
+                        <td>${item.regDt}</td>
+                    </tr>
+                </c:forEach>
+            </c:if>
             </tbody>
         </table>
     </div>
