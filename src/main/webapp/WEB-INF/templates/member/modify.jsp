@@ -5,16 +5,23 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='회원_정보_수정' />
 <c:url var="actionUrl" value="/member/modify" />
+<c:url var="logoUrl" value="/images/ball.png" />
 
-<layout:mypage title="${pageTitle}">
-    <h1>${pageTitle}</h1>
+<layout:main title="${pageTitle}">
+    <section class="layout-width">
+        <div class="modify-title">
+            <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+            <h1>${pageTitle}</h1>
+        </div>
+    <body>
+    <section class="modify-box">
     <form name="frmModify" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
     <dl>
         <dt>
             <fmt:message key="이메일" />
         </dt>
         <dd>${member.email}
-        <%--<input type="hidden" name="email" value="${member.email}">--%>
+        <%--<input type="text" name="email" value="${member.email}">--%>
         </dd>
     </dl>
     <dl>
@@ -50,4 +57,6 @@
             </button>
         </div>
     </form>
-</layout:mypage>
+    </section>
+    </body>
+</layout:main>

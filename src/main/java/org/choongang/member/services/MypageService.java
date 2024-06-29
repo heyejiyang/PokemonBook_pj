@@ -13,7 +13,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class MypageService {
     private final MemberMapper mapper;
 
-    public RequestMypage getInfo(String email) {
+    public RequestMypage process(String email) {
 
         Member member = mapper.get(email);
         RequestMypage form = new RequestMypage();

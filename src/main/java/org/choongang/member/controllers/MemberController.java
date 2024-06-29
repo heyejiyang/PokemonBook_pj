@@ -86,8 +86,9 @@ public class MemberController {
 
     // 회원정보 수정 양식
     @GetMapping("/modify")
-    public String modify() {
-        
+    public String modify(HttpServletRequest request) {
+
+        request.setAttribute("addCss", List.of("modify"));
         return "member/modify";
     }
 
