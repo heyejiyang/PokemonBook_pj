@@ -30,7 +30,7 @@
                     <th>날짜</th>
                     <th>조회</th>
                 </tr>
-                <c:forEach var="item" begin="1" end="10">
+                <c:forEach var="item" begin="1" end="5">
                     <tr>
                         <td>${item}</td>
                         <td>제목 ${item}</td>
@@ -42,6 +42,12 @@
                 </c:forEach>
         </table>
     </div>
+
+    <div class="page">
+       <button><a href="/#">&lt;</a></button>
+       <button><a href="/#">&gt;</a></button>
+    </div>
+
     <div class="search">
         <select name="searchType">
             <option value="TITLE">제목</option>
