@@ -15,7 +15,7 @@
             <fmt:message key="이메일" />
         </dt>
         <dd>
-            <input type="text" name="email">
+            <input type="text" name="email" value="${sessionScope.member.email}">
         </dd>
     </dl>
     <dl>
@@ -36,10 +36,10 @@
     </dl>
     <dl>
         <dt>
-            <fmt:message key="회원명" />
+            <fmt:message key="회원명"/>
         </dt>
         <dd>
-            <input type="text" name="userName">
+            <input type="text" name="userName" value="${member.userName}">
         </dd>
     </dl>
         <div class="button-group">
