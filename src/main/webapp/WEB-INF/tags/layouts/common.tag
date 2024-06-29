@@ -11,6 +11,7 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <!DOCTYPE html>
+
 <html>
     <head>
         <meta charset="UTF-8">

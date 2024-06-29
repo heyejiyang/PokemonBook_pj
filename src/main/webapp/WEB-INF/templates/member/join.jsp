@@ -66,6 +66,9 @@
                  <div class="image-container">
                      <img src="${logoUrl5}" alt="<fmt:message key='메인이미지' />" class="center-image">
                  </div>
+                 </div>
+              </form>
+              </section>
 
          </layout:main>
 
