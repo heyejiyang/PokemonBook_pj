@@ -16,16 +16,52 @@
     justify-content: center;
 }
 
-dl {
-display: flex;
-justify-content: center;
-items-align: center;
+.modify-table {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 90%;
+    /*border: 1px solid #ccc;*/
+    padding: 10px;
+    background-color: #fff;
 }
 
-dt {
-font-size: 1.2rem;
-color: #000;
+tr {
+display: flex;
+width: 100%;
+margin-bottom: 10px;
+justify-content: center;
+
 }
+
+th{
+display: flex;
+    color: #000;
+    width: 30%;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+}
+
+.modify-table tr:first-of-type td {
+    border: 1px solid #ccc;
+}
+
+span {
+    line-height: 35px;
+}
+
+
+
+td {
+width: 70%;
+display:flex;
+justify-content: center;
+}
+
+td, th {
+        padding: 0px;
+        /*border: 1px solid #ccc;*/
+        }
 
 .button-group {
 display: flex;

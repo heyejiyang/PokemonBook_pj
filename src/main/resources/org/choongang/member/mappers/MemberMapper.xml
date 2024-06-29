@@ -33,9 +33,6 @@
             <if test="password != null and password.equals('')">
                 PASSWORD = #{password},
             </if>
-            <if test="userType != null and userType.equals('')">
-                USER_TYPE = #{userType},
-            </if>
             MOD_DT=SYSDATE
         </set>
         WHERE EMAIL=#{email}

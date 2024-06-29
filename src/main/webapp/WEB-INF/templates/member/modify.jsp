@@ -16,38 +16,41 @@
     <body>
     <section class="modify-box">
     <form name="frmModify" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
-    <dl>
-        <dt>
-            <fmt:message key="이메일" />
-        </dt>
-        <dd>${member.email}
+    <table class="modify-table">
+    <tr>
+        <th>
+            <span><fmt:message key="이메일" /></span>
+        </th>
+        <td>
+        <span>${member.email}</span>
         <%--<input type="text" name="email" value="${member.email}">--%>
-        </dd>
-    </dl>
-    <dl>
-        <dt>
-            <fmt:message key="비밀번호" />
-        </dt>
-        <dd>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span><fmt:message key="비밀번호" /></span>
+        </th>
+        <td>
             <input type="password" name="password" placeholder="<fmt:message key="변경할_비밀번호를_입력하세요"/>">
-        </dd>
-    </dl>
-    <dl>
-        <dt>
-            <fmt:message key="비밀번호_확인" />
-        </dt>
-        <dd>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span><fmt:message key="비밀번호_확인" /></span>
+        </th>
+        <td>
             <input type="password" name="confirmPassword" placeholder="<fmt:message key="비밀번호를_다시_입력하세요"/>">
-        </dd>
-    </dl>
-    <dl>
-        <dt>
-            <fmt:message key="회원명"/>
-        </dt>
-        <dd>
+        </td>
+    </tr>
+    <tr>
+        <th>
+            <span><fmt:message key="회원명"/></span>
+        </th>
+        <td>
             <input type="text" name="userName" value="${member.userName}">
-        </dd>
-    </dl>
+        </td>
+    </tr>
+    </table>
         <div class="button-group">
             <button type="reset">
                 <fmt:message key="다시_입력하기" />
