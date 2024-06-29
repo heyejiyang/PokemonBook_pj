@@ -33,11 +33,10 @@ public class MapperTest {
                 .build();
         int result = mapper.register(board);
         System.out.println(result);
-
     }
 
     @Test
-    void ModifyTest() {
+    void modifyTest() {
         Board board = Board.builder()
                 .bId(bId)
                 .bName("자유게시판")

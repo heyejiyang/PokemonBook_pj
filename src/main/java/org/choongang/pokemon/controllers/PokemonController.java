@@ -35,12 +35,16 @@ public class PokemonController {
 
         return "pokemon/index";
     }
-    //마스터 병합을 위한 약간의 주석
+
+
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq) {
         commonProcess();
 
         PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
+        // 여기로 유입이 된다. admin설정을 확인해보고 왜 여기로 유입되는지 확인해보자
+        //여기서 해당 정보를 찾지 못하기 때문에 오류가 뜬다, 그렇다면 왜 정보를 찾지 못하는가?
+
 
         request.setAttribute("data", data);
         request.setAttribute("addCss", new String[] {"pokemon/index"});
