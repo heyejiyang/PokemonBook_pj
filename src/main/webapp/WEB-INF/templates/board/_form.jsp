@@ -22,7 +22,7 @@
     <dd>
         <input type="text" name="poster" value="${isLogin ? loggedMember.userName : ''}">
         <c:if test="${isAdmin}">
-            <input type="checkbox" name="notice" value="true" id="notice"${data.notice == 1 ? ' checked':''}>
+            <input type="checkbox" name="notice" value="true" id="notice" ${data.notice ? 'checked' : ''}>
             <label for="notice">
                 공지글
             </label>
