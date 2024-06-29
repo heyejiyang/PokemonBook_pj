@@ -11,6 +11,7 @@
         <result column="BID" property="bId" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
+        <result column="BID" property="bId" />
     </resultMap>
 
     <select id="getList2" resultMap="boardExMap">
