@@ -23,7 +23,7 @@ public class AdminController {
 
         List<Member> items = allMemberConfigInfoService.getList();
         request.setAttribute("items", items);
-
+//        request.setAttribute("addCss", List.of("admin/members"));
         return "admin/index";
     }
 }
