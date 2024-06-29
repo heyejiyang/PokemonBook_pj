@@ -5,9 +5,11 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='회원가입' />
 <c:url var="actionUrl" value="/member/join" />
+<c:url var="logoUrl5" value="/images/bee.png" />
 
 <layout:main title="${pageTitle}">
     <section class="content-box">
+
         <h1>${pageTitle}</h1>
         <form name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
             <dl>
@@ -60,7 +62,12 @@
                 <button type="submit">
                     <fmt:message key="가입하기" />
                 </button>
-            </div>
-        </form>
-    </section>
-</layout:main>
+
+                 <div class="image-container">
+                     <img src="${logoUrl5}" alt="<fmt:message key='메인이미지' />" class="center-image">
+                 </div>
+
+         </layout:main>
+
+
+

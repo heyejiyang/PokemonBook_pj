@@ -10,6 +10,8 @@ import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.services.JoinService;
 import org.choongang.member.services.LoginService;
 
+import java.util.List;
+
 @Controller
 @RequestMapping("/member")
 @RequiredArgsConstructor
@@ -20,8 +22,8 @@ public class MemberController {
 
     // 회원 가입 양식
     @GetMapping("/join")
-    public String join() {
-
+    public String join(HttpServletRequest request) {
+        request.setAttribute("addCss", List.of("join"));
         return "member/join";
     }
 
@@ -41,8 +43,8 @@ public class MemberController {
 
     // 로그인 양식
     @GetMapping("/login")
-    public String login() {
-
+    public String login(HttpServletRequest request) {
+        request.setAttribute("addCss", List.of("login"));
         return "member/login";
     }
 

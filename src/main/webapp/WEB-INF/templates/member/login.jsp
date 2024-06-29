@@ -5,9 +5,13 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="로그인" />
 <c:url var="actionUrl" value="/member/login" />
+<c:url var="logoUrl4" value="/images/Jirachi2.png" />
+
+
 
 <layout:main title="${pageTitle}">
     <div class="content-box small">
+
         <h1>${pageTitle}</h1>
 
         <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
@@ -22,10 +26,15 @@
                 <label for="saveEmail">
                     <fmt:message key="이메일_기억하기" />
                 </label>
+
             </div>
             <button type="submit">
                 <fmt:message key="로그인" />
             </button>
-        </form>
-    </div>
+
+
+                 <div class="image-container">
+                     <img src="${logoUrl4}" alt="<fmt:message key='메인이미지' />" class="center-image">
+                 </div>
+
 </layout:main>

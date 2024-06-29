@@ -1,0 +1,26 @@
+main {
+    display: flex;
+    flex-direction: column;
+    min-height: 750px;
+}
+
+.featured-image {
+    flex-grow: 1;
+    background: url("../../images/Pachi2.png") no-repeat center center;
+    background-size: contain;
+    /* 배경 이미지 사이즈 변경하는 방법
+        background-size: 가로비율 세로비율; 예) 30% 50%
+        background-size: 전체적인 비율;  에) 50%
+        background-size: contain; - 이미가 화면에 포함되도록 너비 조정
+                         cover;  - 이미지가 화면 비율에 맞게 조정, 일부 짤리는 부분이 있음.
+    */
+}
+
+.grass-image {
+    height: 250px;
+    background:url("../../images/grass.jpeg") repeat-x center center;
+}
+
+footer {
+    margin-top: 0;
+}
