@@ -23,7 +23,7 @@
             <fmt:message key="비밀번호" />
         </dt>
         <dd>
-            <input type="password" name="password">
+            <input type="password" name="password" placeholder="<fmt:message key="변경할_비밀번호를_입력하세요"/>">
         </dd>
     </dl>
     <dl>
@@ -31,7 +31,7 @@
             <fmt:message key="비밀번호_확인" />
         </dt>
         <dd>
-            <input type="password" name="confirmPassword">
+            <input type="password" name="confirmPassword" placeholder="<fmt:message key="비밀번호를_다시_입력하세요"/>">
         </dd>
     </dl>
     <dl>

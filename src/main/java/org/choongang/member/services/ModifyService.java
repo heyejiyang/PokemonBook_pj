@@ -1,5 +1,6 @@
 package org.choongang.member.services;
 
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.global.exceptions.AlertException;
@@ -24,38 +25,28 @@ public class ModifyService {
 
         Member member = memberUtil.getMember(); //로그인한 회원 정보
 
+//        String email = member.getEmail();
+//        if (email != null && !email.isBlank() && !email.equals(form.getEmail())){
+//            member.setEmail(form.getEmail());
+//        } else {
+//            member.setEmail(email);
+//        }
+
+        member.setEmail(form.getEmail());
+
         String password = form.getPassword();
         if (password != null && !password.isBlank()) {
             String hash = BCrypt.hashpw(password, BCrypt.gensalt(12));
             member.setPassword(hash);
         }
 
-        member.setEmail(form.getEmail());
         member.setUserName(form.getUserName());
         member.setModDt(LocalDateTime.now());
 
-        mapper.modify(member);
-
-        /*
-        // 비밀번호 해시화
-        String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
-
-        // DB에 영구 저장 처리
-        Member member = Member.builder()
-                            .email(form.getEmail())
-                            .password(hash)
-                            .userName(form.getUserName())
-                            .modDt(LocalDateTime.now())
-                            .build();
-
-        int result = mapper.modify(member); //DB row 수
-
-        */
-
-        //수정일 경우 result=0
-
-        //if (result < 1) {
-          //  throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
-        //}
+        try {
+            mapper.modify(member);
+        } catch (AlertException e) {
+            throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
+        }
     }
 }
