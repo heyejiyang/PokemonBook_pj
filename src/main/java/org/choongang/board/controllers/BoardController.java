@@ -4,6 +4,7 @@ package org.choongang.board.controllers;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.entities.Board;
+import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.config.annotations.*;
@@ -19,30 +20,34 @@ public class BoardController {
     private final HttpServletRequest request;
     private final BoardConfigInfoService configInfoService;
 
-    //공지사항
-    @GetMapping("/notice")
-    public String notice(){
-        request.setAttribute("addCss", List.of("notice"));
-        return "board/notice";
-    }
-
-//    //질문과답변
-//    @GetMapping("/question")
-//    public String question(){
-//        request.setAttribute("addCss", List.of("question"));
-//        return "board/question";
-//    }
-//
-//    @PostMapping("/question")
-//    public String questionPost() {
-//        return null;
+//    //공지사항
+//    @GetMapping("/notice")
+//    public String notice(){
+//        request.setAttribute("addCss", List.of("notice"));
+//        return "board/notice";
 //    }
 
     //게시글 목록
-    @GetMapping("/list/{bId}")
-    public String list(@PathVariable("bId") String bId){
-        commonProcess(bId,"list");
-        return "board/list";
+    @RequestMapping("/list/{bId}")
+    public String list(@PathVariable("bId") String bId,
+                       @RequestParam(value = "page") int page) {
+        int pageSize = 10;  // 한 페이지에 보여줄 게시글 수
+        int totalCount = 100;  // 가상 총 게시글 수 (예: 100개)
+        int totalPages = (int) Math.ceil((double) totalCount / pageSize);  // 총 페이지 수
+
+        // 가상 데이터 생성
+        List<String> boards = new ArrayList<>();
+        for (int i = (page - 1) * pageSize + 1; i <= page * pageSize && i <= totalCount; i++) {
+            boards.add("제목 " + i);
+        }
+
+        request.setAttribute("boards", boards);
+        request.setAttribute("currentPage", page);
+        request.setAttribute("totalPages", totalPages);
+        request.setAttribute("bId", bId);
+
+        commonProcess(bId, "list");
+        return "board/list";  // JSP 페이지로 이동
     }
 
     //게시글 보기
