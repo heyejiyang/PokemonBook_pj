@@ -240,9 +240,19 @@ footer {
     background: #000;
 }
 
-footer .bottom-bar {
+footer .bottom-bar .bottom1{
     color: #fff;
     display: flex;
     justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 40px;
+}
+
+footer .bottom-bar .bottom2{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
 }
 /* 사이트 푸터 영역 E */

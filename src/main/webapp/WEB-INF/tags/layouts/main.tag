@@ -17,6 +17,7 @@
 <c:url var="miniLogo3Url" value="/images/mini_logo5.png" />
 <c:url var="miniLogo4Url" value="/images/mini_logo6.png" />
 <c:url var="storeUrl" value="https://www.pokemonstore.co.kr/" />
+<c:url var="footerUrl" value="/images/ft_logo.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -91,7 +92,8 @@
     <jsp:attribute name="footer">
         <section class="layout-width inner">
             <div class="bottom-bar">
-                포켓몬 도감 프로젝트
+                <div class="bottom1"><img src="${footerUrl}">포켓몬 도감 프로젝트</div>
+                <div class="bottom2">회사 소개 | 사업내용 | 제휴안내 | 이용약관 | 개인정보처리방침 | 이메일무단수집거부 | 고객센터</div>
             </div>
         </section>
     </jsp:attribute>
