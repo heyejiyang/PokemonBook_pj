@@ -1,6 +1,8 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
+<c:url var="searchUrl" value="/pokemon" />
 <layout:main>
 <section class="layout-width">
         <div class="formWrap">
@@ -29,5 +31,5 @@
         </c:if>
     </ul>
 </section>
-
+<util:pagination />
 </layout:main>
