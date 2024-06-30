@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE configuration>
+<configuration>
+
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%d [%5p] [%t] - %m%n</pattern>
+        </encoder>
+    </appender>
+
+    <root level="info">
+        <appender-ref ref="stdout"/>
+    </root>
+
+    <logger name="org.choongang.member.mappers" level="DEBUG" />
+    <logger name="org.choongang.pokemon.mappers" level="DEBUG" />
+    <logger name="org.choongang.board.mappers" level="DEBUG" />
+</configuration>

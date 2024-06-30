@@ -1,0 +1,77 @@
+.board-area {
+    max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
+    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    background-color: #ffffff; /* 바탕색 지정 */
+}
+
+.location_cont{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.boardTitle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTitle img {
+    vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.notice-table {
+    width: calc(100% - 100px);
+    border-collapse: collapse;
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+}
+
+.notice-table th, .notice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.notice-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    background: #228B22;
+    color: #fff;
+}
+
+.table-cols td {
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px
+}
+
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td {
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea {
+    width: 100%;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+    width: 300px;
+    height: 45px;
+}
