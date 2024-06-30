@@ -43,10 +43,10 @@ public class ModifyService {
         member.setUserName(form.getUserName());
         member.setModDt(LocalDateTime.now());
 
-        try {
+//        try {
             mapper.modify(member);
-        } catch (AlertException e) {
-            throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
-        }
+//        } catch (AlertException e) {
+//            throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
+//        }
     }
 }

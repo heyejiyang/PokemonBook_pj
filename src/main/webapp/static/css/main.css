@@ -124,6 +124,7 @@ main {
 main img {
     display: block;
 }
+/*버튼을 같은 디자인으로 통일한다면 main.css에 넣어도 될 듯함*/
 
 
 /* 사이트 푸터 영역 S */

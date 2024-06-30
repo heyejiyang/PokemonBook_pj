@@ -17,12 +17,11 @@
 }
 
 .modify-table {
-    border-spacing: 0;
-    padding: 0 0 10px;
-    width: 90%;
+    border-spacing: 0; /*오른쪽 패딩이 왜 적용이 안되나요..*/
+    width: 100%;
     /*border: 1px solid #ccc;*/
-    padding: 10px;
-    background-color: #fff;
+    padding: 10px 20px 10px 10px;
+    background-color: #F6F6F6;
 }
 
 tr {
@@ -30,7 +29,7 @@ display: flex;
 width: 100%;
 margin-bottom: 10px;
 justify-content: center;
-
+font-size:15px;
 }
 
 th{
@@ -42,8 +41,13 @@ display: flex;
     justify-content: center;
 }
 
+.modify-table tr:last-of-type {
+    margin-bottom: 0;
+}
+
 .modify-table tr:first-of-type td {
     border: 1px solid #ccc;
+    background: var(--white)
 }
 
 span {
@@ -77,4 +81,5 @@ button {
     margin: 0 20px;
     background: var(--blue);
     color: #fff;
+    font-size: 1.2rem;
 }

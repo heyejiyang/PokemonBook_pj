@@ -18,10 +18,15 @@ public class MypageService {
         Member member = mapper.get(email);
         RequestMypage form = new RequestMypage();
 
-        form.getEmail();
-        form.getUserName();
-        form.getUserType();
-        form.getRegDt();
+        form.setEmail(member.getEmail());
+        form.setUserName(member.getUserName());
+        form.setUserType(member.getUserType());
+        form.setRegDt(member.getRegDt());
+
+//        form.getEmail();
+//        form.getUserName();
+//        form.getUserType();
+//        form.getRegDt();
 
         return form;
     }

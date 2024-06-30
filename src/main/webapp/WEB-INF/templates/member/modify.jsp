@@ -51,6 +51,8 @@
         </td>
     </tr>
     </table>
+        </body>
+
         <div class="button-group">
             <button type="reset">
                 <fmt:message key="다시_입력하기" />
@@ -61,5 +63,5 @@
         </div>
     </form>
     </section>
-    </body>
+
 </layout:main>

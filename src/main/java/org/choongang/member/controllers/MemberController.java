@@ -26,8 +26,9 @@ public class MemberController {
 
     // 회원 가입 양식
     @GetMapping("/join")
-    public String join() {
+    public String join(HttpServletRequest request) {
 
+        request.setAttribute("addCss", List.of("join"));
         return "member/join";
     }
 
@@ -47,8 +48,9 @@ public class MemberController {
 
     // 로그인 양식
     @GetMapping("/login")
-    public String login() {
+    public String login(HttpServletRequest request) {
 
+        request.setAttribute("addCss", List.of("login"));
         return "member/login";
     }
 
@@ -64,6 +66,7 @@ public class MemberController {
         String script = String.format("parent.location.replace('%s');", request.getContextPath() + redirectUrl);
 
         request.setAttribute("script", script);
+
 
         return "commons/execute_script";
     }
