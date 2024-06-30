@@ -4,6 +4,7 @@ package org.choongang.board.controllers;
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.entities.Board;
+import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.config.annotations.*;
@@ -17,12 +18,12 @@ public class BoardController {
     private final HttpServletRequest request;
     private final BoardConfigInfoService configInfoService;
 
-    //공지사항
-    @GetMapping("/notice")
-    public String notice(){
-        request.setAttribute("addCss", List.of("notice"));
-        return "board/notice";
-    }
+//    //공지사항
+//    @GetMapping("/notice")
+//    public String notice(){
+//        request.setAttribute("addCss", List.of("notice"));
+//        return "board/notice";
+//    }
 
 //    //질문과답변
 //    @GetMapping("/question")
@@ -40,6 +41,11 @@ public class BoardController {
     @GetMapping("/list/{bId}")
     public String list(@PathVariable("bId") String bId){
         commonProcess(bId);
+
+        //게시판 목록 참고
+//            List<BoardData> items = infoService.getList();
+//            request.setAttribute("items", items);
+
         return "board/list";
     }
 
