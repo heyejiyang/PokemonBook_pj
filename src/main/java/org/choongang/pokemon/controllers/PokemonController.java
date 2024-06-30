@@ -56,6 +56,28 @@ public class PokemonController {
         return "pokemon/view";
     }
 
+    @GetMapping("/gacha")
+    public String gacha(PokemonSearch search) {
+        commonProcess();
+
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
+        return "pokemon/gacha";
+    }
+
+    @GetMapping("/gacharesult")
+    public String gacharesult(PokemonSearch search) {
+        commonProcess();
+
+        ListData<PokemonDetail> listData = infoService.getList(search);
+        List<PokemonDetail> items = listData.getItems();
+
+        request.setAttribute("items", items);
+        request.setAttribute("addCss", new String[] {"pokemon/gacharesult"});
+
+        return "pokemon/gacharesult";
+    }
+
+
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.
         request.setAttribute("addCss", new String[] {"pokemon/style"});
