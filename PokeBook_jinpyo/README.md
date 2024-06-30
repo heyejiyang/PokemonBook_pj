@@ -1,5 +1,5 @@
 ![main_logo](https://github.com/heyejiyang/PokemonBook_pj/assets/163953938/0d95ae0a-eec6-439e-83bc-0d3d37dff59a)
-# 😎 포켓몬 도감 프로젝트 ✌
+# 😎 포켓몬 도감 프로젝트 ✌1
 # 1. 프로젝트 소개
 ### 🔹 개요
 - 프로젝트명 : 포켓몬 도감 프로젝트(?)
