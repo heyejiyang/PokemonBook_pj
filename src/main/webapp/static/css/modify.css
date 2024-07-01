@@ -1,0 +1,85 @@
+.modify-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 10px;
+}
+
+.modify-title img {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.modify-box { /*테이블 가운데 정렬*/
+    display: flex;
+    justify-content: center;
+}
+
+.modify-table {
+    border-spacing: 0; /*오른쪽 패딩이 왜 적용이 안되나요..*/
+    width: 100%;
+    /*border: 1px solid #ccc;*/
+    padding: 10px 20px 10px 10px;
+    background-color: #F6F6F6;
+}
+
+tr {
+display: flex;
+width: 100%;
+margin-bottom: 10px;
+justify-content: center;
+font-size:15px;
+}
+
+th{
+display: flex;
+    color: #000;
+    width: 30%;
+    height: 35px;
+    text-align: center;
+    justify-content: center;
+}
+
+.modify-table tr:last-of-type {
+    margin-bottom: 0;
+}
+
+.modify-table tr:first-of-type td {
+    border: 1px solid #ccc;
+    background: var(--white)
+}
+
+span {
+    line-height: 35px;
+}
+
+
+
+td {
+width: 70%;
+display:flex;
+justify-content: center;
+}
+
+td, th {
+        padding: 0px;
+        /*border: 1px solid #ccc;*/
+        }
+
+.button-group {
+display: flex;
+justify-content:center;
+margin-top: 30px;
+}
+
+button {
+    border: 1px solid #ccc; /*옅은 회색*/
+    padding: 0 10px; /*좌우 패팅*/
+    height: 50px;
+    width: 200px;
+    margin: 0 20px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 1.2rem;
+}
