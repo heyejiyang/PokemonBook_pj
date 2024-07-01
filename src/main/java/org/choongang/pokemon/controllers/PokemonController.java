@@ -4,10 +4,8 @@ import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
 import org.choongang.global.Pagination;
-import org.choongang.global.config.annotations.Controller;
-import org.choongang.global.config.annotations.GetMapping;
-import org.choongang.global.config.annotations.PathVariable;
-import org.choongang.global.config.annotations.RequestMapping;
+import org.choongang.global.config.annotations.*;
+import org.choongang.member.controllers.RequestJoin;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.pokemon.services.PokemonInfoService;
@@ -91,6 +89,7 @@ public class PokemonController {
 
         return "pokemon/gacharesult";
     }
+
 
 
     private void commonProcess() {

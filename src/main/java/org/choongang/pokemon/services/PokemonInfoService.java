@@ -20,10 +20,7 @@ import org.choongang.pokemon.entities.api.Pokemon;
 import org.choongang.pokemon.mappers.PokemonMapper;
 
 import java.net.http.HttpResponse;
-import java.util.Collections;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -38,6 +35,7 @@ public class PokemonInfoService {
     private final ObjectMapperService om;
     private final PokemonSaveService saveService;
     private final PokemonMapper mapper;
+    private final Set<Integer> returnedPokemonIds = new HashSet<>();
 
     // 포켓몬 API URL
     private String apiUrl = AppConfig.get("pokemon.api.url");
@@ -245,8 +243,20 @@ public class PokemonInfoService {
      */
     public Optional<PokemonDetail> getRandom() {
         PokemonDetail data = mapper.getRandom();
-        convertRawData(data);
+        while (data != null && returnedPokemonIds.contains(data.getSeq())) {
+            data = mapper.getRandom();
+        }
+
+        if (data != null) {
+            convertRawData(data);
+            returnedPokemonIds.add((int) data.getSeq());
+        }
 
         return Optional.ofNullable(data);
+    }
+
+
+    public void clearReturnedPokemonIds() {
+        returnedPokemonIds.clear();
     }
 }
