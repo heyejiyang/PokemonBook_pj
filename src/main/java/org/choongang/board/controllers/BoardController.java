@@ -42,10 +42,6 @@ public class BoardController {
     public String list(@PathVariable("bId") String bId){
         commonProcess(bId);
 
-        //게시판 목록 참고
-//            List<BoardData> items = infoService.getList();
-//            request.setAttribute("items", items);
-
         return "board/list";
     }
 
