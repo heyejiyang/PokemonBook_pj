@@ -9,7 +9,6 @@ import org.choongang.global.config.annotations.RequestMapping;
 import org.choongang.member.controllers.RequestModify;
 import org.choongang.member.controllers.RequestMypage;
 import org.choongang.member.services.ModifyService;
-import org.choongang.member.services.MypageService;
 
 import java.util.List;
 
@@ -19,7 +18,6 @@ import java.util.List;
 
 public class adminMypageController {
 
-    private final MypageService mypageService;
     private final ModifyService modifyService;
     private final HttpServletRequest request;
 

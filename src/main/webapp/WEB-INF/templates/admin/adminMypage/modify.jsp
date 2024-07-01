@@ -15,7 +15,6 @@
         <div class="admin_title_text"><h1>${adminmodifyTitle}</h1></div>
     </div>
     <section class="layout-width">
-        <body>
         <section class="modify-box">
             <form name="frmModify" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
                 <table class="modify-table">
@@ -25,7 +24,6 @@
                         </th>
                         <td>
                             <span>${loggedMember.email}</span>
-                                <%--<input type="text" name="email" value="${member.email}">--%>
                         </td>
                     </tr>
                     <tr>
@@ -53,8 +51,6 @@
                         </td>
                     </tr>
                 </table>
-
-
                 <div class="button-group">
                     <button type="reset">
                         <fmt:message key="다시_입력하기" />
@@ -64,6 +60,5 @@
                     </button>
                 </div>
             </form>
-        </body>
     </section>
 </layout:admin>
