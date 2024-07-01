@@ -20,17 +20,11 @@ public class BoardController {
     private final HttpServletRequest request;
     private final BoardConfigInfoService configInfoService;
 
-//    //공지사항
-//    @GetMapping("/notice")
-//    public String notice(){
-//        request.setAttribute("addCss", List.of("notice"));
-//        return "board/notice";
-//    }
-
     //게시글 목록
     @RequestMapping("/list/{bId}")
     public String list(@PathVariable("bId") String bId,
                        @RequestParam(value = "page") int page) {
+        /*추가 코드 S*/
         int pageSize = 10;  // 한 페이지에 보여줄 게시글 수
         int totalCount = 100;  // 가상 총 게시글 수 (예: 100개)
         int totalPages = (int) Math.ceil((double) totalCount / pageSize);  // 총 페이지 수
@@ -45,7 +39,7 @@ public class BoardController {
         request.setAttribute("currentPage", page);
         request.setAttribute("totalPages", totalPages);
         request.setAttribute("bId", bId);
-
+        /*추가 코드 E*/
         commonProcess(bId, "list");
         return "board/list";  // JSP 페이지로 이동
     }
