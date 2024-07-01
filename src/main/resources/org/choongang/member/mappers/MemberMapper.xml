@@ -23,7 +23,7 @@
 
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, USER_ID, USER_PW, USER_NAME, USER_TYPE)
-            VALUES (SEQ_MEMBER.NEXTVAL, #{id}, #{password}, #{userType}, #{userName})
+            VALUES (SEQ_MEMBER.NEXTVAL, #{EMAIL}, #{PASSWORD}, #{USER_TYPE}, #{USER_NAME})
     </insert>
 
     <select id="memberList">
