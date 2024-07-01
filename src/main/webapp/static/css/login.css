@@ -1,0 +1,16 @@
+.button-group {
+display: flex;
+justify-content:center;
+margin-top: 30px;
+}
+
+button {
+    border: 1px solid #ccc; /*옅은 회색*/
+    padding: 0 10px; /*좌우 패팅*/
+    height: 50px;
+    width: 200px;
+    margin: 0 20px;
+    background: var(--blue);
+    font-size: 1.2rem;
+    color: #fff;
+}
