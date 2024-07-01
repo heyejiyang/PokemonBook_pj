@@ -31,7 +31,7 @@
                 </div>
                 <div class="layout-width inner">
                     <div class="mini_logo">
-                    <img src="${miniLogo1Url}"></div>
+                        <img src="${miniLogo1Url}"></div>
                     <div class="dropdown">
                         <a href="#">게시판</a>
                         <ul class="dropdown-content">
@@ -44,7 +44,7 @@
                     <a href="<c:url value='/pokemon' />">도감</a>
                     <util:guestOnly>
                         <div class="mini_logo">
-                            <img src="${miniLogo3Url}"></div>
+                        <img src="${miniLogo3Url}"></div>
                         <a href="<c:url value='/member/login' />">
                             <fmt:message key="로그인" />
                         </a>
