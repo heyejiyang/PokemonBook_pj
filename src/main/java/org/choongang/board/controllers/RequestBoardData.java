@@ -6,7 +6,7 @@ import java.util.UUID;
 
 @Data
 public class RequestBoardData {
-    private String mode;
+    private String mode; //write: 쓰기, update: 수정
     private long seq;
     private String bId; //게시판 아이디
     private String gId = UUID.randomUUID().toString(); //그룹 아이디
