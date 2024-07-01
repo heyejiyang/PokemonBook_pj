@@ -57,6 +57,7 @@ public class PokemonController {
         return "pokemon/view";
     }
 
+
     @GetMapping("/mypokemon")
     public String mypokemon() {
         commonProcess();
@@ -64,6 +65,7 @@ public class PokemonController {
         request.setAttribute("addCss", new String[] {"pokemon/mypokemon"});
         return "pokemon/mypokemon";
     }
+
 
     @GetMapping("/gacha")
     public String gacha() {
@@ -73,6 +75,7 @@ public class PokemonController {
         return "pokemon/gacha";
     }
 
+
     @GetMapping("/gacharesult")
     public String gacharesult() {
         commonProcess();
@@ -81,7 +84,6 @@ public class PokemonController {
         PokemonDetail items = listData.get();
         // 랜덤으로 들어오긴 하는데 서버를 껐다가 켜야만 새로운 포켓몬이 나온다.
         // 클릭할 때마다 새로운 포켓몬으로 하려면 어찌해야할까
-
 
         request.setAttribute("items", items);
         request.setAttribute("addCss", new String[] {"pokemon/gacharesult"});
