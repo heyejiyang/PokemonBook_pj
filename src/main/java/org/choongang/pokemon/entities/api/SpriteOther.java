@@ -11,7 +11,6 @@ public class SpriteOther {
     private SpriteImage home;
     private SpriteImage showdown;
 
-
     //일반적으로 JSON 데이터는 다양한 소스에서 제공되며, 각 소스마다 필드 이름이 다를 수 있습니다.
     // 예를 들어, 한 API에서는 official-artwork라는 필드 이름을 사용하고,
     // 다른 API에서는 officialArtwork라는 이름을 사용할 수 있습니다.
