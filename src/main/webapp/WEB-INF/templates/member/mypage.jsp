@@ -20,19 +20,19 @@
 <table class="mypage-table">
     <tr>
         <th>이메일</th>
-        <td>${member.email}</td>
+        <td>${loggedMember.email}</td>
     </tr>
     <tr>
         <th>회원명</th>
-        <td>${member.userName}</td>
+        <td>${loggedMember.userName}</td>
     </tr>
     <tr>
         <th>회원 등급</th>
-        <td>${member.userType}</td>
+        <td>${loggedMember.userType}</td>
     </tr>
     <tr>
         <th>가입일</th>
-        <td><c:out value="${member.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
+        <td><c:out value="${loggedMember.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
     </tr>
 </table>
 </section>
