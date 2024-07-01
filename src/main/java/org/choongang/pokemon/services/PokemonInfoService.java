@@ -47,12 +47,16 @@ public class PokemonInfoService {
      */
 
     public Map<String, String> getApiAll() {
-
+        //API에서 데이터를 가져오고, 그 데이터를 Map<String, String> 형태로 반환
         HttpResponse<String> res = service.request(apiUrl);
 
         try {
             Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {});
-
+            // res.body()를 사용하여 HTTP 응답에서 문자열 형태의 JSON 데이터를 가져옵니다.
+            //om.readValue() 메소드는 Jackson ObjectMapper (om)을 사용하여
+            // Map<String, String>으로 변환합니다.
+            //new TypeReference<>() {}를 사용하여 맵의 제네릭 타입을 지정합니다.
+            // 이 경우에는 런타임에 제네릭 타입을 추론할 수 있도록 빈 타입 참조를 사용합니다.
             return data;
         } catch (JsonProcessingException e) {
             e.printStackTrace();
@@ -66,16 +70,18 @@ public class PokemonInfoService {
      *
      * @param search
      */
+
+    //API에서 Pokemon 관련 데이터를 가져와서 아이템 리스트로 반환하는 기능
     public List<Item> getApiList(PokemonSearch search) {
         int page = search.getPage() < 1 ? 1 : search.getPage();
-        int limit = search.getLimit() < 1 ? 20 : search.getLimit();
+        int limit = search.getLimit() < 1 ? 25 : search.getLimit();
         int offset = (page - 1) * limit;
-
-
+        // 한 페이지다
+        //offset은 0부터 시작해서 page기준으로 하면 2번째가 되므로 -1을 해준다.
         List<Item> items = null;
 
         String url = String.format(apiUrl + "/pokemon?offset=%d&limit=%d", offset, limit);
-
+        //api로 요청할 url생성
         HttpResponse<String> response = service.request(url);
         if (response.statusCode() == HttpServletResponse.SC_OK) {
 
@@ -97,16 +103,19 @@ public class PokemonInfoService {
      * @param seq
      * @return
      */
+    //주어진 포켓몬의 시퀀스 번호를 기반으로 API에서 포켓몬 정보를 업데이트하고,
+    // 필요한 추가 정보(한글 이름 및 설명)를 추출하여 저장하는 기능을 수행
     public Optional<Pokemon> update(long seq) {
 
         String url = apiUrl + "/pokemon/" + seq;
 
         Pokemon pokemon = null;
-        HttpResponse<String> response = service.request(url);
+        HttpResponse<String> response = service.request(url); // 번호에맞는거 가져오기
 
         if (response.statusCode() == HttpServletResponse.SC_OK) {
             try {
                 pokemon = om.readValue(response.body(), Pokemon.class);
+                //ObjectMapper (om)을 사용하여 JSON 데이터를 Pokemon 객체로 변환합니다.
                 pokemon.setRawData(response.body());
 
                 /* 포켓몬 한글 이름, 한글 설명 추출 S */
@@ -162,6 +171,7 @@ public class PokemonInfoService {
      * 현재 총 등록된 포켓몬 목록은 1302개로 전체 일괄 업데이트 해도 문제 없을 듯
      *
      */
+    //모든 포켓몬 데이터를 업데이트하는 기능을 수행
     public void updateAll() {
         //Thread th = new Thread(() -> {
         PokemonSearch search = new PokemonSearch();
@@ -207,6 +217,7 @@ public class PokemonInfoService {
         /* 페이징 처리 E */
         return new ListData<>(items, pagination);
     }
+
 
     public Optional<PokemonDetail> get(long seq) {
         PokemonDetail data = mapper.get(seq);

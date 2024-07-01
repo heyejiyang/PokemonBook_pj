@@ -11,7 +11,7 @@ public class PokemonDetail extends AbstractPokemonDetail {
     private String name;
     private String nameKr;
     private int weight;
-    private int height;
+    private double height;
     private int baseExperience;
     private String frontImage;
     private String backImage;

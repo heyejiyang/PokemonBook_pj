@@ -22,8 +22,8 @@
                 ${fn:replace(data.description, '\\n', '<br>')}
             </div>
             <div class="pokemonCh">
-                키: ${data.height}<br>
-                몸무게: ${data.weight}<br>
+                키: ${data.height*0.1}m<br>
+                몸무게: ${data.weight}kg<br>
             </div>
             <div class="p-type">
                     속성:

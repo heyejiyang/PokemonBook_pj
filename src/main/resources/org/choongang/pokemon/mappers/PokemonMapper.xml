@@ -66,10 +66,4 @@
         </where>
     </select>
 
-    <!-- 포켓몬 랜덤 조회 -->
-    <select id="getRandom" resultMap="pokemonMap">
-        <![CDATA[
-        SELECT * FROM (SELECT P.SEQ, ROWNUM NUM, P.NAME, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P ORDER BY DBMS_RANDOM.VALUE(0, 2000)) WHERE ROWNUM = 1
-        ]]>
-    </select>
 </mapper>
