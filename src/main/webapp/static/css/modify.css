@@ -1,9 +1,24 @@
+.all-form {
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-form {
+    width: 600px;
+}
+
 .modify-title {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0 10px;
+}
+
+.modify-title h1 {
+    font-size: 1.35rem;
 }
 
 .modify-title img {
@@ -17,8 +32,8 @@
 }
 
 .modify-table {
-    border-spacing: 0; /*오른쪽 패딩이 왜 적용이 안되나요..*/
-    width: 100%;
+    border-spacing: 0;
+    width: 600px;
     /*border: 1px solid #ccc;*/
     padding: 10px 20px 10px 10px;
     background-color: #F6F6F6;

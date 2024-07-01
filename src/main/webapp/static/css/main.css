@@ -246,6 +246,7 @@ footer {
     /*position: fixed; !*해당 부분 고정*!*/
     bottom: 0; /*하단 여백 없이 고정*/
     width: 100%; /*가로 사이즈를 브라우저에 가득 채우기*/
+    /*position: absolute;*/ /*부모 요소 기준으로 배치*/
 }
 
 footer .bottom-bar .bottom1{
