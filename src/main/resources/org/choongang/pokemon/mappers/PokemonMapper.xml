@@ -31,15 +31,23 @@
         SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
         <where>
             <if test="skey != null and !skey.equals('')">
-                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
-                AND P.NAME || P.NAME_KR || P.DESCRIPTION LIKE #{keyword}
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
+                P.NAME_KR  LIKE #{keyword}
             </if>
         </where>
-        ORDER BY P.SEQ
+        ORDER BY P.seq
         ) P2
-        WHERE
-        <![CDATA[
+        <if test="skey == null or skey == ''">
+            WHERE
+            <![CDATA[
             P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}
+        ]]>
+        </if>
+    </select>
+    <!-- 포켓몬 랜덤 조회 -->
+    <select id="getRandom" resultMap="pokemonMap">
+        <![CDATA[
+        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P ORDER BY DBMS_RANDOM.VALUE(0, 2000)) WHERE ROWNUM = 1
         ]]>
     </select>
 
@@ -51,12 +59,5 @@
                 AND NAME || NAME_KR || DESCRIPTION LIKE #{keyword}
             </if>
         </where>
-    </select>
-
-    <!-- 포켓몬 랜덤 조회 -->
-    <select id="getRandom" resultMap="pokemonMap">
-        <![CDATA[
-        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P ORDER BY DBMS_RANDOM.VALUE(0, 2000)) WHERE ROWNUM = 1
-        ]]>
     </select>
 </mapper>
