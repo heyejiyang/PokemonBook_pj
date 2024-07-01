@@ -82,13 +82,13 @@ td, th {
         /*border: 1px solid #ccc;*/
         }
 
-.button-group {
+.buttons {
 display: flex;
 justify-content:center;
 margin-top: 30px;
 }
 
-button {
+.buttons button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
@@ -97,4 +97,10 @@ button {
     background: var(--blue);
     color: #fff;
     font-size: 1.2rem;
+    cursor: pointer; /*커서 포인터*/
+    transition: background 0.5s ease; /*부드러운 색상 변화*/
+}
+
+.buttons button:hover{
+    background: var(--yellow);
 }

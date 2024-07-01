@@ -40,7 +40,7 @@
                                 <span><fmt:message key="비밀번호_확인" /></span>
                             </th>
                             <td>
-                                <input type="password" name="confirmPassword" placeholder="<fmt:message key="비밀번호를_다시_입력하세요"/>">
+                                <input type="password" name="confirmPassword" placeholder="<fmt:message key="비밀번호를_다시_입력하세요"/>" autofocus>
                             </td>
                         </tr>
                         <tr>
@@ -53,7 +53,7 @@
                         </tr>
                     </table>
 
-                    <div class="button-group">
+                    <div class="buttons">
                         <button type="reset">
                             <fmt:message key="다시_입력하기" />
                         </button>

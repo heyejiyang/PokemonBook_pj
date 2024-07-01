@@ -39,7 +39,7 @@
                 </section>
             </body>
 
-            <div class="button-group">
+            <div class="buttons">
                 <button type="button">
                     <a href="${modUrl}" alt="<fmt:message key="회원정보_수정하기" />">회원정보 수정하기</a>
                 </button>
