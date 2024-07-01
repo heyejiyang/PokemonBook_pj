@@ -160,6 +160,10 @@ nav > .inner a:nth-of-type(3).on {
     width: 30px;
     height: 30px;
 }
+
+.right .store {
+    width: 110px;
+}
 /* 사이트 헤더 영역 E */
 
 /* 사이트 배너 영역 S */

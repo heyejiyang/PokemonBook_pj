@@ -18,6 +18,7 @@
 <c:url var="miniLogo4Url" value="/images/mini_logo6.png" />
 <c:url var="storeUrl" value="https://www.pokemonstore.co.kr/" />
 <c:url var="footerUrl" value="/images/ft_logo.png" />
+<c:url var="store2Url" value="/images/a-store.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -79,6 +80,13 @@
                             <img src="${logo4Url}" alt="<fmt:message key='로고' />">
                             <a href="<c:url value='/admin' />" target="_blank">
                                 <fmt:message key="사이트_관리" />
+                            </a>
+                        </c:if>
+                        <c:if test="${!isAdmin}">
+<%--                            <img src="${logo4Url}" alt="<fmt:message key='로고' />">--%>
+                            <a href="<c:url value="${storeUrl}" />" target="_blank">
+<%--                                <fmt:message key="스토어" />--%>
+                         <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
                             </a>
                         </c:if>
                         </util:memberOnly>
