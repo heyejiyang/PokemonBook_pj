@@ -1,0 +1,184 @@
+.boardTitle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.boardTitle img {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.location{
+    padding-top: 20px;
+    padding-bottom: 50px;
+}
+
+.page-container {
+    max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+    margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    background-color: #ffffff; /* 배경색 설정 */
+}
+
+.notice-table {
+    width: calc(100% - 100px);
+    border-collapse: collapse;
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+}
+
+.notice-table th, .notice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.notice-table th {
+    background-color: #f2f2f2;
+    color: #333;
+}
+
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    background: #228B22;
+    color: #fff;
+}
+
+.table-cols td {
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px
+}
+
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td {
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea {
+    width: 100%;
+}
+
+.board_search_box {
+    margin: 50px 0 30px 0;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    justify-content: center; /* 중앙 정렬을 위해 추가 */
+    align-items: center;
+    height: 34px;
+    unicode-bidi: isolate;
+}
+
+.visible {
+    visibility: visible !important;
+}
+
+.board_search_box select {
+    width: 80px;
+    height: 34px;
+    border: solid 1px #ddd;
+}
+.board_search_box input {
+    width: 240px;
+    height: 34px;
+    border: solid 1px #ddd; /* 추가 */
+    padding: 0 10px; /* 추가 */
+}
+
+.board_search_box select,
+.board_search_box input,
+.board_search_box button {
+    margin-right: 10px; /* 요소들 사이에 간격 추가 */
+}
+
+.board_search_box button {
+    background: #000; /* 배경색을 검정으로 설정 */
+    font-size: 13px;
+    font-weight: bold;
+    height: 34px;
+    margin: 0 0 0 5px;
+    padding: 0 15px;
+    line-height: 34px;
+    min-width: 62px;
+    cursor: pointer;
+    border: 0;
+    border-radius: 4px; /* 버튼 모서리를 둥글게 설정 */
+}
+.board_search_box button em {
+    color: #FFF; /* 글자색을 흰색으로 설정 */
+}
+
+select {
+    height: 30px;
+    border-color: #ddd;
+    color: #999;
+    vertical-align: top;
+    outline: none;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+}
+
+.board_search_box select option{
+    color: #999;
+}
+
+table {
+    margin: auto;
+    width: 700px;
+    border-radius: 5px;
+    border-collapse: collapse;
+    border-top: none;
+}
+.header {
+    background-color: rgb(218, 231, 255);
+    text-align: center;
+}
+.table td, .table th {
+    border-bottom: 1px lightgray solid;
+    height: 30px;
+    font-size: 14px;
+}
+.num {
+    width: 50px;
+}
+.title {
+    width: 500px;
+}
+.body {
+    text-align: center;
+}
+.body .title {
+    text-align: left;
+}
+.write-btn {
+    width: 80px;
+    height: 20px;
+    border: 0;
+    outline: 1.5px rgb(68, 136, 244) solid;
+    border-radius: 5px;
+    padding-left: 10px;
+    background-color: rgb(164, 199, 255);
+}
+.write-btn:active {
+    width: 83px;
+    height: 23px;
+    border: 0;
+    border-radius: 5px;
+    outline: 1.5px rgb(27, 76, 155) solid;
+    padding-left: 10px;
+    background-color: rgb(68, 136, 244);
+}
