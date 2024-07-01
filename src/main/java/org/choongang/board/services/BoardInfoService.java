@@ -1,11 +1,9 @@
 package org.choongang.board.services;
 
 import jakarta.servlet.http.HttpServletRequest;
-import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.controllers.BoardSearch;
 import org.choongang.board.controllers.RequestBoardData;
-import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardNotFoundException;
 import org.choongang.board.mappers.BoardDataMapper;
@@ -25,56 +23,59 @@ public class BoardInfoService {
 
     /**
      * 게시글 번호로 게시글 조회
-     *  - 쓰기, 수정, 목록, 보기 권한 데이터 추가
-     *  - 댓글 목록 데이터 추가
-     *  - 게시글에 첨부한 이미지 또는 파일 목록
+     *      - 쓰기, 수정, 목록, 보기 권한 데이터 추가
+     *      - 댓글 목록 데이터 추가
+     *      - 게시글에 첨부한 이미지 또는 파일 목록
+     *
      * @param seq
      * @return
      */
-    public Optional<BoardData> get(long seq){
+    public Optional<BoardData> get(long seq) {
         BoardData data = mapper.get(seq);
+
 
         return Optional.ofNullable(data);
     }
 
-    public RequestBoardData getForm(long seq){
+
+    public RequestBoardData getForm(long seq) {
         BoardData data = get(seq).orElseThrow(BoardNotFoundException::new);
-        return getForm(seq);
+        return getForm(data);
     }
 
     public RequestBoardData getForm(BoardData data){
-        RequestBoardData form = new ModelMapper().map(data,RequestBoardData.class);
+        RequestBoardData form = new ModelMapper().map(data, RequestBoardData.class);
         form.setMode("update");
         return form;
     }
 
-    /*
-    * 게시글 목록
-    * @param search
-    * @return - 조회된 목록 + 페이징
-    * */
-    public ListData<BoardData> getList(BoardSearch search){
-        int page = Math.max(search.getPage(), 1); //페이지 수가 1보다 작은경우 1로 고정-Math.max()
+    /**
+     * 게시글 목록
+     * @param search
+     * @return - 조회된 목록 + 페이징
+     */
+    public ListData<BoardData> getList(BoardSearch search) {
+        int page = Math.max(search.getPage(),1); //max -> 두수중에 큰 수 반환, 음수일경우 1 반환
         int limit = search.getLimit();
-        limit = limit < 1 ? 20 : limit; //1보다 작으면 20으로 고정
+        limit = limit <1 ? 20 : limit; //limit가 0일땐 20으로 고정
 
-        int offset = (page - 1) * limit + 1; //시작번호 1부터 시작하도록 요청
-        int endRows = offset + limit; //종료번호
+        int offset = (page -1) * limit +1; //시작 지점을 1로 시작할 수 있게 설정
+        int endRows = offset + limit; //종료 번호
+        search.setOffset(offset);
         search.setEndRows(endRows);
 
         List<BoardData> items = mapper.getList(search);
 
-        //페이징 처리
+        //페이징 처리를 하기 위한 데이터가져오기
+        /*Pagination 클래스 참고*/
         int total = mapper.getTotal(search);
-        //(int page, int total, int ranges, int limit, HttpServletRequest request)
         HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
-        Pagination pagination = new Pagination(page, total, 10, limit, request);
+        Pagination pagination = new Pagination(page,total,10,limit,request);
 
         return new ListData<>(items, pagination);
-        //데이터와 페이징
     }
 
-    public ListData<BoardData> getList(String bId, BoardSearch search){
+    public ListData<BoardData> getList(String bId, BoardSearch search) {
         search.setBId(bId);
 
         return getList(search);

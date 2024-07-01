@@ -62,12 +62,13 @@ public class BoardSaveService {
         if (!memberUtil.isLogin()) {
             String hash = BCrypt.hashpw(form.getGuestPassword(), BCrypt.gensalt(12));
             data.setGuestPassword(hash);
-        } else {
+        }else{
             data.setGuestPassword("");
         }
 
         String category = data.getCategory();
-        data.setCategory(Objects.requireNonNullElse(category, ""));
+        data.setCategory(Objects.requireNonNullElse(category,""));
+
 
         if (mode.equals("update")) {
             mapper.modify(data);

@@ -1,8 +1,8 @@
 <%--게시글 작성--%>
-<%@ page contentType="text/html; charset=UTF-8"%>
+<%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
-<%@taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<c:url var="listLink" value="/board/list/${board.BId}"/>
+<%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<c:url var="listLink" value="/board/list/${board.BId}" />
 <c:url var="actionUrl" value="/board/save" />
 <%--추가, 수정 모두 /board/save 로 유입--%>
 

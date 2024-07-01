@@ -14,11 +14,9 @@
             <input type="hidden" name="seq" value="${data.seq}">
             <jsp:include page="_form.jsp"/>
             <div class="button-group">
-                <button type="reset" class="reset">다시입력</button>
-                <button type="submit" class="submit">글수정</button>
+                <button class="reset" type="reset">다시입력</button>
+                <button class="submit" type="submit">글수정</button>
             </div>
         </form>
-
-
     </section>
 </layout:main>
