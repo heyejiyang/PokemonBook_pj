@@ -5,17 +5,18 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
-<fmt:message var="pageTitle" key='마이페이지' />
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
-<c:url var="homeUrl" value="/member/mypage" />
-<c:url var="logoUrl" value="/images/book_logo1.png" />
 
 <layout:common title="${title}">
+    <jsp:attribute name="commonCss">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}popup.css">
+    </jsp:attribute>
+    <jsp:attribute name="commonJs">
+        <script src="${jsUrl}popup.js"></script>
+    </jsp:attribute>
     <jsp:body>
-        <section class="userInfo-box">
-            <jsp:doBody />
-        </section>
+        <jsp:doBody />
     </jsp:body>
 </layout:common>

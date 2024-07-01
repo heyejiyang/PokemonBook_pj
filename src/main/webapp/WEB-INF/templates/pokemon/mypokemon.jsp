@@ -1,17 +1,9 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
-<c:url var="searchUrl" value="/pokemon" />
+
 <layout:main>
-<section class="layout-width">
-        <div class="formWrap">
-            <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
-                <input type="text" name="skey" value="${param.skey}" placeholder="포켓몬 이름을 입력하세요.">
-                <button type="submit">검색</button>
-            </form>
-        </div>
-    <ul class="pokemon-list">
+<ul class="pokemon-list">
         <c:if test="${items == null || items.isEmpty()}">
             <li class='no-data'>조회된 포켓몬이 없습니다.</li>
 
@@ -30,6 +22,5 @@
             </c:forEach>
         </c:if>
     </ul>
-</section>
-<util:pagination />
+
 </layout:main>
