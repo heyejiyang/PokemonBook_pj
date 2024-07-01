@@ -49,8 +49,8 @@ header img {
 
 .mini_logo img {
     height: 65px;
-    margin-right: -30px;
     margin-top: -10px;
+    display: block;
 } /* 포켓몬 얼굴 아이콘 */
 
 nav {

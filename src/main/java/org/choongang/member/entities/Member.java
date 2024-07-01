@@ -16,4 +16,5 @@ public class Member {
     private UserType userType = UserType.USER;
     private LocalDateTime regDt;
     private LocalDateTime modDt;
+    private long myPokemonSeq;
 }
