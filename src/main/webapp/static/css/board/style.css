@@ -19,7 +19,7 @@
 .page-container {
     max-width: 1200px; /* 최대 너비를 1200px로 설정 */
     margin: 30px auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
-    padding: 0; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    padding: 0;
     background-color: #ffffff; /* 배경색 설정 */
 }
 

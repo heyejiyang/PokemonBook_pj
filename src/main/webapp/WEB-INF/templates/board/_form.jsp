@@ -10,7 +10,7 @@
         <dt>분류 선택</dt>
         <dd>
             <c:forEach var="category" items="${board.categories}" varStatus="status">
-                <input type="radio" name="category" value="${category}" id="category-${status.index}"${data.category != null && category.trim() && category.equals(data.category) ? ' checked':''}>
+                <input type="radio" name="category" value="${category}" id="category-${status.index}"${data.category != null && category.trim().equals(data.category) ? ' checked':''}>
                 <label for="category-${status.index}">${category}</label>
             </c:forEach>
         </dd>
@@ -27,7 +27,7 @@
             <input type="text" name="poster" value="${isLogin ? loggedMember.userName : ''}">
         </c:if>
         <c:if test="${isAdmin}">
-            <input type="checkbox" name="notice" value="true" id="notice"${data.notice == 1 ? ' checked':''}>
+            <input type="checkbox" name="notice" value="true" id="notice" ${data.notice ? 'checked' : ''}>
             <label for="notice">
                 공지글
             </label>
@@ -35,12 +35,12 @@
     </dd>
 </dl>
 <util:guestOnly>
-<dl>
-    <dt>비밀번호</dt>
-    <dd>
-        <input type="password" name="guestPassword" placeholder="글 수정, 삭제 비밀번호">
-    </dd>
-</dl>
+    <dl>
+        <dt>비밀번호</dt>
+        <dd>
+            <input type="password" name="guestPassword" placeholder="글 수정, 삭제 비밀번호">
+        </dd>
+    </dl>
 </util:guestOnly>
 <dl>
     <dt>제목</dt>
