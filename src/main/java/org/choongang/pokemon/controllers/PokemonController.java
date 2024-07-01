@@ -13,7 +13,6 @@ import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
-import java.util.Optional;
 
 @Controller
 @RequestMapping("/pokemon")
@@ -40,7 +39,7 @@ public class PokemonController {
         return "pokemon/index";
     }
 
-    //{seq} 값을 받아 해당 포켓몬 상세 정보를 가져옵니다. 정보를 찾지 못하면 PokemonNotFoundException을 던짐
+//{seq} 값을 받아 해당 포켓몬 상세 정보를 가져옵니다. 정보를 찾지 못하면 PokemonNotFoundException을 던짐
 // 가져온 데이터를 요청 속성에 저장하고 pokemon/view 뷰를 반환
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq) {
@@ -52,7 +51,7 @@ public class PokemonController {
 
 
         request.setAttribute("data", data); // 포켓몬 데이터
-        request.setAttribute("addCss", new String[]{"pokemon/view"}); // 뷰 설정들
+        request.setAttribute("addCss", new String[] {"pokemon/view"}); // 뷰 설정들
 
         return "pokemon/view";
     }
@@ -61,8 +60,7 @@ public class PokemonController {
     public String gacha(PokemonSearch search) {
         commonProcess();
 
-        request.setAttribute("addCss", new String[]{"pokemon/gacha"}); // 교체가능
-//        request.setAttribute("addCss", List.of("gacha")); // 불변
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/gacha";
     }
 
@@ -70,11 +68,11 @@ public class PokemonController {
     public String gacharesult(PokemonSearch search) {
         commonProcess();
 
-        PokemonDetail randomPokemon = infoService.getRandom().get();
-        List<PokemonDetail> items = List.of(randomPokemon);
+        ListData<PokemonDetail> listData = infoService.getList(search);
+        List<PokemonDetail> items = listData.getItems();
 
         request.setAttribute("items", items);
-        request.setAttribute("addCss", new String[]{"pokemon/gacharesult"});
+        request.setAttribute("addCss", new String[] {"pokemon/gacharesult"});
 
         return "pokemon/gacharesult";
     }
@@ -82,7 +80,7 @@ public class PokemonController {
 
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.
-        request.setAttribute("addCss", new String[]{"pokemon/style"});
+        request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
 }

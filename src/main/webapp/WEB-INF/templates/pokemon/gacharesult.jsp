@@ -1,26 +1,22 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+
 <layout:main>
-<div class="gacha_result_wrap">
-        <c:choose>
-            <c:when test="${not empty items}">
-                <c:forEach var="item" items="${items}">
-                    <div class="pokemon_detail">
-                        <img src="${item.frontImage}" alt="${item.nameKr}">
-                        <div class="p-name">
-                            No.${item.seq}<br>
-                            ${item.nameKr}
-                        </div>
-                        <div class="p-description">
-                            ${item.description}
-                        </div>
+
+            <img src="${items.frontImage}" alt="${items.nameKr}">
+            <div class="p-name">
+                <p class="pokemonNum">No.${items.seq}</p>
+                <p class="pokemonName">${items.nameKr}</p>
+            </div>
+
+            <form name="frmSearch" method="post" action="<c:url value='/pokemon/save' />" autocomplete="off">
+                    <input type="hidden" name="pokemonId" value="${items.seq}">
+                    <input type="hidden" name="pokemonName" value="${items.nameKr}">
+                    <input type="text" name="nickname" value="${param.skey}" placeholder="별명을 입력해주세요.">
+                    <div class="backToList">
+                        <button type="submit" class="btn">저장</button>
                     </div>
-                </c:forEach>
-            </c:when>
-            <c:otherwise>
-                <div class="no-data">No Pokémon found.</div>
-            </c:otherwise>
-        </c:choose>
-    </div>
+                </form>
+
 </layout:main>

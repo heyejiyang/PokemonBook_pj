@@ -10,6 +10,7 @@
         <a class="pokeball" href="<c:url value='/pokemon/gacharesult' />">
             <img src="${pokeball}" alt="pokeball">
         </a>
+
         <div class="gacha_explain">
             몬스터볼을 클릭해주세요!
         </div>
