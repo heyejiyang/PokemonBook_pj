@@ -36,10 +36,13 @@
         <where>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
+
                  P.NAME_KR  LIKE #{keyword}
+
+
             </if>
         </where>
-        ORDER BY P.SEQ
+        ORDER BY P.seq
         ) P2
         <if test="skey == null or skey == ''">
             WHERE
@@ -48,7 +51,6 @@
         ]]>
         </if>
     </select>
-
     <!-- 포켓몬 랜덤 조회 -->
     <select id="getRandom" resultMap="pokemonMap">
         <![CDATA[

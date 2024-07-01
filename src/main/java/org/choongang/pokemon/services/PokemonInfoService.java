@@ -210,8 +210,10 @@ public class PokemonInfoService {
 
         List<PokemonDetail> items = mapper.getList(search);
 
+
         /* 페이징 처리 S */
         int total = mapper.getTotal(search);
+
 
         Pagination pagination = new Pagination(page, total, 10, limit, BeanContainer.getInstance().getBean(HttpServletRequest.class));
         /* 페이징 처리 E */

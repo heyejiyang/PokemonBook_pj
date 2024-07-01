@@ -7,7 +7,7 @@
         <result column="NUM" property="num" />
         <result column="SEQ" property="seq" />
         <result column="BID" property="bId" />
-        <result column="GID" property="gId"/>
+        <result column="GID" property="gId" />
         <result column="POSTER" property="poster" />
         <result column="MEMBER_SEQ" property="memberSeq" />
         <result column="GUEST_PASSWORD" property="guestPassword" />
@@ -22,14 +22,18 @@
         <result column="EMAIL" property="email" />
         <result column="USER_NAME" property="userName" />
     </resultMap>
+
     <insert id="register">
         <selectKey keyProperty="seq" order="BEFORE" resultType="long">
             SELECT SEQ_BOARD_DATA.NEXTVAL FROM DUAL
         </selectKey>
 
         INSERT INTO BOARD_DATA
-        (SEQ, BID, GID, POSTER, MEMBER_SEQ, GUEST_PASSWORD, CATEGORY, NOTICE, SUBJECT, CONTENT, UA, IP)
-        VALUES (#{seq}, #{bId}, #{gId}, #{poster}, #{memberSeq}, #{guestPassword}, #{category}, #{notice}, #{subject}, #{content}, #{ua}, #{ip})
+        (SEQ, BID, GID, POSTER, MEMBER_SEQ,
+        GUEST_PASSWORD, CATEGORY, NOTICE, SUBJECT, CONTENT, UA, IP)
+        VALUES
+        (#{seq},#{bId}, #{gId}, #{poster}, #{memberSeq}, #{guestPassword},#{category},
+        #{notice}, #{subject}, #{content}, #{ua}, #{ip})
     </insert>
 
     <update id="modify">
@@ -66,7 +70,6 @@
         WHERE B.SEQ = #{seq}
     </select>
 
-    <!--통합검색-->
     <select id="getList" resultMap="boardDataMap">
         SELECT * FROM (
         SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
@@ -74,6 +77,9 @@
         <where>
             <if test="bId != null and !bId.equals('')">
                 AND B.BID = #{bId}
+            </if>
+            <if test="category != null and !category.equals('')">
+                AND B.CATEGORY = #{category}
             </if>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
@@ -104,7 +110,40 @@
         ]]>
     </select>
 
-    <select id="exist" resultType="int">
+    <select id="getTotal">
+        SELECT COUNT(*) FROM BOARD_DATA B
+            LEFT JOIN MEMBER M ON B.MEMBER_SEQ = M.USER_NO
+        <where>
+            <if test="bId != null and !bId.equals('')">
+                AND B.BID = #{bId}
+            </if>
+            <if test="category != null and !category.equals('')">
+                AND B.CATEGORY = #{category}
+            </if>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+
+                <if test="sopt != null and sopt.equals('ALL')">
+                    AND B.SUBJECT || B.CONTENT || B.POSTER || M.EMAIL || M.USER_NAME
+                    LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT_CONTENT')">
+                    AND B.SUBJECT || B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT')">
+                    AND B.SUBJECT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('CONTENT')">
+                    AND B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('NAME')">
+                    AND B.POSTER || M.EMAIL || M.USER_NAME LIKE #{keyword}
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <select id="exists" resultType="int">
         SELECT COUNT(*) FROM BOARD_DATA WHERE SEQ=#{seq}
     </select>
 </mapper>

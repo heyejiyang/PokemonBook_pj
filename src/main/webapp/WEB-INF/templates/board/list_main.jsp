@@ -2,17 +2,12 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='질문과답변' />
 <c:url var="homeUrl" value="/" />
 <c:url var="logoUrl" value="/images/ball.png" />
 <c:url var="writeUrl" value="/board/write/${board.BId}" />
-
-<c:set var="currentDate" value="<%= new java.util.Date() %>" />
-<c:set var="boards" value="${requestScope.boards}" />
-<c:set var="currentPage" value="${requestScope.currentPage}" />
-<c:set var="totalPages" value="${requestScope.totalPages}" />
-<c:set var="bId" value="${requestScope.bId}" />
 
 <div class="page-container">
     <div class="table-container">
@@ -22,17 +17,30 @@
                 <th>제목</th>
                 <th>작성자</th>
                 <th>날짜</th>
-                <th>조회</th>
             </tr>
-            <c:forEach var="item" items="${boards}" varStatus="status">
-                <tr>
-                    <td>${status.index + 1}</td>
-                    <td>${item}</td>
-                    <td>user ${status.index + 1}</td>
-                    <td><fmt:formatDate value="${currentDate}" pattern="yyyy.MM.dd"/></td>
-                    <td>${status.index + 101}</td>
-                </tr>
-            </c:forEach>
+            <c:if test="${items == null || items.isEmpty()}">
+                <li class="no-data">조회된 게시글이 없습니다.</li>
+            </c:if>
+            <c:if test="${items != null && !items.isEmpty()}">
+                <c:forEach var="item" items="${items}">
+                    <tr>
+                        <td>
+                                ${item.seq}
+                        </td>
+                        <td>
+                            <a href="<c:url value="/board/view/${item.seq}"/>" class="l_subject">
+                                ${item.subject}
+                            </a>
+                        </td>
+                        <td>
+                            <div class="post-info">
+                                ${item.poster}(${item.memberSeq > 0 ? item.email : "비회원"})
+                            </div>
+                        </td>
+                        <td><util:formatDate value="${item.regDt}" pattern="yyyy.MM.dd HH:mm"></util:formatDate></td>
+                    </tr>
+                </c:forEach>
+            </c:if>
         </table>
         <br>
         <c:choose>
@@ -56,24 +64,24 @@
                 <!-- 기본 동작: 버튼 표시 안함 -->
             </c:otherwise>
         </c:choose>
-
         <!-- Pagination -->
-        <div class="pagination-container">
-            <c:if test="${currentPage > 1}">
-                <a class="pagination__button pagination__button--prev" href="${pageContext.request.contextPath}/board/list/${bId}?page=${currentPage - 1}">&lt;</a>
-            </c:if>
+<%--        <div class="pagination-container">--%>
+<%--            <c:if test="${currentPage > 1}">--%>
+<%--                <a class="pagination__button pagination__button--prev" href="${pageContext.request.contextPath}/board/list/${bId}?page=${currentPage - 1}">&lt;</a>--%>
+<%--            </c:if>--%>
 
-            <div class="pagination__pages">
-                <c:forEach var="i" begin="1" end="${totalPages}">
-                    <a class="pagination__button ${i == currentPage ? 'pagination__button--active' : ''}" href="${pageContext.request.contextPath}/board/list/${bId}?page=${i}">
-                            ${i}
-                    </a>
-                </c:forEach>
-            </div>
+<%--            <div class="pagination__pages">--%>
+<%--                <c:forEach var="i" begin="1" end="${totalPages}">--%>
+<%--                    <a class="pagination__button ${i == currentPage ? 'pagination__button--active' : ''}" href="${pageContext.request.contextPath}/board/list/${bId}?page=${i}">--%>
+<%--                            ${i}--%>
+<%--                    </a>--%>
+<%--                </c:forEach>--%>
+<%--            </div>--%>
 
-            <c:if test="${currentPage < totalPages}">
-                <a class="pagination__button pagination__button--next" href="${pageContext.request.contextPath}/board/list/${bId}?page=${currentPage + 1}">&gt;</a>
-            </c:if>
-        </div>
+<%--            <c:if test="${currentPage < totalPages}">--%>
+<%--                <a class="pagination__button pagination__button--next" href="${pageContext.request.contextPath}/board/list/${bId}?page=${currentPage + 1}">&gt;</a>--%>
+<%--            </c:if>--%>
+<%--        </div>--%>
     </div>
 </div>
+<util:pagination />
