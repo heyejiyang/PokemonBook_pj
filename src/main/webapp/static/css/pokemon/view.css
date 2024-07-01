@@ -22,6 +22,7 @@
 .image_wrap {
     border: 1px solid #000;
 }
+
 .content_wrap {
      width: 50%;
      border: 1px solid #000;
@@ -30,6 +31,7 @@
      padding-top: 20px;
 }
 
+.p-name-v {
     font-size: 15pt;
     margin-bottom: 10px;
     color: #808080;
