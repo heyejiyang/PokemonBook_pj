@@ -33,6 +33,7 @@ dt, dd{
 /*다시입력, 글쓰기 버튼 속성*/
 .button-group{
     text-align: center;
+    margin-bottom: 40px;
 }
 
 .button-group button{
