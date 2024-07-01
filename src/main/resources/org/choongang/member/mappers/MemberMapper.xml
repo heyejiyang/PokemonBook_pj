@@ -9,18 +9,33 @@
         <result column="PASSWORD" property="password" />
         <result column="USER_NAME" property="userName" />
         <result column="USER_TYPE" property="userType" />
+        <result column="MY_POKEMON_SEQ" property="myPokemonSeq" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
-        <result column="MY_POKEMON_SEQ" property="myPokemonSeq" />
     </resultMap>
 
     <select id="get" resultMap="memberMap">
-        SELECT * FROM MEMBER WHERE EMAIL=#{email}
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
     <select id="exists" resultType="int">
         SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
     </select>
+
+    <update id="modify">
+        UPDATE MEMBER
+        <set>
+            <if test="password != null and password.equals('')">
+                PASSWORD = #{password},
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME = #{userName},
+            </if>
+            <!--My_POKEMON_SEQ=#{myPokemonSeq}, -->
+            MOD_DT=SYSDATE
+        </set>
+        WHERE EMAIL=#{email}
+    </update>
 
     <insert id="register">
         INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_TYPE, USER_NAME)
@@ -28,21 +43,6 @@
     </insert>
 
     <select id="getList" resultMap="memberMap">
-        SELECT * FROM MEMBER ORDER BY REG_DT DESC
+        SELECT * FROM MEMBER ORDER BY REG_DT
     </select>
-
-    <update id="modify">
-        UPDATE MEMBER
-        <set>
-            <if test="userName != null and !userName.equals('')">
-                USER_NAME=#{userName},
-            </if>
-            <if test="password != null and !password.equals('')">
-                PASSWORD=#{password},
-            </if>
-            MY_POKEMON_SEQ=#{myPokemonSeq},
-            MOD_DT = SYSDATE
-        </set>
-        WHERE email=#{email}
-    </update>
 </mapper>
