@@ -7,7 +7,7 @@
         <result column="NUM" property="num" />
         <result column="SEQ" property="seq" />
         <result column="BID" property="bId" />
-        <result column="GID" property="gId"/>
+        <result column="GID" property="gId" />
         <result column="POSTER" property="poster" />
         <result column="MEMBER_SEQ" property="memberSeq" />
         <result column="GUEST_PASSWORD" property="guestPassword" />
@@ -104,7 +104,7 @@
         ]]>
     </select>
 
-    <select id="exist" resultType="int">
+    <select id="exists" resultType="int">
         SELECT COUNT(*) FROM BOARD_DATA WHERE SEQ=#{seq}
     </select>
 </mapper>

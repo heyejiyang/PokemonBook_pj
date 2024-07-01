@@ -2,12 +2,17 @@ package org.choongang.board.controllers;
 
 
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
+import org.choongang.board.exceptions.BoardNotFoundException;
+import org.choongang.board.services.BoardInfoService;
+import org.choongang.board.services.BoardSaveService;
 import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.config.annotations.*;
+import org.choongang.global.exceptions.AlertException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,29 +22,17 @@ import java.util.Objects;
 @RequestMapping("/board")
 @RequiredArgsConstructor
 public class BoardController {
-    private final HttpServletRequest request;
     private final BoardConfigInfoService configInfoService;
+    private final BoardSaveService saveService;
+    private final BoardInfoService infoService;
+    private final HttpServletRequest request;
+    private BoardData boardData;
 
     //게시글 목록
     @RequestMapping("/list/{bId}")
     public String list(@PathVariable("bId") String bId,
                        @RequestParam(value = "page") int page) {
-        /*추가 코드 S*/
-        int pageSize = 10;  // 한 페이지에 보여줄 게시글 수
-        int totalCount = 100;  // 가상 총 게시글 수 (예: 100개)
-        int totalPages = (int) Math.ceil((double) totalCount / pageSize);  // 총 페이지 수
 
-        // 가상 데이터 생성
-        List<String> boards = new ArrayList<>();
-        for (int i = (page - 1) * pageSize + 1; i <= page * pageSize && i <= totalCount; i++) {
-            boards.add("제목 " + i);
-        }
-
-        request.setAttribute("boards", boards);
-        request.setAttribute("currentPage", page);
-        request.setAttribute("totalPages", totalPages);
-        request.setAttribute("bId", bId);
-        /*추가 코드 E*/
         commonProcess(bId, "list");
         return "board/list";  // JSP 페이지로 이동
     }
@@ -47,6 +40,7 @@ public class BoardController {
     //게시글 보기
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq){
+        commonProcess(seq, "view");
         return "board/view";
     }
 
@@ -66,8 +60,28 @@ public class BoardController {
     //게시글 수정
     @GetMapping("/update/{seq}")
     public String update(@PathVariable("seq") long seq){
+        commonProcess(seq, "update");
+
+        RequestBoardData data = infoService.getForm(boardData);
+        request.setAttribute("data",data);
 
         return "board/update";
+    }
+
+    @PostMapping("/save")
+    public String save(RequestBoardData form){
+        String mode = form.getMode();
+        String modeStr = mode.equals("update")? "수정":"등록";
+        String message = "게시글" + modeStr + "에 실패하였습니다.";
+
+        BoardData data = saveService.save(form).orElseThrow(()->new AlertException(message, HttpServletResponse.SC_BAD_REQUEST));
+
+        //게시글 등록, 수정이 완료되면 - 게시글 보기로 이동
+        String url = request.getContextPath() + "/board/view/" + data.getSeq();
+        String script = String.format("parent.location.replace('%s');", url);
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
     }
 
     /**
@@ -101,5 +115,19 @@ public class BoardController {
         request.setAttribute("board", board);
         request.setAttribute("addCss",addCss);
         request.setAttribute("addScript",addScript);
+    }
+
+    /*
+    * 게시글 번호가 있는 페이지 URL
+    *   - 게시글 보기, 게시글 수정
+    *
+    * @param seq
+    * @param mode
+    * */
+    private void commonProcess(long seq, String mode){
+        boardData = infoService.get(seq).orElseThrow(BoardNotFoundException::new);
+        String bId = boardData.getBId();
+        commonProcess(bId, mode);
+        request.setAttribute("data", boardData);
     }
 }

@@ -34,8 +34,12 @@ public class BoardInfoService {
 
     public RequestBoardData getForm(long seq){
         BoardData data = get(seq).orElseThrow(BoardNotFoundException::new);
-        RequestBoardData form = new ModelMapper().map(data,RequestBoardData.class);
+        return getForm(seq);
+    }
 
+    public RequestBoardData getForm(BoardData data){
+        RequestBoardData form = new ModelMapper().map(data,RequestBoardData.class);
+        form.setMode("update");
         return form;
     }
 
