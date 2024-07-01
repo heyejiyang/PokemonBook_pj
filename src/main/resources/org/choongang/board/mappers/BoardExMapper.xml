@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.board.mappers.BoardExMapper">
+    <resultMap id="boardExMap" type="org.choongang.board.entities.BoardEx">
+        <result column="SEQ" property="seq" />
+        <result column="POSTER" property="poster" />
+        <result column="SUBJECT" property="subject" />
+        <result column="CONTENT" property="content" />
+        <result column="REG_DT" property="regDt" />
+        <result column="MOD_DT" property="modDt" />
+        <result column="BID" property="bId" />
+    </resultMap>
+
+    <select id="getList2" resultMap="boardExMap">
+        SELECT * FROM BOARDEX WHERE SEQ=#{seq}
+    </select>
+
+    <insert id="insert">
+        <selectKey keyProperty="seq" order="BEFORE" resultType="long">
+            SELECT SEQ_BOARDEX.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO BOARDEX (SEQ, POSTER, SUBJECT, CONTENT)
+        VALUES
+        (#{seq}, #{poster}, #{subject}, #{content})
+    </insert>
+
+</mapper>

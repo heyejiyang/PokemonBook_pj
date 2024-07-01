@@ -11,6 +11,7 @@ import java.io.Reader;
 public class DBConn {
     private static SqlSessionFactory factory;
 
+
     static {
         try {
             String mode = System.getenv("mode");
@@ -38,3 +39,5 @@ public class DBConn {
         return getSession(true);
     }
 }
+
+
