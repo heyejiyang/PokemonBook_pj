@@ -39,8 +39,8 @@ public class ModifyService {
 
         //회원 정보 수정 처리
         mapper.modify(member);
+        //회원 정보 수정 실패 시 오류 알림 메세지 에외처리는 불가..
 
-        
         //세션 데이터 업데이트(변경된 정보가 바로 반영될 수 있게 함)
         HttpSession session = BeanContainer.getInstance().getBean(HttpSession.class);
         Member _member = mapper.get(member.getEmail());
