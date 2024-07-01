@@ -37,10 +37,10 @@
         </where>
         ORDER BY P.SEQ
         ) P2
-        WHERE
-        <![CDATA[
-            P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}
-        ]]>
+<!--        WHERE-->
+<!--        <![CDATA[-->
+<!--            P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}-->
+<!--        ]]>-->
     </select>
 
     <!-- 포켓몬 랜덤 조회 -->

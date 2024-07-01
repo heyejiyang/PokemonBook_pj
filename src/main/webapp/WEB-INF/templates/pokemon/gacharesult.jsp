@@ -12,7 +12,11 @@
 
             <form name="frmSearch" method="get" action="${searchUrl}" autocomplete="off">
                    <input type="text" name="skey" value="${param.skey}" placeholder="별명을 입력해주세요.">
-                   <button type="submit">저장</button>
+                   <div class="backToList">
+                        <a href="<c:url value='/pokemon/mypokemon' />" class="btn">
+                            저장
+                        </a>
+                   </div>
             </form>
 
 </layout:main>
