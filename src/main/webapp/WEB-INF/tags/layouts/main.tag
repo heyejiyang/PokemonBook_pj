@@ -83,9 +83,7 @@
                             </a>
                         </c:if>
                         <c:if test="${!isAdmin}">
-<%--                            <img src="${logo4Url}" alt="<fmt:message key='로고' />">--%>
                             <a href="<c:url value="${storeUrl}" />" target="_blank">
-<%--                                <fmt:message key="스토어" />--%>
                          <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
                             </a>
                         </c:if>
