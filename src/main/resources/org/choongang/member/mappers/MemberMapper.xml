@@ -9,12 +9,13 @@
         <result column="PASSWORD" property="password" />
         <result column="USER_NAME" property="userName" />
         <result column="USER_TYPE" property="userType" />
+        <result column="MY_POKEMON_SEQ" property="myPokemonSeq" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
 
     <select id="get" resultMap="memberMap">
-        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
     <select id="exists" resultType="int">
@@ -24,15 +25,13 @@
     <update id="modify">
         UPDATE MEMBER
         <set>
-<!--            <if test="email != null and !email.equals('')" >-->
-<!--                EMAIL = #{email},-->
-<!--            </if>-->
             <if test="password != null and password.equals('')">
                 PASSWORD = #{password},
             </if>
             <if test="userName != null and !userName.equals('')">
                 USER_NAME = #{userName},
             </if>
+            <!--My_POKEMON_SEQ=#{myPokemonSeq}, -->
             MOD_DT=SYSDATE
         </set>
         WHERE EMAIL=#{email}

@@ -49,8 +49,8 @@ header img {
 
 .mini_logo img {
     height: 65px;
-    margin-right: -30px;
     margin-top: -10px;
+    display: block;
 } /* 포켓몬 얼굴 아이콘 */
 
 nav {
@@ -243,6 +243,9 @@ footer {
     min-height: 150px;
     width: 100%;
     background: #000;
+    position: fixed; /*해당 부분 고정*/
+    bottom: 0; /*하단 여백 없이 고정*/
+    width: 100%; /*가로 사이즈를 브라우저에 가득 채우기*/
 }
 
 footer .bottom-bar .bottom1{
