@@ -35,7 +35,7 @@
                 <td><c:out value="${loggedMember.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
             </tr>
         </table>
-        <div class="button-group">
+        <div class="admin_button">
             <button type="button">
                 <a href="${modUrl}" alt="<fmt:message key="관리자_정보_수정하기" />">${adminmodifyTitle}</a>
             </button>
