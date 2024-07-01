@@ -66,7 +66,7 @@
                     <util:memberOnly>
                         <div class="mini_logo">
                             <img src="${miniLogo3Url}"></div>
-                        <a href="<c:url value='/mypage' />">
+                        <a href="<c:url value='/member/mypage' />">
                             <fmt:message key="마이페이지" />
                         </a>
                         <div class="mini_logo">
