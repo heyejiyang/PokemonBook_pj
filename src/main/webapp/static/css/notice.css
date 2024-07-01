@@ -36,7 +36,7 @@
 }
 
 .notice-table th {
-    background-color: #f2f2f2;
+    background-color: #FDB827;
     color: #333;
 }
 
@@ -69,10 +69,78 @@
 .table-cols textarea {
     width: 100%;
 }
+/*
+.search{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+*/
+
+.page{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.page button {
+    background: #FDB827;
+    border: 1px solid #ccc;
+    margin-right: 30px;
+    margin-left: 30px
+}
+
+.search{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
 
 .search-box{
     display: flex;
     align-items: center;
-    width: 300px;
-    height: 45px;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search select {
+    height: 37px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-box input {
+    flex: 1; /* 입력 상자가 남은 공간을 차지하도록 설정 */
+    padding: 5px 50px; /* 입력 상자 패딩 설정 */
+    border: 1px solid #ccc; /* 입력 상자 테두리 설정 */
+    border-radius: 4px;  /* 테두리 둥글게 */
+    height: 38px; /* 높이 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 높이에 포함 */
+}
+
+.search-box button {
+    padding: 0 10px; /* 버튼 패딩 설정 */
+    margin-left: 5px;
+    background-color: #FDB827; /* 버튼 배경색 설정 */
+    border: 1px solid #FDB827; /* 버튼 테두리 설정 */
+    border-radius: 4px; /* 테두리 둥글게 */
+    cursor: pointer; /* 마우스 커서 설정 */
+    color: white; /* 버튼 텍스트 색상 */
+    height: 38px; /* 높이 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 높이에 포함 */
+    display: flex; /* 버튼 내부 요소를 플렉스로 설정 */
+    align-items: center; /* 내부 요소 수직 정렬 */
+}
+
+.search-box button i {
+    display: inline-block; /* 아이콘을 인라인 블록으로 설정 */
 }

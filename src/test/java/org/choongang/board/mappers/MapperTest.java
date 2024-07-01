@@ -29,15 +29,15 @@ public class MapperTest {
                 .active(1)
                 .activeCategory(1)
                 .rowsPerPage(20)
+                .category("")
                 .authority(Authority.USER)
                 .build();
         int result = mapper.register(board);
         System.out.println(result);
-
     }
 
     @Test
-    void ModifyTest() {
+    void modifyTest() {
         Board board = Board.builder()
                 .bId(bId)
                 .bName("자유게시판")
@@ -46,7 +46,7 @@ public class MapperTest {
                 .rowsPerPage(20)
                 .authority(Authority.USER)
                 .build();
-        int result = mapper.register(board);
+        int result = mapper.modify(board);
         System.out.println(result);
 
         board.setBName("(수정)자유게시판");

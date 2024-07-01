@@ -23,7 +23,7 @@ import java.util.regex.Pattern;
 import static org.junit.jupiter.api.Assertions.assertDoesNotThrow;
 
 @DisplayName("포켓몬 조회 서비스 테스트")
-public class PokemonInfoServiceTest {
+public class   PokemonInfoServiceTest {
 
     private PokemonInfoService service;
 

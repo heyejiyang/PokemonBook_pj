@@ -3,11 +3,19 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="listLink" value="/board/list/${board.BId}"/>
+<c:url var="actionUrl" value="/board/save" />
 
 <layout:main title="${board.BName}">
-    <h1>
-        <a href="${listLink}">
-            ${board.BName}
-        </a>
-    </h1>
+    <section class="layout-width">
+        <jsp:include page="_header.jsp"/>
+
+        <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
+            <input type="hidden" name="mode" value="register">
+                <jsp:include page="_form.jsp"/>
+            <div class="button-group">
+                <button class="reset" type="reset">다시입력</button>
+                <button class="submit" type="submit">글쓰기</button>
+            </div>
+        </form>
+    </section>
 </layout:main>

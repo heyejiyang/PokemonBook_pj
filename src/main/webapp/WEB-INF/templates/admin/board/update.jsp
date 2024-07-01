@@ -14,8 +14,19 @@
         <jsp:include page="_form.jsp"/>
 
         <div class="button-group">
-            <button type="reset">다시입력</button>
-            <button type="submit">수정하기</button>
+            <button type="submit" class="button">
+                <p class="btnText">등록하기</p>
+                <div class="btnTwo">
+                    <p class="btnText2"> ✔ </p>
+                </div>
+            </button>
+
+            <button type="reset" class="button">
+                <p class="btnText">다시입력</p>
+                <div class="btnTwo">
+                    <p class="btnText2"> ↺ </p>
+                </div>
+            </button>
         </div>
     </form>
 </layout:admin>
