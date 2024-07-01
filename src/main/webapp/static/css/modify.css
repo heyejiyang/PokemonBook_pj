@@ -98,7 +98,7 @@ margin-top: 30px;
     color: #fff;
     font-size: 1.2rem;
     cursor: pointer; /*커서 포인터*/
-    transition: background 0.5s ease; /*부드러운 색상 변화*/
+    transition: background 0.5s ease; /*부드러운 색상 변화, 근데 왜 다른 버튼도 적용되지.. 지정해서 적용시켰는데..*/
 }
 
 .buttons button:hover{
