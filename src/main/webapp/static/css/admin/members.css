@@ -1,0 +1,38 @@
+/* 내용 영역 S */
+
+main > .main-content {
+    flex-grow: 1;
+    background: #fff;
+    padding: 50px;
+}
+
+main > .main-content h1 {
+    line-height: 1;
+    font-size: 2rem;
+    margin : 10px 0 25px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid #000;
+}
+
+.member_list {
+    text-align: center;
+}
+
+.member_list_table{
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.member_list_table th{
+    background: #424242;
+    color: #fff;
+}
+
+.member_list_table th,
+.member_list_table td{
+    border-bottom: 1px solid #555;
+    padding: 15px;
+}
+
+/* 내용 영역 E */
