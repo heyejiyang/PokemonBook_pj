@@ -64,6 +64,9 @@
                     <c:if test="${isLogin}">
                     --%>
                     <util:memberOnly>
+                    <c:if test="${myProfile != null}">
+                           <img src="${myProfile.frontImage}" width="50">
+                    </c:if>
                         <div class="mini_logo">
                             <img src="${miniLogo3Url}"></div>
                         <a href="<c:url value='/member/mypage' />">

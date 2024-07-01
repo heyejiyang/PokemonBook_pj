@@ -14,6 +14,7 @@
 <html>
     <head>
         <meta charset="UTF-8">
+        <meta name="rootUrl" content="<c:url value='/' />">
         <title>
          <c:if test="${!empty title}">
          ${title} -
@@ -29,6 +30,7 @@
             </c:forEach>
         </c:if>
 
+        <script src="&{jsUrl}layer.js"></script>
         <script src="${jsUrl}common.js"></script>
         <jsp:invoke fragment="commonJs" />
         <c:if test="${addScript != null}">

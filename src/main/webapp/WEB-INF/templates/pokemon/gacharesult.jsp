@@ -10,7 +10,8 @@
                 <p class="pokemonName">${items.nameKr}</p>
             </div>
 
-            <form name="frmSearch" method="post" action="<c:url value='/pokemon/save' />" autocomplete="off">
+            <form name="frmSearch" method="post" action="<c:url value='/pokemon/save' />" autocomplete="off"
+                        target="ifrmProcess">
                     <input type="hidden" name="pokemonId" value="${items.seq}">
                     <input type="hidden" name="pokemonName" value="${items.nameKr}">
                     <input type="text" name="nickname" value="${param.skey}" placeholder="별명을 입력해주세요.">
