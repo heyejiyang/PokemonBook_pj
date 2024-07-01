@@ -8,9 +8,12 @@ import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.exceptions.BoardNotFoundException;
+import org.choongang.board.mappers.BoardDataMapper;
+import org.choongang.board.services.BoardDeleteService;
 import org.choongang.board.services.BoardInfoService;
 import org.choongang.board.services.BoardSaveService;
 import org.choongang.board.services.config.BoardConfigInfoService;
+import org.choongang.global.ListData;
 import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.AlertException;
 
@@ -25,15 +28,21 @@ public class BoardController {
     private final BoardConfigInfoService configInfoService;
     private final BoardSaveService saveService;
     private final BoardInfoService infoService;
+    private final BoardDeleteService deleteService;
+
     private final HttpServletRequest request;
     private BoardData boardData;
+    private Board board;
 
     //게시글 목록
     @RequestMapping("/list/{bId}")
-    public String list(@PathVariable("bId") String bId,
-                       @RequestParam(value = "page") int page) {
-
+    public String list(@PathVariable("bId") String bId, BoardSearch search) {
         commonProcess(bId, "list");
+
+        ListData<BoardData> data = infoService.getList(bId, search);
+        request.setAttribute("items", data.getItems());
+        request.setAttribute("pagination", data.getPagination());
+
         return "board/list";  // JSP 페이지로 이동
     }
 
@@ -41,6 +50,11 @@ public class BoardController {
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq){
         commonProcess(seq, "view");
+
+        String bId = boardData.getBId();
+        ListData<BoardData> data = infoService.getList(bId);
+        request.setAttribute("items", data.getItems());
+        request.setAttribute("pagination", data.getPagination());
         return "board/view";
     }
 
@@ -84,14 +98,24 @@ public class BoardController {
         return "commons/execute_script";
     }
 
+    @GetMapping("/delete/{seq}")
+    public String delete(@PathVariable("seq") long seq){
+        commonProcess(seq, "delete");
+
+        deleteService.delete(seq);
+
+        return "redirect:/board/list/" + board.getBId();
+        //게시글 삭제 후 이동할 화면 (해당 게시판)
+    }
+
     /**
      * 모든 요청 처리 메서드에 공통 처리 부분
      * @param bId : 게시판 아이디가 있을 경우 게시판 설정 유지/ 게시판 아이디가 없을 경우 게시판 설정 X -> 게시판이 없음(BoardConfigNotFoundException)
      * @Param mode: 처리 모드 - write, update, list, view
      */
     //bId가 있을때마다 처리
-    private void commonProcess(String bId,String mode){
-        Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
+    private void commonProcess(String bId, String mode){
+        board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
         //mode가 null이면 write로 기본값 설정
         mode= Objects.requireNonNullElse(mode,"write");
@@ -116,6 +140,8 @@ public class BoardController {
         request.setAttribute("addCss",addCss);
         request.setAttribute("addScript",addScript);
     }
+
+
 
     /*
     * 게시글 번호가 있는 페이지 URL

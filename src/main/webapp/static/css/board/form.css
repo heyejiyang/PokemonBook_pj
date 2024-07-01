@@ -4,7 +4,7 @@
 }
 
 ._form_content{
-    border: 5px solid #ddd;
+    border: 5px solid #000;
     border-radius: 20px;
     padding: 20px;
     margin: 50px;
@@ -39,7 +39,7 @@ dt, dd{
     display: inline-block;
     padding: 10px 10px 9px 10px;
     width: 200px;
-    height: 60px;
+    height: 50px;
     border: 1px solid #3d3d3d;
     font-weight: bold;
     font-size: 1.25rem;
@@ -58,7 +58,7 @@ dt, dd{
 }
 
 .button-group .submit{
-    background: #000;
+    background: var(--blue);
     color: #fff;
 }
 
