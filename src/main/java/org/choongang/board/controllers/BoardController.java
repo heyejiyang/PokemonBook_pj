@@ -7,9 +7,11 @@ import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.exceptions.BoardNotFoundException;
+import org.choongang.board.services.BoardDeleteService;
 import org.choongang.board.services.BoardInfoService;
 import org.choongang.board.services.BoardSaveService;
 import org.choongang.board.services.config.BoardConfigInfoService;
+import org.choongang.global.ListData;
 import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.AlertException;
 
@@ -27,10 +29,16 @@ public class BoardController {
     private BoardData boardData;
     private final BoardInfoService infoService;
     private final HttpServletRequest request;
+    private Board board;
+    private final BoardDeleteService deleteService;
 
     @GetMapping("/list/{bId}")
-    public String list(@PathVariable("bId") String bId) {
+    public String list(@PathVariable("bId") String bId, BoardSearch search) {
         commonProcess(bId, "list");
+
+        ListData<BoardData> data = infoService.getList(bId,search);
+        request.setAttribute("items",data.getItems());
+        request.setAttribute("pagination",data.getPagination());
 
         return "board/list";
     }
@@ -39,7 +47,13 @@ public class BoardController {
     public String view(@PathVariable("seq") long seq) {
 
         commonProcess(seq,"view");
+//        RequestBoardData data = infoService.getForm(boardData);
+//        request.setAttribute("data",data);
 
+        String bId = boardData.getBId();
+        ListData<BoardData> data = infoService.getList(bId);
+        request.setAttribute("items",data.getItems());
+        request.setAttribute("pagination",data.getPagination());
         return "board/view";
     }
 
@@ -81,6 +95,15 @@ public class BoardController {
         return "commons/execute_script";
     }
 
+    @GetMapping("/delete/{seq}")
+    public String delete(@PathVariable("seq") long seq){
+        commonProcess(seq,"delete");
+
+        deleteService.delete(seq);
+
+        return "redirect:/board/list/"+board.getBId();
+    }
+
     /**
      * 모든 요청 처리 메서드에 공통 처리 부분
      *
@@ -88,7 +111,7 @@ public class BoardController {
      * @param mode : 처리 모드 - write, update, list, view
      */
     private void commonProcess(String bId, String mode) {
-        Board board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
+        board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
         // mode가 null이면 write로 기본값 설정
         mode = Objects.requireNonNullElse(mode, "write");

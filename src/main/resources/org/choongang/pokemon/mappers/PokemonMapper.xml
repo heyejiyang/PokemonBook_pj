@@ -43,6 +43,16 @@
         ]]>
     </select>
 
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM POKEMON
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                AND NAME || NAME_KR || DESCRIPTION LIKE #{keyword}
+            </if>
+        </where>
+    </select>
+
     <!-- 포켓몬 랜덤 조회 -->
     <select id="getRandom" resultMap="pokemonMap">
         <![CDATA[
