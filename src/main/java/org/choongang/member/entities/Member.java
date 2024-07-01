@@ -17,5 +17,4 @@ public class Member {
     private long myPokemonSeq;
     private LocalDateTime regDt;
     private LocalDateTime modDt;
-    private long myPokemonSeq;
 }
