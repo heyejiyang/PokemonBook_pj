@@ -2,6 +2,7 @@ package org.choongang.board.services;
 
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.controllers.BoardSearch;
+import org.choongang.board.controllers.RequestBoardData;
 import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.mappers.BoardDataMapper;

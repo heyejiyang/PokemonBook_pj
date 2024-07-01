@@ -31,6 +31,9 @@ public class MemberUtil {
      */
     public Member getMember() {
         HttpSession session = BeanContainer.getInstance().getBean(HttpSession.class);
+        if(session == null) {
+            return null;
+        }
         Member member = (Member)session.getAttribute("member");
 
         return member;
