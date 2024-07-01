@@ -11,4 +11,5 @@ public interface BoardDataMapper {
     int delete(long seq);
     BoardData get(long seq); //개별 게시글 조회
     List<BoardData> getList(BoardSearch search); //게시글 리스트 조회
+    int exists(long seq); //게시글 유무 조회
 }
