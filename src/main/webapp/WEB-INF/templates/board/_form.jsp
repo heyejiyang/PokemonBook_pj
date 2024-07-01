@@ -4,7 +4,7 @@
 
 <input type="hidden" name="bId" value="${data.BId}">
 <input type="hidden" name="gId" value="${data.GId}">
-
+<div class="_form_content">
 <c:if test="${board.activeCategory == 1}">
     <dl>
         <dt>분류 선택</dt>
@@ -61,4 +61,4 @@
         <button type='button'>파일 선택</button>
     </dd>
 </dl>
-
+</div>
