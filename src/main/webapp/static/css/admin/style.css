@@ -120,28 +120,6 @@ main > .main-content h1 {
     padding: 0 0 15px;
     border-bottom: 3px solid #000;
 }
-/*
-.member_list {
-    text-align: center;
-}
-
-.member_list_table{
-    border-spacing: 0;
-    padding: 0;
-    width: 100%;
-}
-
-.member_list_table th{
-    background: #424242;
-    color: #fff;
-}
-
-.member_list_table th,
-.member_list_table td{
-    border-bottom: 1px solid #555;
-    padding: 15px;
-}
-*/
 /* 내용 영역 E */
 
 /* 서브 메뉴 S */
@@ -307,5 +285,5 @@ nav.sub-menu a:hover {
 }
 
 .button:active { /*Clicked and held*/
-    box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+    box-shadow: 0 5px 6px rgba(0,0,0,0.3);
 }

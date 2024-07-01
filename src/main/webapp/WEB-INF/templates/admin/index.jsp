@@ -18,7 +18,7 @@
             <thead>
             <th>이메일</th>
             <th>이름</th>
-            <th>등급</th>
+            <th>회원등급</th>
             <th>가입날짜</th>
             </thead>
             <tbody>

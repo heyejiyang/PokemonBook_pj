@@ -9,4 +9,5 @@ public interface MemberMapper {
     int exists(String email);
     int register(Member member);
     List<Member> getList();
+    int modify(Member member);
 }

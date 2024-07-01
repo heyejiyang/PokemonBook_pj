@@ -28,6 +28,21 @@
     </insert>
 
     <select id="getList" resultMap="memberMap">
-        SELECT * FROM MEMBER ORDER BY REG_DT
+        SELECT * FROM MEMBER ORDER BY REG_DT DESC
     </select>
+
+    <update id="modify">
+        UPDATE MEMBER
+        <set>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME=#{userName},
+            </if>
+            <if test="password != null and !password.equals('')">
+                PASSWORD=#{password},
+            </if>
+            MY_POKEMON_SEQ=#{myPokemonSeq},
+            MOD_DT = SYSDATE
+        </set>
+        WHERE email=#{email}
+    </update>
 </mapper>
