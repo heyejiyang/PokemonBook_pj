@@ -4,6 +4,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="관리자_정보" />
+<fmt:message var="adminmodifyTitle" key="관리자_정보_수정하기" />
 <c:url var="modUrl" value="/admin/adminMypage/modify" />
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <c:url var="logoUrl" value="/images/ball.png" />
@@ -32,5 +33,10 @@
                 <td><c:out value="${loggedMember.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
             </tr>
         </table>
+        <div class="button-group">
+            <button type="button">
+                <a href="${modUrl}" alt="<fmt:message key="관리자_정보_수정하기" />">${adminmodifyTitle}</a>
+            </button>
+        </div>
     </section>
 </layout:admin>
