@@ -22,8 +22,21 @@
                 ${fn:replace(data.description, '\\n', '<br>')}
             </div>
             <div class="pokemonCh">
-                키: <br>
-                몸무게: <br>
+                키: ${data.height*0.1}m<br>
+                몸무게: ${data.weight}kg<br>
+            </div>
+            <div class="p-type">
+                    속성:
+        <c:if test="${not empty data.type1}">
+            <img src="<c:url value='/images/type/${data.type1}.png' />" alt="${data.type1}" />
+        </c:if>
+        <c:if test="${not empty data.type2}">
+            <img src="<c:url value='/images/type/${data.type2}.png' />" alt="${data.type2}" />
+        </c:if>
+            </div>
+            <div class="pixel">
+            <img src="${data.pixelFrontImage}" alt="${item.nameKr}">
+            <img src="${data.pixelBackImage}" alt="${item.nameKr}">
             </div>
             </div>
         </div>

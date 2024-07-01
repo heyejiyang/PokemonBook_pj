@@ -44,7 +44,7 @@ public class PokemonController {
         return "pokemon/index";
     }
 
-//{seq} 값을 받아 해당 포켓몬 상세 정보를 가져옵니다. 정보를 찾지 못하면 PokemonNotFoundException을 던짐
+    //{seq} 값을 받아 해당 포켓몬 상세 정보를 가져옵니다. 정보를 찾지 못하면 PokemonNotFoundException을 던짐
 // 가져온 데이터를 요청 속성에 저장하고 pokemon/view 뷰를 반환
     @GetMapping("/view/{seq}")
     public String view(@PathVariable("seq") long seq) {

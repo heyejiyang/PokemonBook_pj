@@ -47,7 +47,7 @@ public class PokemonInfoService {
      */
 
     public Map<String, String> getApiAll() {
-    //API에서 데이터를 가져오고, 그 데이터를 Map<String, String> 형태로 반환
+        //API에서 데이터를 가져오고, 그 데이터를 Map<String, String> 형태로 반환
         HttpResponse<String> res = service.request(apiUrl);
 
         try {
@@ -210,8 +210,10 @@ public class PokemonInfoService {
 
         List<PokemonDetail> items = mapper.getList(search);
 
+
         /* 페이징 처리 S */
         int total = mapper.getTotal(search);
+
 
         Pagination pagination = new Pagination(page, total, 10, limit, BeanContainer.getInstance().getBean(HttpServletRequest.class));
         /* 페이징 처리 E */
