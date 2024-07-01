@@ -22,8 +22,8 @@
     </resultMap>
 
     <insert id="register">
-        INSERT INTO POKEMON (SEQ, NAME, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, PIXEL_FRONT_IMAGE, PIXEL_BACK_IMAGE, RAW_DATA, NAME_KR, DESCRIPTION, TYPE1, TYPE2)
-        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{pixelFrontImage}, #{pixelBackImage},#{rawData}, #{nameKr}, #{description}, #{type1}, #{type2})
+        INSERT INTO POKEMON (SEQ, NAME, NAME_KR, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, PIXEL_FRONT_IMAGE, PIXEL_BACK_IMAGE, RAW_DATA, DESCRIPTION, TYPE1, TYPE2)
+        VALUES (#{seq}, #{name}, #{nameKr}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{pixelFrontImage}, #{pixelBackImage}, #{rawData}, #{description}, #{type1}, #{type2})
     </insert>
 
     <select id="get" resultMap="pokemonMap">
@@ -38,8 +38,6 @@
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
 
                  P.NAME_KR  LIKE #{keyword}
-
-
             </if>
         </where>
         ORDER BY P.seq
@@ -67,5 +65,4 @@
             </if>
         </where>
     </select>
-
 </mapper>
