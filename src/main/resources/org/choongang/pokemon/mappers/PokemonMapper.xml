@@ -32,7 +32,7 @@
         <where>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
-                AND P.NAME || P.NAME_KR || P.DESCRIPTION LIKE #{keyword}
+                AND P.NAME_KR  LIKE #{keyword}
             </if>
         </where>
         ORDER BY P.SEQ

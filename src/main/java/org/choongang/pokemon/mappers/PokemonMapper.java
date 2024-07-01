@@ -12,4 +12,5 @@ public interface PokemonMapper {
     int getTotal(PokemonSearch search);
     // 포켓몬 랜덤 조회
     PokemonDetail getRandom();
+
 }

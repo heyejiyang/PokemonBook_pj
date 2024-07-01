@@ -47,6 +47,7 @@ public class PokemonInfoService {
      *
      * @return
      */
+
     public Map<String, String> getApiAll() {
     //API에서 데이터를 가져오고, 그 데이터를 Map<String, String> 형태로 반환
         HttpResponse<String> res = service.request(apiUrl);

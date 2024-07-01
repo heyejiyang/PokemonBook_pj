@@ -13,6 +13,7 @@ import org.choongang.pokemon.exceptions.PokemonNotFoundException;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
+import java.util.Optional;
 
 @Controller
 @RequestMapping("/pokemon")
@@ -57,7 +58,7 @@ public class PokemonController {
     }
 
     @GetMapping("/gacha")
-    public String gacha(PokemonSearch search) {
+    public String gacha() {
         commonProcess();
 
         request.setAttribute("addCss", new String[] {"pokemon/gacha"});
@@ -65,11 +66,14 @@ public class PokemonController {
     }
 
     @GetMapping("/gacharesult")
-    public String gacharesult(PokemonSearch search) {
+    public String gacharesult() {
         commonProcess();
 
-        ListData<PokemonDetail> listData = infoService.getList(search);
-        List<PokemonDetail> items = listData.getItems();
+        Optional <PokemonDetail> listData = infoService.getRandom();
+        PokemonDetail items = listData.get();
+        // 랜덤으로 들어오긴 하는데 서버를 껐다가 켜야만 새로운 포켓몬이 나온다.
+        // 클릭할 때마다 새로운 포켓몬으로 하려면 어찌해야할까
+
 
         request.setAttribute("items", items);
         request.setAttribute("addCss", new String[] {"pokemon/gacharesult"});
