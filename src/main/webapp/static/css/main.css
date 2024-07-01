@@ -26,6 +26,7 @@
 /* 사이트 헤더 영역 S */
 header .site-top {
     background: var(--white);
+    width: 100%;
 }
 
 header .layout-width inner {
@@ -54,6 +55,7 @@ header img {
 } /* 포켓몬 얼굴 아이콘 */
 
 nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -79,31 +81,41 @@ nav > .inner a {
     height: 50px;
 }
 
-.dropdown a:hover {
-    background: #17a2b8;
-    color: #f8f8f8;
-    transition: 1s;
+.nav_title {
+    border: 7px solid gray;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 70px;
 }
 
-nav > .inner a:nth-of-type(1):hover,
-nav > .inner a:nth-of-type(1).on {
-    background: #21209C;
+.nav_title:nth-of-type(1):hover,
+.nav_title:nth-of-type(1).on {
+    background: #75e0ec;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
 }
 
-nav > .inner a:nth-of-type(2):hover,
-nav > .inner a:nth-of-type(2).on {
+.nav_title:nth-of-type(6):hover,
+.nav_title:nth-of-type(6).on {
     background: #FDB827;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
 }
 
-nav > .inner a:nth-of-type(3):hover,
-nav > .inner a:nth-of-type(3).on {
-    background: #dc3545;
+.nav_title:nth-of-type(4):hover,
+.nav_title:nth-of-type(4).on {
+    background: #21209C;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
+}
+
+.nav_title:nth-of-type(8):hover,
+.nav_title:nth-of-type(8).on {
+    background: #75e0ec;
+    color: #f8f8f8;
+    transition: 0.5s;
 }
 
 .dropdown{ /* 게시판 드롭다운 */

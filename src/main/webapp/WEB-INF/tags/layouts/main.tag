@@ -33,7 +33,7 @@
                     <div class="mini_logo">
                         <img src="${miniLogo1Url}"></div>
                     <div class="dropdown">
-                        <a href="#">게시판</a>
+                        <div class="nav_title"><a href="#">게시판</a></div>
                         <ul class="dropdown-content">
                             <li><a href="<c:url value="/board/list/notice"/>">공지사항</a></li>
                             <li><a href="<c:url value="/board/list/QnA"/>">QnA</a></li>
@@ -41,18 +41,18 @@
                     </div>
                     <div class="mini_logo">
                         <img src="${miniLogo2Url}"></div>
-                    <a href="<c:url value='/pokemon' />">도감</a>
+                    <div class="nav_title"><a href="<c:url value='/pokemon' />">도감</a></div>
                     <util:guestOnly>
                         <div class="mini_logo">
                         <img src="${miniLogo3Url}"></div>
-                        <a href="<c:url value='/member/login' />">
+                    <div class="nav_title"><a href="<c:url value='/member/login' />">
                             <fmt:message key="로그인" />
-                        </a>
+                        </a></div>
                         <div class="mini_logo">
                             <img src="${miniLogo4Url}"></div>
-                        <a href="<c:url value='/member/join' />">
+                    <div class="nav_title"><a href="<c:url value='/member/join' />">
                             <fmt:message key="회원가입" />
-                        </a>
+                        </a></div>
                     </util:guestOnly>
                         <%--
                    <fmt:message key="LOGIN_MSG">
@@ -66,14 +66,14 @@
                     <util:memberOnly>
                         <div class="mini_logo">
                             <img src="${miniLogo3Url}"></div>
-                        <a href="<c:url value='/mypage' />">
+                    <div class="nav_title"><a href="<c:url value='/mypage' />">
                             <fmt:message key="마이페이지" />
-                        </a>
+                        </a></div>
                         <div class="mini_logo">
                             <img src="${miniLogo4Url}"></div>
-                        <a href="<c:url value='/member/logout' />">
+                        <div class="nav_title"><a href="<c:url value='/member/logout' />">
                             <fmt:message key="로그아웃" />
-                        </a>
+                        </a></div>
                     </div>
                 <div class="right">
                         <c:if test="${isAdmin}">
