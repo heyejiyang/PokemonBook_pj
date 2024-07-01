@@ -83,6 +83,7 @@ margin-top: 30px;
 
 .buttons > button:hover{
     background: var(--yellow);
+    font-weight: bold;
 }
 
 a {

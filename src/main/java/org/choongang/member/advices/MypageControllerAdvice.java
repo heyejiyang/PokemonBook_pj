@@ -25,14 +25,17 @@ public class MypageControllerAdvice implements Interceptor {
             HttpServletResponse response = BeanContainer.getInstance().getBean(HttpServletResponse.class);
             HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
 
-            String url = request.getContextPath() + "/member/login?redirectUrl=/member/mypage";
+            if (request.getRequestURI().contains("/mypage")) { //마이페이지가 들어간 uri 주소만
 
-            try{
-                response.sendRedirect(url);
-            } catch(IOException e){
-                //e.printStackTrace();
+                String url = request.getContextPath() + "/member/login?redirectUrl=/member/mypage";
+
+                try {
+                    response.sendRedirect(url);
+                } catch (IOException e) {
+                    //e.printStackTrace();
+                }
+                return false;
             }
-            return false;
         }
 
         return true; //컨트롤러 실행
