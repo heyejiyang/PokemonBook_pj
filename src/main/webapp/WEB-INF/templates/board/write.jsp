@@ -13,8 +13,8 @@
             <input type="hidden" name="mode" value="register">
                 <jsp:include page="_form.jsp"/>
             <div class="button-group">
-                <button type="reset">다시입력</button>
-                <button type="submit">글작성</button>
+                <button class="reset" type="reset">다시입력</button>
+                <button class="submit" type="submit">글쓰기</button>
             </div>
         </form>
     </section>
