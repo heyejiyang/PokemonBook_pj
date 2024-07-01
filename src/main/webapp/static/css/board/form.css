@@ -40,6 +40,16 @@ dt, dd{
     margin-right: 20px;
 }
 
+.button-group .submit:hover{
+    background: red;
+    cursor: pointer;
+}
+
+.button-group .reset:hover{
+    background: #FDB827;
+    cursor: pointer;
+}
+
 .button-group .reset{
     margin-left: 50px;
     background: #fff;
