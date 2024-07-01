@@ -1,0 +1,311 @@
+/* 사이트 헤더 */
+header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    height: 120px;
+    background: #fff;
+    align-items: center;
+    padding: 10px 0;
+}
+
+/* 사이트 로고 */
+.book_logo {
+    margin-top: 30px;
+    width: 250px;
+}
+
+/* 중간 로고 */
+.mini_logo1,
+.mini_logo2 {
+    margin-top: 20px;
+    height: 120px;
+}
+
+/* 로그아웃 버튼 */
+.right {
+    width: 120px;
+    height: 80px;
+    background-color: #FFDE00;
+    margin-right: 50px;
+    border-radius: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.right > a {
+    color: #403813;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.right:hover {
+    background-color: #FDB827;
+}
+
+/* 내용 배치 */
+main {
+    display: flex;
+    min-height: 750px;
+}
+
+.admin_title {
+    display: flex;
+}
+
+.admin_title_img {
+    margin-top: 10px;
+    margin-right: 15px;
+}
+
+.admin_title_text {
+    width: 100%;
+}
+
+/* 사이드 주 메뉴 S */
+main > .side-menu {
+    width: 210px;
+    background: #efeee1;
+    margin-top: 50px;
+}
+
+main > .side-menu a {
+    display: block;
+    height: 100px;
+    font-size: 1.5rem;
+    color: #000;
+    font-weight: bold;
+    padding: 0 30px;
+    line-height: 100px;
+    text-align: center;
+}
+
+main > .side-menu a + a {
+    border-top: none;
+}
+
+main > .side-menu a:nth-of-type(1):hover,
+main > .side-menu a:nth-of-type(1).on {
+    background: #FDB827;
+    color: #f8f8f8;
+}
+
+main > .side-menu a:nth-of-type(2):hover,
+main > .side-menu a:nth-of-type(2).on {
+    background: #21209C;
+    color: #f8f8f8;
+}
+
+main > .side-menu a:nth-of-type(3):hover,
+main > .side-menu a:nth-of-type(3).on {
+    background: #dc3545;
+    color: #f8f8f8;
+}
+/* 사이드 주 메뉴 E */
+
+/* 내용 영역 S */
+
+main > .main-content {
+    flex-grow: 1;
+    background: #fff;
+    padding: 50px;
+}
+
+main > .main-content h1 {
+    line-height: 1;
+    font-size: 2rem;
+    margin : 10px 0 25px;
+    padding: 0 0 15px;
+    border-bottom: 3px solid #000;
+}
+/*
+.member_list {
+    text-align: center;
+}
+
+.member_list_table{
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.member_list_table th{
+    background: #424242;
+    color: #fff;
+}
+
+.member_list_table th,
+.member_list_table td{
+    border-bottom: 1px solid #555;
+    padding: 15px;
+}
+*/
+/* 내용 영역 E */
+
+/* 서브 메뉴 S */
+nav.sub-menu {
+    background: #fff;
+    display: flex;
+    height: 50px;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px #333;
+    margin-bottom: 50px;
+}
+
+nav.sub-menu a {
+    line-height: 50px;
+    padding: 0 30px;
+    font-size: 1.35rem;
+}
+
+nav.sub-menu a:hover {
+    background: #333;
+    color: #fff;
+}
+
+/* 서브 메뉴 E */
+
+/* 테이블 공통 S */
+.table-cols{
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.table-cols th{
+    background: #3c3c3c;
+    color: #fff;
+}
+
+.table-cols td{
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px;
+}
+
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td{
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea{
+    width: 100%;
+}
+
+.table-rows{
+    border-spacing: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.table-rows thead th{
+    background: #333;
+    color: #fff;
+    height: 45px;
+    font-weight: normal;
+    font-size: 1.2rem;
+}
+
+.table-rows thead th + th{
+    border-left: 1px solid #fff;
+}
+
+.table-rows tbody td{
+    padding: 15px 10px;
+    background: #fff;
+    border-bottom: 1px solid #333;
+}
+
+.table-rows a:hover{
+    text-decoration: underline;
+}
+
+/* 테이블 공통 E */
+
+/* 메시지 박스 */
+.message{
+    font-size: 0.95rem;
+    font-weight: bold;
+    display: inline-block;
+    margin-top: 5px;
+    padding: 2px 10px;
+    box-shadow: inset 0 -30px 0 rgba(255, 183, 6, 0.5);
+    border-radius: 8px;
+}
+
+#authority-table {
+    margin-bottom: 70px; /* 원하는 margin 값으로 설정 */
+}
+
+.button-group {
+    padding: 10px;
+    width: 500px; /* 가로 정렬을 위해 너비 확장 */
+    margin: 0 auto;
+    position: relative;
+    border-radius: 2px;
+    display: flex; /* flexbox를 사용하여 가로 정렬 */
+    justify-content: space-around; /* 버튼 사이에 공간 배분 */
+}
+
+.button {
+    background: #3c3c3c;
+    margin: 20px;
+    width: 200px;
+    height: 50px;
+    overflow: hidden;
+    font-size: 1.2rem;
+    text-align: center;
+    transition: .2s;
+    cursor: pointer;
+    border-radius: 3px;
+    box-shadow: 0px 1px 2px rgba(0,0,0,.2);
+    position: relative;
+    display: flex; /* flexbox를 사용하여 텍스트 가운데 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: center; /* 가로 가운데 정렬 */
+}
+
+.btnTwo {
+    position: absolute;
+    width: 190px;
+    height: 50px; /* 세로 크기를 .button과 맞춤 */
+    top: 0;
+    left: -250px;
+    font-size: 2rem;
+    background: #0e4794;
+    transition: .3s;
+    display: flex; /* flexbox를 사용하여 텍스트 가운데 정렬 */
+    align-items: center; /* 세로 가운데 정렬 */
+    justify-content: flex-end; /* 가로 가운데 정렬 */
+    padding-right: 20px;
+    z-index: 1; /* .btnTwo를 .button 위로 올리기 */
+}
+
+.btnText {
+    color: white;
+    transition: .3s;
+    z-index: 2; /* .btnText를 .btnTwo 위로 올리기 */
+}
+
+.btnText2 {
+    color: #FFF;
+    z-index: 2; /* .btnText2를 .btnTwo 위로 올리기 */
+}
+
+.button:hover .btnTwo { /*When hovering over .button change .btnTwo*/
+    left: -130px;
+}
+
+.button:hover .btnText { /*When hovering over .button change .btnText*/
+    margin-left: 65px;
+}
+
+.button:active { /*Clicked and held*/
+    box-shadow: 0px 5px 6px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.member.mappers.MemberMapper">
+    <resultMap id="memberMap" type="org.choongang.member.entities.Member">
+        <result column="USER_NO" property="userNo" />
+        <result column="EMAIL" property="email" />
+        <result column="PASSWORD" property="password" />
+        <result column="USER_NAME" property="userName" />
+        <result column="USER_TYPE" property="userType" />
+        <result column="MY_POKEMON_SEQ" property="myPokemonSeq" />
+        <result column="REG_DT" property="regDt" />
+        <result column="MOD_DT" property="modDt" />
+    </resultMap>
+
+    <select id="get" resultMap="memberMap">
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
+    </select>
+
+    <select id="exists" resultType="int">
+        SELECT COUNT(*) FROM MEMBER WHERE EMAIL=#{email}
+    </select>
+
+    <update id="modify">
+        UPDATE MEMBER
+        <set>
+            <if test="password != null and password.equals('')">
+                PASSWORD = #{password},
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME = #{userName},
+            </if>
+            <!--My_POKEMON_SEQ=#{myPokemonSeq}, -->
+            MOD_DT=SYSDATE
+        </set>
+        WHERE EMAIL=#{email}
+    </update>
+
+    <insert id="register">
+        INSERT INTO MEMBER (USER_NO, EMAIL, PASSWORD, USER_TYPE, USER_NAME)
+            VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userType}, #{userName})
+    </insert>
+
+    <select id="getList" resultMap="memberMap">
+        SELECT * FROM MEMBER ORDER BY REG_DT
+    </select>
+</mapper>

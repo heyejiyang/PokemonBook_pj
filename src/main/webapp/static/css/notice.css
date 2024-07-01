@@ -1,0 +1,146 @@
+.board-area {
+    max-width: 1200px; /* 최대 너비를 1200px로 설정 */
+    margin: 0 auto; /* 가운데 정렬을 위해 좌우 여백을 자동으로 설정 */
+    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    background-color: #ffffff; /* 바탕색 지정 */
+}
+
+.location_cont{
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.boardTitle {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.boardTitle img {
+    vertical-align: middle; /* 수직 정렬을 가운데로 설정 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.notice-table {
+    width: calc(100% - 100px);
+    border-collapse: collapse;
+    margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
+}
+
+.notice-table th, .notice-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
+.notice-table th {
+    background-color: #FDB827;
+    color: #333;
+}
+
+.table-cols {
+    border-spacing: 0;
+    padding: 0 0 10px;
+    width: 100%;
+}
+
+.table-cols th{
+    background: #228B22;
+    color: #fff;
+}
+
+.table-cols td {
+    background: #fff;
+}
+
+.table-cols th,
+.table-cols td{
+    border-bottom: 1px solid #555;
+    padding: 10px
+}
+
+.table-cols tr:first-of-type th,
+.table-cols tr:first-of-type td {
+    border-top: 1px solid #555;
+}
+
+.table-cols textarea {
+    width: 100%;
+}
+/*
+.search{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+*/
+
+.page{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.page button {
+    background: #FDB827;
+    border: 1px solid #ccc;
+    margin-right: 30px;
+    margin-left: 30px
+}
+
+.search{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
+.search-box{
+    display: flex;
+    align-items: center;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.search select {
+    height: 37px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 5px;
+}
+
+.search-box input {
+    flex: 1; /* 입력 상자가 남은 공간을 차지하도록 설정 */
+    padding: 5px 50px; /* 입력 상자 패딩 설정 */
+    border: 1px solid #ccc; /* 입력 상자 테두리 설정 */
+    border-radius: 4px;  /* 테두리 둥글게 */
+    height: 38px; /* 높이 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 높이에 포함 */
+}
+
+.search-box button {
+    padding: 0 10px; /* 버튼 패딩 설정 */
+    margin-left: 5px;
+    background-color: #FDB827; /* 버튼 배경색 설정 */
+    border: 1px solid #FDB827; /* 버튼 테두리 설정 */
+    border-radius: 4px; /* 테두리 둥글게 */
+    cursor: pointer; /* 마우스 커서 설정 */
+    color: white; /* 버튼 텍스트 색상 */
+    height: 38px; /* 높이 설정 */
+    box-sizing: border-box; /* 패딩과 테두리를 높이에 포함 */
+    display: flex; /* 버튼 내부 요소를 플렉스로 설정 */
+    align-items: center; /* 내부 요소 수직 정렬 */
+}
+
+.search-box button i {
+    display: inline-block; /* 아이콘을 인라인 블록으로 설정 */
+}

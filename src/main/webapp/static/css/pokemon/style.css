@@ -1,0 +1,91 @@
+/* 검색기능 S */
+
+.formWrap {
+    background-color: #2c2c2c; /* 원하는 배경색 설정 */
+    padding: 30px; /* 내부 여백 설정 */
+    max-width: 100%; /* 폼 전체 너비 설정 */
+    margin: 0 auto; /* 가운데 정렬 */
+    text-align: center; /* 내부 요소 가운데 정렬 */
+}
+
+form[name="frmSearch"] {
+    display: flex; /* 입력 필드와 버튼을 한 줄에 나란히 배치하기 위해 flex 사용 */
+    justify-content: center; /* 가로 방향 가운데 정렬 */
+    align-items: center; /* 세로 방향 가운데 정렬 */
+}
+
+form[name="frmSearch"] input[type="text"] {
+    flex: 1; /* 입력 필드가 남은 공간을 모두 차지하도록 설정 */
+    max-width: 70%;
+    padding: 28px;
+    border: 1px solid transparent;
+    border-radius: 5px; /
+    margin-right: 10px;
+    background-color: #000;
+    color: #818181;
+    font-size: 1.4rem;
+
+}
+
+form[name="frmSearch"] button[type="submit"] {
+   font-size: 1.4rem;
+    padding: 20px 20px;
+    border: none;
+    background-color: #d1180b;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* 검색기능 E */
+
+.pokemon-list {
+    margin-top:50px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.pokemon-list > li {
+    width: calc(100% / 5);
+    padding: 0 10px 10px;
+}
+
+
+.pokemon-list > li a {
+    display: block;
+    box-shadow: 2px 2px 5px #A2A2A2;
+    border-radius: 10px;
+    padding: 25px;
+    transition: transform 0.3s ease;
+}
+
+
+.pokemon-list > li a:hover{
+    transform: scale(1.07)
+}
+
+
+.pokemon-list > li img {
+    width: 100%;
+    display: block;
+}
+
+
+
+.pokemon-list > li .p-name {
+    text-align: left;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.pokemonNum{
+ font-size: 1.3rem;
+ color: #a0a0a0;
+}
+
+.pokemonName{
+    font-size: 1.7rem;
+    font-weight: bold;
+}

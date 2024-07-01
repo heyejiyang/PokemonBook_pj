@@ -1,0 +1,287 @@
+/* 메인 레이아웃 공통 */
+.layout-width {
+    min-width: 800px;
+    max-width: 1300px;
+    margin: 0 auto;
+}
+
+.content-box {
+    min-width: 550px;
+    max-width: 700px;
+    min-height: 650px;
+    margin: 50px auto;
+    box-shadow: 2px 2px 10px #414141;
+    border-radius: 20px;
+    padding: 30px;
+}
+
+.content-box h1 {
+    font-size: 1.5rem;
+    line-height: 1;
+    padding: 0 10px 15px;
+    margin: 0 0 20px;
+    border-bottom: 2px solid #000;
+}
+
+/* 사이트 헤더 영역 S */
+header .site-top {
+    background: var(--white);
+}
+
+header .layout-width inner {
+    display: flex;
+    justify-content: space-between;
+    height: 35px;
+    align-items: center;
+}
+
+header .site-top a {
+    line-height: 1;
+}
+
+header .site-top a:hover {
+    text-decoration: underline;
+}
+
+header img {
+    height: 100px;
+} /* 메인 로고 */
+
+.mini_logo img {
+    height: 65px;
+    margin-top: -10px;
+    display: block;
+} /* 포켓몬 얼굴 아이콘 */
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.3);
+    /* 상단 메뉴바 영역 */
+}
+
+nav > .inner {
+    display: flex;
+    justify-content: space-between;
+    flex-grow: 1;
+    height: 55px;
+} /* 상단 메뉴바 안쪽 내용물 */
+
+nav > .inner a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #000;
+    padding : 12px 10px;
+    display : block;
+    min-width : 200px;
+    margin-top: 10px;
+}
+
+.dropdown a:hover {
+    background: #17a2b8;
+    color: #f8f8f8;
+    transition: 1s;
+}
+
+nav > .inner a:nth-of-type(1):hover,
+nav > .inner a:nth-of-type(1).on {
+    background: #21209C;
+    color: #f8f8f8;
+    transition: 1s;
+}
+
+nav > .inner a:nth-of-type(2):hover,
+nav > .inner a:nth-of-type(2).on {
+    background: #FDB827;
+    color: #f8f8f8;
+    transition: 1s;
+}
+
+nav > .inner a:nth-of-type(3):hover,
+nav > .inner a:nth-of-type(3).on {
+    background: #dc3545;
+    color: #f8f8f8;
+    transition: 1s;
+}
+
+.dropdown{ /* 게시판 드롭다운 */
+    position : relative;
+    display : inline-block;
+}
+
+.dropdown-content{
+    display : none;
+    position : absolute;
+    z-index : 1; /*다른 요소들보다 앞에 배치*/
+    font-weight: 400;
+    background-color: var(--white);
+    min-width : 200px;
+}
+
+.dropdown-content a{
+    display : block;
+    text-decoration: none;
+    font-size: 12px;
+    padding : 12px 20px;
+}
+
+.dropdown-content a:hover{
+    background-color : #ececec
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.right { /* 스토어 노란 버튼 */
+    width: 120px;
+    height: 80px;
+    background-color: #FFDE00;
+    margin-right: 50px;
+    border-radius: 30px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.right > a {
+    color: #403813;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.right:hover {
+    background-color: #FDB827;
+}
+
+.right img {
+    width: 30px;
+    height: 30px;
+}
+
+.right .store {
+    width: 110px;
+}
+/* 사이트 헤더 영역 E */
+
+/* 사이트 배너 영역 S */
+.banner img{
+    width: 100%;
+}
+/* 사이트 배너 영역 E */
+
+/* 메인 페이지 내용 배치 S */
+.container {
+    width: 100%;
+    margin: 30px 50px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+ /* 메인 페이지 내용 배치 E */
+
+/* 콘텐츠 영역 S */
+.content_list {
+    display: flex;
+    justify-content: space-between;
+    gap:20px;
+}
+
+.content_list img {
+    width: 300px;
+    height: 180px;
+}
+/*버튼을 같은 디자인으로 통일한다면 main.css에 넣어도 될 듯함*/
+
+.container h2 {
+    text-align: center;
+    font-size: 30px;
+}
+
+.container h2 img {
+    margin: -5px 10px;
+}
+
+.do-hyeon-regular {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.container2 {
+    margin-top: 50px;
+}
+
+.content {
+    border-bottom: 10px solid #17a2b8;
+    width: 300px;
+    height: 300px;
+    background-color: #f2f2f2;
+}
+
+.content2 {
+    border-bottom: 10px solid var(--yellow);
+}
+
+.content p{
+    text-align: center;
+    font-weight: bold;
+    font-size: 17px;
+    padding: 10px 25px;
+}
+
+.container3 img {
+    width: 100%;
+}
+/* 콘텐츠 영역 E*/
+
+
+/* 사이트 푸터 영역 S */
+footer {
+    min-height: 150px;
+    width: 100%;
+    background: #000;
+    /*position: fixed; !*해당 부분 고정*!*/
+    bottom: 0; /*하단 여백 없이 고정*/
+    width: 100%; /*가로 사이즈를 브라우저에 가득 채우기*/
+}
+
+footer .bottom-bar .bottom1{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    font-size: 18px;
+    font-weight: bold;
+    padding-top: 40px;
+}
+
+footer .bottom-bar .bottom2{
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+/* 사이트 푸터 영역 E */
+
+/* 페이징 영역*/
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.pagination a.on {
+    /*background: #333;*/
+    /*color: #fff;*/
+    background-image: url('../images/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    color: white;
+}

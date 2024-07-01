@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.board.mappers.BoardDataMapper">
+    <resultMap id="boardDataMap" type="org.choongang.board.entities.BoardData">
+        <result column="NUM" property="num" />
+        <result column="SEQ" property="seq" />
+        <result column="BID" property="bId" />
+        <result column="GID" property="gId" />
+        <result column="POSTER" property="poster" />
+        <result column="MEMBER_SEQ" property="memberSeq" />
+        <result column="GUEST_PASSWORD" property="guestPassword" />
+        <result column="CATEGORY" property="category" />
+        <result column="NOTICE" property="notice" />
+        <result column="SUBJECT" property="subject" />
+        <result column="CONTENT" property="content" />
+        <result column="UA" property="ua" />
+        <result column="IP" property="ip" />
+        <result column="REG_DT" property="regDt" />
+        <result column="MOD_DT" property="modDt" />
+        <result column="EMAIL" property="email" />
+        <result column="USER_NAME" property="userName" />
+    </resultMap>
+
+    <insert id="register">
+        <selectKey keyProperty="seq" order="BEFORE" resultType="long">
+            SELECT SEQ_BOARD_DATA.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO BOARD_DATA
+        (SEQ, BID, GID, POSTER, MEMBER_SEQ,
+        GUEST_PASSWORD, CATEGORY, NOTICE, SUBJECT, CONTENT, UA, IP)
+        VALUES
+        (#{seq},#{bId}, #{gId}, #{poster}, #{memberSeq}, #{guestPassword},#{category},
+        #{notice}, #{subject}, #{content}, #{ua}, #{ip})
+    </insert>
+
+    <update id="modify">
+        UPDATE BOARD_DATA
+        <set>
+            <if test="poster != null">
+                POSTER=#{poster},
+            </if>
+            <if test="guestPassword != null">
+                GUEST_PASSWORD=#{guestPassword},
+            </if>
+            <if test="category != null">
+                CATEGORY=#{category},
+            </if>
+            <if test="subject != null">
+                SUBJECT=#{subject},
+            </if>
+            <if test="content != null">
+                CONTENT=#{content},
+            </if>
+            NOTICE=#{notice},
+            MOD_DT=SYSDATE
+        </set>
+        WHERE SEQ=#{seq}
+    </update>
+
+    <delete id="delete">
+        DELETE FROM BOARD_DATA WHERE SEQ=#{seq}
+    </delete>
+
+    <select id="get" resultMap="boardDataMap">
+        SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
+        WHERE B.SEQ = #{seq}
+    </select>
+
+    <select id="getList" resultMap="boardDataMap">
+        SELECT * FROM (
+        SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
+        <where>
+            <if test="bId != null and !bId.equals('')">
+                AND B.BID = #{bId}
+            </if>
+            <if test="category != null and !category.equals('')">
+                AND B.CATEGORY = #{category}
+            </if>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+
+                <if test="sopt != null and sopt.equals('ALL')">
+                    AND B.SUBJECT || B.CONTENT || B.POSTER || M.EMAIL || M.USER_NAME
+                    LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT_CONTENT')">
+                    AND B.SUBJECT || B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT')">
+                    AND B.SUBJECT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('CONTENT')">
+                    AND B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('NAME')">
+                    AND B.POSTER || M.EMAIL || M.USER_NAME LIKE #{keyword}
+                </if>
+            </if>
+        </where>
+        ORDER BY B.SEQ DESC
+        ) D
+        WHERE
+        <![CDATA[
+        D.NUM >= #{offset} AND D.NUM < #{endRows}
+        ]]>
+    </select>
+
+    <select id="getTotal">
+        SELECT COUNT(*) FROM BOARD_DATA B
+            LEFT JOIN MEMBER M ON B.MEMBER_SEQ = M.USER_NO
+        <where>
+            <if test="bId != null and !bId.equals('')">
+                AND B.BID = #{bId}
+            </if>
+            <if test="category != null and !category.equals('')">
+                AND B.CATEGORY = #{category}
+            </if>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+
+                <if test="sopt != null and sopt.equals('ALL')">
+                    AND B.SUBJECT || B.CONTENT || B.POSTER || M.EMAIL || M.USER_NAME
+                    LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT_CONTENT')">
+                    AND B.SUBJECT || B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT')">
+                    AND B.SUBJECT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('CONTENT')">
+                    AND B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('NAME')">
+                    AND B.POSTER || M.EMAIL || M.USER_NAME LIKE #{keyword}
+                </if>
+            </if>
+        </where>
+    </select>
+
+    <select id="exists" resultType="int">
+        SELECT COUNT(*) FROM BOARD_DATA WHERE SEQ=#{seq}
+    </select>
+</mapper>

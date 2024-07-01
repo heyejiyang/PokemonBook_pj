@@ -1,0 +1,70 @@
+/* 에디터 높이 */
+.ck-editor__editable{
+    min-height: 350px;
+}
+
+._form_content{
+    border: 5px solid #ddd;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 50px;
+    font-weight: bold;
+}
+
+dt, dd{
+    margin-bottom: 5px;
+}
+
+/*이미지첨부, 파일첨부 버튼*/
+._form_content button{
+    min-width: 74px;
+    padding: 10px 10px 9px 10px;
+    border: 1px solid #848484;
+    color: #fff;
+    background: #979797;
+    font-weight: bold;
+
+}
+
+._form_content button:hover{
+    background: #848484
+}
+
+/*다시입력, 글쓰기 버튼 속성*/
+.button-group{
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.button-group button{
+    display: inline-block;
+    padding: 10px 10px 9px 10px;
+    width: 200px;
+    height: 60px;
+    border: 1px solid #3d3d3d;
+    font-weight: bold;
+    font-size: 1.25rem;
+    margin-right: 20px;
+}
+
+.button-group .submit:hover{
+    background: #979797;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.button-group .reset:hover{
+    background: #979797;
+    cursor: pointer;
+    transition: 0.7s;
+}
+
+.button-group .reset{
+    margin-left: 50px;
+    background: #fff;
+}
+
+.button-group .submit{
+    background: #000;
+    color: #fff;
+}

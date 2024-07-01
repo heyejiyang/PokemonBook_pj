@@ -1,0 +1,72 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic:wght@400;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Do+Hyeon&display=swap');
+:root {
+    --blue: #21209C;
+    --yellow: #FDB827;
+    --white: #ffffff;
+    --black: #000000;
+    --gray: #cccccc;
+}
+
+/* 태그 기본 스타일 초기화 */
+* {
+    box-sizing: border-box;
+    font-family: "Nanum Gothic", sans-serif;
+    color: #000;
+    outline: none;
+}
+
+html {
+    font-size: 13px; /* 1rem - 13px */
+}
+
+body {
+    margin: 0;
+    overflow-x: hidden;
+}
+
+a {
+    text-decoration: none;
+}
+
+ul, ol {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+dl, dt, dd {
+    margin: 0;
+    padding: 0;
+}
+
+img {
+    border: 0;
+}
+
+input[type='text'],
+input[type='number'],
+input[type='email'],
+input[type='password'] {
+    border: 1px solid #ccc;
+    padding: 0 10px;
+    width: 100%;
+    height: 35px;
+    border-radius: 3px;
+}
+
+textarea {
+    border: 1px solid #ccc;
+    padding: 10px;
+    min-height: 100px;
+    resize: none;
+    border-radius: 3px;
+}
+
+.dn { display: none !important; }
+
+/* 팝업 공통 S */
+#layer_dim { position: fixed; z-index: 100; top: 0; left: 0; width: 100%; height: 100%; background:rgba(0, 0, 0, 0.7); cursor: pointer; }
+#layer_popup { position: fixed; z-index: 101; background: #fff; border-radius: 5px; overflow: hidden; }
+#layer_popup iframe { border: 0; }
+/* 팝업 공통 E */
