@@ -1,7 +1,60 @@
+.all-form {
+margin-top: 30px;
+display:flex;
+align-items: center;
+justify-content: center;
+}
+
+.form-box {
+display: box;
+items-align: center;
+justify-content: center;
+width: 90%;
+height: 700px;
+}
+
+div{
+    padding: 0 10px;
+    margin: 10px 0;
+}
+
+.email input,
+.pw input {
+    height: 50px;
+    cursor: pointer;
+}
+
+.save-email {
+    font-size: 1.2rem;
+}
+
+
+.form-box h1 {
+font-weight: bold;
+font-size: 1.35rem;
+text-align: center;
+}
+
+.email {
+
+}
+
+.pw {
+
+}
+
+.save-email {
+    margin-top: 20px;
+}
+
+input[type=checkbox] {
+transform : scale(1.5);
+}
+
 .button-group {
 display: flex;
-justify-content:center;
-margin-top: 30px;
+justify-content: center;
+margin-top: 20px;
 }
 
 button {
@@ -9,8 +62,8 @@ button {
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
     width: 200px;
-    margin: 0 20px;
     background: var(--blue);
     font-size: 1.2rem;
     color: #fff;
+    cursor: pointer;
 }
