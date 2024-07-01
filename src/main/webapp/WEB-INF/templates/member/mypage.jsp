@@ -36,7 +36,7 @@
     </tr>
 </table>
 </section>
-<body>
+</body>
 
 <div class="button-group">
     <button type="button">

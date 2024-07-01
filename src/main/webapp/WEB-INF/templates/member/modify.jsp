@@ -51,7 +51,7 @@
         </td>
     </tr>
     </table>
-        </body>
+
 
         <div class="button-group">
             <button type="reset">
@@ -62,6 +62,7 @@
             </button>
         </div>
     </form>
+    </body>
     </section>
 
 </layout:main>

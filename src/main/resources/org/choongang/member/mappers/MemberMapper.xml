@@ -7,14 +7,14 @@
         <result column="USER_NO" property="userNo" />
         <result column="EMAIL" property="email" />
         <result column="PASSWORD" property="password" />
-        <result column="USER_TYPE" property="userType" />
         <result column="USER_NAME" property="userName" />
+        <result column="USER_TYPE" property="userType" />
         <result column="REG_DT" property="regDt" />
         <result column="MOD_DT" property="modDt" />
     </resultMap>
 
     <select id="get" resultMap="memberMap">
-        SELECT * FROM MEMBER WHERE EMAIL=#{email}
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
     <select id="exists" resultType="int">
@@ -27,11 +27,11 @@
 <!--            <if test="email != null and !email.equals('')" >-->
 <!--                EMAIL = #{email},-->
 <!--            </if>-->
-            <if test="userName != null and !userName.equals('')">
-                USER_NAME = #{userName},
-            </if>
             <if test="password != null and password.equals('')">
                 PASSWORD = #{password},
+            </if>
+            <if test="userName != null and !userName.equals('')">
+                USER_NAME = #{userName},
             </if>
             MOD_DT=SYSDATE
         </set>
