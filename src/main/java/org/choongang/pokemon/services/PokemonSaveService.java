@@ -25,7 +25,7 @@ public class PokemonSaveService {
                 .weight(data.getWeight())
                 .baseExperience(data.getBase_experience())
                 .frontImage(data.getSprites().getOther().getOfficial_artwork().getFront_default())
-                .backImage(data.getSprites().getBack_default())
+                .backImage(data.getSprites().getOther().getOfficial_artwork().getBack_default())
                 .rawData(data.getRawData())
                 .nameKr(data.getNameKr())
                 .description(data.getDescription())

@@ -74,7 +74,7 @@ public class PokemonInfoServiceTest {
     void getListDbTest() {
         PokemonSearch search = new PokemonSearch();
         search.setPage(1);
-        search.setLimit(5);
+        search.setLimit(25);
 
         service.getList(search);
     }
