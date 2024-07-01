@@ -24,22 +24,16 @@ public class PokemonController {
 
     @GetMapping
     public String index(PokemonSearch search) {
-        try {
+        commonProcess();
 
-            commonProcess();
+        ListData<PokemonDetail> listData = infoService.getList(search);
+        List<PokemonDetail> items = listData.getItems();
+        Pagination pagination = listData.getPagination();
 
-            ListData<PokemonDetail> listData = infoService.getList(search);
-            List<PokemonDetail> items = listData.getItems();
-            Pagination pagination = listData.getPagination();
+        request.setAttribute("items", items);
+        request.setAttribute("pagination", pagination);
 
-            request.setAttribute("items", items);
-            request.setAttribute("pagination", pagination);
-
-            return "pokemon/index";
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-        return "";
+        return "pokemon/index";
     }
     //마스터 병합을 위한 약간의 주석
     @GetMapping("/view/{seq}")
@@ -58,5 +52,4 @@ public class PokemonController {
         request.setAttribute("addCss", new String[] {"pokemon/style"});
         request.setAttribute("addScript", List.of("pokemon/wishlist"));
     }
-
 }

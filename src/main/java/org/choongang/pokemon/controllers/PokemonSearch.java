@@ -5,7 +5,7 @@ import lombok.Data;
 @Data
 public class PokemonSearch {
     private int page = 1;
-    private int limit = 20; // 한페이지당 출력될 레코드 갯수
+    private int limit = 25; // 한페이지당 출력될 레코드 갯수
     private int offset;
     private int endRows;
     private String sopt; // 검색 옵션

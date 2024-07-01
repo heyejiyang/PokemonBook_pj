@@ -2,7 +2,6 @@ package org.choongang.pokemon.services;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonNode;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
@@ -166,7 +165,7 @@ public class PokemonInfoService {
         //Thread th = new Thread(() -> {
         PokemonSearch search = new PokemonSearch();
         search.setPage(1);
-        search.setLimit(100);
+        search.setLimit(2000);
         List<Item> items = getApiList(search);
         items.forEach(item -> {
             String url = item.getUrl();
@@ -235,7 +234,4 @@ public class PokemonInfoService {
 
         return Optional.ofNullable(data);
     }
-
-
-
 }

@@ -7,13 +7,13 @@
         <result column="SEQ" property="seq" />
         <result column="NUM" property="num" />
         <result column="NAME" property="name" />
-        <result column="NAME_KR" property="nameKr" />
         <result column="WEIGHT" property="weight" />
         <result column="HEIGHT" property="height" />
         <result column="BASE_EXPERIENCE" property="baseExperience" />
         <result column="FRONT_IMAGE" property="frontImage" />
         <result column="BACK_IMAGE" property="backImage" />
         <result column="RAW_DATA" property="rawData" />
+        <result column="NAME_KR" property="nameKr" />
         <result column="DESCRIPTION" property="description" />
     </resultMap>
 
@@ -48,5 +48,15 @@
         <![CDATA[
         SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P ORDER BY DBMS_RANDOM.VALUE(0, 2000)) WHERE ROWNUM = 1
         ]]>
+    </select>
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM POKEMON
+        <where>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                AND NAME || NAME_KR || DESCRIPTION LIKE #{keyword}
+            </if>
+        </where>
     </select>
 </mapper>
