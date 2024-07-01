@@ -1,8 +1,10 @@
 package org.choongang.member.services;
 
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Service;
+import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.global.exceptions.AlertException;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.controllers.RequestModify;
@@ -22,31 +24,26 @@ public class ModifyService {
 
     public void process(RequestModify form) {
         validator.check(form);
+        
+        String password = form.getPassword();
+        String userName = form.getUserName();
 
         Member member = memberUtil.getMember(); //로그인한 회원 정보
 
-//        String email = member.getEmail();
-//        if (email != null && !email.isBlank() && !email.equals(form.getEmail())){
-//            member.setEmail(form.getEmail());
-//        } else {
-//            member.setEmail(email);
-//        }
-
-        member.setEmail(form.getEmail());
-
-        String password = form.getPassword();
         if (password != null && !password.isBlank()) {
             String hash = BCrypt.hashpw(password, BCrypt.gensalt(12));
             member.setPassword(hash);
         }
 
-        member.setUserName(form.getUserName());
-        member.setModDt(LocalDateTime.now());
+        member.setUserName(userName);
 
-//        try {
-            mapper.modify(member);
-//        } catch (AlertException e) {
-//            throw new AlertException("회원정보 수정에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
-//        }
+        //회원 정보 수정 처리
+        mapper.modify(member);
+        //회원 정보 수정 실패 시 오류 알림 메세지 에외처리는 불가..
+
+        //세션 데이터 업데이트(변경된 정보가 바로 반영될 수 있게 함)
+        HttpSession session = BeanContainer.getInstance().getBean(HttpSession.class);
+        Member _member = mapper.get(member.getEmail());
+        session.setAttribute("member", _member);
     }
 }

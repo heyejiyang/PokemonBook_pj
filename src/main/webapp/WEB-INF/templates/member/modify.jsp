@@ -22,7 +22,7 @@
             <span><fmt:message key="이메일" /></span>
         </th>
         <td>
-        <span>${member.email}</span>
+        <span>${loggedMember.email}</span>
         <%--<input type="text" name="email" value="${member.email}">--%>
         </td>
     </tr>
