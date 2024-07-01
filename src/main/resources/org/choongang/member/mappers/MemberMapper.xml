@@ -43,7 +43,7 @@
             VALUES (SEQ_MEMBER.NEXTVAL, #{email}, #{password}, #{userType}, #{userName})
     </insert>
 
-    <select id="memberList">
-        SELECT * FROM MEMBER WHERE EMAIL=#{email}, USER_NAME=#{userName}, USER_TYPE=#{userType}, REG_DT=#{regDt}
+    <select id="getList" resultMap="memberMap">
+        SELECT * FROM MEMBER ORDER BY REG_DT
     </select>
 </mapper>
