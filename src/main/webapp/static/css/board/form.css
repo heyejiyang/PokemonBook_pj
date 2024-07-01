@@ -15,6 +15,7 @@ dt, dd{
     margin-bottom: 5px;
 }
 
+/*이미지첨부, 파일첨부 버튼*/
 ._form_content button{
     min-width: 74px;
     padding: 10px 10px 9px 10px;
@@ -25,6 +26,11 @@ dt, dd{
 
 }
 
+._form_content button:hover{
+    background: #848484
+}
+
+/*다시입력, 글쓰기 버튼 속성*/
 .button-group{
     text-align: center;
 }
@@ -41,13 +47,15 @@ dt, dd{
 }
 
 .button-group .submit:hover{
-    background: red;
+    background: #979797;
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .button-group .reset:hover{
-    background: #FDB827;
+    background: #979797;
     cursor: pointer;
+    transition: 0.7s;
 }
 
 .button-group .reset{
