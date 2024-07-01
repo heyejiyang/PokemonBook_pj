@@ -264,3 +264,24 @@ footer .bottom-bar .bottom2{
     padding-top: 20px;
 }
 /* 사이트 푸터 영역 E */
+
+/* 페이징 영역*/
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.pagination a.on {
+    /*background: #333;*/
+    /*color: #fff;*/
+    background-image: url('../images/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    color: white;
+}
