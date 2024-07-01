@@ -103,4 +103,8 @@
         D.NUM >= #{offset} AND D.NUM < #{endRows}
         ]]>
     </select>
+
+    <select id="exist" resultType="int">
+        SELECT COUNT(*) FROM BOARD_DATA WHERE SEQ=#{seq}
+    </select>
 </mapper>
