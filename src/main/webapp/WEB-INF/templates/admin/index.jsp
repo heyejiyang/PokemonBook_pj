@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="관리자_페이지" />
 <c:url var="logoUrl" value="/images/ball.png" />
@@ -34,5 +35,6 @@
             </c:if>
             </tbody>
         </table>
+        <util:pagination />
     </div>
 </layout:admin>
