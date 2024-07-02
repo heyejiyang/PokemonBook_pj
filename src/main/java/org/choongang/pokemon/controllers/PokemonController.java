@@ -7,6 +7,7 @@ import org.choongang.global.Pagination;
 import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
+import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
@@ -104,6 +105,26 @@ public class PokemonController {
                               @RequestParam("nickname") String nickname) {
         pokemonService.add(seq, nickname);
         return "redirect:/pokemon/mypokemon";
+    }
+
+//    @PostMapping("/join")
+//    public String joinPs(RequestJoin form, HttpServletRequest request) {
+//
+//        joinService.process(form);
+//
+//        String url = request.getContextPath() + "/member/login";
+//        String script = String.format("parent.location.replace('%s');", url);
+//
+//        request.setAttribute("script", script);
+//
+//        return "commons/execute_script";
+//    }
+
+    @PostMapping("/mypokemon")
+    public String save() {
+
+
+        return "commons/execute_script";
     }
 
     private void commonProcess() {

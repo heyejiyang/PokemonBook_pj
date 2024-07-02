@@ -9,9 +9,6 @@
         <button type="button">
             <a href="<c:url value='/pokemon/gacha' />">오늘의 포켓몬 뽑기!</a>
         </button>
-        <button type="button">
-            <a href="<c:url value='/pokemon/mypokemon' />">내 포켓몬 조회</a>
-        </button>
     </div>
 
     <ul class="pokemon-list">

@@ -11,7 +11,7 @@
     </div>
 
     <section class="gacharesult">
-        <form method="post" action="<c:url value='/pokemon/save' />" autocomplete="off">
+        <form method="post" action="<c:url value='/pokemon/mypokemon' />" autocomplete="off">
             <input type="hidden" name="seq" value="${data.seq}">
             <input type="hidden" name="pokemonId" value="${items.seq}">
             <input type="hidden" name="pokemonName" value="${items.nameKr}">
@@ -19,5 +19,5 @@
             <button type="submit" class="btn">저장</button>
         </form>
     </section>
-
+///
 </layout:main>
