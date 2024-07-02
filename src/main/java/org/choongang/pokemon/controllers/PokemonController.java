@@ -66,6 +66,8 @@ public class PokemonController {
     public String mypokemon() {
         commonProcess();
 
+        List<PokemonDetail> pokemons = pokemonService.getList();
+        request.setAttribute("pokemons", pokemons);
         request.setAttribute("addCss", new String[] {"pokemon/mypokemon"});
         return "pokemon/mypokemon";
     }
@@ -97,8 +99,12 @@ public class PokemonController {
         return "pokemon/gacharesult";
     }
 
-
-
+    @PostMapping("/gacharesult")
+    public String savePokemon(@RequestParam("seq") long seq,
+                              @RequestParam("nickname") String nickname) {
+        pokemonService.add(seq, nickname);
+        return "redirect:/pokemon/mypokemon";
+    }
 
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.
