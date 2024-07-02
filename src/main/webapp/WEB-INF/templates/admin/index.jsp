@@ -37,6 +37,6 @@
             </c:if>
             </tbody>
         </table>
-        <div class="pagination"><util:pagination /></div>
+        <util:pagination />
     </div>
 </layout:admin>
