@@ -45,4 +45,12 @@
     <select id="getList" resultMap="memberMap">
         SELECT * FROM MEMBER ORDER BY REG_DT
     </select>
+
+    <select id="getTotal" resultType="int">
+        SELECT COUNT(*) FROM MEMBER
+    </select>
+
+    <delete id="delete">
+        DELETE FROM MEMBER WHERE EMAIL=#{email}
+    </delete>
 </mapper>

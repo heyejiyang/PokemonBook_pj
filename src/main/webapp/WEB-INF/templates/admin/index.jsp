@@ -2,6 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key="관리자_페이지" />
 <c:url var="logoUrl" value="/images/ball.png" />
@@ -20,6 +21,7 @@
             <th>이름</th>
             <th>등급</th>
             <th>가입날짜</th>
+            <th>회원탈퇴</th>
             </thead>
             <tbody>
             <c:if test="${items != null && !items.isEmpty()}">
@@ -29,10 +31,12 @@
                         <td>${item.userName}</td>
                         <td>${item.userType}</td>
                         <td><c:out value="${item.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
+                        <td><button class="delete" type="submit">삭제</button></td>
                     </tr>
                 </c:forEach>
             </c:if>
             </tbody>
         </table>
+        <div class="pagination"><util:pagination /></div>
     </div>
 </layout:admin>
