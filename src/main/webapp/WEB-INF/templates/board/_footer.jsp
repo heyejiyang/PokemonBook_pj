@@ -16,6 +16,6 @@
             <option value="NAME"${param.sopt == 'NAME' ? ' selected':''}>이름</option>
         </select>
         <input type="text" id="articleKeyword" class="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
-        <button id="btnArticleSearch" class="btn_board_search" type="submit"><em>조회</em></button>
+        <button id="btnArticleSearch" class="btn_board_search" type="submit">조회</button>
     </form>
 </div>
