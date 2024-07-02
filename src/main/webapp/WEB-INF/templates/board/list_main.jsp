@@ -9,6 +9,17 @@
 <c:url var="logoUrl" value="/images/ball.png" />
 <c:url var="writeUrl" value="/board/write/${board.BId}" />
 
+<c:if test="${board.activeCategory == 1 && board.categories != null && !board.categories.isEmpty()}">
+<div class='tab-category'>
+    <a href="<c:url value='/board/list/${board.BId}' />" class="tab${empty param.category ? ' on':''}">전체</a>
+    <c:forEach var="category" items="${board.categories}">
+        <a href="<c:url value='/board/list/${board.BId}?category=${category}' />" class="tab${param.category == category ? ' on':''}">
+            ${category}
+        </a>
+    </c:forEach>
+</div>
+</c:if>
+
 <div class="page-container">
     <div class="table-container">
         <table class="notice-table">
@@ -29,6 +40,9 @@
                         </td>
                         <td>
                             <a href="<c:url value="/board/view/${item.seq}"/>" class="l_subject">
+                            <c:if test="${! empty item.category }">
+                                [${item.category}]
+                            </c:if>
                                 ${item.subject}
                             </a>
                         </td>
