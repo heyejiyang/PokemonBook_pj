@@ -192,7 +192,7 @@ nav > .inner a {
     flex-direction: column;
     align-items: center;
 }
- /* 메인 페이지 내용 배치 E */
+/* 메인 페이지 내용 배치 E */
 
 /* 콘텐츠 영역 S */
 .content_list {
@@ -205,34 +205,6 @@ nav > .inner a {
     width: 300px;
     height: 180px;
 }
-/* 사이트 배너 영역 S */
-.banner img{
-    width: 100%;
-}
-/* 사이트 배너 영역 E */
-
-/* 메인 페이지 내용 배치 S */
-.container {
-    width: 100%;
-    margin: 30px 50px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
- /* 메인 페이지 내용 배치 E */
-
-/* 콘텐츠 영역 S */
-.content_list {
-    display: flex;
-    justify-content: space-between;
-    gap:20px;
-}
-
-.content_list img {
-    width: 300px;
-    height: 180px;
-}
-/*버튼을 같은 디자인으로 통일한다면 main.css에 넣어도 될 듯함*/
 
 .container h2 {
     text-align: center;
@@ -282,9 +254,6 @@ footer {
     min-height: 150px;
     width: 100%;
     background: #000;
-    /*position: fixed; !*해당 부분 고정*!*/
-    bottom: 0; /*하단 여백 없이 고정*/
-    width: 100%; /*가로 사이즈를 브라우저에 가득 채우기*/
 }
 
 footer .bottom-bar .bottom1{
@@ -303,24 +272,3 @@ footer .bottom-bar .bottom2{
     padding-top: 20px;
 }
 /* 사이트 푸터 영역 E */
-
-/* 페이징 영역*/
-.pagination {
-    text-align: center;
-    margin: 20px 0;
-}
-.pagination a {
-    display: inline-block;
-    padding: 5px 10px;
-    border-radius: 3px;
-}
-.pagination a.on {
-    /*background: #333;*/
-    /*color: #fff;*/
-    background-image: url('../images/1.png');
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center center;
-    opacity: 1.0;
-    color: white;
-}
