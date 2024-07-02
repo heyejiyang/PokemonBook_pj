@@ -26,12 +26,13 @@
     border: 1px solid #ddd;
     padding: 12px;
     text-align: center;
+    font-size: 1.25rem;
 }
 
 .notice-table th {
     background-color: #000;
     color: #fff;
-    font-size: 1.15rem;
+    padding: 13px;
 }
 
 
