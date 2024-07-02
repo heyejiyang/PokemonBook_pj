@@ -9,7 +9,7 @@
         <img src="${data.frontImage}" alt="${data.nameKr}">
         <div>${data.nameKr}</div>
         <div>${fn:replace(data.description, '\\n', '<br>')}</div>
-        <button type='submit'>프로필 이미지로 선택</button>
+        <button type='submit'>저장</button>
     </form>
     </section>
 </layout:popup>

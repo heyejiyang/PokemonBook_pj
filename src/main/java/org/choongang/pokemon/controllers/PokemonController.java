@@ -5,10 +5,14 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
 import org.choongang.global.Pagination;
 import org.choongang.global.config.annotations.*;
-import org.choongang.member.controllers.RequestJoin;
+import org.choongang.global.exceptions.UnAuthorizedException;
+import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.Member;
+import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.mypage.services.ProfileService;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
-import org.choongang.pokemon.mappers.MyPokemonService;
+import org.choongang.pokemon.services.MyPokemonService;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
@@ -20,8 +24,11 @@ import java.util.Optional;
 public class PokemonController {
 
     private final PokemonInfoService infoService;
-    private final HttpServletRequest request;
+    private final ProfileService profileService;
     private final MyPokemonService pokemonService;
+
+    private final MemberUtil memberUtil;
+    private final HttpServletRequest request;
 
     @GetMapping
     public String index(PokemonSearch search) { // PokemonSearch는 검색 조건을 담는 객체
@@ -92,7 +99,35 @@ public class PokemonController {
         return "pokemon/gacharesult";
     }
 
+    @GetMapping("/popup/{seq}")
+    public String popup(@PathVariable("seq") long seq) {
 
+        PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
+
+        pokemonService.add(seq); // 발급 받은 포켓몬 저장
+
+        request.setAttribute("data", data);
+
+        return "pokemon/popup";
+    }
+
+    @PostMapping("/popup")
+    public String popupPs(@RequestParam("seq") long seq) {
+        if (!memberUtil.isLogin()) {
+            throw new UnAuthorizedException();
+        }
+
+        Member member = memberUtil.getMember();
+        RequestProfile form = new RequestProfile();
+        form.setMyPokemonSeq(seq);
+        form.setUserName(member.getUserName());
+        profileService.update(form);
+
+        String script = "parent.parent.location.reload();";
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
+    }
 
 
 

@@ -1,10 +1,11 @@
-package org.choongang.pokemon.mappers;
+package org.choongang.pokemon.services;
 
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.member.MemberUtil;
 import org.choongang.member.entities.Member;
 import org.choongang.pokemon.entities.PokemonDetail;
+import org.choongang.pokemon.mappers.PokemonMapper;
 
 import java.util.Collections;
 import java.util.List;
@@ -15,17 +16,15 @@ public class MyPokemonService {
     private final PokemonMapper mapper;
     private final MemberUtil memberUtil;
 
-
-    /*
+    /**
      * 포켓몬 저장
      *
-     * @Param seq
-     * */
+     * @param seq
+     */
     public void add(long seq) {
         if (!memberUtil.isLogin()) {
             return;
         }
-
         Member member = memberUtil.getMember();
         try {
             mapper.registerMyPokemon(member.getUserNo(), seq);
@@ -44,6 +43,7 @@ public class MyPokemonService {
         if (!memberUtil.isLogin()) {
             return;
         }
+
         Member member = memberUtil.getMember();
         mapper.deleteAllMyPokemon(member.getUserNo());
     }
@@ -51,6 +51,7 @@ public class MyPokemonService {
     public List<PokemonDetail> getList() {
         if (memberUtil.isLogin()) {
             List<PokemonDetail> items = mapper.getMyPokemons(memberUtil.getMember().getUserNo());
+
             return items;
         }
 
