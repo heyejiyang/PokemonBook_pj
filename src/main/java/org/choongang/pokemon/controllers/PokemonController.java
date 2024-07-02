@@ -66,9 +66,19 @@ public class PokemonController {
 
 
     @GetMapping("/mypokemon")
-    public String mypokemon() {
+    public String mypokemon(long seq) {
         commonProcess();
 
+        PokemonDetail data = infoService.get(seq).orElseThrow(PokemonNotFoundException::new);
+
+        pokemonService.add(seq); // 발급 받은 포켓몬 저장
+
+        request.setAttribute("data", data);
+
+//        ListData<PokemonDetail> listData = infoService.getList(search);
+//        List<PokemonDetail> items = listData.getItems();
+//
+//        request.setAttribute("items", items); // 포켓몬 데이터
         request.setAttribute("addCss", new String[] {"pokemon/mypokemon"});
         return "pokemon/mypokemon";
     }

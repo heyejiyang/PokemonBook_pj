@@ -7,7 +7,9 @@
         <div class="gacha_title">
             오늘의 포켓몬!
         </div>
-        <a class="pokeball" href="<c:url value='/pokemon/gacharesult' />">
+     <!--   <a class="pokeball" href="<c:url value='/pokemon/gacharesult' />"> -->
+        <a class="pokeball" href="<c:url value='/pokemon/popup' />">
+        <a class="pokeball" href="<c:url value='/common/execute_script' />">
             <img src="${pokeball}" alt="pokeball">
         </a>
         <div class="gacha_explain">
