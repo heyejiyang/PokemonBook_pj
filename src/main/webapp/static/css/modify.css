@@ -14,11 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 20px;
+    margin: 20px 0 40px;
 }
 
 .modify-title h1 {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    margin: 0;
 }
 
 .modify-title img {
@@ -86,19 +87,18 @@ td, th {
 
 .buttons {
     display: flex;
-    justify-content:center;
+    justify-content:space-evenly;
     margin: 30px 0;
 }
 
 .buttons button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
-    height: 50px;
+    height: 60px;
     width: 200px;
-    margin: 0 20px;
     background: var(--blue);
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     cursor: pointer; /*커서 포인터*/
     transition: background 0.5s ease; /*부드러운 색상 변화, 근데 왜 다른 버튼도 적용되지.. 지정해서 적용시켰는데..*/
 }
