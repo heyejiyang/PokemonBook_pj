@@ -24,7 +24,7 @@
 
 .notice-table th, .notice-table td {
     border: 1px solid #ddd;
-    padding: 8px;
+    padding: 12px;
     text-align: center;
 }
 
@@ -42,12 +42,13 @@
 }
 
 .tab-category .category-hover:hover{
-    color: red;
+    color: #d1180b;
 }
 
 .tab-category {
     text-align: left;
     margin-left: 3px;
+    font-size: 1.1rem;
 }
 
 .btn_right_box {
@@ -67,6 +68,9 @@
     color: #FFF;
 }
 
+.btn_right_box button:hover {
+    background: #d1180b;
+}
 
 /*.pagination-container {*/
 /*    justify-content: center;*/
