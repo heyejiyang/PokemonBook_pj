@@ -100,6 +100,8 @@
             <div class="bottom-bar">
                 <div class="bottom1"><img src="${footerUrl}">포켓몬 도감 프로젝트</div>
                 <div class="bottom2">회사 소개 | 사업내용 | 제휴안내 | 이용약관 | 개인정보처리방침 | 이메일무단수집거부 | 고객센터</div>
+                <div class="bottom2">♡이용교 강사님 감사합니다 사랑합니다♡ 이번 프로젝트로 고생하셨습니다♡</div>
+                <div class="bottom2">@중앙 502호 3조@</div>
             </div>
         </section>
     </jsp:attribute>
