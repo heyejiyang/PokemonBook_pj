@@ -47,10 +47,14 @@
 
 .tab-category {
     text-align: left;
+    margin-left: 3px;
 }
 
 .btn_right_box {
-    display: inline-block;
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+
 }
 
 .btn_right_box button {
@@ -58,8 +62,12 @@
     height: 30px;
     cursor: pointer;
     min-width: 90px;
-    border: 1px solid #eeeeee;
+    border: 1px solid #000;
+    background: #000;
+    color: #FFF;
 }
+
+
 /*.pagination-container {*/
 /*    justify-content: center;*/
 /*    margin-top: 20px;*/

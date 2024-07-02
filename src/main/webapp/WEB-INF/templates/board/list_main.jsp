@@ -20,9 +20,6 @@
     </c:forEach>
 </div>
 </c:if>
-
-
-
     <table class="notice-table">
         <tr>
             <th>번호</th>
@@ -58,20 +55,21 @@
         </c:if>
     </table>
     <br>
+
     <c:choose>
         <c:when test="${board.BId == 'notice'}">
-            <c:if test="${isAdmin}">
-                <div class="btn_right_box">
+            <div class="btn_right_box">
+                <c:if test="${isAdmin}">
                     <button type="button" class="btn_write" onclick="location.href='${writeUrl}'">
-                        <strong>작성하기</strong>
+                        작성하기
                     </button>
-                </div>
-            </c:if>
+                </c:if>
+            </div>
         </c:when>
         <c:when test="${board.BId == 'QnA'}">
             <div class="btn_right_box">
                 <button type="button" class="btn_write" onclick="location.href='${writeUrl}'">
-                    <strong>작성하기</strong>
+                    작성하기
                 </button>
             </div>
         </c:when>
@@ -97,6 +95,5 @@
 <%--                <a class="pagination__button pagination__button--next" href="${pageContext.request.contextPath}/board/list/${bId}?page=${currentPage + 1}">&gt;</a>--%>
 <%--            </c:if>--%>
 <%--        </div>--%>
-
-</div>
+    </div>
 <util:pagination />
