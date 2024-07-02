@@ -9,7 +9,9 @@ title: 게시판 이름
     <section class="layout-width">
         <jsp:include page="_header.jsp"/>
     </section>
+
     <jsp:include page="list_main.jsp"/>
+
     <section class="layout-width">
         <jsp:include page="_footer.jsp"/>
     </section>

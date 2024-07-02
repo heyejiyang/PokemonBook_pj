@@ -1,0 +1,53 @@
+.view-layout-width {
+    border: 5px solid #21209C;
+    border-radius: 20px;
+    padding: 20px;
+    margin: 50px;
+    font-weight: bold;
+}
+
+.subject {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.poster-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 14px;
+    border-bottom: 2px solid #ddd;
+}
+.poster-info .view-left,
+.poster-info .view-right{
+    margin-bottom: 20px;
+    color: var(--gray);
+}
+
+.content {
+    margin-bottom: 20px;
+    background-color: #fff;
+    border-bottom: 2px solid #ddd;
+    width: auto;
+}
+
+.btn-group {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0056b3;
+}

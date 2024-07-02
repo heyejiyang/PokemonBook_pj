@@ -30,8 +30,10 @@ public class Pokemon {
 
     @JsonIgnore
     private String rawData;
+
     @JsonIgnore
     private String nameKr;
+
     @JsonIgnore
     private String description;
 }

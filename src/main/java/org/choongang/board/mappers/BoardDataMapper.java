@@ -12,4 +12,5 @@ public interface BoardDataMapper {
     BoardData get(long seq); //개별 게시글 조회
     List<BoardData> getList(BoardSearch search); //게시글 리스트 조회
     int exists(long seq);
+    int getTotal(BoardSearch search);
 }

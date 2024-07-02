@@ -1,16 +1,18 @@
 <%@ page contentType="text/html; charset=UTF-8"%>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <c:url var="mainUrl" value="/"/>
-<c:url var="listUrl" value="/board/list/${board.BId}"/>
+<c:url var="searchUrl" value="/board/list/${board.BId}"/>
 
 <div class="search-container">
-    <form class="board_search_box" method="post">
-        <select name="searchType">
-            <option value="TITLE" <c:out value="#"/> >제목</option>
-            <option value="CONTENT">내용</option>
-            <option value="WRITER">작성자</option>
+    <form class="board_search_box" name="frmSearch" method="get" autocomplete="off">
+        <select name="sopt">
+            <option value="ALL"${param.sopt == 'ALL' || empty param.sopt ? ' selected':''}>통합검색</option>
+            <option value="SUBJECT"${param.sopt == 'SUBJECT' ? ' selected':''}>제목</option>
+            <option value="CONTENT"${param.sopt == 'CONTENT' ? ' selected':''}>내용</option>
+            <option value="SUBJECT_CONTENT${param.sopt == 'SUBJECT_CONTENT' ? ' selected':''}">제목+내용</option>
+            <option value="NAME"${param.sopt == 'NAME' ? ' selected':''}>이름</option>
         </select>
-        <input type="text" id="articleKeyword" class="text" name="keyword">
-        <button id="btnArticleSearch" class="btn_board_search"><em>조회</em></button>
+        <input type="text" id="articleKeyword" class="text" name="skey" value="${param.skey}" placeholder="검색어를 입력하세요.">
+        <button id="btnArticleSearch" class="btn_board_search" type="submit"><em>조회</em></button>
     </form>
 </div>
