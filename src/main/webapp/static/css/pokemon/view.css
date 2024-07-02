@@ -3,15 +3,16 @@
     text-align: center;
     padding-top: 100px;
     padding-bottom: 100px;
+    background-image : url(https://pokemonkorea.co.kr/img/bg_pattern2.jpg)
 }
 
 .pokemon-view {
     width: 1000px;
-    height: 700px;
+    height: 650px;
     margin: 0 auto;
 
-    # border: 3px solid #000;
-    border-radius: 30px;
+    border: 2px solid #6a6a6a;
+    border-radius: 20px;
     padding: 50px;
     background-color: #fff;
     text-align: left;
@@ -46,7 +47,7 @@
 }
 
 .backToList {
-    margin-top: 50px;
+    margin-top: 20px;
     text-align: center;
 }
 
