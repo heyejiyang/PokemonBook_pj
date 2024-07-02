@@ -58,6 +58,6 @@ main > .main-content h1 {
     background-repeat: no-repeat;
     background-position: center center;
     opacity: 1.0;
-    color: white;
+    color: var(--yellow);
 }
 
