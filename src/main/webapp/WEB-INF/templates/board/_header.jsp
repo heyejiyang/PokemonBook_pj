@@ -17,6 +17,6 @@
 
     <div class="boardTitle">
         <img src="${logoUrl}" alt="<fmt:message key='로고' />">
-        <h1>${board.BName}</h1>
+        <h1 class="do-hyeon-regular">${board.BName}</h1>
     </div>
 </div>

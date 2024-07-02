@@ -1,11 +1,17 @@
+.view-body{
+    display: flex;
+    justify-content: center;
+}
+
 .view-layout-width {
+    max-width: 1000px; /* 최대 너비를 1000px로 설정 */
+    width: 100%; /* 최대 너비까지 차지하도록 설정 */
     border: 5px solid #21209C;
     border-radius: 20px;
     padding: 20px;
-    margin: 50px;
+    /* 자동으로 수평 가운데 정렬 */
     font-weight: bold;
 }
-
 .subject {
     font-size: 24px;
     font-weight: bold;
@@ -23,7 +29,7 @@
 .poster-info .view-left,
 .poster-info .view-right{
     margin-bottom: 20px;
-    color: var(--gray);
+    color: #555;
 }
 
 .content {
@@ -46,17 +52,17 @@
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #007bff;
-    color: #fff;
+    background-color: #cccccc;
+    color: #000;
     cursor: pointer;
 }
 
 .btn:hover {
-    background-color: #0056b3;
+    background-color: var(--yellow);
 }
 
 .view-page .page-container{
-    margin-bottom: 0px;
+    margin-bottom: 0;
 }
 
 .view-page .notice-table {
@@ -70,15 +76,15 @@
     text-align: center;
 }
 
+.view-page .tab-category a.category-hover:hover {
+    color: red;
+}
+
 .view-page .tab-category {
-    margin-left: 30px;
+    margin-left: 50px;
     padding-bottom: 5px ;
     border-bottom: 4px solid var(--yellow);
     display: inline-block;
-}
-
-.view-page .tab-category a.category-hover:hover {
-    color: red;
 }
 
 .view-page .table-container {
@@ -90,6 +96,19 @@
 .view-page .btn_right_box {
     display: none;
 }
+
+.view-page .notice-table{
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+
+.view-page .notice-table th, .notice-table td {
+    border-top: 1px solid #ddd;
+    padding: 8px;
+    text-align: center;
+}
+
 
 .view-page .pagination {
     display: flex;
@@ -104,7 +123,7 @@
     border-radius: 3px;
 }
 .view-page .pagination a.on {
-    background-image: url('../../images/3.png');
+    background-image: url('../../images/1.png');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
