@@ -16,7 +16,7 @@
     border-collapse: collapse;
     margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
 }
-.notice-table
+
 .notice-table td:first-child, .table th:first-child{ width:5% }
 .notice-table td:nth-child(2), .table th:nth-child(2){ width:60% }
 .notice-table td:nth-child(3+n), .table th:nth-child(3+n){ width:15% }
