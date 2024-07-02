@@ -1,3 +1,4 @@
+/* 메인 헤더 */
 .boardTitle {
     text-align: center;
     display: flex;
@@ -10,25 +11,19 @@
     margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
 }
 
-.location_cont {
+.location{
     padding-top: 20px;
     padding-bottom: 50px;
 }
 
 .page-container {
     max-width: 1200px; /* 최대 너비를 1200px로 설정 */
-    margin: 0 auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
-    padding: 20px; /* 위아래로 20px, 좌우로 20px의 패딩 설정 */
+    margin: 30px auto; /* 좌우 여백을 자동으로 설정하여 가운데 정렬 */
+    padding: 0;
     background-color: #ffffff; /* 배경색 설정 */
 }
 
-.q-list {
-    background-color: #ffffff; /* 목록의 배경색 설정 */
-    border: 1px solid #ccc; /* 테두리 설정 */
-    padding: 20px; /* 내부 패딩 설정 */
-    margin-top: 20px; /* 위쪽 여백 설정 */
-}
-
+/* 메인 푸터 검색창 */
 .board_search_box {
     margin: 50px 0 30px 0;
     text-align: center;
@@ -48,6 +43,8 @@
     width: 80px;
     height: 34px;
     border: solid 1px #ddd;
+    border-radius: 0; /* 테두리를 사각형으로 설정 */
+    cursor: pointer; /* 커서를 포인터로 설정 */
 }
 .board_search_box input {
     width: 240px;
@@ -90,8 +87,16 @@ select {
     line-height: 1.5;
     margin: 0;
     padding: 0;
+    cursor: pointer;
+    border-radius: 0; /* 테두리를 사각형으로 설정 */
 }
 
-.board_search_box select option{
+select option {
+    border: 0;
+    cursor: pointer; /* 커서를 포인터로 설정 */
+}
+
+.board_search_box select option {
     color: #999;
+    cursor: pointer; /* 커서를 포인터로 설정 */
 }
