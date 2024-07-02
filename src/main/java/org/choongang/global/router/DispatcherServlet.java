@@ -21,11 +21,6 @@ public class DispatcherServlet extends HttpServlet  {
         BeanContainer bc = BeanContainer.getInstance();
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
-        bc.setLoaded(true);
-        //System.out.println("check1" + check(request));
-        if (check(request)) {
-            bc.setLoaded(false);
-        }
 
         bc.addBean(HttpServletRequest.class.getName(), request);
         bc.addBean(HttpServletResponse.class.getName(), response);
@@ -33,21 +28,17 @@ public class DispatcherServlet extends HttpServlet  {
 
         bc.loadBeans();
 
-        if(check(request)){
-            bc.setLoaded(true);
-        }
-
         RouterService service = bc.getBean(RouterService.class);
         service.route(request, response);
     }
 
     /**
-     * // png, jpg, css, js 파일 요청이 아닌지 체크
+     * css, js, image 파일 요청이 아닌지 체크
      *
      * @param request
      * @return
      */
-    private boolean check(HttpServletRequest request){
+    private boolean check(HttpServletRequest request) {
         String uri = request.getRequestURI().toLowerCase();
         List<String> excludeExtensions = List.of(".css", ".js", ".png", ".jpg", ".jpeg", ".gif");
 
