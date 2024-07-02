@@ -32,7 +32,7 @@
 
     <select id="getList" resultMap="pokemonMap">
 
-        SELECT * FROM (SELECT P.SEQ, ROWNUM NUM, P.NAME, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P
+        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
         <where>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
@@ -56,7 +56,7 @@
     <!--                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>-->
 
     <!--                 P.NAME_KR  LIKE #{keyword}-->
-<!-- 커밋 전용 주석 -->
+    <!-- 커밋 전용 주석 -->
 
     <!--            </if>-->
     <!--        </where>-->

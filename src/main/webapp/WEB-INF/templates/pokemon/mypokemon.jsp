@@ -3,7 +3,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
 <layout:main>
-<ul class="pokemon-list">
+    <ul class="pokemon-list">
         <c:if test="${items == null || items.isEmpty()}">
             <li class='no-data'>조회된 포켓몬이 없습니다.</li>
 
