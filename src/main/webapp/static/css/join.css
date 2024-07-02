@@ -2,12 +2,13 @@ main {
     background: #f7f7f7;
     min-height: 700px;
     display: flex;
-    align-items: center;
+    justify-content: center;
+    flex-direction: column;
 }
 
 .join-box {
     width: 580px;
-    margin: 100px auto;
+    margin: 30px auto 100px;
     background: #fff;
     padding: 55px;
 }
@@ -18,6 +19,12 @@ main {
     padding: 0;
     margin: 0 0 25px;
 }
+
+.logo-img {
+    text-align: center;
+    margin-top: 70px;
+}
+
 
 .join-box input[type='text'],
 .join-box input[type='password'] {

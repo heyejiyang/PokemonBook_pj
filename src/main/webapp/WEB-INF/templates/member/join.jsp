@@ -5,8 +5,12 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='회원가입' />
 <c:url var="actionUrl" value="/member/join" />
+<c:url var="logoUrl" value="/images/book_logo4.png" />
 
 <layout:main title="${pageTitle}">
+    <a href="<c:url value='/' />" class="logo-img">
+        <img src="${logoUrl}" />
+    </a>
     <section class="join-box">
         <h1>${pageTitle}</h1>
         <form name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
