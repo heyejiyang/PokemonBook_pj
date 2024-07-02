@@ -56,7 +56,7 @@
     <!--                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>-->
 
     <!--                 P.NAME_KR  LIKE #{keyword}-->
-<!-- 커밋 전용 주석 -->
+    <!-- 커밋 전용 주석 -->
 
     <!--            </if>-->
     <!--        </where>-->

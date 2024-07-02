@@ -26,6 +26,7 @@
 /* 사이트 헤더 영역 S */
 header .site-top {
     background: var(--white);
+    width: 100%;
 }
 
 header .layout-width inner {
@@ -49,11 +50,11 @@ header img {
 
 .mini_logo img {
     height: 65px;
-    margin-top: -10px;
     display: block;
 } /* 포켓몬 얼굴 아이콘 */
 
 nav {
+    width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -64,45 +65,54 @@ nav {
 nav > .inner {
     display: flex;
     justify-content: space-between;
-    flex-grow: 1;
     height: 55px;
 } /* 상단 메뉴바 안쪽 내용물 */
 
 nav > .inner a {
-    font-size: 1.5rem;
-    font-weight: bold;
+    font-size: 2rem;
     color: #000;
     padding : 12px 10px;
     display : block;
     min-width : 200px;
     margin-top: 10px;
+    height: 50px;
+    font-family: "Do Hyeon", sans-serif;
 }
 
-.dropdown a:hover {
-    background: #17a2b8;
-    color: #f8f8f8;
-    transition: 1s;
+.nav_title {
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    height: 70px;
 }
 
-nav > .inner a:nth-of-type(1):hover,
-nav > .inner a:nth-of-type(1).on {
-    background: #21209C;
+.nav_title:nth-of-type(1):hover {
+    background: #9fdfca;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
 }
 
-nav > .inner a:nth-of-type(2):hover,
-nav > .inner a:nth-of-type(2).on {
-    background: #FDB827;
+.nav_title:nth-of-type(6):hover {
+    background: #fecc1d;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
 }
 
-nav > .inner a:nth-of-type(3):hover,
-nav > .inner a:nth-of-type(3).on {
-    background: #dc3545;
+.nav_title:nth-of-type(4):hover {
+    background: #75e0ec;
     color: #f8f8f8;
-    transition: 1s;
+    transition: 0.5s;
+}
+
+.nav_title:nth-of-type(8):hover {
+    background: #e79859;
+    color: #f8f8f8;
+    transition: 0.5s;
+}
+
+.nav_title a:hover {
+    color: white;
 }
 
 .dropdown{ /* 게시판 드롭다운 */
@@ -122,12 +132,14 @@ nav > .inner a:nth-of-type(3).on {
 .dropdown-content a{
     display : block;
     text-decoration: none;
+    text-align: center;
     font-size: 12px;
     padding : 12px 20px;
 }
 
 .dropdown-content a:hover{
-    background-color : #ececec
+    background-color : #9fdfca;
+    color: white;
 }
 
 .dropdown:hover .dropdown-content {
@@ -180,7 +192,7 @@ nav > .inner a:nth-of-type(3).on {
     flex-direction: column;
     align-items: center;
 }
- /* 메인 페이지 내용 배치 E */
+/* 메인 페이지 내용 배치 E */
 
 /* 콘텐츠 영역 S */
 .content_list {
@@ -193,7 +205,6 @@ nav > .inner a:nth-of-type(3).on {
     width: 300px;
     height: 180px;
 }
-/*버튼을 같은 디자인으로 통일한다면 main.css에 넣어도 될 듯함*/
 
 .container h2 {
     text-align: center;
@@ -243,9 +254,6 @@ footer {
     min-height: 150px;
     width: 100%;
     background: #000;
-    /*position: fixed; !*해당 부분 고정*!*/
-    bottom: 0; /*하단 여백 없이 고정*/
-    width: 100%; /*가로 사이즈를 브라우저에 가득 채우기*/
 }
 
 footer .bottom-bar .bottom1{
@@ -254,7 +262,7 @@ footer .bottom-bar .bottom1{
     justify-content: center;
     font-size: 18px;
     font-weight: bold;
-    padding-top: 40px;
+    padding-top: 30px;
 }
 
 footer .bottom-bar .bottom2{
@@ -276,8 +284,6 @@ footer .bottom-bar .bottom2{
     border-radius: 3px;
 }
 .pagination a.on {
-    /*background: #333;*/
-    /*color: #fff;*/
     background-image: url('../images/1.png');
     background-size: cover;
     background-repeat: no-repeat;
