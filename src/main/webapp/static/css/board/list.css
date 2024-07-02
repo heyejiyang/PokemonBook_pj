@@ -1,6 +1,5 @@
 .page-container{
-    padding : 20px;
-    padding-bottom: 60px;
+    padding: 30px;
     width: calc(100% - 100px);
 }
 
