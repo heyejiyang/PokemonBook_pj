@@ -31,9 +31,9 @@
                 </div>
                 <div class="layout-width inner">
                     <div class="mini_logo">
-                    <img src="${miniLogo1Url}"></div>
+                        <img src="${miniLogo1Url}"></div>
                     <div class="dropdown">
-                        <a onclick="alert('아래의 공지사항 또는 QnA를 선택해주세요')">게시판</a>
+                        <div class="nav_title"><a onclick="alert('아래의 공지사항 또는 QnA를 선택해주세요')">게시판</a></div>
                         <ul class="dropdown-content">
                             <li><a href="<c:url value="/board/list/notice"/>">공지사항</a></li>
                             <li><a href="<c:url value="/board/list/QnA"/>">QnA</a></li>
@@ -41,18 +41,18 @@
                     </div>
                     <div class="mini_logo">
                         <img src="${miniLogo2Url}"></div>
-                    <a href="<c:url value='/pokemon' />">도감</a>
+                    <div class="nav_title"><a href="<c:url value='/pokemon' />">도감</a></div>
                     <util:guestOnly>
                         <div class="mini_logo">
                             <img src="${miniLogo3Url}"></div>
-                        <a href="<c:url value='/member/login' />">
-                            <fmt:message key="로그인" />
-                        </a>
+                    <div class="nav_title"><a href="<c:url value='/member/login' />">
+                        <fmt:message key="로그인" />
+                    </a></div>
                         <div class="mini_logo">
                             <img src="${miniLogo4Url}"></div>
-                        <a href="<c:url value='/member/join' />">
-                            <fmt:message key="회원가입" />
-                        </a>
+                    <div class="nav_title"><a href="<c:url value='/member/join' />">
+                        <fmt:message key="회원가입" />
+                    </a></div>
                     </util:guestOnly>
                         <%--
                    <fmt:message key="LOGIN_MSG">
@@ -60,21 +60,21 @@
                        <fmt:param>${loggedMember.email}</fmt:param>
                    </fmt:message>
                    --%>
-                    <%--
-                    <c:if test="${isLogin}">
-                    --%>
+                        <%--
+                        <c:if test="${isLogin}">
+                        --%>
                     <util:memberOnly>
-                        <div class="mini_logo">
-                            <img src="${miniLogo3Url}"></div>
-                        <a href="<c:url value='/member/mypage' />">
-                            <fmt:message key="마이페이지" />
-                        </a>
-                        <div class="mini_logo">
-                            <img src="${miniLogo4Url}"></div>
-                        <a href="<c:url value='/member/logout' />">
-                            <fmt:message key="로그아웃" />
-                        </a>
-                    </div>
+                    <div class="mini_logo">
+                        <img src="${miniLogo3Url}"></div>
+                    <div class="nav_title"><a href="<c:url value='/member/mypage' />">
+                        <fmt:message key="마이페이지" />
+                    </a></div>
+                    <div class="mini_logo">
+                        <img src="${miniLogo4Url}"></div>
+                    <div class="nav_title"><a href="<c:url value='/member/logout' />">
+                        <fmt:message key="로그아웃" />
+                    </a></div>
+                </div>
                 <div class="right">
                         <c:if test="${isAdmin}">
                             <img src="${logo4Url}" alt="<fmt:message key='로고' />">
@@ -82,19 +82,17 @@
                                 <fmt:message key="사이트_관리" />
                             </a>
                         </c:if>
-                        <c:if test="${!isAdmin}">
-<%--                            <img src="${logo4Url}" alt="<fmt:message key='로고' />">--%>
+                    <c:if test="${!isAdmin}">
                             <a href="<c:url value="${storeUrl}" />" target="_blank">
-<%--                                <fmt:message key="스토어" />--%>
-                         <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
+                                <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
                             </a>
                         </c:if>
-                        </util:memberOnly>
-                    <%--
-                    </c:if>
-                    --%>
-                    </div>
-                </nav>
+                    </util:memberOnly>
+                        <%--
+                        </c:if>
+                        --%>
+                </div>
+            </nav>
         </section>
     </jsp:attribute>
     <jsp:attribute name="footer">
@@ -102,6 +100,8 @@
             <div class="bottom-bar">
                 <div class="bottom1"><img src="${footerUrl}">포켓몬 도감 프로젝트</div>
                 <div class="bottom2">회사 소개 | 사업내용 | 제휴안내 | 이용약관 | 개인정보처리방침 | 이메일무단수집거부 | 고객센터</div>
+                <div class="bottom2">♡이용교 강사님 감사합니다 사랑합니다♡ 이번 프로젝트로 고생하셨습니다♡</div>
+                <div class="bottom2">@중앙 502호 3조@</div>
             </div>
         </section>
     </jsp:attribute>

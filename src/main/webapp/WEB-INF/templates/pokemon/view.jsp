@@ -1,8 +1,23 @@
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<c:set var="heightPoint" value="${data.height * 0.1}" />
+
+<!-- 공부용.
+<fmt:formatNumber value="12341234" type="number"/><br>
+천 단위마다 ','
+<fmt:formatNumber value="1234" type="currency" currencySymbol="$"/><br>
+$ 시작, 천단위마다 ','
+<fmt:formatNumber value="0.35" type="percent"/><br>
+% 표시
+<fmt:formatNumber value="1234.1234" pattern=".00"/><br>
+1234.12 pattern에 표시한 자리수만큼 반올림
+<fmt:parseNumber var="test" value="1234.12" integerOnly="true"/><br>
+${test} 출력시 소수점 이하 버림, 1234
+-->
 
 <c:set var="heightInMeters" value="${data.height * 0.1}" />
 
@@ -30,8 +45,10 @@
                         </c:if>
                     </div>
                     <div class="pokemonCh">
-                        <p class="pokemonHeight"> 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m</p>
-                        <p class="pokemonWeight"> 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg</p>
+                        키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m<br>
+                        몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg<br>
+                        <!-- 키: ${data.height * 0.1}m<br> -->
+                        <!-- 몸무게: ${data.weight}kg<br> -->
                     </div>
                     <div class="p-desc">
                             ${fn:replace(data.description, '\\n', '<br>')}

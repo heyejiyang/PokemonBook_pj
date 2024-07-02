@@ -1,0 +1,77 @@
+.content-box {
+    min-width: 550px;
+    max-width: 700px;
+    min-height: 600px;
+    margin: 50px auto;
+    box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.content-box img {
+    width: 200px;
+}
+
+.logo2 {
+    display: flex;
+    justify-content: center;
+}
+
+.modify-table{
+    border-spacing: 0;
+    padding: 0;
+    font-size: 15px;
+    border-top: 1px solid var(--yellow);
+}
+
+.modify-table th{
+    background: #f1eac8;
+    width: 200px;
+}
+
+.modify-table th,
+.modify-table td{
+    padding: 15px;
+    height: 70px;
+    border: 1px solid var(--yellow);
+    border-top: none;
+}
+
+.modify-table td{
+    width: 300px;
+    border-left: none;
+}
+
+.modify-table input {
+    height: 40px;
+    font-size: 15px;
+}
+
+.button-group {
+    display: flex;
+    justify-content:center;
+    margin-top: 30px;
+}
+
+button {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 0 10px;
+    height: 50px;
+    width: 200px;
+    margin: 0 20px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--yellow);
+    color: black;
+    transition: 0.5s;
+}
