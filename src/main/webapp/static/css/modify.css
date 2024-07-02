@@ -6,7 +6,7 @@
 }
 
 .layout-form {
-    width: 600px;
+    width: 700px;
 }
 
 .modify-title {
@@ -18,7 +18,7 @@
 }
 
 .modify-title h1 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
 }
 
 .modify-title img {
@@ -36,13 +36,13 @@
     width: 600px;
     /*border: 1px solid #ccc;*/
     padding: 10px 20px 10px 10px;
-    background-color: #F6F6F6;
+    background: #E7E7E7;
 }
 
 tr {
 display: flex;
 width: 100%;
-margin-bottom: 10px;
+margin-bottom: 15px;
 justify-content: center;
 font-size:15px;
 }

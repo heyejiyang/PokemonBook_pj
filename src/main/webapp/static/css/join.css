@@ -1,16 +1,108 @@
-.button-group {
-display: flex;
-justify-content:center;
-margin-top: 30px;
+.all-form {
+    margin: 30px 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
 }
 
-button {
+h1 {
+    margin: 10px;
+}
+
+.form-box {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    /*border: 1px solid #414141;*/
+    padding: 10px 20px;
+    background: var(--white);
+}
+
+.join-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 50px 0 50px;
+    height: 70px;
+}
+
+.join-title h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    /*text-align: center;*/
+}
+
+
+.logo {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    width: 180px;
+}
+
+.div{
+    padding: 0 15px;
+    margin: 15px 0;
+}
+
+dt {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+dd {
+    margin-bottom: 10px;
+}
+
+.dd input {
+    height: 40px;
+    width: 95%;
+    cursor: pointer;
+
+}
+
+.terms {
+    font-size: 1.2rem;
+}
+
+.tit, .agree-check {
+    font-weight: bold;
+}
+
+.termsContent {
+    font-size: 13px;
+    border: 1px solid #A2A2A2;
+    margin: 5px 0 10px;
+    line-height: 2;
+    padding: 5px;
+}
+
+input[type=checkbox] {
+    transform : scale(1.5);
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 20px;
+}
+
+.button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
     width: 200px;
-    margin: 0 20px;
     background: var(--blue);
     font-size: 1.2rem;
-        color: #fff;
+    margin: 20px 0;
+    cursor: pointer;
+    transform: skew(-20deg);
+}
+
+.button > p {
+    transform: skew(20deg);
+    color: #fff;
 }

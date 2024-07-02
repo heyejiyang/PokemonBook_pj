@@ -19,7 +19,7 @@
 
 
 .mypage-title h1 {
-    font-size: 1.35rem;
+    font-size: 1.5rem;
 }
 
 .mypage-title img {
@@ -39,11 +39,11 @@
     border: 1px solid #ccc;
     padding: 10px;
     text-align: center;
-    background-color: #fff;
+    background: #fff;
 }
 
 th{
-    background: #F6F6F6;
+    background: #E7E7E7;
     color: #000;
 }
 

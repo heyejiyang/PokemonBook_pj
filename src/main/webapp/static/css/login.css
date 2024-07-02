@@ -6,6 +6,10 @@
     height: 700px;
 }
 
+h1 {
+    margin: 10px;
+}
+
 .form-box {
     display: block;
     align-items: center;
@@ -54,16 +58,6 @@
 .save-email {
     font-size: 1.2rem;
 }
-
-
-.email {
-
-}
-
-.pw {
-
-}
-
 
 input[type=checkbox] {
     transform : scale(1.5);
