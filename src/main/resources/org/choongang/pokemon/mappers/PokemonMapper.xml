@@ -7,7 +7,6 @@
         <result column="SEQ" property="seq" />
         <result column="NUM" property="num" />
         <result column="NAME" property="name" />
-        <result column="NAME_KR" property="nameKr" />
         <result column="WEIGHT" property="weight" />
         <result column="HEIGHT" property="height" />
         <result column="BASE_EXPERIENCE" property="baseExperience" />
@@ -16,6 +15,7 @@
         <result column="PIXEL_FRONT_IMAGE" property="pixelFrontImage" />
         <result column="PIXEL_BACK_IMAGE" property="pixelBackImage" />
         <result column="RAW_DATA" property="rawData" />
+        <result column="NAME_KR" property="nameKr" />
         <result column="DESCRIPTION" property="description" />
         <result column="TYPE1" property="type1" />
         <result column="TYPE2" property="type2" />
@@ -23,23 +23,23 @@
 
     <insert id="register">
         INSERT INTO POKEMON (SEQ, NAME, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, PIXEL_FRONT_IMAGE, PIXEL_BACK_IMAGE, RAW_DATA, NAME_KR, DESCRIPTION, TYPE1, TYPE2)
-        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{pixelFrontImage}, #{pixelBackImage},#{rawData}, #{nameKr}, #{description}, #{type1}, #{type2})
+        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{pixelFrontImage}, #{pixelBackImage}, #{rawData}, #{nameKr}, #{description}, #{type1}, #{type2})
     </insert>
 
     <select id="get" resultMap="pokemonMap">
-        SELECT P.SEQ, ROWNUM NUM, P.NAME, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P WHERE P.seq=#{seq}
+        SELECT P.SEQ, ROWNUM NUM, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P WHERE P.seq=#{seq}
     </select>
 
     <select id="getList" resultMap="pokemonMap">
 
-        SELECT * FROM (SELECT P.SEQ, ROWNUM NUM, P.NAME, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P
+        SELECT * FROM (SELECT ROWNUM NUM, P.* FROM POKEMON P
         <where>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
-                 P.NAME_KR  LIKE #{keyword}
+                P.NAME_KR  LIKE #{keyword}
             </if>
         </where>
-        ORDER BY P.SEQ
+        ORDER BY P.seq
         ) P2
         <if test="skey == null or skey == ''">
             WHERE
@@ -48,7 +48,27 @@
         ]]>
         </if>
     </select>
+    <!--    <select id="getList" resultMap="pokemonMap">-->
 
+    <!--        SELECT * FROM (SELECT P.SEQ, ROWNUM NUM, P.NAME, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P-->
+    <!--        <where>-->
+    <!--            <if test="skey != null and !skey.equals('')">-->
+    <!--                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>-->
+
+    <!--                 P.NAME_KR  LIKE #{keyword}-->
+
+
+    <!--            </if>-->
+    <!--        </where>-->
+    <!--        ORDER BY P.seq-->
+    <!--        ) P2-->
+    <!--        <if test="skey == null or skey == ''">-->
+    <!--            WHERE-->
+    <!--            <![CDATA[-->
+    <!--            P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}-->
+    <!--        ]]>-->
+    <!--        </if>-->
+    <!--    </select>-->
     <!-- 포켓몬 랜덤 조회 -->
     <select id="getRandom" resultMap="pokemonMap">
         <![CDATA[
