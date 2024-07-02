@@ -45,6 +45,9 @@
     <button type="button">
         <a href="#" alt="<fmt:message key="작성글_조회하기" />">작성글 조회하기</a>
     </button>
+    <button type="button">
+        <a href="<c:url value='/pokemon/mypokemon' />" alt="myPokemon">내 포켓몬 조회하기</a>
+    </button>
 </div>
 </section>
 </layout:main>

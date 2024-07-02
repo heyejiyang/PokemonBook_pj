@@ -3,6 +3,15 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
 <layout:main>
+
+<div class="mypokemon-buttons">
+    <button type="button">
+        <a href="<c:url value='/pokemon/gacha' />" alt="TodayPokemon">오늘의 포켓몬 뽑기!</a>
+    </button>
+    <button type="button">
+        <a href="#" alt="MyPokemon" />내 포켓몬 조회</a>
+    </button>
+</div>
 <ul class="pokemon-list">
         <c:if test="${items == null || items.isEmpty()}">
             <li class='no-data'>조회된 포켓몬이 없습니다.</li>

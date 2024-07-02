@@ -7,11 +7,10 @@ import org.choongang.global.Pagination;
 import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.member.MemberUtil;
-import org.choongang.member.controllers.RequestJoin;
 import org.choongang.member.entities.Member;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
-import org.choongang.pokemon.services.PokemonGachaService;
+import org.choongang.pokemon.services.MyPokemonService;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
@@ -25,7 +24,8 @@ public class PokemonController {
     private final PokemonInfoService infoService;
     private final HttpServletRequest request;
     private final MemberUtil memberUtil;
-    private final PokemonGachaService pokemonGachaService;
+    private final MyPokemonService pokemonService;
+
 
     @GetMapping
     public String index(PokemonSearch search) { // PokemonSearch는 검색 조건을 담는 객체
@@ -97,22 +97,8 @@ public class PokemonController {
         return "pokemon/gacharesult";
     }
 
-//    @PostMapping("/save")
-//    public String save(@RequestParam("seq") long seq){
-//        if(!memberUtil.isLogin()) {
-//            throw new UnAuthorizedException();
-//        }
-//
-//        Member member = memberUtil.getMember();
-//        PokemonGachaService form = new PokemonGachaService();
-//        form.setMyPokemonSeq(seq);
-//        form.setUserName(member.getUserName());
-//        profileService.update(form);
-//
-//        String script = "parent,parent.location.reload();";
-//        request.setAttribute("script", script);
-//        return "commons/execute_script";
-//    }
+
+
 
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.

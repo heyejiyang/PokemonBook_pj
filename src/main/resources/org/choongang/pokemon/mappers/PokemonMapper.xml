@@ -85,5 +85,23 @@
             </if>
         </where>
     </select>
+    <!-- 마이 포켓몬 목록 조회-->
+    <select id="getMyPokemons" resultMap="pokemonMap">
+        SELECT P.SEQ, ROWNUM NUM, P.NAME, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE, P.RAW_DATA, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM MY_POKEMON M
+        INNER JOIN POKEMON P ON M.SEQ = P.SEQ
+        WHERE M.USER_NO=#{userNo} ORDER BY P.SEQ
+    </select>
+
+    <insert id="registerMyPokemon">
+        INSERT INTO MY_POKEMON (USER_NO, SEQ, NICKNAME) VALUES (#{userNo}, #{seq}, #{nickname})
+    </insert>
+
+    <delete id="deleteMyPokemon">
+        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo} AND SEQ=#{seq}
+    </delete>
+
+    <delete id="deleteAllMyPokemon">
+        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo}
+    </delete>
 
 </mapper>
