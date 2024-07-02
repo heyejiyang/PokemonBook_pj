@@ -22,24 +22,34 @@ public class DispatcherServlet extends HttpServlet  {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
+        if (check(request)) {
+            bc.setLoaded(false);
+        }
+
         bc.addBean(HttpServletRequest.class.getName(), request);
         bc.addBean(HttpServletResponse.class.getName(), response);
         bc.addBean(HttpSession.class.getName(), request.getSession());
 
         bc.loadBeans();
 
+        if (check(request)) {
+            bc.setLoaded(true);
+        }
+
         RouterService service = bc.getBean(RouterService.class);
         service.route(request, response);
     }
 
-    /*
-    * css, js, image 파일 요청이 아닌지 체크
-    *
-    * @param request
-    * @return
-    * */
+    /**
+     * css, js, image 파일 요청이 아닌지 체크
+     *
+     * @param request
+     * @return
+     */
     private boolean check(HttpServletRequest request) {
-        String uri = request.getRequestURI();
-        List<String> excludeExtensions = List.of(".css", ".js", ".png", ".jpg",)
+        String uri = request.getRequestURI().toLowerCase();
+        List<String> excludeExtensions = List.of(".css", ".js", ".png", ".jpg", ".jpeg", ".gif");
+
+        return excludeExtensions.stream().noneMatch(s -> uri.endsWith(s));
     }
 }

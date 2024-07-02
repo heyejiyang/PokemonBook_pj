@@ -62,7 +62,7 @@ public class   PokemonInfoServiceTest {
             service.update(1);
         });
     }
-// 커밋용 주석
+
     @Test
     @DisplayName("포켓몬 데이터 일괄 업데이트 테스트")
     void updateAllTest() {
