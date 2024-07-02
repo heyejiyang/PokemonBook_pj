@@ -9,6 +9,16 @@
 .boardTitle img {
     vertical-align: middle; /* 이미지를 가운데 정렬 */
     margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+    margin-left: 10px;
+}
+
+.boardTitle h1{
+    font-size: 4.0rem;
+}
+.do-hyeon-regular {
+    font-family: "Do Hyeon", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
 .location{
@@ -24,6 +34,14 @@
 }
 
 /* 메인 푸터 검색창 */
+.search-container {
+   background-color: #2c2c2c;
+   padding: 10px;
+   max-width: 100%;
+   margin: 0 auto;
+   text-align: center;
+}
+
 .board_search_box {
     margin: 50px 0 30px 0;
     text-align: center;
@@ -60,7 +78,7 @@
 }
 
 .board_search_box button {
-    background: #000; /* 배경색을 검정으로 설정 */
+    background: #d1180b; /* 배경색을 검정으로 설정 */
     font-size: 13px;
     font-weight: bold;
     height: 34px;
@@ -71,9 +89,7 @@
     cursor: pointer;
     border: 0;
     border-radius: 4px; /* 버튼 모서리를 둥글게 설정 */
-}
-.board_search_box button em {
-    color: #FFF; /* 글자색을 흰색으로 설정 */
+    color: #FFF;
 }
 
 select {

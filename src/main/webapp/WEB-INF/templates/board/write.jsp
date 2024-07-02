@@ -4,6 +4,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="listLink" value="/board/list/${board.BId}" />
 <c:url var="actionUrl" value="/board/save" />
+<%--추가, 수정 모두 /board/save 로 유입--%>
 
 <layout:main title="${board.BName}">
     <section class="layout-width">
