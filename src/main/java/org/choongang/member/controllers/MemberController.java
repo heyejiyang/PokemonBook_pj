@@ -109,4 +109,14 @@ public class MemberController {
 
         return "commons/execute_script";
     }
+
+
+    //마이보드 작성글 조회, 오류 발생 시 지워주세요..
+    @GetMapping("/myboard")
+    public String myboard(RequestMyboard form, HttpServletRequest request) {
+        request.setAttribute("form", form);
+        request.setAttribute("addCss", List.of("myboard"));
+
+        return "member/myboard";
+    }
 }
