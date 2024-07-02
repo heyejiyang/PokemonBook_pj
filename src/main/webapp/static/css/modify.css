@@ -33,10 +33,10 @@
 
 .modify-table {
     border-spacing: 0;
-    width: 700px;
+    width: 800px;
     height: 300px;
     /*border: 1px solid #ccc;*/
-    padding: 40px 40px 50px 30px;
+    padding: 40px 80px 50px 30px;
     background: #EDF3E9;
 }
 
@@ -56,6 +56,7 @@ display: flex;
     height: 35px;
     text-align: center;
     justify-content: center;
+    padding: 0 10px 0 50px;
 }
 
 .modify-table tr:last-of-type {
@@ -76,13 +77,12 @@ td {
     width: 70%;
     display:flex;
     justify-content: center;
-
+    padding: 0;
 }
 
 td, th {
-        padding: 0px;
-        /*border: 1px solid #ccc;*/
-        }
+    /*border: 1px solid #ccc;*/
+}
 
 .buttons {
     display: flex;
