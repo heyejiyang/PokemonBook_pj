@@ -38,37 +38,37 @@
     min-width: 90px;
     border: 1px solid #eeeeee;
 }
-/*.pagination-container {*/
-/*    justify-content: center;*/
-/*    margin-top: 20px;*/
-/*    display: flex;*/
-/*}*/
+.pagination-container {
+    justify-content: center;
+    margin-top: 20px;
+    display: flex;
+}
 
-/*.pagination__button {*/
-/*    display: inline-block;*/
-/*    box-sizing: border-box;*/
-/*    width: 40px;*/
-/*    height: 40px;*/
-/*    line-height: 40px;*/
-/*    text-align: center;*/
-/*    cursor: pointer;*/
-/*    color: #4a4a4a;*/
-/*    font-size: 15px;*/
-/*    margin-right: 10px;*/
-/*    text-decoration: none;*/
-/*}*/
+.pagination__button {
+    display: inline-block;
+    box-sizing: border-box;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    cursor: pointer;
+    color: #4a4a4a;
+    font-size: 15px;
+    margin-right: 10px;
+    text-decoration: none;
+}
 
-/*.pagination__button--prev, .pagination__button--next {*/
-/*    width: 40px;*/
-/*    padding: 0;*/
-/*}*/
+.pagination__button--prev, .pagination__button--next {
+    width: 40px;
+    padding: 0;
+}
 
-/*.pagination__button--active {*/
-/*    background-image: url('../../images/1.png'); !* 이미지 경로 설정 *!*/
-/*    background-size: cover; !* 이미지가 버튼 영역을 채우도록 설정 *!*/
-/*    background-repeat: no-repeat; !* 이미지 반복 없음 *!*/
-/*    background-position: center center; !* 이미지를 가운데 정렬 *!*/
-/*    opacity: 1.0; !* 투명도 설정 (0.0부터 1.0까지) *!*/
-/*    color: white; !* 글자색은 반드시 보이게 하기 위해 설정 *!*/
-/*}*/
+.pagination__button--active {
+    background-image: url('../../images/1.png'); /* 이미지 경로 설정 */
+    background-size: cover; /* 이미지가 버튼 영역을 채우도록 설정 */
+    background-repeat: no-repeat; /* 이미지 반복 없음 */
+    background-position: center center; /* 이미지를 가운데 정렬 */
+    opacity: 1.0; /* 투명도 설정 (0.0부터 1.0까지) */
+    color: white; /* 글자색은 반드시 보이게 하기 위해 설정 */
+}
 
