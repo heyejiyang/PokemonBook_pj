@@ -1,7 +1,6 @@
 /* 메인 레이아웃 공통 */
 .layout-width {
     min-width: 800px;
-    max-width: 1300px;
     margin: 0 auto;
 }
 
