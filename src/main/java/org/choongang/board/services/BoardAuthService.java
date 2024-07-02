@@ -1,7 +1,10 @@
 package org.choongang.board.services;
 
+import jakarta.servlet.RequestDispatcher;
+import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 import org.choongang.board.constants.Authority;
@@ -15,6 +18,7 @@ import org.choongang.global.config.containers.BeanContainer;
 import org.choongang.global.exceptions.AlertBackException;
 import org.choongang.global.exceptions.AlertRedirectException;
 import org.choongang.member.MemberUtil;
+import org.mindrot.jbcrypt.BCrypt;
 
 import java.util.List;
 import java.util.Objects;
@@ -43,7 +47,7 @@ public class BoardAuthService {
 
         mode = Objects.requireNonNullElse(mode, "");
         HttpServletRequest request = BeanContainer.getInstance().getBean(HttpServletRequest.class);
-
+        HttpServletResponse response = BeanContainer.getInstance().getBean(HttpServletResponse.class);
         board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
         if(seq > 0L){ // 게시글이 없는 경우 조회
@@ -67,14 +71,31 @@ public class BoardAuthService {
             throw new AlertRedirectException("관리자 전용 게시판입니다.", redirectUrl, HttpServletResponse.SC_UNAUTHORIZED);
         }
 
-        boolean isEditable = false; //true -> 수정, 삭제 가능 / 관리자는 전부 가능
-        if(memberUtil.isAdmin() || (boardData != null && memberUtil.isLogin() && boardData.getMemberSeq() == memberUtil.getMember().getUserNo())){
-            isEditable = true;
-        }
+        if(List.of("update", "delete").contains(mode)) {
+            boolean isEditable = false; //true -> 수정, 삭제 가능 / 관리자는 전부 가능
+            if (memberUtil.isAdmin() || boardData.getMemberSeq() == 0L || (boardData != null && memberUtil.isLogin() && boardData.getMemberSeq() == memberUtil.getMember().getUserNo())) {
+                isEditable = true;
+            }
 
-        if(List.of("update", "delete").contains(mode) && !isEditable){
-            String strMode = mode.equals("update") ? "수정" : "삭제";
-            throw new AlertBackException(strMode + "권한이 없습니다.", HttpServletResponse.SC_UNAUTHORIZED);
+            if (!isEditable) {
+                String strMode = mode.equals("update") ? "수정" : "삭제";
+                throw new AlertBackException(strMode + "권한이 없습니다.", HttpServletResponse.SC_UNAUTHORIZED);
+            }
+
+
+            // 비회원 게시글 수정, 삭제 권한 체크
+            HttpSession session = BeanContainer.getInstance().getBean(HttpSession.class);
+            if (boardData.getMemberSeq() == 0L) {
+                String authKey = "board_" + boardData.getSeq(); //키값이 존재하면 인증 OK (null 이면 인증X)
+                if (session.getAttribute(authKey) == null) { //비회원 인증X
+                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/templates/board/password.jsp");
+                    try {
+                        rd.forward(request, response);
+                    } catch (Exception e) {
+
+                    }
+                }
+            }
         }
     }
     /*
@@ -98,5 +119,23 @@ public class BoardAuthService {
         }
 
         check(boardData.getBId(), seq, mode);
+    }
+
+    /**
+     * 비회원 게시글 비밀번호 체크
+     * @param seq
+     * @param password
+     * */
+    public boolean passwordCheck(long seq, String password){
+        if(boardData == null){
+            boardData = infoService.get(seq).orElseThrow(BoardNotFoundException::new);
+        }
+        if(boardData.getMemberSeq() == 0L){ // 비회원 게시글 체크
+            String guestPassword = boardData.getGuestPassword();
+
+            return BCrypt.checkpw(password, guestPassword);//비회원 비밀번호 검증(입력한 PW, 저장된 PW)
+        }
+
+        return false;
     }
 }

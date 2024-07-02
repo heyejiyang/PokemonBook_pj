@@ -21,8 +21,9 @@ public class DispatcherServlet extends HttpServlet  {
         BeanContainer bc = BeanContainer.getInstance();
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
-
-        if(check(request)){
+        bc.setLoaded(true);
+        //System.out.println("check1" + check(request));
+        if (check(request)) {
             bc.setLoaded(false);
         }
 
