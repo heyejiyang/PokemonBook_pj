@@ -12,6 +12,7 @@ import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.exceptions.BoardNotFoundException;
+import org.choongang.board.exceptions.GuestPasswordCheckException;
 import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.config.annotations.Service;
 import org.choongang.global.config.containers.BeanContainer;
@@ -50,7 +51,7 @@ public class BoardAuthService {
         HttpServletResponse response = BeanContainer.getInstance().getBean(HttpServletResponse.class);
         board = configInfoService.get(bId).orElseThrow(BoardConfigNotFoundException::new);
 
-        if(seq > 0L){ // 게시글이 없는 경우 조회
+        if(List.of("update", "delete").contains(mode) && seq > 0L){ // 게시글이 없는 경우 조회
             boardData = infoService.get(seq).orElseThrow(BoardNotFoundException::new);
         }
 
@@ -87,13 +88,10 @@ public class BoardAuthService {
             HttpSession session = BeanContainer.getInstance().getBean(HttpSession.class);
             if (boardData.getMemberSeq() == 0L) {
                 String authKey = "board_" + boardData.getSeq(); //키값이 존재하면 인증 OK (null 이면 인증X)
-                if (session.getAttribute(authKey) == null) { //비회원 인증X
-                    RequestDispatcher rd = request.getRequestDispatcher("/WEB-INF/templates/board/password.jsp");
-                    try {
-                        rd.forward(request, response);
-                    } catch (Exception e) {
 
-                    }
+                if (session.getAttribute(authKey) == null) { //비회원 인증X
+                    request.setAttribute("seq", boardData.getSeq());
+                    throw new GuestPasswordCheckException();
                 }
             }
         }

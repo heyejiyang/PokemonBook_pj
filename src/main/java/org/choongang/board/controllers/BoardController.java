@@ -8,6 +8,7 @@ import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardConfigNotFoundException;
 import org.choongang.board.exceptions.BoardNotFoundException;
+import org.choongang.board.exceptions.GuestPasswordCheckException;
 import org.choongang.board.services.BoardAuthService;
 import org.choongang.board.services.BoardDeleteService;
 import org.choongang.board.services.BoardInfoService;
@@ -16,6 +17,7 @@ import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.ListData;
 import org.choongang.global.config.annotations.*;
 import org.choongang.global.exceptions.AlertException;
+import org.choongang.global.exceptions.ExceptionHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,6 +113,11 @@ public class BoardController {
 
     @PostMapping("/password")
     public String password(@RequestParam("seq") long seq, @RequestParam("password") String password, HttpSession session){
+
+        if(password == null || password.isBlank()){
+            throw new AlertException("비밀번호를 입력하세요.", HttpServletResponse.SC_BAD_REQUEST);
+        }
+
         if(!authService.passwordCheck(seq, password)){//비회원 비밀번호가 일치하지 않는 경우
             throw new AlertException("비밀번호가 일치하지 않습니다.", HttpServletResponse.SC_BAD_REQUEST);
         }
@@ -176,5 +183,10 @@ public class BoardController {
         commonProcess(bId,mode);
 
         request.setAttribute("data", boardData);
+    }
+
+    @ExceptionHandler(GuestPasswordCheckException.class)
+    public String guestPassword(){
+        return "board/password";
     }
 }
