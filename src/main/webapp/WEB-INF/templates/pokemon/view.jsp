@@ -22,6 +22,13 @@ ${test} 출력시 소수점 이하 버림, 1234
 <c:set var="heightInMeters" value="${data.height * 0.1}" />
 
 <layout:main title="${data.nameKr}">
+    <div class="navigation-arrows">
+        <c:if test="${data.seq > 1}">
+        </c:if>
+        <c:if test="${data.seq > 1}">
+        </c:if>
+        <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow"></a>
+        <a href="<c:url value='/pokemon/view/${data.seq + 1}' />" class="arrow right-arrow"></a>
 </div>
 <div class="viewWrap">
     <section class="pokemon-view">
@@ -45,8 +52,10 @@ ${test} 출력시 소수점 이하 버림, 1234
                 </c:if>
             </div>
             <div class="pokemonCh">
-                키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m<br>
-                몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg<br>
+                <p class="pokemonHeight"> 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m</p>
+                <p class="pokemonWeight"> 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg</p>
+                <!-- 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m<br> -->
+                <!-- 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg<br> -->
                 <!-- 키: ${data.height * 0.1}m<br> -->
                 <!-- 몸무게: ${data.weight}kg<br> -->
             </div>

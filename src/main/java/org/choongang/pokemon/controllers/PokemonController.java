@@ -8,6 +8,7 @@ import org.choongang.global.config.annotations.*;
 import org.choongang.member.controllers.RequestJoin;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
+import org.choongang.pokemon.mappers.MyPokemonService;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class PokemonController {
 
     private final PokemonInfoService infoService;
     private final HttpServletRequest request;
+    private final MyPokemonService pokemonService;
 
     @GetMapping
     public String index(PokemonSearch search) { // PokemonSearch는 검색 조건을 담는 객체
@@ -89,6 +91,8 @@ public class PokemonController {
 
         return "pokemon/gacharesult";
     }
+
+
 
 
 

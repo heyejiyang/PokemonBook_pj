@@ -87,3 +87,58 @@
         font-size: 18px;
         font-weight: bold;
     }
+
+
+
+    .navigation-arrows {
+        display: flex;
+        justify-content: space-between;
+        margin: 20px;
+    }
+
+    .arrow {
+        font-size: 2rem;
+        color: #333;
+        text-decoration: none;
+        padding: 10px;
+        transition: color 0.3s, transform 0.3s;
+        position: relative;
+    }
+
+    .arrow::before,
+    .arrow::after {
+        content: '';
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        background: #333;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(45deg);
+        transition: background 0.3s, transform 0.3s;
+    }
+
+    .arrow::after {
+        transform: translate(-50%, -50%) rotate(-45deg);
+    }
+
+    .left-arrow::before,
+    .left-arrow::after {
+        transform-origin: left;
+    }
+
+    .right-arrow::before,
+    .right-arrow::after {
+        transform-origin: right;
+    }
+
+    .arrow:hover {
+        color: #ff5722;
+        transform: scale(1.2);
+    }
+
+    .arrow:hover::before,
+    .arrow:hover::after {
+        background: #ff5722;
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
