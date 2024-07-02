@@ -33,7 +33,7 @@
                     <div class="mini_logo">
                     <img src="${miniLogo1Url}"></div>
                     <div class="dropdown">
-                        <a href="#">게시판</a>
+                        <a onclick="alert('아래의 공지사항 또는 QnA를 선택해주세요')">게시판</a>
                         <ul class="dropdown-content">
                             <li><a href="<c:url value="/board/list/notice"/>">공지사항</a></li>
                             <li><a href="<c:url value="/board/list/QnA"/>">QnA</a></li>
