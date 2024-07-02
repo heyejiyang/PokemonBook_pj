@@ -8,6 +8,7 @@ import org.choongang.pokemon.entities.api.Type;
 import org.choongang.pokemon.mappers.PokemonMapper;
 
 import java.util.List;
+import java.util.Objects;
 
 @Service
 @RequiredArgsConstructor
@@ -25,7 +26,8 @@ public class PokemonSaveService {
                 .weight(data.getWeight())
                 .baseExperience(data.getBase_experience())
                 .frontImage(data.getSprites().getOther().getOfficial_artwork().getFront_default())
-                .backImage(data.getSprites().getOther().getDream_world().getBack_default())
+                .backImage(Objects.requireNonNullElse(data.getSprites().getOther().getDream_world().getBack_default(), ""))
+                //null일 경우 대체한다.
                 .pixelFrontImage(data.getSprites().getFront_default())
                 .pixelBackImage(data.getSprites().getBack_default())
                 .rawData(data.getRawData())

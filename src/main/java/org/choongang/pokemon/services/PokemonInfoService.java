@@ -176,7 +176,7 @@ public class PokemonInfoService {
         //Thread th = new Thread(() -> {
         PokemonSearch search = new PokemonSearch();
         search.setPage(1);
-        search.setLimit(25);
+        search.setLimit(1000);
         List<Item> items = getApiList(search);
         items.forEach(item -> {
             String url = item.getUrl();

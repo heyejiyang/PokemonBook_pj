@@ -4,7 +4,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
 <layout:main title="${data.nameKr}">
-
+</div>
 <div class="viewWrap">
     <section class="pokemon-view">
         <div class="separate">
@@ -18,22 +18,23 @@
                        ${data.nameKr}
                 </span>
             </div>
-            <div class="p-desc">
-                ${fn:replace(data.description, '\\n', '<br>')}
+            <div class="p-type">
+                <c:if test="${not empty data.type1}">
+                    <img src="<c:url value='/images/type/${data.type1}.png' />" alt="${data.type1}" />
+                </c:if>
+                <c:if test="${not empty data.type2}">
+                    <img src="<c:url value='/images/type/${data.type2}.png' />" alt="${data.type2}" />
+                </c:if>
             </div>
             <div class="pokemonCh">
-                키: ${data.height*0.1}m<br>
-                몸무게: ${data.weight}kg<br>
+                <p class="pokemonHeight">키: ${data.height*0.1}m</p>
+                <p class="pokemonWeight">몸무게: ${data.weight}kg</p>
             </div>
-            <div class="p-type">
-                    속성:
-        <c:if test="${not empty data.type1}">
-            <img src="<c:url value='/images/type/${data.type1}.png' />" alt="${data.type1}" />
-        </c:if>
-        <c:if test="${not empty data.type2}">
-            <img src="<c:url value='/images/type/${data.type2}.png' />" alt="${data.type2}" />
-        </c:if>
-            </div>
+            <div class="p-desc">
+                ${fn:replace(data.description, '\\n', '<br>')}
+            </div><br>
+
+            <div class="imageExplain">게임 속 이미지 </div>
             <div class="pixel">
             <img src="${data.pixelFrontImage}" alt="${item.nameKr}">
             <img src="${data.pixelBackImage}" alt="${item.nameKr}">
@@ -46,7 +47,5 @@
               </a>
          </div>
     </section>
-
-
 </div>
 </layout:main>
