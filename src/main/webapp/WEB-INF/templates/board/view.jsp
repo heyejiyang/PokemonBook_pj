@@ -29,18 +29,16 @@
                 ${data.content}
             </div>
             <div class="btn-group">
-<%--                <button type="button" class="btn" onclick="location.href='${updateUrl}'">수정하기</button>--%>
-    <a class="btn" href="<c:url value="/board/write/${data.BId}"/>">글쓰기</a>
-    <a class="btn" href="<c:url value="/board/update/${data.seq}"/>">수정하기</a>
-    <a class="btn" href="<c:url value="/board/delete/${data.seq}"/>" onclick="return alert('정말 삭제하시겠습니까?');">삭제하기</a>
-    <a class="btn" href="<c:url value="/board/list/${data.BId}"/>">목록으로가기</a>
-<%--                <button type="button" class="btn" onclick="location.href='${actionUrl}'">목록으로 가기</button>--%>
+                <a class="btn" href="<c:url value="/board/write/${data.BId}"/>">글쓰기</a>
+                <a class="btn" href="<c:url value="/board/update/${data.seq}"/>">수정하기</a>
+                <a class="btn" href="<c:url value='/board/delete/${data.seq}' />" onclick="return confirm('정말 삭제하시겠습니까?');">삭제하기</a>
+                <a class="btn" href="<c:url value="/board/list/${data.BId}"/>">목록으로가기</a>
             </div>
         </div>
     </section>
 
     <c:if test="${items != null && !items.isEmpty()}">
-        <section>
+        <section class="view-page">
             <jsp:include page="list_main.jsp"/>
         </section>
     </c:if>

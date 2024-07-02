@@ -1,11 +1,9 @@
 package org.choongang.board.services;
 
-
 import lombok.RequiredArgsConstructor;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.exceptions.BoardNotFoundException;
 import org.choongang.board.mappers.BoardDataMapper;
-import org.choongang.board.services.config.BoardConfigInfoService;
 import org.choongang.global.config.annotations.Service;
 
 @Service
@@ -15,10 +13,11 @@ public class BoardDeleteService {
     private final BoardInfoService infoService;
     private final BoardAuthService authService;
 
-    public void delete(long seq){
+    public void delete(long seq) {
+
         BoardData data = infoService.get(seq).orElseThrow(BoardNotFoundException::new);
         authService.setBoardData(data);
-        authService.check(seq,"delete");
+        authService.check(seq, "delete");
 
         mapper.delete(seq);
     }
