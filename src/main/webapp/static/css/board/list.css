@@ -1,8 +1,26 @@
+.page-container{
+    padding : 20px;
+    padding-bottom: 60px;
+    width: calc(100% - 100px);
+}
+
 .notice-table {
+    width: 100%;
+    margin: 3px 0 20px 0;
+    /*border-top: 2px solid #191919;*/
+    border-spacing: 0;
+    border-collapse: collapse;
+    text-align: center;
+    /*
     width: 100%;
     border-collapse: collapse;
     margin: 0 auto; /* 가운데 정렬을 위한 margin 설정 */
 }
+.notice-table
+.notice-table td:first-child, .table th:first-child{ width:5% }
+.notice-table td:nth-child(2), .table th:nth-child(2){ width:60% }
+.notice-table td:nth-child(3), .table th:nth-child(3){ width:15% }
+.notice-table td:nth-child(4), .table th:nth-child(4){ width:15% }
 
 .notice-table th, .notice-table td {
     border: 1px solid #ddd;
@@ -11,20 +29,24 @@
 }
 
 .notice-table th {
-    background-color: #f2f2f2;
-    color: #333;
+    background-color: #000;
+    color: #fff;
 }
 
-.page-container{
-    padding-right: 0;
-    padding-left: 0;
-}
 
-/* btn_right_box를 table-container와 함께 정렬 */
+/* btn_right_box를 table-container와 함께 정렬(table-container 삭제) */
 .table-container {
     width: calc(100% - 100px); /* 원하는 너비로 설정 */
     margin: 0 auto;
     text-align: right; /* 내부 요소들을 오른쪽 정렬 */
+}
+
+.tab-category .category-hover:hover{
+    color: red;
+}
+
+.tab-category {
+    text-align: left;
 }
 
 .btn_right_box {
