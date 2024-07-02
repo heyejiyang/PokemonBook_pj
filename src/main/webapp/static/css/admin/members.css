@@ -17,13 +17,13 @@ main > .main-content h1 {
 .member_list {
     text-align: center;
     display: flex;
+    flex-direction: column;
     justify-content: center;
 }
 
 .member_list_table{
     border-spacing: 0;
     padding: 0;
-    width: 90%;
     font-size: 15px;
 }
 
@@ -39,3 +39,15 @@ main > .main-content h1 {
 }
 
 /* 내용 영역 E */
+
+.pagination {
+    margin: 20px 0;
+    font-size: 15px;
+}
+
+.pagination a {
+    border: 3px solid var(--yellow);
+    color: #555;
+    padding: 8px;
+    border-radius: 20px;
+}

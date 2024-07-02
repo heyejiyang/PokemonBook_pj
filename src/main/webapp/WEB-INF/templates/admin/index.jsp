@@ -21,6 +21,7 @@
             <th>이름</th>
             <th>등급</th>
             <th>가입날짜</th>
+            <th>회원탈퇴</th>
             </thead>
             <tbody>
             <c:if test="${items != null && !items.isEmpty()}">
@@ -30,11 +31,12 @@
                         <td>${item.userName}</td>
                         <td>${item.userType}</td>
                         <td><c:out value="${item.regDt.format(DateTimeFormatter.ofPattern('yyyy-MM-dd'))}"/></td>
+                        <td><button class="delete" type="submit">삭제</button></td>
                     </tr>
                 </c:forEach>
             </c:if>
             </tbody>
         </table>
-        <util:pagination />
+        <div class="pagination"><util:pagination /></div>
     </div>
 </layout:admin>
