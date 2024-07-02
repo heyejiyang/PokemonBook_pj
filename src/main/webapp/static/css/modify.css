@@ -14,7 +14,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 10px;
+    margin: 20px 0 20px;
 }
 
 .modify-title h1 {
@@ -33,18 +33,20 @@
 
 .modify-table {
     border-spacing: 0;
-    width: 600px;
+    width: 700px;
+    height: 300px;
     /*border: 1px solid #ccc;*/
-    padding: 10px 20px 10px 10px;
-    background: #E7E7E7;
+    padding: 40px 40px 50px 30px;
+    background: #D8D8D8;
 }
 
 tr {
-display: flex;
-width: 100%;
-margin-bottom: 15px;
-justify-content: center;
-font-size:15px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 35px;
 }
 
 th{
@@ -70,11 +72,11 @@ span {
 }
 
 
-
 td {
-width: 70%;
-display:flex;
-justify-content: center;
+    width: 70%;
+    display:flex;
+    justify-content: center;
+
 }
 
 td, th {
