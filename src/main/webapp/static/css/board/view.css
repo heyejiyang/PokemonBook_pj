@@ -61,13 +61,17 @@
     background-color: var(--yellow);
 }
 
+
 .view-page .page-container{
     margin-bottom: 0;
+    width: calc(100% - 100px);
+    /*text-align: center;*/
 }
 
 .view-page .notice-table {
     width: 50%;
     border-collapse: collapse;
+    text-align: center;
 }
 
 .view-page .notice-table th,

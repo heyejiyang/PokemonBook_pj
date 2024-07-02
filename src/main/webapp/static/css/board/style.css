@@ -9,6 +9,7 @@
 .boardTitle img {
     vertical-align: middle; /* 이미지를 가운데 정렬 */
     margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+    margin-left: 10px;
 }
 
 .boardTitle h1{
