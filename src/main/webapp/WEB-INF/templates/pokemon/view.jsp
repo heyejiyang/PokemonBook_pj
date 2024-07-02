@@ -2,6 +2,9 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+
+<c:set var="heightInMeters" value="${data.height * 0.1}" />
 
 <layout:main title="${data.nameKr}">
 </div>
@@ -27,8 +30,8 @@
                 </c:if>
             </div>
             <div class="pokemonCh">
-                <p class="pokemonHeight">키: ${data.height*0.1}m</p>
-                <p class="pokemonWeight">몸무게: ${data.weight}kg</p>
+                <p class="pokemonHeight"> 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m</p>
+                <p class="pokemonWeight"> 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg</p>
             </div>
             <div class="p-desc">
                 ${fn:replace(data.description, '\\n', '<br>')}
