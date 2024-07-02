@@ -30,7 +30,7 @@
             <button type="submit">
                 <fmt:message key="로그인" />
             </button>
-            </dib>
+            </div>
         </form>
     </section>
     </section>
