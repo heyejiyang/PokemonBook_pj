@@ -44,15 +44,15 @@
                     <div class="nav_title"><a href="<c:url value='/pokemon' />">도감</a></div>
                     <util:guestOnly>
                         <div class="mini_logo">
-                        <img src="${miniLogo3Url}"></div>
+                            <img src="${miniLogo3Url}"></div>
                     <div class="nav_title"><a href="<c:url value='/member/login' />">
-                            <fmt:message key="로그인" />
-                        </a></div>
+                        <fmt:message key="로그인" />
+                    </a></div>
                         <div class="mini_logo">
                             <img src="${miniLogo4Url}"></div>
                     <div class="nav_title"><a href="<c:url value='/member/join' />">
-                            <fmt:message key="회원가입" />
-                        </a></div>
+                        <fmt:message key="회원가입" />
+                    </a></div>
                     </util:guestOnly>
                         <%--
                    <fmt:message key="LOGIN_MSG">
@@ -60,21 +60,21 @@
                        <fmt:param>${loggedMember.email}</fmt:param>
                    </fmt:message>
                    --%>
-                    <%--
-                    <c:if test="${isLogin}">
-                    --%>
+                        <%--
+                        <c:if test="${isLogin}">
+                        --%>
                     <util:memberOnly>
-                        <div class="mini_logo">
-                            <img src="${miniLogo3Url}"></div>
+                    <div class="mini_logo">
+                        <img src="${miniLogo3Url}"></div>
                     <div class="nav_title"><a href="<c:url value='/mypage' />">
-                            <fmt:message key="마이페이지" />
-                        </a></div>
-                        <div class="mini_logo">
-                            <img src="${miniLogo4Url}"></div>
-                        <div class="nav_title"><a href="<c:url value='/member/logout' />">
-                            <fmt:message key="로그아웃" />
-                        </a></div>
-                    </div>
+                        <fmt:message key="마이페이지" />
+                    </a></div>
+                    <div class="mini_logo">
+                        <img src="${miniLogo4Url}"></div>
+                    <div class="nav_title"><a href="<c:url value='/member/logout' />">
+                        <fmt:message key="로그아웃" />
+                    </a></div>
+                </div>
                 <div class="right">
                         <c:if test="${isAdmin}">
                             <img src="${logo4Url}" alt="<fmt:message key='로고' />">
@@ -82,17 +82,17 @@
                                 <fmt:message key="사이트_관리" />
                             </a>
                         </c:if>
-                        <c:if test="${!isAdmin}">
+                    <c:if test="${!isAdmin}">
                             <a href="<c:url value="${storeUrl}" />" target="_blank">
-                         <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
+                                <img class="store" src="${store2Url}" alt="<fmt:message key='로고' />">
                             </a>
                         </c:if>
-                        </util:memberOnly>
-                    <%--
-                    </c:if>
-                    --%>
-                    </div>
-                </nav>
+                    </util:memberOnly>
+                        <%--
+                        </c:if>
+                        --%>
+                </div>
+            </nav>
         </section>
     </jsp:attribute>
     <jsp:attribute name="footer">
