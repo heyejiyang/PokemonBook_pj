@@ -168,7 +168,9 @@ public class HandlerAdapterImpl implements HandlerAdapter {
         }
 
         Object result = method.invoke(controller, args.toArray());
-
+        if(result == null){ // Controller 쪽 반환값이 void -> FileDownload 의 경우 필요함
+            return;
+        }
         /**
          *  컨트롤러 타입이 @Controller이면 템플릿 출력,
          * @RestController이면 JSON 문자열로 출력, 응답 헤더를 application/json; charset=UTF-8로 고정
