@@ -1,8 +1,8 @@
 const fileManager = {
     /**
-    * 파일 업로드 처리
-    *
-    */
+     * 파일 업로드 처리
+     *
+     */
     upload(files, gid, location) {
         console.log(files, gid, location);
         // FormData 생성자 - Content-Type: multipart/formData
@@ -34,8 +34,13 @@ const fileManager = {
                 cache: 'no-cache',
                 body: formData
             })
-            .then(res => res.json())
-            .then(json => console.log(json));
+                .then(res => res.json())
+                .then(json => {
+                    // callbackFileUpload라는 함수만 정의하면 그 후 처리는 각 상황에 맞게 처리
+                    if(typeof callbackFileUpload === 'function'){
+                        callbackFileUpload(json);
+                    }
+                });
 
         } catch (err) {
             alert(err.message);

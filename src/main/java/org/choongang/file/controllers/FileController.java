@@ -1,5 +1,7 @@
 package org.choongang.file.controllers;
 
+
+import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.entities.FileInfo;
 import org.choongang.file.services.FileDownloadService;
@@ -26,15 +28,15 @@ public class FileController {
         return items;
     }
 
-    @PostMapping("/download/{seq}")
+    @RequestMapping("/download/{seq}")
     public void download(@PathVariable("seq") long seq){
         downloadService.download(seq);
     }
 
     @ExceptionHandler(Exception.class)
     public boolean errorHandler(Exception e){
-        //예외 발생시 처리 -> 해당 부분이 출력되면 실패한 것
         e.printStackTrace();
+
         return false;
     }
 }

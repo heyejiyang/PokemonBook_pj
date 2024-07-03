@@ -10,16 +10,17 @@ import java.util.UUID;
 @Service
 @RequiredArgsConstructor
 public class FileInfoSaveService {
+
     private final FileInfoMapper mapper;
     private final FileInfoService infoService;
 
-    public FileInfo save(FileInfo data){
+    public FileInfo save(FileInfo data) {
         String gid = data.getGid();
         gid = gid == null || gid.isBlank() ? UUID.randomUUID().toString() : gid;
         data.setGid(gid);
 
         int result = mapper.register(data);
-        if(result > 0L){
+        if (result > 0L) {
             return infoService.get(data.getSeq()).orElse(null);
         }
         return null;

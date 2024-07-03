@@ -30,7 +30,7 @@
                         </tr>
                         <tr>
                             <th>회원 등급</th>
-                            <td>${loggedMember.userType}</td>
+                            <td>${loggedMember.userType.title}</td>
                         </tr>
                         <tr>
                             <th>가입일</th>

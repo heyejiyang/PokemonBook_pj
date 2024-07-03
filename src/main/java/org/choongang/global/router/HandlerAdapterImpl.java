@@ -168,7 +168,7 @@ public class HandlerAdapterImpl implements HandlerAdapter {
         }
 
         Object result = method.invoke(controller, args.toArray());
-        if(result == null){ // Controller 쪽 반환값이 void -> FileDownload 의 경우 필요함
+        if(result == null){ //반환값이 void
             return;
         }
         /**

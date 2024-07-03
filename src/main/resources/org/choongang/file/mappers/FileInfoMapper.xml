@@ -4,14 +4,14 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.choongang.file.mappers.FileInfoMapper">
     <resultMap id="fileInfoMap" type="org.choongang.file.entities.FileInfo">
-        <result column="SEQ" property="seq"/>
-        <result column="GID" property="gid"/>
-        <result column="LOCATION" property="location"/>
-        <result column="FILE_NAME" property="fileName"/>
-        <result column="EXTENSION" property="extension"/>
-        <result column="CONTENT_TYPE" property="contentType"/>
-        <result column="DONE" property="done"/>
-        <result column="REG_DT" property="regDt"/>
+        <result column="SEQ" property="seq" />
+        <result column="GID" property="gid" />
+        <result column="LOCATION" property="location" />
+        <result column="FILE_NAME" property="fileName" />
+        <result column="EXTENSION" property="extension" />
+        <result column="CONTENT_TYPE" property="contentType" />
+        <result column="DONE" property="done" />
+        <result column="REG_DT" property="regDt" />
     </resultMap>
 
     <select id="getList" resultMap="fileInfoMap">
@@ -53,7 +53,7 @@
         </selectKey>
 
         INSERT INTO FILE_INFO (SEQ, GID, LOCATION, FILE_NAME, EXTENSION, CONTENT_TYPE)
-            VALUES (#{seq}, #{gid}, #{location}, #{fileName}, #{extension}, #{contentType})
+        VALUES (#{seq}, #{gid}, #{location}, #{fileName}, #{extension}, #{contentType})
     </insert>
 
     <delete id="delete">
@@ -70,10 +70,10 @@
     </delete>
 
     <!-- GID 로 찾아 완료 상태로 변경 -->
-    <update id="updateDone" >
+    <update id="updateDone">
         UPDATE FILE_INFO
-            SET
-                DONE=1
-            WHERE GID=#{gid}
+        SET
+        DONE=1
+        WHERE GID = #{gid}
     </update>
 </mapper>

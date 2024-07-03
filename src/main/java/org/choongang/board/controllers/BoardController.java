@@ -103,6 +103,7 @@ public class BoardController {
     @GetMapping("/delete/{seq}")
     public String delete(@PathVariable("seq") long seq) {
         commonProcess(seq, "delete");
+
         deleteService.delete(seq);
 
         return "redirect:/board/list/" + board.getBId();
@@ -155,7 +156,7 @@ public class BoardController {
         if (mode.equals("write") || mode.equals("update")) { // 쓰기, 수정
             addCss.add("board/form");
             addScript.add("ckeditor5/ckeditor");
-            addScript.add("fileManager"); //⁂form 위에 추가해야함!
+            addScript.add("fileManager");
             addScript.add("board/form");
 
         } else if (mode.equals("list")) { // 목록
@@ -163,6 +164,7 @@ public class BoardController {
 
         } else if (mode.equals("view")) { // 글보기
             addCss.add("board/view");
+
         }
 
         request.setAttribute("board", board);

@@ -1,11 +1,15 @@
-window.addEventListener("DOMContentLoaded", function() {
+// dom이 로딩된 다음에 열기
+window.addEventListener("DOMContentLoaded", function (){
+    const editor = ClassicEditor.create(document.getElementById("content"),{
+        //너비 높이 등 스타일 수정
+        height: 350
+    })
+        .then((editor) =>{
+        window.editor = editor
+        //editor로 통제.. 이미지 추가, 내부에 텍스트 가져오기, 템플릿만들기 등등 사용..
+        // editor을 전역변수처럼 이용할 수 있도록
 
-    ClassicEditor.create(document.getElementById("content"), {
-            height: 350
-        })
-        .then((editor) => {
-            window.editor = editor;
-        });
+    }); //게시물 작성 내용
 
     /* 파일 업로드 버튼 클릭 처리 S */
     const fileUploadButtons = document.getElementsByClassName("file-upload");
@@ -57,14 +61,13 @@ window.addEventListener("DOMContentLoaded", function() {
 });
 
 /**
-* 파일 업로드 후 후속 처리
-*
-*/
-function callbackFileUpload(files) {
-    if (files.length == 0) {
+ * 파일 업로드 후 후속 처리
+ * @param files
+ */
+function callbackFileUpload(files){
+    if(files.length == 0){
         return;
     }
-
     const targetEditor = document.getElementById("attach-files-editor");
     const targetAttach = document.getElementById("attach-files-attach");
 
@@ -74,29 +77,29 @@ function callbackFileUpload(files) {
     const domParser = new DOMParser();
 
     const source = [];
-    for (const file of files) {
+    for(const file of files){
         const location = file.location;
         let html, target;
-        if (location == 'editor') { // 에디터에 이미지 추가
+        if(location == 'editor'){ //에디터에 이미지 추가
             source.push(file.fileUrl);
             html = editorTpl;
             target = targetEditor;
-        } else { // 파일 첨부
+        }else{ //파일 첨부
             html = attachTpl;
             target = targetAttach;
         }
 
         html = html.replace(/\[seq\]/g, file.seq)
-                    .replace(/\[fileName\]/g, file.fileName)
-                    .replace(/\[fileUrl\]/g, file.fileUrl);
+            .replace(/\[fileName\]/g,file.fileName)
+            .replace(/\[fileUrl\]/g,file.fileUrl);
 
         const dom = domParser.parseFromString(html,"text/html");
         const span = dom.querySelector("span");
         target.appendChild(span);
     }
 
-    // 에디터에 이미지 추가
-    if (source.length > 0) {
-        editor.execute('insertImage', { source });
+    //에디터에 이미지 추가
+    if(source.length > 0){
+        editor.execute('insertImage',{ source });
     }
 }
