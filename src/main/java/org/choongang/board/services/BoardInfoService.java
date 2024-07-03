@@ -68,13 +68,16 @@ public class BoardInfoService {
      */
     public ListData<BoardData> getList(BoardSearch search) {
 
-        if (board == null && (search.getBId() != null && !search.getBId().isEmpty())) {
-            board = configInfoService.get(search.getBId()).orElseThrow(BoardConfigNotFoundException::new);
-        }
+        // `bId`가 설정되지 않은 경우에도 동작하도록 수정
+        if (search.getBId() != null && !search.getBId().isEmpty()) {
+            if (board == null) {
+                board = configInfoService.get(search.getBId()).orElseThrow(BoardConfigNotFoundException::new);
+            }
 
-        //권한 체크
-//        authService.setBoard(board);
-//        authService.check(search.getBId(),"list");
+            // 권한 체크
+            // authService.setBoard(board);
+            // authService.check(search.getBId(), "list");
+        }
 
         int page = Math.max(search.getPage(),1); //max -> 두수중에 큰 수 반환, 음수일경우 1 반환
         int limit = search.getLimit();
