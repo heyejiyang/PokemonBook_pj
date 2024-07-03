@@ -27,9 +27,6 @@
             <th>작성자</th>
             <th>날짜</th>
         </tr>
-        <c:if test="${items == null || items.isEmpty()}">
-            <li class="no-data">조회된 게시글이 없습니다.</li>
-        </c:if>
         <c:if test="${items != null && !items.isEmpty()}">
             <c:forEach var="item" items="${items}">
                 <tr>
@@ -54,6 +51,9 @@
             </c:forEach>
         </c:if>
     </table>
+    <c:if test="${items == null || items.isEmpty()}">
+        <li class="no-data">조회된 게시글이 없습니다.</li>
+    </c:if>
     <br>
 
     <c:choose>
