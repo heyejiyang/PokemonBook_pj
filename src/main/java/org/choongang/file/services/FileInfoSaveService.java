@@ -11,6 +11,7 @@ import java.util.UUID;
 @RequiredArgsConstructor
 public class FileInfoSaveService {
     private final FileInfoMapper mapper;
+    private final FileInfoService infoService;
 
     public FileInfo save(FileInfo data){
         String gid = data.getGid();
@@ -19,7 +20,7 @@ public class FileInfoSaveService {
 
         int result = mapper.register(data);
         if(result > 0L){
-            return mapper.get(data.getSeq());
+            return infoService.get(data.getSeq()).orElse(null);
         }
         return null;
     }
