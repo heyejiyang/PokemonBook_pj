@@ -9,9 +9,6 @@
     <button type="button">
         <a href="<c:url value='/pokemon/gacha' />" alt="TodayPokemon">오늘의 포켓몬 뽑기!</a>
     </button>
-    <button type="button">
-        <a href="#" alt="MyPokemon" />내 포켓몬 조회</a>
-    </button>
 </div>
          <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
             <dl>

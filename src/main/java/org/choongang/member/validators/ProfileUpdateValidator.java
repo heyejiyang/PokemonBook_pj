@@ -1,4 +1,4 @@
-package org.choongang.mypage.validators;
+package org.choongang.member.validators;
 
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -8,7 +8,7 @@ import org.choongang.global.exceptions.UnAuthorizedException;
 import org.choongang.global.validators.RequiredValidator;
 import org.choongang.global.validators.Validator;
 import org.choongang.member.MemberUtil;
-import org.choongang.mypage.controllers.RequestProfile;
+import org.choongang.member.controllers.RequestProfile;
 
 @Component
 @RequiredArgsConstructor
