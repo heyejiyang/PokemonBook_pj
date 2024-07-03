@@ -1,31 +1,21 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
+
+
+<link rel="stylesheet"
+href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+crossorigin="anonymous">
+
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
-<c:url var="actionUrl" value="/pokemon/mypokemon" />
 <c:url var="popupUrl" value="/pokemon/gacha" />
-<layout:main title="시원초이">
+<layout:main title="시원초이진표">
     <section class="layout-width">
-<div class="mypokemon-buttons">
-    <button type="button">
-        <a href="<c:url value='/pokemon/gacha' />" alt="TodayPokemon">오늘의 포켓몬 뽑기!</a>
-    </button>
-</div>
-         <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
-            <dl>
-             <dt>프로필 이미지</dt>
-                <dd>
-                    <c:if test="${myProfile != null}">
-                       <div class='profile'>
-                            <img src="${myProfile.frontImage}" alt="${myProfile.nameKr}">
-                            <div>${myProfile.nameKr}</div>
-                       </div>
-                    </c:if>
-                    <button type='button' id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 650);">
+            <div class="button-wrapper">
+                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 650);">
                     랜덤 프로필 이미지
-                    </button>
-                </dd>
-            </dl>
-        </form>
+                </button>
+            </div>
          <jsp:include page="_my_pokemon.jsp" />
     </section>
 </layout:main>

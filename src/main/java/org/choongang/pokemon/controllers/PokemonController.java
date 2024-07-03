@@ -64,15 +64,6 @@ public class PokemonController {
 
         return "pokemon/view";
     }
-    /*
-    @GetMapping("/gacha")
-    public String gacha() {
-        commonProcess();
-
-        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
-        return "pokemon/gacha";
-    }
-    */
 
     @GetMapping("/gacharesult")
     public String gacharesult() {
@@ -138,7 +129,8 @@ public class PokemonController {
 
         List<PokemonDetail> items = pokemonService.getList();
 
-        request.setAttribute("addScript", List.of("pokemon/info"));
+        request.setAttribute("addCss", new String[]{"pokemon/mypokemon"});
+        request.setAttribute("addScript", List.of("pokemon/mypokemon"));
         request.setAttribute("items", items);
 
         return "pokemon/mypokemon";
