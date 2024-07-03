@@ -32,6 +32,7 @@
         AND DONE=1 ORDER BY SEQ
     </select>
 
+    <!-- 미완료된 파일만 가져오기 -->
     <select id="getListUnDone" resultMap="fileInfoMap">
         SELECT * FROM FILE_INFO
         WHERE GID = #{gid}
@@ -41,6 +42,7 @@
         AND DONE=0 ORDER BY SEQ
     </select>
 
+    <!-- 파일 1개 조회 -->
     <select id="get" resultMap="fileInfoMap">
         SELECT * FROM FILE_INFO WHERE SEQ=#{seq}
     </select>
@@ -58,6 +60,7 @@
         DELETE FROM FILE_INFO WHERE SEQ=#{seq}
     </delete>
 
+    <!-- deletes : 여러개 삭제 -->
     <delete id="deletes">
         DELETE FROM FILE_INFO
         WHERE GID=#{gid}
@@ -66,6 +69,7 @@
         </if>
     </delete>
 
+    <!-- GID 로 찾아 완료 상태로 변경 -->
     <update id="updateDone">
         UPDATE FILE_INFO
         SET
