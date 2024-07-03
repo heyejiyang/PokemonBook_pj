@@ -1,0 +1,122 @@
+.all-form {
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-form {
+    width: 700px;
+}
+
+.withdraw-title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 40px;
+}
+
+.withdraw-title h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.withdraw-title img {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    margin-right: 10px; /* 이미지 오른쪽 여백 추가 */
+}
+
+.withdraw-box { /*테이블 가운데 정렬*/
+    display: flex;
+    justify-content: center;
+}
+
+.withdraw-box input[type='password']{
+  height: 50px;
+}
+
+
+.withdraw-table {
+    border-spacing: 0;
+    width: 800px;
+    height: 350px;
+    /*border: 1px solid #ccc;*/
+    padding: 40px 80px 50px 30px;
+    background: #EDF3E9;
+}
+
+tr {
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    justify-content: center;
+    font-size: 1.2rem;
+    height: 35px;
+}
+
+th{
+display: flex;
+    color: #000;
+    width: 30%;
+    height: 50px;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding: 0 10px 0 50px;
+}
+
+.withdraw-table tr:last-of-type {
+    margin-bottom: 0;
+}
+
+.withdraw-table tr:nth-of-type(1) td,
+tr:nth-of-type(2) td {
+    border: 1px solid #ccc;
+    background: var(--white)
+}
+
+span {
+    line-height: 1.3rem;
+    font-size: 1.3rem;
+}
+
+td > span {
+    font-size: 1.3rem;
+}
+
+td {
+    width: 70%;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+td, th {
+    /*border: 1px solid #ccc;*/
+}
+
+.buttons {
+    display: flex;
+    justify-content:space-evenly;
+    margin: 30px 0;
+}
+
+.buttons button {
+    border: 1px solid #ccc; /*옅은 회색*/
+    padding: 0 10px; /*좌우 패팅*/
+    height: 60px;
+    width: 200px;
+    background: var(--blue);
+    color: #fff;
+    font-size: 1.35rem;
+    cursor: pointer; /*커서 포인터*/
+    transition: background 0.5s ease; /*부드러운 색상 변화, 근데 왜 다른 버튼도 적용되지.. 지정해서 적용시켰는데..*/
+}
+
+.buttons button:hover{
+    background: var(--yellow);
+    font-weight: bold;
+}

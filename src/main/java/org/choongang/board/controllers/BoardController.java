@@ -124,6 +124,8 @@ public class BoardController {
         String authKey = "board_" + seq;
         session.setAttribute(authKey, true);
 
+        commonProcess(seq, "password");
+
         String script = "parent.location.reload();";
         request.setAttribute("script", script);
         return "commons/execute_script";
@@ -154,6 +156,7 @@ public class BoardController {
         if (mode.equals("write") || mode.equals("update")) { // 쓰기, 수정
             addCss.add("board/form");
             addScript.add("ckeditor5/ckeditor");
+            addScript.add("fileManager");
             addScript.add("board/form");
 
         } else if (mode.equals("list")) { // 목록
@@ -188,6 +191,8 @@ public class BoardController {
 
     @ExceptionHandler(GuestPasswordCheckException.class)
     public String guestPassword(){
+        request.setAttribute("addCss", List.of("board/style", "board/password"));
+
         return "board/password";
     }
 }

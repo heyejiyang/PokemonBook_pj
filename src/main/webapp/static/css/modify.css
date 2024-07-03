@@ -6,7 +6,7 @@
 }
 
 .layout-form {
-    width: 600px;
+    width: 700px;
 }
 
 .modify-title {
@@ -14,11 +14,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 10px;
+    margin: 20px 0 40px;
 }
 
 .modify-title h1 {
-    font-size: 1.35rem;
+    font-size: 2rem;
+    margin: 0;
 }
 
 .modify-title img {
@@ -31,29 +32,38 @@
     justify-content: center;
 }
 
+.modify-box input[type='text']
+, input[type='password']{
+    height: 50px;
+}
+
 .modify-table {
     border-spacing: 0;
-    width: 600px;
+    width: 800px;
+    height: 300px;
     /*border: 1px solid #ccc;*/
-    padding: 10px 20px 10px 10px;
-    background-color: #F6F6F6;
+    padding: 40px 80px 50px 30px;
+    background: #EDF3E9;
 }
 
 tr {
-display: flex;
-width: 100%;
-margin-bottom: 10px;
-justify-content: center;
-font-size:15px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 35px;
+    justify-content: center;
+    font-size: 1.3rem;
+    height: 35px;
 }
 
 th{
 display: flex;
     color: #000;
     width: 30%;
-    height: 35px;
+    height: 50px;
     text-align: center;
+    align-items: center;
     justify-content: center;
+    padding: 0 10px 0 50px;
 }
 
 .modify-table tr:last-of-type {
@@ -66,37 +76,44 @@ display: flex;
 }
 
 span {
-    line-height: 35px;
+    line-height: 1.3rem;
+    font-size: 1.3rem;
 }
 
+td > span {
+    font-size: 1.3rem;
+}
 
 
 td {
-width: 70%;
-display:flex;
-justify-content: center;
+    width: 70%;
+    height: 50px;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
 }
 
 td, th {
-        padding: 0px;
-        /*border: 1px solid #ccc;*/
-        }
+    /*border: 1px solid #ccc;*/
+}
 
 .buttons {
-display: flex;
-justify-content:center;
-margin-top: 30px;
+    display: flex;
+    justify-content:space-evenly;
+    margin: 30px 0;
 }
+
+
 
 .buttons button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
-    height: 50px;
+    height: 60px;
     width: 200px;
-    margin: 0 20px;
     background: var(--blue);
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1.35rem;
     cursor: pointer; /*커서 포인터*/
     transition: background 0.5s ease; /*부드러운 색상 변화, 근데 왜 다른 버튼도 적용되지.. 지정해서 적용시켰는데..*/
 }
