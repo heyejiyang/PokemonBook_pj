@@ -20,26 +20,26 @@ main > .main-content h1 {
     flex-direction: column;
 }
 
-.member_list_table{
+.member_list_table {
     border-spacing: 0;
     padding: 0;
     font-size: 15px;
 }
 
-.member_list_table th{
+.member_list_table th {
     background: #555;
     color: #fff;
 }
 
 .member_list_table th,
-.member_list_table td{
+.member_list_table td {
     border-bottom: 1px solid #555;
     padding: 15px;
 }
 
 .pagination {
     display: flex;
-    margin: 20px;
+    margin: 0;
     width: auto;
     justify-content: center;
     align-items: center;
@@ -60,4 +60,30 @@ main > .main-content h1 {
     opacity: 1.0;
     color: var(--yellow);
 }
+
+.delete {
+    margin-top: 10px;
+    margin-right: 10px;
+    display: flex;
+    justify-content: right;
+}
+
+button {
+    width: 100px;
+    height: 30px;
+    background: #555;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+}
+
+.member_list_table input[type="checkbox"] {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
 
