@@ -56,6 +56,7 @@ display: flex;
     width: 30%;
     height: 35px;
     text-align: center;
+    align-items: center;
     justify-content: center;
     padding: 0 10px 0 50px;
 }
@@ -71,14 +72,19 @@ tr:nth-of-type(2) td {
 }
 
 span {
-    line-height: 35px;
+    line-height: 1.3rem;
+    font-size: 1.3rem;
 }
 
+td > span {
+    font-size: 1.25rem;
+}
 
 td {
     width: 70%;
     display:flex;
     justify-content: center;
+    align-items: center;
     padding: 0;
 }
 

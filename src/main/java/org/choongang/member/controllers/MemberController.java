@@ -137,8 +137,8 @@ public class MemberController {
 
         withdrawService.process(form);
 
-        String url = request.getContextPath() + "/member/join";
-        //회원탈퇴가 완료되면 회원가입페이지로 돌아감
+        String url = request.getContextPath() + "/";
+        //회원탈퇴가 완료되면 메인 페이지로 돌아감
         String script = String.format("parent.location.replace('%s');", url);
 
         request.setAttribute("script", script);

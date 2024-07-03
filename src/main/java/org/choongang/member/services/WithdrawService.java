@@ -42,7 +42,6 @@ public class WithdrawService {
 
         //회원 탈퇴 처리
         mapper.withdraw(member);
-        //회원 정보 수정 실패 시 오류 알림 메세지 에외처리는 불가..
 
         int result = mapper.withdraw(member);
         if (result > 1) {
