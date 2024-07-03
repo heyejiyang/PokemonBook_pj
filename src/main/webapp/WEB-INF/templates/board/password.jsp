@@ -8,7 +8,7 @@
         <div>
             <img src="${logoUrl}" alt="<fmt:message key='로고' />" class="logo">
         </div>
-        <h1 class="do-hyeon-regular">비밀번호 확인</h1>
+        <h1 class="do-hyeon-regular">게시글 비밀번호를 확인해주세요!</h1>
 
         <form class="pw-ck" name="frmCheck" method="POST" action="<c:url value='/board/password' />" target="ifrmProcess" autocomplete="off">
             <input type="hidden" name="seq" value="${seq}">
