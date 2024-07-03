@@ -37,9 +37,15 @@ public class WithdrawService {
         validator.check(form);
         
         Member member = memberUtil.getMember(); //로그인한 회원 정보
-        
+
         member.setPassword(form.getPassword());
 
+        //비밀번호 해시화
+        String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
+
+        if (!member.getPassword().equals(hash)) {
+            throw new AlertException("비밀번호가 올바르지 않습니다.", HttpServletResponse.SC_BAD_REQUEST);
+        }
 
         //회원 탈퇴 처리
         mapper.withdraw(member);
