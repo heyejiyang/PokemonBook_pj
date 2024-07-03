@@ -4,5 +4,77 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
 <mapper namespace="org.choongang.file.mappers.FileInfoMapper">
+    <resultMap id="fileInfoMap" type="org.choongang.file.entities.FileInfo">
+        <result column="SEQ" property="seq"/>
+        <result column="GID" property="gid"/>
+        <result column="LOCATION" property="location"/>
+        <result column="FILE_NAME" property="fileName"/>
+        <result column="EXTENSION" property="extension"/>
+        <result column="CONTENT_TYPE" property="contentType"/>
+        <result column="DONE" property="done"/>
+        <result column="REG_DT" property="regDt"/>
+    </resultMap>
 
+    <!--목록 조회-->
+    <select id="getList" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        ORDER BY SEQ
+    </select>
+
+    <!--완료된 파일-->
+    <select id="getListDone" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        AND DONE=1 ORDER BY SEQ
+    </select>
+
+    <!--미완료된 파일-->
+    <select id="getListUnDone" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        AND DONE=0 ORDER BY SEQ
+    </select>
+
+    <!--낱개 조회-->
+    <select id="get" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO WHERE SEQ=#{seq}
+    </select>
+
+    <insert id="register">
+        <selectKey keyProperty="seq" order="BEFORE" resultType="long">
+            SELECT SEQ_FILE_INFO.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO (SEQ, GID, LOCATION, FILE_NAME, EXTENSION, CONTENT_TYPE)
+            VALUES(#{seq}, #{gid}, #{location}, #{fileName}, #{extension}, #{contentType})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM FILE_INFO WHERE SEQ=#{seq}
+    </delete>
+
+    <delete id="deletes">
+        DELETE FROM FILE_INFO
+        WHERE GID=#{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION=#{location}
+        </if>
+    </delete>
+
+    <update id="updateDone">
+        UPDATE FILE_INFO
+            SET
+                DONE=1
+            WHERE GID = #{gid}
+    </update>
 </mapper>
