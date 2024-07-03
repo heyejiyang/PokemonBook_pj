@@ -9,6 +9,7 @@
 <layout:main title="${board.BName}">
     <section class="layout-width-con">
         <jsp:include page="_header.jsp"/>
+        <section class="all-view">
         <div class="view-body">
             <div class="view-layout-width">
                 <div class="subject">
@@ -44,4 +45,5 @@
             <jsp:include page="list_main.jsp"/>
         </section>
     </c:if>
+    </section>
 </layout:main>

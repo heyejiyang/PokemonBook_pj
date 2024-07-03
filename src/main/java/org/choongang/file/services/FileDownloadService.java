@@ -24,6 +24,7 @@ public class FileDownloadService {
      */
     public void download(long seq) {
         FileInfo data = infoService.get(seq).orElseThrow(FileNotFoundException::new);
+        //파일이 없으면 예외 처리 - 뒤로 가기
         String filePath = data.getFilePath();
         File file = new File(filePath);
 
