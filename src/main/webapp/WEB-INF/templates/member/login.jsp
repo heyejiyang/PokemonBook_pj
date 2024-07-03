@@ -9,12 +9,14 @@
 <c:url var="logoUrl" value="/images/book_logo1.png" />
 
 <layout:main title="${pageTitle}">
+
+
     <section class="all-form">
         <section class="form-box">
             <section class="login-title">
-                <div>
-                    <img src="${logoUrl}" alt="<fmt:message key='로고' />" class="logo">
-                </div>
+            <a href="<c:url value='/' />" class="logo-img">
+                    <img src="${logoUrl}" />
+                </a>
                 <h1>${pageTitle}</h1>
             </section>
             <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">

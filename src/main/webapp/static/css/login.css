@@ -23,7 +23,7 @@
     justify-content: center;
     align-items: center;
     margin: 20px 0 50px;
-    height: 70px;
+    height: 130px;
 }
 
 .login-title h1 {
@@ -33,9 +33,16 @@
 }
 
 
-.logo {
-    vertical-align: middle; /* 이미지를 가운데 정렬 */
-    width: 180px;
+.logo-img {
+    text-align: center;
+     margin-top: 30px;
+}
+
+.logo-img img {
+    width: 200px; /* 원하는 너비 */
+    height: auto; /* 비율에 맞게 높이 자동 조절 */
+    /* height: 150px; 원하는 높이로 설정할 수도 있음 */
+
 }
 
 .div{
