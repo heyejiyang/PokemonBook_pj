@@ -26,13 +26,14 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 60px;
+    margin: 20px 0 70px;
     height: 70px;
 }
 
 .login-title h1 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 900;
     /*text-align: center;*/
 }
 
@@ -93,7 +94,7 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .link-login > a {
