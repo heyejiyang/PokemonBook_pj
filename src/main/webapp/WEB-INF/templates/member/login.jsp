@@ -17,6 +17,7 @@
             <a href="<c:url value='/' />" class="logo-img">
                     <img src="${logoUrl}" />
                 </a>
+
                 <h1>${pageTitle}</h1>
             </section>
             <form name="frmLogin" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
@@ -24,10 +25,11 @@
                     <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
                 </c:if>
                 <div class="email">
-                    <input type="text" name="email" placeholder="<fmt:message key='이메일' />" autofocus value="${cookie.saveEmail != null ? cookie.saveEmail.value : ''}">
+                    <input type="text" name="email" placeholder="<fmt:message key='이메일' />" autofocus value="${cookie.saveEmail != null ? cookie.saveEmail.value : ''}"
+                      class="input-icon email">
                 </div>
                 <div class="pw">
-                    <input type="password" name="password" placeholder="<fmt:message key='비밀번호' />">
+                    <input type="password" name="password" placeholder="<fmt:message key='비밀번호' />" class="input-icon password">
                 </div>
                 <div class="save-email">
                     <input type="checkbox" name="saveEmail" value="true" id="saveEmail"${cookie.saveEmail != null ? ' checked':''}>

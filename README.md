@@ -100,7 +100,7 @@ CREATE TABLE POKEMON (
 ## MEMBER
 ## BOARD
 ## BOARD_DATA
-## COMMENTS
+
 <BR>
 
 # 7. 역할 분담

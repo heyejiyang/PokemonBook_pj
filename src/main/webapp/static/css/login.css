@@ -1,20 +1,22 @@
 .all-form {
-    margin: 30px 0;
+    /*margin: 30px 0; */
     display:flex;
     align-items: center;
     justify-content: center;
     height: 700px;
+    background: #fbf3ff;
 }
 
 .form-box {
     display: block;
     align-items: center;
     justify-content: center;
-    width: 600px;
-    height: 500px;
-    /*border: 1px solid #414141;*/
-    padding: 10px 20px;
-    background: var(--white);
+    width: 620px;
+    height: 590px;
+    /*border: 1px solid #414141; */
+    border-radius: 20px;
+    padding: 20px 40px;
+    background: #dfe7ff;
 }
 
 .login-title {
@@ -22,13 +24,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 50px;
-    height: 130px;
+    margin: 40px 0 40px;
+    height: 140px;
 }
 
 .login-title h1 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2.2rem;
+   font-family:"Do Hyeon", sans-serif;
     /*text-align: center;*/
 }
 
@@ -41,7 +44,7 @@
 .logo-img img {
     width: 200px; /* 원하는 너비 */
     height: auto; /* 비율에 맞게 높이 자동 조절 */
-    /* height: 150px; 원하는 높이로 설정할 수도 있음 */
+
 
 }
 
@@ -90,7 +93,7 @@ input[type=checkbox] {
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
     width: 95%;
-    background: var(--blue);
+    background: #1d1849d1;
     font-size: 1.2rem;
     margin: 20px 0;
     cursor: pointer;
@@ -112,6 +115,14 @@ input[type=checkbox] {
     margin-top: 30px;
     padding: 10px 22px;
     border-radius: 38px;
-    background: #FFFFE9 ;
+    background: #f5f5f58a ;
 
+}
+
+.input-icon.email {
+    background: #fff url("../images/img_login2.png") no-repeat 10px center;
+}
+
+.input-icon.password {
+    background: #fff url("../images/img_loginPassword.png") no-repeat 10px center;
 }
