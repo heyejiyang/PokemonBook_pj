@@ -1,0 +1,80 @@
+.tab-menu {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.tab-menu a {
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #333;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.tab-menu a.on {
+    background-color: var(--blue);
+    color: white;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    padding: 15px; /* Increased padding for better spacing */
+    margin-bottom: 10px; /* Space between items */
+    background-color: #f9f9f9; /* Light background for better visibility */
+    border-radius: 4px; /* Rounded corners */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Slight shadow for depth */
+}
+
+.list-item:last-child {
+}
+
+.list-item .subject {
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.list-item .subject:hover {
+    text-decoration: underline;
+}
+
+.item-category {
+    font-weight: bold;
+    color: #1B3467;
+}
+
+.post-info {
+    font-size: 0.9em;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+.pagination a {
+    border: 1px solid #333;
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.pagination a.on {
+    background: #333;
+    color: #fff;
+}
