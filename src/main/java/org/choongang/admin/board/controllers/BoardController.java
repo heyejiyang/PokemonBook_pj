@@ -67,7 +67,7 @@ public class BoardController {
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
         request.setAttribute("addCss", List.of("admin/posts"));
-        return "admin/board/admin_post";
+        return "admin/board/posts";
     }
 
     // 게시판 수정

@@ -14,15 +14,38 @@
         </div>
     </div>
 
-    <h2>${boardName} 전체 게시글 목록</h2> <!-- 카테고리명 표시 -->
+    <h2> 게시글 목록</h2>
 
     <section class="layout-width">
         <jsp:include page="/WEB-INF/templates/board/_footer.jsp"/>
     </section>
 
     <c:if test="${items != null && !items.isEmpty()}">
-        <section class="view-layout-width">
-            <jsp:include page="/WEB-INF/templates/board/list_main.jsp" />
+        <section>
+            <ul class="list-items">
+                <c:if test="${items == null || items.isEmpty()}">
+                    <li class='no-data'>조회된 게시글이 없습니다.</li>
+                </c:if>
+
+                <c:if test="${items != null && !items.isEmpty()}">
+                    <c:forEach var="item" items="${items}">
+                        <li class="list-item">
+                            <a href="<c:url value='/board/view/${item.seq}' />" class='subject'>
+                                <c:if test="${! empty item.category}">
+                                    <span class="item-category">[${item.category}]</span>
+                                </c:if>
+                                    ${item.subject}
+                            </a>
+                            <div class='post-info'>
+                                    ${item.poster} (${item.memberSeq > 0 ? item.email : '비회원'})
+                                <util:formatDate value='${item.regDt}' pattern='yyyy.MM.dd HH:mm' />
+                            </div>
+                        </li>
+                    </c:forEach>
+                </c:if>
+            </ul>
+            <util:pagination />
         </section>
     </c:if>
+
 </layout:admin>
