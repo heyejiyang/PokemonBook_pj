@@ -31,7 +31,7 @@
             <c:forEach var="item" items="${items}">
                 <tr>
                     <td>
-                            ${item.seq}
+                        ${item.seq}
                     </td>
                     <td class>
                         <a href="<c:url value="/board/view/${item.seq}"/>" class="l_subject">
@@ -43,10 +43,15 @@
                     </td>
                     <td>
                         <div class="post-info">
-                            ${item.poster}(${item.memberSeq > 0 ? item.email : "비회원"})
+<%--                            <c:if test="${member.userNo = null}">--%>
+<%--                                ${item.poster}(알 수 없음)--%>
+<%--                            </c:if>--%>
+                            <c:if test="${item.memberSeq >= 0}">
+                                ${item.poster}(${item.memberSeq > 0 ? item.email : "비회원"})
+                            </c:if>
                         </div>
                     </td>
-                    <td><util:formatDate value="${item.regDt}" pattern="yyyy.MM.dd HH:mm"></util:formatDate></td>
+                    <td><util:formatDate value="${item.regDt}" pattern="yyyy.MM.dd HH:mm" /></td>
                 </tr>
             </c:forEach>
         </c:if>
