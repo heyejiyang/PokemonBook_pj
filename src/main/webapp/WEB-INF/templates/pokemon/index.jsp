@@ -27,8 +27,8 @@
                         <p class="pokemonNum">No.${item.seq}</p>
                         <p class="pokemonName">${item.nameKr}</p>
                     </div>
-                    <pk:myPokemon seq="${item.seq}" />
                     </a>
+                    <pk:myPokemon seq="${item.seq}" />
                 </li>
             </c:forEach>
         </c:if>

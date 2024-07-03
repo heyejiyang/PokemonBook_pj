@@ -66,13 +66,6 @@ public class PokemonController {
     }
 
 
-    @GetMapping("/mypokemon")
-    public String mypokemon() {
-        commonProcess();
-
-        request.setAttribute("addCss", new String[] {"pokemon/mypokemon"});
-        return "pokemon/mypokemon";
-    }
 
 
     @GetMapping("/gacha")
@@ -135,7 +128,17 @@ public class PokemonController {
         return "commons/execute_script";
     }
 
+    @GetMapping("/mypokemon")
+    public String mypokemon() {
+        commonProcess();
 
+        List<PokemonDetail> items = pokemonService.getList();
+
+        request.setAttribute("addScript", List.of("pokemon/profile", "pokemon/info"));
+        request.setAttribute("items", items);
+
+        return "pokemon/mypokemon";
+    }
 
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.

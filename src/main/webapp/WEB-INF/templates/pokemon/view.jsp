@@ -6,7 +6,7 @@
 
 <c:set var="heightPoint" value="${data.height * 0.1}" />
 
-<!-- 공부용.
+<!-- 공부용, 조만간 적용
 <fmt:formatNumber value="12341234" type="number"/><br>
 천 단위마다 ','
 <fmt:formatNumber value="1234" type="currency" currencySymbol="$"/><br>
@@ -23,11 +23,11 @@ ${test} 출력시 소수점 이하 버림, 1234
 
 <layout:main title="${data.nameKr}">
     <div class="navigation-arrows">
-        <c:if test="${data.seq > 1}">
-        </c:if>
-        <c:if test="${data.seq > 1}">
-        </c:if>
+        <c:if test="${data.seq >= 1}">
         <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow"></a>
+        </c:if>
+        <c:if test="${data.seq > 1}">
+        </c:if>
         <a href="<c:url value='/pokemon/view/${data.seq + 1}' />" class="arrow right-arrow"></a>
 </div>
 <div class="viewWrap">

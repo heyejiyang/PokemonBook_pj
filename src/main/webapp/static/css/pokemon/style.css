@@ -49,6 +49,7 @@ form[name="frmSearch"] button[type="submit"] {
     width: calc(100% / 5);
     padding: 0 10px 10px;
     z-index: 0;
+    position: relative;
 }
 
 .pokemon-list .my-pokemon{
