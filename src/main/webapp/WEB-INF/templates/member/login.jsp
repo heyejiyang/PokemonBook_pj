@@ -22,13 +22,13 @@
                     <input type="hidden" name="redirectUrl" value="${param.redirectUrl}">
                 </c:if>
                 <div class="email">
-                    <input type="text" name="email" placeholder="<fmt:message key='이메일' />" autofocus>
+                    <input type="text" name="email" placeholder="<fmt:message key='이메일' />" autofocus value="${cookie.saveEmail != null ? cookie.saveEmail.value : ''}">
                 </div>
                 <div class="pw">
                     <input type="password" name="password" placeholder="<fmt:message key='비밀번호' />">
                 </div>
                 <div class="save-email">
-                    <input type="checkbox" name="saveEmail" value="true" id="saveEmail">
+                    <input type="checkbox" name="saveEmail" value="true" id="saveEmail"${cookie.saveEmail != null ? ' checked':''}>
                     <label for="saveEmail">
                         <fmt:message key="이메일_기억하기" />
                     </label>
