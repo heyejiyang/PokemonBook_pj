@@ -56,7 +56,7 @@ public class BoardController {
 
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
-        request.setAttribute("addCss", List.of("admin/posts"));
+        request.setAttribute("addCss", List.of("admin/posts","board/style"));
         return "admin/board/posts";
     }
 
@@ -66,7 +66,7 @@ public class BoardController {
         ListData<BoardData> data = boardInfoService.getList(bId, search);
         request.setAttribute("items", data.getItems());
         request.setAttribute("pagination", data.getPagination());
-        request.setAttribute("addCss", List.of("admin/posts"));
+        request.setAttribute("addCss", List.of("admin/posts","board/style"));
         return "admin/board/posts";
     }
 

@@ -1,4 +1,30 @@
+/* 검색바 */
+.layout-width{
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    margin-bottom: 20px; /* 아래 컨텐츠와 간격 */
+}
 
+.search-container{
+    display: inline-block;
+    background-color: transparent !important;
+    border: 2px solid var(--black);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.board_search_box{
+    margin: 0 !important;
+}
+.board_search_box button{
+    background-color: black !important;
+}
+
+.board_search_box button:hover{
+    background-color: red !important;
+}
+
+/* 전체/ 공지사항/ 질문과답변 버튼 */
 .tab-menu {
     margin-top: 60px;
     margin-bottom: 20px;
@@ -24,46 +50,11 @@
     color: white;
 }
 
-/* list_main.jsp 스타일 */
-.page-container {
-    width: 80%;
-    margin: 0 auto;
-    background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
+/* post.jsp 스타일 */
 
-.notice-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-top: 20px;
+h2{
+    font-size: 2rem;
 }
-
-.notice-table th, .notice-table td {
-    padding: 10px;
-    border-bottom: 1px solid #ccc;
-    text-align: left;
-}
-
-.notice-table tr {
-    padding: 15px;
-    margin-bottom: 10px;
-    border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.notice-table th {
-    background-color: #000;
-    color: #ccc;
-}
-
-.notice-table .no-data {
-    text-align: center;
-    padding: 20px;
-    color: #999;
-}
-
-/* admin_post.jsp 스타일 */
 
 .list-items {
     list-style: none;
