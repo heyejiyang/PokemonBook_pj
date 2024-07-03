@@ -68,7 +68,7 @@ public class BoardInfoService {
      */
     public ListData<BoardData> getList(BoardSearch search) {
 
-        if(board == null){
+        if (board == null && (search.getBId() != null && !search.getBId().isEmpty())) {
             board = configInfoService.get(search.getBId()).orElseThrow(BoardConfigNotFoundException::new);
         }
 
@@ -85,7 +85,7 @@ public class BoardInfoService {
         search.setOffset(offset);
         search.setEndRows(endRows);
 
-        List<BoardData> items = mapper.getList(search);
+        List<BoardData> items = (search.getBId() == null || search.getBId().isEmpty()) ? mapper.getListWithoutBId(search) : mapper.getList(search);
 
         //페이징 처리를 하기 위한 데이터가져오기
         /*Pagination 클래스 참고*/

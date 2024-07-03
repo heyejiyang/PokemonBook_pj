@@ -3,7 +3,11 @@
     display:flex;
     align-items: center;
     justify-content: center;
-    height: 700px;
+    height: 800px;
+}
+
+h1 {
+    margin: 10px;
 }
 
 .form-box {
@@ -22,13 +26,14 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 50px;
+    margin: 20px 0 70px;
     height: 70px;
 }
 
 .login-title h1 {
     font-weight: bold;
-    font-size: 1.5rem;
+    font-size: 2rem;
+    font-weight: 900;
     /*text-align: center;*/
 }
 
@@ -46,24 +51,15 @@
 .email input,
 .pw input {
     height: 50px;
-    width: 95%;
+    width: 100%;
     cursor: pointer;
     margin-bottom: 20px;
+    font-size: 1.3rem;
 }
 
 .save-email {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
 }
-
-
-.email {
-
-}
-
-.pw {
-
-}
-
 
 input[type=checkbox] {
     transform : scale(1.5);
@@ -84,7 +80,7 @@ input[type=checkbox] {
     height: 50px;
     width: 95%;
     background: var(--blue);
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     margin: 20px 0;
     cursor: pointer;
     transform: skew(-20deg);
@@ -98,7 +94,7 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 12px;
+    font-size: 1rem;
 }
 
 .link-login > a {
