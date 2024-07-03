@@ -30,6 +30,7 @@ public class PokemonSaveService {
                 .pixelFrontImage(data.getSprites().getFront_default())
                 .pixelBackImage(data.getSprites().getBack_default())
                 .rawData(data.getRawData())
+                .nameKr(data.getNameKr())
                 .description(data.getDescription())
                 .type1(type1)
                 .type2(type2)
