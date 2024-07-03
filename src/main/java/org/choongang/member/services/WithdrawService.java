@@ -39,10 +39,6 @@ public class WithdrawService {
         Member member = memberUtil.getMember(); //로그인한 회원 정보
 
 
-
-        //비밀번호 해시화
-        //String hash = BCrypt.hashpw(form.getPassword(), BCrypt.gensalt(12));
-
         if (!BCrypt.checkpw(form.getPassword(), member.getPassword())) {
             throw new AlertException("비밀번호가 올바르지 않습니다.", HttpServletResponse.SC_BAD_REQUEST);
         }
