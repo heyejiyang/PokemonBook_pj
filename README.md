@@ -7,7 +7,6 @@
 <BR>
 
 # 2. 개발 환경
-![제목 추가](https://github.com/heyejiyang/PokemonBook_pj/assets/163953938/2fdd49a4-339e-4cf0-82ca-d146d89edca5)
 - Intelli J
 - Gradle
 - java
