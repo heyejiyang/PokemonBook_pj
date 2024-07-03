@@ -50,7 +50,7 @@ h1 {
 .email input,
 .pw input {
     height: 50px;
-    width: 95%;
+    width: 100%;
     cursor: pointer;
     margin-bottom: 20px;
 }

@@ -40,6 +40,7 @@ public class WithdrawService {
         
         member.setPassword(form.getPassword());
 
+
         //회원 탈퇴 처리
         mapper.withdraw(member);
 
