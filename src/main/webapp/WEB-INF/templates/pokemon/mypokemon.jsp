@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<c:url var="actionUrl" value="/pokemon/mypokemon" />
 
 <layout:main title="시원초이">
     <section class="layout-width">

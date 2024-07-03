@@ -65,9 +65,6 @@ public class PokemonController {
         return "pokemon/view";
     }
 
-
-
-
     @GetMapping("/gacha")
     public String gacha() {
         commonProcess();
@@ -75,6 +72,7 @@ public class PokemonController {
         request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/gacha";
     }
+
 
     @GetMapping("/gacharesult")
     public String gacharesult() {

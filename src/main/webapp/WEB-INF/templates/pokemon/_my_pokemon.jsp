@@ -14,7 +14,6 @@
         </li>
     </c:forEach>
     </ul>
-    <button type="button" class="button-action" data-mode='update'>프로필 이미지 변경</button>
     <button type="button" class="button-action" data-mode="delete">선택 삭제</button>
     <button type="button" class="button-action" data-mode="delete-all">전체 비우기</button>
 </form>

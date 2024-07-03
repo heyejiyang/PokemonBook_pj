@@ -246,10 +246,24 @@ public class PokemonInfoService {
      */
     public Optional<PokemonDetail> getRandom() {
         PokemonDetail data = mapper.getRandom();
-        convertRawData(data);
+        while (data != null && returnedPokemonIds.contains(data.getSeq())) {
+            data = mapper.getRandom();
+        }
+
+        if (data != null) {
+            convertRawData(data);
+            returnedPokemonIds.add((int) data.getSeq());
+        }
 
         return Optional.ofNullable(data);
     }
+
+//    public Optional<PokemonDetail> getRandom() {
+//        PokemonDetail data = mapper.getRandom();
+//        convertRawData(data);
+//
+//        return Optional.ofNullable(data);
+//    }
 
     public List<Long> getSeqsByUserNo(long userNo) {
         return mapper.getMyPokemonSeqs(userNo);
