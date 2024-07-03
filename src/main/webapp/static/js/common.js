@@ -3,7 +3,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
 
     const cursorIcon = new Image();
-    cursorIcon.src = `${rootUrl}/images/icon_mouse.png`;
+    cursorIcon.src = `${rootUrl}/images/m_icon.png`;
 
     document.body.appendChild(cursorIcon);
 
@@ -11,8 +11,8 @@ window.addEventListener("DOMContentLoaded", function() {
         cursorIcon.style.position = "absolute";
 
         window.addEventListener("mousemove", function(e) {
-            cursorIcon.style.left = (e.pageX + cursorIcon.width  + 2)   + "px";
-            cursorIcon.style.top = (e.pageY + cursorIcon.height + 2) + "px";
+            cursorIcon.style.left = (e.pageX + cursorIcon.width)   + "px";
+            cursorIcon.style.top = (e.pageY + cursorIcon.height) + "px";
 
         });
 
