@@ -134,6 +134,6 @@ public class PokemonController {
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.
         request.setAttribute("addCss", new String[] {"pokemon/style"});
-        request.setAttribute("addScript", List.of("pokemon/wishlist"));
+        request.setAttribute("addScript", List.of("pokemon/my"));
     }
 }

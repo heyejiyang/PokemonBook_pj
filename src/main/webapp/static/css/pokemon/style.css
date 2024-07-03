@@ -48,6 +48,14 @@ form[name="frmSearch"] button[type="submit"] {
 .pokemon-list > li {
     width: calc(100% / 5);
     padding: 0 10px 10px;
+    z-index: 0;
+}
+
+.pokemon-list .my-pokemon{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    z-index: 1;
 }
 
 
@@ -70,14 +78,22 @@ form[name="frmSearch"] button[type="submit"] {
     display: block;
 }
 
-
-
 .pokemon-list > li .p-name {
     text-align: left;
     margin-top: 10px;
     margin-left: 10px;
     font-size: 1.25rem;
     font-weight: bold;
+}
+
+.my-pokemon {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.my-pokemon on{
+    color: red;
 }
 
 .pokemonNum{
@@ -89,3 +105,4 @@ form[name="frmSearch"] button[type="submit"] {
     font-size: 1.7rem;
     font-weight: bold;
 }
+

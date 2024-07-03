@@ -26,7 +26,6 @@ import java.util.regex.Pattern;
 
 /**
  * 포켓몬 API 목록 조회 및 상세 조회 서비스
- *
  */
 @Service
 @RequiredArgsConstructor
@@ -51,7 +50,8 @@ public class PokemonInfoService {
         HttpResponse<String> res = service.request(apiUrl);
 
         try {
-            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {});
+            Map<String, String> data = om.readValue(res.body(), new TypeReference<>() {
+            });
             // res.body()를 사용하여 HTTP 응답에서 문자열 형태의 JSON 데이터를 가져옵니다.
             //om.readValue() 메소드는 Jackson ObjectMapper (om)을 사용하여
             // Map<String, String>으로 변환합니다.
@@ -86,7 +86,8 @@ public class PokemonInfoService {
         if (response.statusCode() == HttpServletResponse.SC_OK) {
 
             try {
-                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {});
+                ApiResult<Item> apiResult = om.readValue(response.body(), new TypeReference<>() {
+                });
 
                 items = apiResult.getResults().stream().toList();
             } catch (JsonProcessingException e) {
@@ -169,7 +170,6 @@ public class PokemonInfoService {
     /**
      * 포켓몬 데이터 일괄 업데이트
      * 현재 총 등록된 포켓몬 목록은 1302개로 전체 일괄 업데이트 해도 문제 없을 듯
-     *
      */
     //모든 포켓몬 데이터를 업데이트하는 기능을 수행
     public void updateAll() {
@@ -234,7 +234,8 @@ public class PokemonInfoService {
             try {
                 Pokemon pokemon = om.readValue(rawData, Pokemon.class);
                 data.setPokemon(pokemon); // 원 데이터 변환
-            } catch (JsonProcessingException e) {}
+            } catch (JsonProcessingException e) {
+            }
         }
     }
 
@@ -257,8 +258,8 @@ public class PokemonInfoService {
         return Optional.ofNullable(data);
     }
 
-
-    public void clearReturnedPokemonIds() {
-        returnedPokemonIds.clear();
+    public List<Long> getSeqsByUserNo(long userNo) {
+        return mapper.getMyPokemonSeqs(userNo);
     }
+
 }
