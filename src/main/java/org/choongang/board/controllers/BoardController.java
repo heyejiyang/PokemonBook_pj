@@ -103,7 +103,6 @@ public class BoardController {
     @GetMapping("/delete/{seq}")
     public String delete(@PathVariable("seq") long seq) {
         commonProcess(seq, "delete");
-
         deleteService.delete(seq);
 
         return "redirect:/board/list/" + board.getBId();
@@ -123,6 +122,8 @@ public class BoardController {
         // 비밀번호가 일치한다면 인증 처리
         String authKey = "board_" + seq;
         session.setAttribute(authKey, true);
+
+        commonProcess(seq, "password");
 
         String script = "parent.location.reload();";
         request.setAttribute("script", script);
@@ -161,7 +162,6 @@ public class BoardController {
 
         } else if (mode.equals("view")) { // 글보기
             addCss.add("board/view");
-
         }
 
         request.setAttribute("board", board);
@@ -188,6 +188,8 @@ public class BoardController {
 
     @ExceptionHandler(GuestPasswordCheckException.class)
     public String guestPassword(){
+        request.setAttribute("addCss", List.of("board/style", "board/password"));
+
         return "board/password";
     }
 }
