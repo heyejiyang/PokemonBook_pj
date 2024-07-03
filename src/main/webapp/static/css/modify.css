@@ -32,6 +32,11 @@
     justify-content: center;
 }
 
+.modify-box input[type='text']
+, input[type='password']{
+    height: 50px;
+}
+
 .modify-table {
     border-spacing: 0;
     width: 800px;
@@ -46,7 +51,7 @@ tr {
     width: 100%;
     margin-bottom: 35px;
     justify-content: center;
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     height: 35px;
 }
 
@@ -54,7 +59,7 @@ th{
 display: flex;
     color: #000;
     width: 30%;
-    font-size: 1.35rem;
+    height: 50px;
     text-align: center;
     align-items: center;
     justify-content: center;
@@ -76,12 +81,13 @@ span {
 }
 
 td > span {
-    font-size: 1.25rem;
+    font-size: 1.3rem;
 }
 
 
 td {
     width: 70%;
+    height: 50px;
     display:flex;
     justify-content: center;
     align-items: center;
