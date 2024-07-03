@@ -13,4 +13,8 @@ public interface BoardDataMapper {
     List<BoardData> getList(BoardSearch search); //게시글 리스트 조회
     int exists(long seq);
     int getTotal(BoardSearch search);
+
+    // bId 조건 없이 모든 게시글 데이터를 가져오는 메서드 추가
+    List<BoardData> getListWithoutBId(BoardSearch search);
+
 }
