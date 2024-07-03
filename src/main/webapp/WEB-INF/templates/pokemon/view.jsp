@@ -25,6 +25,7 @@ ${test} 출력시 소수점 이하 버림, 1234
     <div class="navigation-arrows">
         <c:if test="${data.seq >= 1}">
         <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow"></a>
+        ${data.seq}
         </c:if>
         <c:if test="${data.seq > 1}">
         </c:if>
