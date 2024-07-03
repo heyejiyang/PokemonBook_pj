@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="actionUrl" value="/pokemon/mypokemon" />
-
+<c:url var="popupUrl" value="/pokemon/gacha" />
 <layout:main title="시원초이">
     <section class="layout-width">
 <div class="mypokemon-buttons">
@@ -20,7 +20,7 @@
                             <div>${myProfile.nameKr}</div>
                        </div>
                     </c:if>
-                    <button type='button' id="generate-profile-image">
+                    <button type='button' id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 650);">
                     랜덤 프로필 이미지
                     </button>
                 </dd>

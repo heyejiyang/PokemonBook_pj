@@ -4,33 +4,14 @@
 <%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
-<c:set var="heightPoint" value="${data.height * 0.1}" />
-
-<!-- 공부용, 조만간 적용
-<fmt:formatNumber value="12341234" type="number"/><br>
-천 단위마다 ','
-<fmt:formatNumber value="1234" type="currency" currencySymbol="$"/><br>
-$ 시작, 천단위마다 ','
-<fmt:formatNumber value="0.35" type="percent"/><br>
-% 표시
-<fmt:formatNumber value="1234.1234" pattern=".00"/><br>
-1234.12 pattern에 표시한 자리수만큼 반올림
-<fmt:parseNumber var="test" value="1234.12" integerOnly="true"/><br>
-${test} 출력시 소수점 이하 버림, 1234
--->
-
 <c:set var="heightInMeters" value="${data.height * 0.1}" />
+<c:set var="weightKilogram" value="${data.height * 0.1}" />
 
 <layout:main title="${data.nameKr}">
     <div class="navigation-arrows">
-        <c:if test="${data.seq >= 1}">
         <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow"></a>
-        ${data.seq}
-        </c:if>
-        <c:if test="${data.seq > 1}">
-        </c:if>
         <a href="<c:url value='/pokemon/view/${data.seq + 1}' />" class="arrow right-arrow"></a>
-</div>
+    </div>
 <div class="viewWrap">
     <section class="pokemon-view">
         <div class="separate">
@@ -54,11 +35,7 @@ ${test} 출력시 소수점 이하 버림, 1234
             </div>
             <div class="pokemonCh">
                 <p class="pokemonHeight"> 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m</p>
-                <p class="pokemonWeight"> 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg</p>
-                <!-- 키: <fmt:formatNumber value="${heightInMeters}" type="number" minFractionDigits="1" maxFractionDigits="1" />m<br> -->
-                <!-- 몸무게: <fmt:formatNumber value="${data.weight}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg<br> -->
-                <!-- 키: ${data.height * 0.1}m<br> -->
-                <!-- 몸무게: ${data.weight}kg<br> -->
+                <p class="pokemonWeight"> 몸무게: <fmt:formatNumber value="${weightKilogram}" type="number" minFractionDigits="0" maxFractionDigits="0" />kg</p>
             </div>
             <div class="p-desc">
                 ${fn:replace(data.description, '\\n', '<br>')}
