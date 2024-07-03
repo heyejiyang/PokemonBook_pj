@@ -23,7 +23,6 @@ public class FileInfoSaveService {
         if (result > 0L) {
             return infoService.get(data.getSeq()).orElse(null);
         }
-
         return null;
     }
 }
