@@ -53,4 +53,8 @@
     <delete id="delete">
         DELETE FROM MEMBER WHERE EMAIL=#{email}
     </delete>
+
+    <delete id="withdraw">
+        DELETE FROM MEMBER WHERE EMAIL=#{email}
+    </delete>
 </mapper>
