@@ -24,19 +24,19 @@ public class MapperTest {
     }
 
     @Test
-    void getMyPokemonTest() {
-        List<PokemonDetail> items = mapper.getMyPokemons(1L);
+    void getMyPokemonsTest() {
+        List<PokemonDetail> items = mapper.getMyPokemons(81L);
         items.forEach(System.out::println);
     }
 
     @Test
     void deleteMyPokemon() {
-        int result = mapper.deleteMyPokemon(2L, 1L);
+        int result = mapper.deleteMyPokemon(81L, 1L);
         System.out.println(result);
     }
 
     @Test
-    void deleteAllMyPokemon () {
+    void deleteAllMyPokemon() {
         int result = mapper.deleteAllMyPokemon(81L);
         System.out.println(result);
     }

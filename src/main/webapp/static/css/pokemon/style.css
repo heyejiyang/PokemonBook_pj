@@ -92,7 +92,7 @@ form[name="frmSearch"] button[type="submit"] {
     cursor: pointer;
 }
 
-.my-pokemon on{
+.my-pokemon.on {
     color: red;
 }
 

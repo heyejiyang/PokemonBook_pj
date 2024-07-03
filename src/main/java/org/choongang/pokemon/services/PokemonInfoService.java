@@ -246,14 +246,7 @@ public class PokemonInfoService {
      */
     public Optional<PokemonDetail> getRandom() {
         PokemonDetail data = mapper.getRandom();
-        while (data != null && returnedPokemonIds.contains(data.getSeq())) {
-            data = mapper.getRandom();
-        }
-
-        if (data != null) {
-            convertRawData(data);
-            returnedPokemonIds.add((int) data.getSeq());
-        }
+        convertRawData(data);
 
         return Optional.ofNullable(data);
     }

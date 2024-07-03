@@ -6,7 +6,16 @@
 <layout:main title="회원정보 수정">
     <section class="layout-width">
         <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
-
+            <dl>
+                <dt>이메일</dt>
+                <dd>${loggedMember.email}</dd>
+            </dl>
+            <dl>
+                <dt>회원명</dt>
+                <dd>
+                    <input type="text" name="userName" value="${loggedMember.userName}">
+                </dd>
+            </dl>
             <dl>
                 <dt>비밀번호</dt>
                 <dd>

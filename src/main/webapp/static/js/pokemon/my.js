@@ -15,13 +15,14 @@ window.addEventListener("DOMContentLoaded", function() {
             // 서버 반영 처리
             const seq = this.dataset.seq;
 
-            fetch('${rootUrl}api/pokemon/my/${seq}')
+            fetch(`${rootUrl}api/pokemon/my/${seq}`)
                 .then(res => res.text())
                 .then(text => {
-                    if (text == 'true'){
+                    if (text == 'true') {
                         classList.toggle('on');
                     }
                 });
+
         });
     }
 });

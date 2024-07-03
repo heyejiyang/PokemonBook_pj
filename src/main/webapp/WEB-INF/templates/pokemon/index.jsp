@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
-<%@ taglib prefix="pk" tagdir="WEB-INF/tags/pokemon" %>
+<%@ taglib prefix="pk" tagdir="/WEB-INF/tags/pokemon" %>
 <c:url var="searchUrl" value="/pokemon" />
 
 <layout:main>
@@ -23,12 +23,12 @@
                 <li>
                     <a class="a" href="<c:url value='/pokemon/view/${item.seq}' />">
                         <img src="${item.frontImage}" alt="${item.nameKr}">
-                    </a>
                     <div class="p-name">
                         <p class="pokemonNum">No.${item.seq}</p>
                         <p class="pokemonName">${item.nameKr}</p>
                     </div>
                     <pk:myPokemon seq="${item.seq}" />
+                    </a>
                 </li>
             </c:forEach>
         </c:if>

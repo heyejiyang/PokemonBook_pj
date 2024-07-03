@@ -64,10 +64,9 @@ public class MemberUtil {
 
     public List<Long> getMyPokemonSeqs() {
         if (isLogin()) {
+            List<Long> seqs = infoService.getSeqsByUserNo(getMember().getUserNo());
 
-        List<Long> seqs = infoService.getSeqsByUserNo(getMember().getUserNo());
-
-        return seqs;
+            return seqs;
         }
 
         return Collections.EMPTY_LIST;

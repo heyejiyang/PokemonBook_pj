@@ -58,13 +58,12 @@ public class MyPokemonService {
         return Collections.EMPTY_LIST;
     }
 
-    /*
-    *
-    *
-    * @param userNo
-    * @param seq
-    * @return
-    * */
+    /**
+     *
+     * @param userNo
+     * @param seq
+     * @return
+     */
     public boolean toggle(long userNo, long seq) {
         int result = 0;
         if (mapper.myPokemonExists(userNo, seq) > 0L) { // 이미 등록되어 있으면 제거

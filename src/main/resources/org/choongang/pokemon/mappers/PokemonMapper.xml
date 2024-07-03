@@ -90,7 +90,7 @@
 
     <!-- 전체 삭제 -->
     <delete id="deleteAllMyPokemon">
-        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo} AND SEQ=#{seq}
+        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo}
     </delete>
 
     <select id="getMyPokemonSeqs" resultType="java.lang.Long">
