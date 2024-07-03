@@ -16,6 +16,4 @@ public class FileInfo extends AbstractFileInfo {
     private String contentType; // 파일 형식
     private int done; // 그룹 작업 완료 여부
     private LocalDateTime regDt;
-
-
 }
