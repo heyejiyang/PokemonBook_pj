@@ -21,7 +21,7 @@
             <th>이름</th>
             <th>등급</th>
             <th>가입날짜</th>
-            <th>회원탈퇴</th>
+            <th>회원강퇴</th>
             </thead>
             <tbody>
             <c:if test="${items != null && !items.isEmpty()}">
