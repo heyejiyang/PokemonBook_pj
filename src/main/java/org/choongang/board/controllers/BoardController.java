@@ -155,6 +155,7 @@ public class BoardController {
         if (mode.equals("write") || mode.equals("update")) { // 쓰기, 수정
             addCss.add("board/form");
             addScript.add("ckeditor5/ckeditor");
+            addScript.add("fileManager"); //⁂form 위에 추가해야함!
             addScript.add("board/form");
 
         } else if (mode.equals("list")) { // 목록
