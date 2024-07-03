@@ -1,16 +1,110 @@
-.button-group {
-display: flex;
-justify-content:center;
-margin-top: 30px;
+.all-form {
+    margin: 30px 0;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 700px;
 }
 
-button {
+.form-box {
+    display: block;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 500px;
+    /*border: 1px solid #414141;*/
+    padding: 10px 20px;
+    background: var(--white);
+}
+
+.login-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px 0 50px;
+    height: 70px;
+}
+
+.login-title h1 {
+    font-weight: bold;
+    font-size: 1.5rem;
+    /*text-align: center;*/
+}
+
+
+.logo {
+    vertical-align: middle; /* 이미지를 가운데 정렬 */
+    width: 180px;
+}
+
+.div{
+    padding: 0 15px;
+    margin: 15px 0;
+}
+
+.email input,
+.pw input {
+    height: 50px;
+    width: 95%;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+.save-email {
+    font-size: 1.2rem;
+}
+
+
+.email {
+
+}
+
+.pw {
+
+}
+
+
+input[type=checkbox] {
+    transform : scale(1.5);
+    margin-right: 10px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+
+    border-bottom: 1px solid #d0d0d0;
+}
+
+.button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
-    width: 200px;
-    margin: 0 20px;
+    width: 95%;
     background: var(--blue);
     font-size: 1.2rem;
+    margin: 20px 0;
+    cursor: pointer;
+    transform: skew(-20deg);
+}
+
+.button > p {
+    transform: skew(20deg);
     color: #fff;
+}
+.link-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+}
+
+.link-login > a {
+    margin-top: 30px;
+    padding: 10px 22px;
+    border-radius: 38px;
+    background: #FFFFE9 ;
+
 }

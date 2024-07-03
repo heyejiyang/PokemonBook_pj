@@ -16,16 +16,19 @@ main > .main-content h1 {
 
 .member_list {
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .member_list_table{
     border-spacing: 0;
     padding: 0;
-    width: 100%;
+    font-size: 15px;
 }
 
 .member_list_table th{
-    background: #424242;
+    background: #555;
     color: #fff;
 }
 
@@ -36,3 +39,16 @@ main > .main-content h1 {
 }
 
 /* 내용 영역 E */
+
+.pagination {
+    margin: 20px 0;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.pagination a {
+    border: 5px solid #FFDE00;
+    color: #555;
+    padding: 8px;
+    border-radius: 20px;
+}

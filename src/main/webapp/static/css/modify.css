@@ -1,9 +1,24 @@
+.all-form {
+    height: 750px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.layout-form {
+    width: 600px;
+}
+
 .modify-title {
     text-align: center;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: 20px 0 10px;
+}
+
+.modify-title h1 {
+    font-size: 1.35rem;
 }
 
 .modify-title img {
@@ -17,8 +32,8 @@
 }
 
 .modify-table {
-    border-spacing: 0; /*오른쪽 패딩이 왜 적용이 안되나요..*/
-    width: 100%;
+    border-spacing: 0;
+    width: 600px;
     /*border: 1px solid #ccc;*/
     padding: 10px 20px 10px 10px;
     background-color: #F6F6F6;
@@ -67,13 +82,13 @@ td, th {
         /*border: 1px solid #ccc;*/
         }
 
-.button-group {
+.buttons {
 display: flex;
 justify-content:center;
 margin-top: 30px;
 }
 
-button {
+.buttons button {
     border: 1px solid #ccc; /*옅은 회색*/
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
@@ -82,4 +97,11 @@ button {
     background: var(--blue);
     color: #fff;
     font-size: 1.2rem;
+    cursor: pointer; /*커서 포인터*/
+    transition: background 0.5s ease; /*부드러운 색상 변화, 근데 왜 다른 버튼도 적용되지.. 지정해서 적용시켰는데..*/
+}
+
+.buttons button:hover{
+    background: var(--yellow);
+    font-weight: bold;
 }

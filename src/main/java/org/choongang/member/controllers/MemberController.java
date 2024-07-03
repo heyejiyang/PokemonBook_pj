@@ -1,6 +1,8 @@
 package org.choongang.member.controllers;
 
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
+import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 import lombok.RequiredArgsConstructor;
 import org.choongang.global.config.annotations.Controller;
@@ -56,9 +58,20 @@ public class MemberController {
 
     // 로그인 처리
     @PostMapping("/login")
-    public String loginPs(RequestLogin form, HttpServletRequest request) {
+    public String loginPs(RequestLogin form, HttpServletRequest request, HttpServletResponse response) {
 
         loginService.process(form);
+
+
+        /* 이메일 저장 처리 S */
+        Cookie cookie = new Cookie("saveEmail", form.getEmail());
+        if (form.isSaveEmail()) { // 쿠키에 saveEmail 저장(유효기간 7일)
+            cookie.setMaxAge(60 * 60 * 24 * 7);
+        } else { // 쿠키에 saveEmail 제거
+            cookie.setMaxAge(0);
+        }
+        response.addCookie(cookie);
+        /* 이메일 저장 처리 E */
 
         String redirectUrl = form.getRedirectUrl();
         redirectUrl = redirectUrl == null || redirectUrl.isBlank() ? "/" : redirectUrl;

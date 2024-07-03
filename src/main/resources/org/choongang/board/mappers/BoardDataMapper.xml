@@ -112,7 +112,7 @@
 
     <select id="getTotal">
         SELECT COUNT(*) FROM BOARD_DATA B
-            LEFT JOIN MEMBER M ON B.MEMBER_SEQ = M.USER_NO
+        LEFT JOIN MEMBER M ON B.MEMBER_SEQ = M.USER_NO
         <where>
             <if test="bId != null and !bId.equals('')">
                 AND B.BID = #{bId}
