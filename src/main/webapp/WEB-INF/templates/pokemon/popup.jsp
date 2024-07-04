@@ -7,7 +7,6 @@
     <form method="post" action="<c:url value='/pokemon/popup' />" autocomplete="off" target="ifrmProcess">
         <input type="hidden" name="seq" value="${data.seq}">
         <img src="${data.frontImage}" alt="${data.nameKr}">
-
         <div>No.${data.seq}</div>
         <div>${data.nameKr}</div>
         <div>${fn:replace(data.description, '\\n', '<br>')}</div>

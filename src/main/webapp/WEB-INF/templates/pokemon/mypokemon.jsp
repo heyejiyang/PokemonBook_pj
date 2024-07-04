@@ -9,10 +9,10 @@ crossorigin="anonymous">
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <c:url var="popupUrl" value="/pokemon/gacha" />
-<layout:main title="시원초이진표">
+<layout:main title="이진표">
     <section class="layout-width">
             <div class="button-wrapper">
-                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 650);">
+                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 1000, 650);">
                     랜덤 프로필 이미지
                 </button>
             </div>

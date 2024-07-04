@@ -25,7 +25,7 @@
 }
 
 .pokemon-items label {
-    padding: 15px;
+    padding: 10px;
     box-shadow: 2px 2px 5px #333;
     border-radius: 10px;
     cursor: pointer;
@@ -44,5 +44,5 @@
 .pokemon-items label img {
     display: block;
     width: 100%;
-    margin-bottom: 10px;
+    margin-bottom: 1px;
 }

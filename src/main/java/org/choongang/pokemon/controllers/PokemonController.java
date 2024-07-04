@@ -84,6 +84,7 @@ public class PokemonController {
     @GetMapping("/gacha")
     public String gacha() {
 
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/gacha";
     }
 
