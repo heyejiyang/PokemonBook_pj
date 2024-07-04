@@ -125,22 +125,22 @@ CREATE TABLE POKEMON (
 
 
 # BOARD_DATA
-| 키  | 논리      | 물리 | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값     | 코멘트   | 
-|:--:|---------|----|---------|-------|--|--------|---------|-------| 
-| pk | 순서      | SEQ | long    | NUMBER |  | Y      |         |       |
-|    | 회원      |  BID| String  | VARCHAR |  | Y      |         |       |
-|    | 비회원     | GID | String  | VARCHAR |  | Y      |         |  |
-|    | 사진      | POSTER | String  | VARCHAR |  | N      |         |       |
-|    | 회원순서    | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
+| 키  | 논리       | 물리 | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값     | 코멘트   | 
+|:--:|----------|----|---------|-------|--|--------|---------|-------| 
+| pk | 순서       | SEQ | long    | NUMBER |  | Y      |         |       |
+|    | 회원       |  BID| String  | VARCHAR |  | Y      |         |       |
+|    | 비회원      | GID | String  | VARCHAR |  | Y      |         |  |
+|    | 사진       | POSTER | String  | VARCHAR |  | N      |         |       |
+|    | 회원순서     | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
 |    | 비회원 비밀번호 | GUEST_PASSWORD | String  | VARCHAR |  | Y      |         |       |
-|    | 분류      | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
-|    | 공지여부    | NOTICE | int     |  NUMBER |  | Y      | 0       |       |
-|    | 이름      | SUBJECT | String  | VARCHAR  |  | N      |         |       |
-|    | 컨텐츠     |CONTENT | String  |  CLOB    |  | N      |         |       |
+|    | 분류       | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
+|    | 공지여부     | NOTICE | int     |  NUMBER |  | Y      | 0       |       |
+|    | 이름       | SUBJECT | String  | VARCHAR  |  | N      |         |       |
+|    | 파일       |CONTENT | String  |  CLOB    |  | N      |         |       |
 |    | 브라우저 종류 정보 |   UA | String  |  VARCHAR     |  | Y      |         |       |
 |    | 글 작성자 IP 주소 |  IP | String  |   VARCHAR    |  | Y      |         |       |
-|    | 작성일시    |  REG_DT | LocalDateTime |  DATE     |  | Y      | SYSDATE |       |
-|    | 수정일시    |  MOD_DT | LocalDateTime |   DATE    |  | Y      |         |       |
+|    | 작성일시     |  REG_DT | LocalDateTime |  DATE     |  | Y      | SYSDATE |       |
+|    | 수정일시     |  MOD_DT | LocalDateTime |   DATE    |  | Y      |         |       |
 
 
 # POKEMON
@@ -166,12 +166,28 @@ CREATE TABLE POKEMON (
 
 
 # POKEGACHA
+| 키  | 논리    | 물리         | 도메인    | 타입      | UNIQUE | NULL허용 | 기본값    | 코멘트   | 
+|:--:|-------|------------|--------|---------|--|---|--------|-------| 
+| pk | 이메일   | EMAIL      | String | VARCHAR  |  |   |        |       |
+|    | 순서    |SEQ      | long   | NUMBER  |  |   |        |       |
+|    | 한국이름  | NAME_KR        | String | VARCHAR |  |   |        |  |
+|    | 앞면이미지 | FRONT_IMAGE     | String | VARCHAR |  |   |        |       |
+|    | 닉네임   | INPUT_NICKNAME | String   | VARCHAR |  |   |        |       |
 
 
 
 
 # FILE_INFO
-
+| 키  | 논리          | 물리  | 도메인    | 타입      | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
+|:--:|-------------|-----|--------|---------|--|--------|---|-------| 
+| pk | 순서          | SEQ | long | NUMBER  |  |        |   |       |
+|    | 비회원         |GID  | String   | VARCHAR  |  | N      |   |       |
+|    | 위치          | LOCATION | String | VARCHAR |  |        |   |  |
+|    | 파일명         | FILE_NAME | String | VARCHAR |  | N      |   |       |
+|    | 파일 확장자      | EXTENSION | String   | VARCHAR |  |        |   |       |
+|    | 파일 형식       | CONTENT_TYPE |   String      | VARCHAR        |  |        |   |       |
+|    | 그룹 작업 완료 여부 |DONE |   int       |   NUMBER      |  |        | 0 |       |
+|    | 작성일시        | REG_DT | LocalDateTime    |  DATE       |  |        |  SYSDATE |       |
 
 
 <BR>
