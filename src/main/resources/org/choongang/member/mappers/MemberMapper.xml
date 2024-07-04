@@ -43,7 +43,7 @@
     </insert>
 
     <select id="getList" resultMap="memberMap">
-        SELECT * FROM MEMBER WHERE USER_TYPE='USER' ORDER BY REG_DT
+        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE USER_TYPE='USER' ORDER BY REG_DT
     </select>
 
     <select id="getTotal" resultType="int">
