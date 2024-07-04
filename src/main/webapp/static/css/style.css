@@ -77,7 +77,7 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 800px;
+    height: 750px;
 }
 
 .admin401 {
@@ -88,19 +88,24 @@ textarea {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
 }
 
 .title401{
     text-align: center;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 40px;
+    margin: 40px 0 40px;
+}
+
+.title401 img {
+    height: 300px;
 }
 
 
 .title401 h1 {
     font-size: 2rem;
-    margin: 0;
+    margin-bottom: 20px;
 }
 
 .button401 {
@@ -112,11 +117,14 @@ textarea {
     background: var(--blue);
     font-size: 1.35rem;
     transition: background 0.5s ease;
-    color: var(--white);
     cursor: pointer; /*커서 포인터*/
 }
 
 .button401:hover{
     background: var(--yellow);
     font-weight: bold;
+}
+
+.button401 a {
+    color: var(--white);
 }
