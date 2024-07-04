@@ -18,5 +18,4 @@
         <button type='submit' class="popup-button">확인</button>
     </section>
     </form>
-
 </layout:popup>

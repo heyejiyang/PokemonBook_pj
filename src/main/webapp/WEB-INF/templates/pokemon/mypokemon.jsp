@@ -5,8 +5,8 @@
 <layout:main title="이진표">
     <section class="layout-width">
             <div class="button-wrapper">
-                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 700);">
-                    랜덤 프로필 이미지
+                <button type='button' class="button-action" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 700);">
+                    랜덤 포켓몬 뽑기
                 </button>
             </div>
          <jsp:include page="_my_pokemon.jsp" />

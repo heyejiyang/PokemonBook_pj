@@ -14,7 +14,6 @@
             <div class="my-pname">
                     no.${item.seq}
                 <p>
-
                     ${item.nameKr}
                 </p>
             </div>

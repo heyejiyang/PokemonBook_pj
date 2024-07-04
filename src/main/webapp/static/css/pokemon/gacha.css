@@ -19,11 +19,11 @@
 .pokeball img {
     width:400px;
     height: 400px;
-    transition: transform 0.9s ease;
+    transition: transform 0.4s ease;
 }
 
 .pokeball img:hover {
-    transform: scale(1.7)
+    transform: scale(1.8)
 }
 
 .gacha_explain {
