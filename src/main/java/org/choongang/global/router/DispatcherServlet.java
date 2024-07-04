@@ -22,6 +22,7 @@ public class DispatcherServlet extends HttpServlet  {
         HttpServletRequest request = (HttpServletRequest) req;
         HttpServletResponse response = (HttpServletResponse) res;
 
+
         bc.addBean(HttpServletRequest.class.getName(), request);
         bc.addBean(HttpServletResponse.class.getName(), response);
         bc.addBean(HttpSession.class.getName(), request.getSession());

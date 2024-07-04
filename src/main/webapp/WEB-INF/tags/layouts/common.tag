@@ -2,6 +2,7 @@
 <%@ tag pageEncoding="UTF-8" trimDirectiveWhitespaces="true" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
+<%@ taglib prefix="fn" uri="jakarta.tags.functions" %>
 <%@ attribute name="header" fragment="true" %>
 <%@ attribute name="footer" fragment="true" %>
 <%@ attribute name="commonCss" fragment="true" %>
@@ -30,6 +31,7 @@
             </c:forEach>
         </c:if>
 
+        <script src="${jsUrl}layer.js"></script>
         <script src="${jsUrl}common.js"></script>
         <jsp:invoke fragment="commonJs" />
         <c:if test="${addScript != null}">

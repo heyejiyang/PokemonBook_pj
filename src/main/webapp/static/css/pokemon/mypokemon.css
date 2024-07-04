@@ -1,0 +1,88 @@
+.button-wrapper {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            height: 5%; /* 부모 요소의 전체 높이 사용 */
+            margin-top: 13px;
+        }
+
+.profile {
+            text-align: center; /* 프로필 이미지와 텍스트를 중앙 정렬 */
+        }
+
+.pokemon-items {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 50px;
+    margin-left: 250px;
+    margin-right: 250px;
+
+}
+
+.pokemon-items .item {
+    width: calc(100% / 5);
+    padding: 10px;
+}
+
+.pokemon-items input[type='radio'] {
+    display: none;
+}
+
+.pokemon-items label {
+    padding: 10px;
+    box-shadow: 2px 2px 5px #333;
+    border-radius: 10px;
+    cursor: pointer;
+    display: block;
+}
+
+.pokemon-items input[type='radio']:checked + label {
+    background: #333;
+    color: #fff;
+}
+
+.pokemon-items input[type='radio']:checked + label * {
+    color: #fff;
+}
+
+.pokemon-items label img {
+    display: block;
+    width: 100%;
+    margin-bottom: 1px;
+}
+
+.my-pokeNm {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    font-size:20px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.button-wrapper {
+            display: flex;
+            justify-content: center; /* 가로 중앙 정렬 */
+            align-items: center; /* 세로 중앙 정렬 */
+            height: 5%; /* 부모 요소의 전체 높이 사용 */
+            margin-top: 10px;
+            margin-bottom: 50px;
+            gap: 20px;
+        }
+
+.button-action {
+    font-size: 1.2rem;
+    padding: 15px 30px;
+    background-color: #ff5722;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+/* 버튼 hover 효과 */
+.button-action:hover {
+    background-color: #d1180b;
+    transform: scale(1.05);
+}
+

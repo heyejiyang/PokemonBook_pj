@@ -1,0 +1,36 @@
+
+.gacha_wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.gacha_title{
+    margin-top: 50px;
+    text-align:center;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.pokeball {
+    margin-top:30px;
+}
+
+.pokeball img {
+    width:400px;
+    height: 400px;
+    transition: transform 0.3s ease;
+}
+
+.pokeball img:hover {
+    transform: scale(1.07)
+}
+
+.gacha_explain {
+    margin-top: 50px;
+    text-align:center;
+    font-size: 30px;
+    font-weight: bold;
+    color: #ced4da;
+}
