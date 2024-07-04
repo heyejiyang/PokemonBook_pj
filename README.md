@@ -18,7 +18,9 @@
 
 
 
-# 2. 개발 환경
+# 2. 개발 환경 및 역할 분담
+
+## 개발 환경
 ![img_7.png](img_7.png)
 - Intelli J
 - Gradle
@@ -31,6 +33,10 @@
 <br>
 <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" /> <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" /> <img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
 <BR>
+
+## 역할 분담
+![img_8.png](img_8.png)
+<br>
 
 # 3. UserFlow 작성
 ![img_4.png](img_4.png)
@@ -247,6 +253,3 @@
 ![img_1.png](img_1.png)
 
 <br>
-
-# 9. 역할 분담  
-![img_8.png](img_8.png)
