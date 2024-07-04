@@ -1,8 +1,13 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
+<c:url var="logoUrl" value="/images/ball.png" />
+
 <layout:admin title="게시판 목록">
-    <h1>게시판 목록</h1>
+    <div class="admin_title">
+        <div class="admin_title_img"><img src="${logoUrl}" alt="<fmt:message key='로고' />"></div>
+        <div class="admin_title_text"><h1>게시판 목록</h1></div>
+    </div>
 
     <table class="table-rows">
         <thead>

@@ -9,8 +9,17 @@
 
 <layout:main title="${data.nameKr}">
     <div class="navigation-arrows">
-        <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow"></a>
-        <a href="<c:url value='/pokemon/view/${data.seq + 1}' />" class="arrow right-arrow"></a>
+            <a href="<c:url value='/pokemon/view/${data.seq - 1}' />" class="arrow left-arrow">
+                <div class="left-arrow-box">
+                     <div class="left-arrow-ex">이전 포켓몬 조회</div>
+                </div>
+            </a>
+
+            <a href="<c:url value='/pokemon/view/${data.seq + 1}' />" class="arrow right-arrow">
+                <div class="right-arrow-box">
+                    <div class="right-arrow-ex">다음 포켓몬 조회</div>
+                </div>
+            </a>
     </div>
 <div class="viewWrap">
     <section class="pokemon-view">

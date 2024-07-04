@@ -10,5 +10,5 @@
 <% } else {%>
 <div class="my-pokemon${isLogin ? '': ' guest'}" data-seq="${seq}">
 <% }%>
-    『♥』
+    ♥
 </div>

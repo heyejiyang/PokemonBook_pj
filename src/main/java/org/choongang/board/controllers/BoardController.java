@@ -79,6 +79,8 @@ public class BoardController {
         commonProcess(seq, "update");
 
         RequestBoardData data = infoService.getForm(boardData);
+        System.out.println(data.getEditorFiles());
+        System.out.println(data.getAttachFiles());
         request.setAttribute("data", data);
 
         return "board/update";
