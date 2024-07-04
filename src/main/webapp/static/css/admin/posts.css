@@ -1,0 +1,142 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* img와 h2 사이의 간격 조정 */
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 2rem; /* h2의 폰트 크기 조정, 필요에 따라 수정 */
+}
+
+/* 검색바 */
+.layout-width{
+    display: flex;
+    justify-content: flex-end; /* 오른쪽 정렬 */
+    margin-top: 20px;
+    margin-bottom: 20px; /* 아래 컨텐츠와 간격 */
+}
+
+.search-container{
+    display: inline-block;
+    background-color: transparent !important;
+    border: 2px solid var(--black);
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.board_search_box{
+    margin: 0 !important;
+}
+.board_search_box button{
+    background-color: black !important;
+}
+
+.board_search_box button:hover{
+    background-color: red !important;
+}
+
+/* 전체/ 공지사항/ 질문과답변 버튼 */
+.tab-menu {
+    margin-top: 60px;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    color: #FFF;
+}
+
+.tab-menu a {
+    background-color: black;
+    font-weight: bold;
+    margin-right: 10px;
+    padding: 5px 10px;
+    text-decoration: none;
+    color: #FFF;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.tab-menu a:hover {
+    background-color: red;
+    color: white;
+}
+
+/* post.jsp 스타일 */
+
+h2{
+    font-size: 2rem;
+}
+
+.list-items {
+    list-style: none;
+    padding: 0;
+}
+
+.list-item {
+    padding: 15px;
+    margin-bottom: 10px;
+    background-color: #f9f9f9;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.list-item .subject {
+    font-size: 1.2rem;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.l_subject:hover,
+.list-item .subject:hover {
+    text-decoration: underline;
+}
+
+.item-category {
+    font-weight: bold;
+    color: #1B3467;
+}
+
+.post-info {
+    font-size: 0.9rem;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+.list-item .subject {
+    display: block;
+    font-size: 1.2em;
+    color: #333;
+    text-decoration: none;
+    margin-bottom: 5px;
+}
+
+.list-item .subject:hover {
+    text-decoration: underline;
+}
+
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
+
+.pagination {
+    text-align: center;
+    margin: 20px 0;
+}
+.pagination a {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 3px;
+}
+.pagination a.on {
+    background-image: url('../../images/1.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    opacity: 1.0;
+    color: white;
+}

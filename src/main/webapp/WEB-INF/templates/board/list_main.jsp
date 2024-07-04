@@ -27,14 +27,11 @@
             <th>작성자</th>
             <th>날짜</th>
         </tr>
-        <c:if test="${items == null || items.isEmpty()}">
-            <li class="no-data">조회된 게시글이 없습니다.</li>
-        </c:if>
         <c:if test="${items != null && !items.isEmpty()}">
             <c:forEach var="item" items="${items}">
                 <tr>
                     <td>
-                            ${item.seq}
+                        ${item.seq}
                     </td>
                     <td class>
                         <a href="<c:url value="/board/view/${item.seq}"/>" class="l_subject">
@@ -46,14 +43,22 @@
                     </td>
                     <td>
                         <div class="post-info">
-                            ${item.poster}(${item.memberSeq > 0 ? item.email : "비회원"})
+<%--                            <c:if test="${member.userNo = null}">--%>
+<%--                                ${item.poster}(알 수 없음)--%>
+<%--                            </c:if>--%>
+                            <c:if test="${item.memberSeq >= 0}">
+                                ${item.poster}(${item.memberSeq > 0 ? item.email : "비회원"})
+                            </c:if>
                         </div>
                     </td>
-                    <td><util:formatDate value="${item.regDt}" pattern="yyyy.MM.dd HH:mm"></util:formatDate></td>
+                    <td><util:formatDate value="${item.regDt}" pattern="yyyy.MM.dd HH:mm" /></td>
                 </tr>
             </c:forEach>
         </c:if>
     </table>
+    <c:if test="${items == null || items.isEmpty()}">
+        <li class="no-data">조회된 게시글이 없습니다.</li>
+    </c:if>
     <br>
 
     <c:choose>

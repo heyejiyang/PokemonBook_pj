@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="org.choongang.file.mappers.FileInfoMapper">
+    <resultMap id="fileInfoMap" type="org.choongang.file.entities.FileInfo">
+        <result column="SEQ" property="seq" />
+        <result column="GID" property="gid" />
+        <result column="LOCATION" property="location" />
+        <result column="FILE_NAME" property="fileName" />
+        <result column="EXTENSION" property="extension" />
+        <result column="CONTENT_TYPE" property="contentType" />
+        <result column="DONE" property="done" />
+        <result column="REG_DT" property="regDt" />
+    </resultMap>
+
+    <select id="getList" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        ORDER BY SEQ
+    </select>
+
+    <select id="getListDone" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        AND DONE=1 ORDER BY SEQ
+    </select>
+
+    <!-- 미완료된 파일만 가져오기 -->
+    <select id="getListUnDone" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO
+        WHERE GID = #{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION = #{location}
+        </if>
+        AND DONE=0 ORDER BY SEQ
+    </select>
+
+    <!-- 파일 1개 조회 -->
+    <select id="get" resultMap="fileInfoMap">
+        SELECT * FROM FILE_INFO WHERE SEQ=#{seq}
+    </select>
+
+    <insert id="register">
+        <selectKey keyProperty="seq" order="BEFORE" resultType="long">
+            SELECT SEQ_FILE_INFO.NEXTVAL FROM DUAL
+        </selectKey>
+
+        INSERT INTO FILE_INFO (SEQ, GID, LOCATION, FILE_NAME, EXTENSION, CONTENT_TYPE)
+        VALUES (#{seq}, #{gid}, #{location}, #{fileName}, #{extension}, #{contentType})
+    </insert>
+
+    <delete id="delete">
+        DELETE FROM FILE_INFO WHERE SEQ=#{seq}
+    </delete>
+
+    <!-- deletes : 여러개 삭제 -->
+    <delete id="deletes">
+        DELETE FROM FILE_INFO
+        WHERE GID=#{gid}
+        <if test="location != null and !location.equals('')">
+            AND LOCATION=#{location}
+        </if>
+    </delete>
+
+    <!-- GID 로 찾아 완료 상태로 변경 -->
+    <update id="updateDone">
+        UPDATE FILE_INFO
+        SET
+        DONE=1
+        WHERE GID = #{gid}
+    </update>
+</mapper>

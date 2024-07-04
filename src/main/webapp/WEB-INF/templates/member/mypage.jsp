@@ -7,6 +7,7 @@
 <fmt:message var="pageTitle" key='마이페이지' />
 <c:url var="actionUrl" value="/member/mypage" />
 <c:url var="modUrl" value="/member/modify" />
+<c:url var="wdUrl" value="/member/withdraw" />
 <%@ page import="java.time.format.DateTimeFormatter" %>
 <c:url var="logoUrl" value="/images/ball.png" />
 
@@ -30,7 +31,7 @@
                         </tr>
                         <tr>
                             <th>회원 등급</th>
-                            <td>${loggedMember.userType}</td>
+                            <td>${loggedMember.userType.title}</td>
                         </tr>
                         <tr>
                             <th>가입일</th>
@@ -47,7 +48,7 @@
                 </button>
                 <c:if test="${!isAdmin}">
                     <button type="button">
-                        <a href="#" alt="<fmt:message key="작성글_조회하기" />">작성글 조회하기</a>
+                        <a href="${wdUrl}" alt="<fmt:message key="회원_탈퇴하기" />">회원 탈퇴하기</a>
                     </button>
                     <button type="button">
                         <a href="#" alt="<fmt:message key="나의_포켓몬_보기" />" onclick="alert('랜덤으로 나만의 포켓몬을 뽑아보세요!')">나의 포켓몬 보기</a>

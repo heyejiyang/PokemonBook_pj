@@ -9,10 +9,7 @@ import org.choongang.global.config.annotations.Controller;
 import org.choongang.global.config.annotations.GetMapping;
 import org.choongang.global.config.annotations.PostMapping;
 import org.choongang.global.config.annotations.RequestMapping;
-import org.choongang.member.services.JoinService;
-import org.choongang.member.services.LoginService;
-import org.choongang.member.services.ModifyService;
-import org.choongang.member.services.MypageService;
+import org.choongang.member.services.*;
 
 import java.util.List;
 
@@ -25,6 +22,7 @@ public class MemberController {
     private final LoginService loginService;
     private final MypageService mypageService;
     private final ModifyService modifyService;
+    private final WithdrawService withdrawService;
 
     // 회원 가입 양식
     @GetMapping("/join")
@@ -116,6 +114,31 @@ public class MemberController {
 
         String url = request.getContextPath() + "/member/mypage";
         //정보 수정이 완료되면 마이페이지 화면으로 돌아가서 수정 정보 확인할 수 있게 함
+        String script = String.format("parent.location.replace('%s');", url);
+
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
+    }
+
+
+    //회원탈퇴, 오류 발생 시 지워주세요..
+    @GetMapping("/withdraw")
+    public String withdraw(RequestWithdraw form, HttpServletRequest request) {
+        request.setAttribute("form", form);
+        request.setAttribute("addCss", List.of("withdraw"));
+
+        return "member/withdraw";
+    }
+
+    // 회원탈퇴 처리
+    @PostMapping("/withdraw")
+    public String withdrawPs(RequestWithdraw form, HttpServletRequest request) {
+
+        withdrawService.process(form);
+
+        String url = request.getContextPath() + "/";
+        //회원탈퇴가 완료되면 메인 페이지로 돌아감
         String script = String.format("parent.location.replace('%s');", url);
 
         request.setAttribute("script", script);

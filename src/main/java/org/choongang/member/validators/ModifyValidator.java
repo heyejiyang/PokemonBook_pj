@@ -15,7 +15,7 @@ import org.choongang.member.mappers.MemberMapper;
 
 @Component
 @RequiredArgsConstructor
-public class ModifyValidator implements Validator<RequestModify>, RequiredValidator, EmailValidator {
+public class ModifyValidator implements Validator<RequestModify>, RequiredValidator {
 
     private final MemberUtil memberUtil;
     private final MemberMapper mapper;

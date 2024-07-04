@@ -43,7 +43,7 @@
     </insert>
 
     <select id="getList" resultMap="memberMap">
-        SELECT * FROM MEMBER ORDER BY REG_DT
+        SELECT * FROM MEMBER WHERE USER_TYPE='USER' ORDER BY REG_DT
     </select>
 
     <select id="getTotal" resultType="int">
@@ -51,6 +51,10 @@
     </select>
 
     <delete id="delete">
+        DELETE FROM MEMBER WHERE EMAIL=#{email}
+    </delete>
+
+    <delete id="withdraw">
         DELETE FROM MEMBER WHERE EMAIL=#{email}
     </delete>
 </mapper>

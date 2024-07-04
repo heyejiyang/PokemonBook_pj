@@ -9,6 +9,7 @@
 <layout:main title="${board.BName}">
     <section class="layout-width-con">
         <jsp:include page="_header.jsp"/>
+        <section class="all-view">
         <div class="view-body">
             <div class="view-layout-width">
                 <div class="subject">
@@ -29,6 +30,20 @@
                 <div class="content">
                         ${data.content}
                 </div>
+
+                <c:if test="${data.attachFiles != null && !data.attachFiles.isEmpty()}">
+                    <ul class="download-items">
+                        <c:forEach var="item" items="${data.attachFiles}" varStatus="status">
+                            <li>
+                                File #${status.count}:
+                                <a href="<c:url value='/file/download' />/${item.seq}">
+                                        ${item.fileName}
+                                </a>
+                            </li>
+                        </c:forEach>
+                    </ul>
+                </c:if>
+
                 <div class="btn-group">
                     <a class="btn" href="<c:url value="/board/write/${data.BId}"/>">글쓰기</a>
                     <a class="btn" href="<c:url value="/board/update/${data.seq}"/>">수정하기</a>
@@ -44,4 +59,5 @@
             <jsp:include page="list_main.jsp"/>
         </section>
     </c:if>
+    </section>
 </layout:main>

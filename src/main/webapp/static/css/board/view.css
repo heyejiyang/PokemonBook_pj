@@ -37,7 +37,8 @@
     background-color: #fff;
     border-bottom: 2px solid #ddd;
     width: auto;
-    max-height: 400px; /* 원하는 최대 높이 설정 */
+    min-height: 550px; /* 최소 높이 설정 */
+    max-height: none; /* 최대 높이 제한 해제 */
     overflow-y: auto; /* 내용이 많아질 경우 수직 스크롤바 표시 */
     padding: 20px; /* 내용과 경계 사이의 여백 설정 */
 }
@@ -63,13 +64,13 @@
 
 
 .view-page .page-container{
-    margin-bottom: 0;
-    width: calc(100% - 100px);
+    max-width: 1000px; /* 최대 너비를 1000px로 설정 */
+    width: 100%;
     /*text-align: center;*/
 }
 
 .view-page .notice-table {
-    width: 50%;
+    width: 90%;
     border-collapse: collapse;
     text-align: center;
 }
@@ -87,7 +88,7 @@
 .view-page .tab-category {
     margin-left: 50px;
     padding-bottom: 5px ;
-    border-bottom: 4px solid var(--yellow);
+    border-bottom: 2.5px solid var(--yellow);
     display: inline-block;
 }
 
@@ -119,7 +120,6 @@
     margin: 20px; /* 상단, 하단 여백을 주고 왼쪽 정렬 */
     width: auto;
     justify-content: center;
-    padding-right: 500px;
 }
 .view-page .pagination a {
     display: inline-block;

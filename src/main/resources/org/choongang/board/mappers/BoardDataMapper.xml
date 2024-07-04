@@ -71,8 +71,8 @@
     </select>
 
     <select id="getList" resultMap="boardDataMap">
-        SELECT * FROM (
-        SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        SELECT * FROM (SELECT ROWNUM NUM, D.* FROM (
+        SELECT B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
         LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
         <where>
             <if test="bId != null and !bId.equals('')">
@@ -103,10 +103,10 @@
             </if>
         </where>
         ORDER BY B.SEQ DESC
-        ) D
+        ) D)
         WHERE
         <![CDATA[
-        D.NUM >= #{offset} AND D.NUM < #{endRows}
+        NUM >= #{offset} AND NUM < #{endRows}
         ]]>
     </select>
 
@@ -146,4 +146,40 @@
     <select id="exists" resultType="int">
         SELECT COUNT(*) FROM BOARD_DATA WHERE SEQ=#{seq}
     </select>
+
+    <select id="getListWithoutBId" resultMap="boardDataMap">
+        SELECT * FROM (SELECT ROWNUM NUM, D.* FROM (
+        SELECT B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
+        <where>
+            <if test="category != null and !category.equals('')">
+                AND B.CATEGORY = #{category}
+            </if>
+            <if test="skey != null and !skey.equals('')">
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                <if test="sopt != null and sopt.equals('ALL')">
+                    AND (B.SUBJECT || B.CONTENT || B.POSTER || M.EMAIL || M.USER_NAME LIKE #{keyword})
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT_CONTENT')">
+                    AND (B.SUBJECT || B.CONTENT LIKE #{keyword})
+                </if>
+                <if test="sopt != null and sopt.equals('SUBJECT')">
+                    AND B.SUBJECT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('CONTENT')">
+                    AND B.CONTENT LIKE #{keyword}
+                </if>
+                <if test="sopt != null and sopt.equals('NAME')">
+                    AND (B.POSTER || M.EMAIL || M.USER_NAME LIKE #{keyword})
+                </if>
+            </if>
+        </where>
+        ORDER BY B.SEQ DESC
+        ) D)
+        WHERE
+        <![CDATA[
+        NUM >= #{offset} AND NUM < #{endRows}
+        ]]>
+    </select>
+
 </mapper>
