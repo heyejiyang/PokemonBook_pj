@@ -58,6 +58,13 @@ window.addEventListener("DOMContentLoaded", function (){
 
     });
     /* 파일 탐색기에서 선택 처리 E */
+
+    /* 이미지 본문 추가 처리 S*/
+    const insertEditors = document.getElementsByClassName("insert-editor");
+    for(const el of insertEditors){
+        el.addEventListener("click",(e) => insertEditor(e.currentTarget.dataset.url));
+    }
+    /* 이미지 본문 추가 처리 E*/
 });
 
 /**
@@ -96,10 +103,33 @@ function callbackFileUpload(files){
         const dom = domParser.parseFromString(html,"text/html");
         const span = dom.querySelector("span");
         target.appendChild(span);
+
+        const insertEditorEl = span.querySelector(".insert-editor");
+        if(insertEditorEl){
+            insertEditorEl.addEventListener("click", e => insertEditor(e.currentTarget.dataset.url));
+        }
     }
 
     //에디터에 이미지 추가
     if(source.length > 0){
         editor.execute('insertImage',{ source });
+    }
+}
+
+/**
+ * 본문 이미지 추가
+ */
+function insertEditor(imageUrl){
+    editor.execute('insertImage', {source: [imageUrl]});
+}
+
+/**
+ * 파일 삭제 후속 처리
+ * @param seq
+ */
+function callbackFileDelete(seq){
+    const el = document.getElementById(`file-item-${seq}`);
+    if (el) {
+        el.parentElement.removeChild(el);
     }
 }
