@@ -17,23 +17,22 @@ public class FileDeleteService {
 
     /**
      * 파일 1개 삭제
-     * @param seq :파일 등록번호
+     * @param seq  : 파일 등록번호
      */
-    public void delete(long seq) {
+    public void delete(long seq){
         FileInfo data = infoService.get(seq).orElseThrow(FileNotFoundException::new);
         delete(data);
     }
 
-    public void delete(FileInfo data) {
-        String filePath = data.getFilePath();
-        File file =  new File(filePath);
-        if (file.exists()) {
+    public void delete(FileInfo data){
+        String filePath = data.getFilePath(); // 서버에 올라가 있는 파일 경로
+        File file = new File(filePath);
+        if(file.exists()){
             file.delete();
         }
 
         mapper.delete(data.getSeq());
     }
-
 
     /**
      * 파일 목록 삭제
@@ -41,12 +40,13 @@ public class FileDeleteService {
      * @param gid
      * @param location
      */
-    public void deletes(String gid, String location) {
+    public void deletes(String gid, String location){
         List<FileInfo> items = infoService.getList(gid, location);
         items.forEach(this::delete);
     }
 
-    public void deletes(String gid) {
+    public void deletes(String gid){
         deletes(gid, null);
     }
+
 }

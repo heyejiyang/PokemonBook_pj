@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class BoardData extends AbstractBoardData {
+public class BoardData extends AbstractBoardData{
     private long num;
     private long seq;
     private String bId;

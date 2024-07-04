@@ -1,6 +1,5 @@
 package org.choongang.file.controllers;
 
-
 import jakarta.servlet.http.HttpServletRequest;
 import lombok.RequiredArgsConstructor;
 import org.choongang.file.services.FileDeleteService;
@@ -18,16 +17,15 @@ public class FileDeleteController {
     @RequestMapping("/{seq}")
     public String delete(@PathVariable("seq") long seq, HttpServletRequest request){
         deleteService.delete(seq);
-
         /**
-         * 파일 삭제 후속 처리 -callbackFileDelete 함수가 정의되어 있으면
-         * 파일 번호와 함께 호출 - 그 후 처리는 상황에 맞게 처리
+         * 파일 삭제 후속 처리 - callbackFileDelete 함수가 정의되어 있지 않으면
+         *                      파일 번호와 함께 호출 - 그 후 처리는 상황에 맞게 처리
          */
-        String script = "if (typeof callbackFileDelete === 'function') {" +
-                "      parent.callbackFileDelete(" + seq + "); " +
-                "}";
+        String script = "if (typeof parent.callbackFileDelete === 'function') {" + " parent.callbackFileDelete(" + seq + "); " + "}" ;
 
-        request.setAttribute("script", script);
+
+        request.setAttribute("script", script); //삭제후에는 스크립트 실행됨
         return "commons/execute_script";
     }
+
 }

@@ -3,11 +3,13 @@ package org.choongang.board.services;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpSession;
 import org.choongang.board.controllers.RequestBoardData;
+import org.choongang.board.entities.Board;
 import org.choongang.board.entities.BoardData;
 import org.choongang.board.mappers.BoardDataMapper;
 import org.choongang.board.validators.BoardSaveValidator;
 import org.choongang.global.config.DBConn;
 import org.choongang.global.config.containers.BeanContainer;
+import org.choongang.member.MemberUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -16,6 +18,7 @@ import org.mockito.Mock;
 import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.mockito.BDDMockito.given;
 
 @DisplayName("게시글 등록, 수정 테스트")
 public class BoardSaveServiceTest {
@@ -28,23 +31,24 @@ public class BoardSaveServiceTest {
     private HttpServletRequest request;
 
     @BeforeEach
-    void init() {
-        BeanContainer bc = BeanContainer.getInstance();
-        bc.addBean(HttpSession.class.getName(), session);
-        bc.addBean(HttpServletRequest.class.getName(), request);
+    void init(){
 
-        //MemberUtil memberUtil = new MemberUtil();
+        BeanContainer bc = BeanContainer.getInstance();
+        bc.addBean(HttpSession.class.getName(),session);
+        bc.addBean(HttpServletRequest.class.getName(),request)
+        ;
+//        MemberUtil memberUtil = new MemberUtil();
 
         BoardDataMapper mapper = DBConn.getSession().getMapper(BoardDataMapper.class);
-        BoardInfoService infoService = new BoardInfoService(mapper, null, null);
-        BoardSaveValidator validator = new BoardSaveValidator(null, mapper);
-        saveService = new BoardSaveService(null, null, null, null, null, null);
+        BoardInfoService infoService = new BoardInfoService(mapper,null, null);
+        BoardSaveValidator validator = new BoardSaveValidator(null,mapper);
+        saveService = new BoardSaveService(null, null,null, null, null, null);
     }
 
     @Test
-    void saveTest() {
+    void saveTest(){
         RequestBoardData form = new RequestBoardData();
-        form.setBId("freetalk");
+        form.setBId("notice");
         form.setCategory("분류1");
         form.setPoster("작성자");
         form.setSubject("제목");
@@ -53,9 +57,9 @@ public class BoardSaveServiceTest {
         form.setMode("write");
 
         Optional<BoardData> data = saveService.save(form);
-
-        BoardData bData = data.orElse(null);
+        BoardData bData = data.orElse(null); //조회X
         assertNotNull(bData);
+
 
         System.out.println(bData);
     }
