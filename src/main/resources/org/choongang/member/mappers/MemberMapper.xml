@@ -15,7 +15,7 @@
     </resultMap>
 
     <select id="get" resultMap="memberMap">
-        SELECT USER_NO, EMAIL, PASSWORD, USER_NAME, USER_TYPE, MY_POKEMON_SEQ, REG_DT, MOD_DT FROM MEMBER WHERE EMAIL=#{email}
+        SELECT * FROM MEMBER WHERE EMAIL=#{email}
     </select>
 
     <select id="exists" resultType="int">
