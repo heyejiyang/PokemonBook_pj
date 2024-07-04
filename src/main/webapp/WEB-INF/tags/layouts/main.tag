@@ -6,6 +6,7 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
 <%@ attribute name="addScript" fragment="true" %>
+<%@ attribute name="commonCss" fragment="true" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
@@ -121,6 +122,8 @@
     </jsp:attribute>
     <jsp:attribute name="commonCss">
         <link rel="stylesheet" type="text/css" href="${cssUrl}main.css">
+        <link rel="stylesheet" type="text/css" href="${cssUrl}401.css">
+        <jsp:invoke fragment="commonCss" />
     </jsp:attribute>
     <jsp:attribute name="commonJs">
         <script src="${jsUrl}main.js"></script>

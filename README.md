@@ -27,15 +27,9 @@
 - Oracle
 - Apache Tomcat  
 
-<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
-<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
-<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
-<img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" />
-<img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" /> <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" /> <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" /> <img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" /> <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
 <br>
-<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" />
-<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" />
-<img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" /> <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" /> <img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
 <BR>
 
 # 3. UserFlow 작성
@@ -244,10 +238,15 @@
 
 <BR>
 
-
-# 7. 역할 분담
+# 7. 작업일지
 ![img_2.png](img_2.png)
+
 <BR>
 
 # 8. 일정표
 ![img_1.png](img_1.png)
+
+<br>
+
+# 9. 역할 분담  
+![img_8.png](img_8.png)
