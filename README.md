@@ -7,6 +7,7 @@
 <BR>
 
 # 2. 개발 환경
+![img.png](img.png)
 - Intelli J
 - Gradle
 - java
@@ -136,7 +137,8 @@
 <BR>
 
 # 7. 역할 분담
-
+![img_2.png](img_2.png)
 <BR>
 
 # 8. 일정표
+![img_1.png](img_1.png)
