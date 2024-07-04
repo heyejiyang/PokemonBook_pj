@@ -12,8 +12,18 @@
 - java
 - GitHub
 - Oracle
-- Apache Tomcat
-  <BR>
+- Apache Tomcat  
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
+<img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" />
+<img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
+<br>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" />
+<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" />
+<img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
+<BR>
 
 # 3. UserFlow 작성
 <BR>
@@ -81,12 +91,97 @@
 <BR>
 
 # 5. ERD 작성 (엔티티 관계도)
+```mermaid
+    classDiagram
+        %% Member class
+        %% private type= -
+        class Member["회원"] {
+            -long userNo
+            -String email
+            -String password
+            -String userType
+            -long myPokemonSeq
+            -LocalDateTime regDt
+            -LocalDateTime modDt
+            +void login()
+            +void join()
+            +void logout()
+            +void mypage()
+            +void modify()
+            +void withdraw
+        }
+        
+        class Board["게시판"] {
+            -String bId
+            -String bName
+            -int rowsPerPage
+            -int active
+            -int activeCategory
+            -String category
+            -Authority authority
+        }
+        
+        class BoardData["게시글"] {
+            -long num
+            -long seq
+            -String bId
+            -String gId
+            -String poster
+            -long memberSeq
+            -String guestPassword
+            -String category
+            -int notice
+            -String subject
+            -String content
+            -String ua
+            -String ip
+            -LocalDateTime regDt
+            -LocalDateTime modDt
+            
+            -String email
+            -String userName
+        }
 
+        class Pokemon["포켓몬"] {
+          -long seq
+          -long num
+          -String name
+          -String nameKr
+          -int weight
+          -double height
+          -int baseExperience
+          -String frontImage
+          -String backImage
+          -String pixelFrontImage
+          -String pixelBackImage
+          -String rawData
+          -String description
+          -String type1
+          -String type2
+        }
+
+  class File_Info["파일 정보"] {
+    -long seq
+    -String gid
+    -String location
+    -String fileName
+    -String extension
+    -string contentType
+    -int done
+    -LocalDateTime regDt
+  }
+        
+    %% 관계 다중성
+    Member"1" -->"0..n" BoardData
+    Board "1" -->"0..n" BoardData
+    BoardData "1" -->"0..1" File_Info
+```
 <BR>
 
-# 6. 테이블 다이어그램
+# 6. 테이블
 ## MEMBER
 ```
+
 
 ```
 ## BOARD
