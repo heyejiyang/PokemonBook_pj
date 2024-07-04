@@ -2,7 +2,10 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="c" uri="jakarta.tags.core" %>
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
-<c:url var="bannerUrl" value="/images/banner1.png" />
+<c:url var="banner1Url" value="/images/banner1.png" />
+<c:url var="banner2Url" value="/images/banner2.png" />
+<c:url var="banner3Url" value="/images/banner3.png" />
+<c:url var="banner4Url" value="/images/banner4.png" />
 <c:url var="news1Url" value="/images/new1.jpg" />
 <c:url var="news2Url" value="/images/new2.jpg" />
 <c:url var="news3Url" value="/images/new3.png" />
@@ -17,9 +20,17 @@
 <c:url var="ballUrl" value="/images/ball.png" />
 
 <layout:main>
-    <div class="banner">
-        <img src="${bannerUrl}" alt="<fmt:message key='배너' />">
+    <div class="swiper mySwiper">
+        <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="${banner1Url}" alt="<fmt:message key='배너' />"></div>
+        <div class="swiper-slide"><img src="${banner2Url}" alt="<fmt:message key='배너' />"></div>
+        <div class="swiper-slide"><img src="${banner3Url}" alt="<fmt:message key='배너' />"></div>
+        <div class="swiper-slide"><img src="${banner4Url}" alt="<fmt:message key='배너' />"></div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
     </div>
+
     <div class="container">
         <div class="container1">
             <h2 class="do-hyeon-regular"><img src="${ballUrl}" alt="포켓볼">새로운 소식<img src="${ballUrl}" alt="포켓볼"></h2>
