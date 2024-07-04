@@ -199,6 +199,12 @@ CREATE TABLE POKEMON (
 |    | 그룹 작업 완료 여부 |DONE |   int       |   NUMBER      |  |        | 0 |       |
 |    | 작성일시        | REG_DT | LocalDateTime    |  DATE       |  |        |  SYSDATE |       |
 
+# My_Pokemon
+| 키  | 논리   | 물리  | 도메인  | 타입      | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
+|:--:|------|-----|------|---------|--|--------|---|-------| 
+| fk | 회원번호 |USER_NO     | long |         |  | N      |   |       |
+| fk | 순서   |  SEQ   | long |         |  | N      |   |       |
+
 
 <BR>
 
