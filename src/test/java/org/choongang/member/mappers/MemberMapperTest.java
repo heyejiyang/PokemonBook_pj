@@ -83,6 +83,7 @@ public class MemberMapperTest {
 
     }
 
+    // 탈퇴 테스트
     @Test
     @DisplayName("회원 탈퇴 테스트")
     void withdrawTest() {
