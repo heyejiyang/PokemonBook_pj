@@ -1,17 +1,21 @@
 package org.choongang.member.mappers;
 
 import com.github.javafaker.Faker;
+import jakarta.servlet.http.HttpServletRequest;
 import org.apache.ibatis.session.SqlSession;
 import org.choongang.global.config.DBConn;
 import org.choongang.member.constants.UserType;
 import org.choongang.member.entities.Member;
-import org.choongang.member.mappers.MemberMapper;
-import org.junit.jupiter.api.*;
-
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 
 import java.time.LocalDateTime;
 import java.util.Locale;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.mockito.Mockito.mock;
 
 public class MemberMapperTest {
 
@@ -31,12 +35,12 @@ public class MemberMapperTest {
         Faker faker = new Faker(Locale.ENGLISH);
 
         member = Member.builder()
-            .email(System.currentTimeMillis() + faker.internet().emailAddress())
-            .password(faker.regexify("\\w{8,16}").toLowerCase())
-            .userName(faker.name().fullName())
-            .userType(UserType.USER)
-            .regDt(LocalDateTime.now())
-            .build();
+                .email(System.currentTimeMillis() + faker.internet().emailAddress())
+                .password(faker.regexify("\\w{8,16}").toLowerCase())
+                .userName(faker.name().fullName())
+                .userType(UserType.USER)
+                .regDt(LocalDateTime.now())
+                .build();
 
         int result = mapper.register(member); // 등록
         assertEquals(1, result);
@@ -78,9 +82,9 @@ public class MemberMapperTest {
         // 회원 정보 수정
         int result = mapper.modify(member1); // 수정
         assertEquals(1, result);  // 수정 성공 확인
-        
+
     }
-    
+
     @Test
     @DisplayName("회원 탈퇴 테스트")
     void withdrawTest() {
@@ -101,13 +105,43 @@ public class MemberMapperTest {
                 .email(member.getEmail()) // 기존 회원의 이메일로 설정
                 .password(member.getPassword()) // 기존 비번으로 설정
                 .build();
-        
+
 
         // 회원 탈퇴
         int result = mapper.withdraw(member2);
         assertEquals(0, result); // 탈퇴 성공 확인
     }
-    
+
+    @Test
+    @DisplayName("회원 강퇴 테스트")
+    void memberDeleteTest() {
+
+        Faker faker = new Faker(Locale.ENGLISH);
+
+        member = Member.builder()
+                .email(System.currentTimeMillis() + faker.internet().emailAddress())
+                .password(faker.regexify("\\w{8,16}").toLowerCase())
+                .userName(faker.name().fullName())
+                .userType(UserType.USER)
+                .regDt(LocalDateTime.now())
+                .build();
+
+        Member member2 = Member.builder()
+                .email(member.getEmail()) // 기존 회원의 이메일로 설정
+                .password(member.getPassword()) // 기존 비번으로 설정
+                .build();
+
+        // 회원 강퇴
+        HttpServletRequest request = mock(HttpServletRequest.class);
+
+        String[] emails = request.getParameterValues("email");
+
+        if (emails != null) {
+            for (String email : emails) {
+                mapper.delete(email);
+            }
+        }
+    }
 
     @AfterEach
     void destroy() {
