@@ -4,12 +4,18 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <layout:popup>
     <section class="popup-view">
-        <form method="post" action="<c:url value='/pokemon/popup' />" autocomplete="off" target="ifrmProcess">
-            <input type="hidden" name="seq" value="${data.seq}">
-            <img src="${data.frontImage}" alt="${data.nameKr}">
-            <div>${data.nameKr}</div>
-            <div>${fn:replace(data.description, '\\n', '<br>')}</div>
-            <button type='submit'>프로필 이미지로 선택</button>
-        </form>
+    <div class="background">
+    <form method="post" action="<c:url value='/pokemon/popup' />" autocomplete="off" target="ifrmProcess">
+        <input type="hidden" name="seq" value="${data.seq}">
+        <img src="${data.frontImage}" alt="${data.nameKr}">
+    </div>
+    <div class="popup_explain">
+        <div class="no">
+        No.${data.seq}
+        ${data.nameKr}</div>
+        <p class="ex">${fn:replace(data.description, '\\n', '<br>')}</p>
+    </div>
+        <button type='submit' class="popup-button">확인</button>
     </section>
+    </form>
 </layout:popup>

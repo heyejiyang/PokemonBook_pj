@@ -51,7 +51,7 @@
                         <a href="${wdUrl}" alt="<fmt:message key="회원_탈퇴하기" />">회원 탈퇴하기</a>
                     </button>
                     <button type="button">
-                        <a href="#" alt="<fmt:message key="나의_포켓몬_보기" />" onclick="alert('랜덤으로 나만의 포켓몬을 뽑아보세요!')">나의 포켓몬 보기</a>
+                        <a href="<c:url value='/pokemon/mypokemon' />" alt="<fmt:message key="나의_포켓몬_보기" />" onclick="alert('랜덤으로 나만의 포켓몬을 뽑아보세요!')">나의 포켓몬 보기</a>
                     </button>
                 </c:if>
             </div>

@@ -88,7 +88,6 @@ public class BeanContainer {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public static BeanContainer getInstance() {
