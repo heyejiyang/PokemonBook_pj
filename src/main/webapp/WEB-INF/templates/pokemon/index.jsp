@@ -23,12 +23,26 @@
                 <li>
                     <a class="a" href="<c:url value='/pokemon/view/${item.seq}' />">
                         <img src="${item.frontImage}" alt="${item.nameKr}">
-                    <div class="p-name">
-                        <p class="pokemonNum">No.${item.seq}</p>
-                        <p class="pokemonName">${item.nameKr}</p>
-                    </div>
                     </a>
-                    <pk:myPokemon seq="${item.seq}" />
+                    <div class="p-infoWrap">
+                     <div class="p-name">
+                            <p class="pokemonNum">No.${item.seq}</p>
+                            <p class="pokemonName">${item.nameKr}</p>
+                     </div>
+                     <pk:myPokemon seq="${item.seq}" />
+                     </div>
+                     <div class="mp-type">
+                        <div class="mp-type-1">
+                        <c:if test="${not empty item.type1}">
+                             <img src="<c:url value='/images/type/${item.type1}.png' />" alt="${item.type1}" />
+                        </c:if>
+                        </div>
+                        <div class="mp-type-2">
+                        <c:if test="${not empty item.type2}">
+                             <img src="<c:url value='/images/type/${item.type2}.png' />" alt="${item.type2}" />
+                        </c:if>
+                        </div>
+                     </div>
                 </li>
             </c:forEach>
         </c:if>

@@ -1,3 +1,4 @@
+
 /* 검색기능 S */
 
 .formWrap {
@@ -19,8 +20,8 @@ form[name="frmSearch"] input[type="text"] {
     max-width: 70%;
     padding: 28px;
     border: 1px solid transparent;
-    border-radius: 5px; /
-margin-right: 10px;
+    border-radius: 5px;
+    margin-right: 10px;
     background-color: #000;
     color: #818181;
     font-size: 1.4rem;
@@ -41,8 +42,11 @@ form[name="frmSearch"] button[type="submit"] {
 
 .pokemon-list {
     margin-top:50px;
+    margin-right: 100px;
+    margin-left: 100px;
     display: flex;
     flex-wrap: wrap;
+
 }
 
 .pokemon-list > li {
@@ -52,13 +56,16 @@ form[name="frmSearch"] button[type="submit"] {
     position: relative;
 }
 
-.pokemon-list .my-pokemon{
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 1;
+
+.p-infoWrap {
+    display:flex;
+    justify-content:space-between;
+    margin-right:10px;
 }
 
+.p-infoWrap .my-pokemon {
+    padding:19px;
+}
 
 .pokemon-list > li a {
     display: block;
@@ -143,3 +150,21 @@ form[name="frmSearch"] button[type="submit"] {
     width: 100%;
     margin-bottom: 10px;
 }
+
+.mp-type {
+    display:flex;
+    justify-content: space-around;
+    margin-bottom: 30px;
+}
+
+.mp-type-1 {
+width:144px;
+
+}
+
+.mp-type-2{
+width:144px;
+
+}
+
+
