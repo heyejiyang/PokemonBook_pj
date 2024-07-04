@@ -10,7 +10,7 @@
 
 
 # 2. 개발 환경
-![img.png](img.png)
+![img_7.png](img_7.png)
 - Intelli J
 - Gradle
 - java
@@ -30,7 +30,9 @@
 <BR>
 
 # 3. UserFlow 작성
+![img_4.png](img_4.png)
 <BR>
+![img_6.png](img_6.png)
 
 # 4. 기능 명세서
 ## 🔹 관리자 페이지 🔹
@@ -83,7 +85,7 @@
 - 즐겨찾기한 포켓몬
   <BR>
 
-## 게시판
+## 📋게시판
 - 게시판 별 목록 조회
 - 게시판 상단 카테고리 선택시 해당 카테고리의 게시글만 조회
   - 예) 공지사항의 공지 | 이벤트 | 업데이트 ->업데이트 선택시 업데이트 게시글만 조회
@@ -91,7 +93,7 @@
 ### 게시글 조회
 - 제목, 작성자, 내용, 제목+내용 으로 조회
 
-### 📋게시글
+### 게시글
 - 게시글 작성, 수정, 삭제 기능
 - 게시글 보기 기능
 - 파일 업로드 기능
@@ -127,91 +129,8 @@
 <BR>
 
 # 5. ERD 작성 (엔티티 관계도)
-```mermaid
-    classDiagram
-        %% Member class
-        %% private type= -
-        class Member["회원"] {
-            -long userNo
-            -String email
-            -String password
-            -String userType
-            -long myPokemonSeq
-            -LocalDateTime regDt
-            -LocalDateTime modDt
-            +void login()
-            +void join()
-            +void logout()
-            +void mypage()
-            +void modify()
-            +void withdraw
-        }
-        
-        class Board["게시판"] {
-            -String bId
-            -String bName
-            -int rowsPerPage
-            -int active
-            -int activeCategory
-            -String category
-            -Authority authority
-        }
-        
-        class BoardData["게시글"] {
-            -long num
-            -long seq
-            -String bId
-            -String gId
-            -String poster
-            -long memberSeq
-            -String guestPassword
-            -String category
-            -int notice
-            -String subject
-            -String content
-            -String ua
-            -String ip
-            -LocalDateTime regDt
-            -LocalDateTime modDt
-            
-            -String email
-            -String userName
-        }
+![img_3.png](img_3.png)
 
-        class Pokemon["포켓몬"] {
-          -long seq
-          -long num
-          -String name
-          -String nameKr
-          -int weight
-          -double height
-          -int baseExperience
-          -String frontImage
-          -String backImage
-          -String pixelFrontImage
-          -String pixelBackImage
-          -String rawData
-          -String description
-          -String type1
-          -String type2
-        }
-
-  class File_Info["파일 정보"] {
-    -long seq
-    -String gid
-    -String location
-    -String fileName
-    -String extension
-    -string contentType
-    -int done
-    -LocalDateTime regDt
-  }
-        
-    %% 관계 다중성
-    Member"1" -->"0..n" BoardData
-    Board "1" -->"0..n" BoardData
-    BoardData "1" -->"0..1" File_Info
-```
 <BR>
 
 # 6. 테이블
