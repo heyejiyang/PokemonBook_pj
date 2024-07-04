@@ -16,27 +16,32 @@
 이 도감은 언제 어디서 어떻게 왜 누구랑 무엇을 하며 나타날지 모르는 상황을 대비해 각 속성과 특성을 미리 파악하여 대처 할 수 있도록 만든 도감입니다. <br>
 사건 사고가 많은 요즘 같은 날 오늘도 안전하고 무사하며 친구와 가족들을 보호할 수 있는, 안전 또 안전한 하루를 보내길 바랍니다.
 
+
+
 # 2. 개발 환경
-![img.png](img.png)
+![img_7.png](img_7.png)
 - Intelli J
 - Gradle
 - java
 - GitHub
 - Oracle
-- Apache Tomcat
-  <br>
-  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
-  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
-  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
-  <img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" />
-  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
-  <br>
-  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" />
-  <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" />
-  <img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
-  <BR>
-# 3. UserFlow 작성
+- Apache Tomcat  
+
+<img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
+<img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+<img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
+<img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" />
+<img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
+<br>
+<img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" />
+<img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" />
+<img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
 <BR>
+
+# 3. UserFlow 작성
+![img_4.png](img_4.png)
+<BR>
+![img_6.png](img_6.png)
 
 # 4. 기능 명세서
 ## 🔹 관리자 페이지 🔹
@@ -89,7 +94,7 @@
 - 즐겨찾기한 포켓몬
   <BR>
 
-## 게시판
+## 📋게시판
 - 게시판 별 목록 조회
 - 게시판 상단 카테고리 선택시 해당 카테고리의 게시글만 조회
   - 예) 공지사항의 공지 | 이벤트 | 업데이트 ->업데이트 선택시 업데이트 게시글만 조회
@@ -97,7 +102,7 @@
 ### 게시글 조회
 - 제목, 작성자, 내용, 제목+내용 으로 조회
 
-### 📋게시글
+### 게시글
 - 게시글 작성, 수정, 삭제 기능
 - 게시글 보기 기능
 - 파일 업로드 기능
@@ -133,27 +138,112 @@
 <BR>
 
 # 5. ERD 작성 (엔티티 관계도)
+![img_3.png](img_3.png)
 
 <BR>
 
 # 6. 테이블 다이어그램
-## MEMBER
-```
+# MEMBER
+| 키  | 논리     | 물리        | 도메인           | 타입    | UNIQUE | NULL허용 | 기본값     | 코멘트   | 
+|:--:|--------|-----------|---------------|-------|--------|--------|---------|-------| 
+| pk | 회원번호   | USER_NO   | long          | NUMBER |        | Y      |         |       |
+|    | 이메일    | EMAIL     | String        | VARCHAR | Y      | N      |         |       |
+|    | 비밀번호   | PASSWORD  | String        | VARCHAR |        | N      |         | 8자리이상 |
+|    | 회원이름   | USER_NAME | String        | VARCHAR |        | N      |         |       |
+|    | 회원타입   | USER_TYPE | USER_TYPE     | VARCHAR |        | Y      | USER    |       |
+|    | 포켓몬 순서 | MY_POKEMON_SEQ  | long          | NUMBER |        | Y      | 0       |       |
+|    | 생성일자   | REG_DT    | LocalDateTime | DATE  |        | Y      | SYSDATE |       |
+|    | 수정일자   | MDO_DT    | LocalDateTime | DATE  |        | Y      |         |       |
+ 
 
-```
-## BOARD
-```
 
-```
-## BOARD_DATA
-```
+# BOARD
+키  | 논리      | 물리 | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
+|:--:|---------|--|---------|-------|-------|--------|----|-------| 
+| pk | 게시판 아이디 | BID | String  | VARCHAR |       | Y      |    |       |
+|    | 게시판 이름  | BNAME | String  | VARCHAR |       | N      |    |       |
+|    | 페이지 행 수 |ROWS_PER_PAGE | Int     | NUMBER |       | Y      | 20 |  |
+|    | 사용여부    | ACTIVE | Boolean | NUMBER |       | Y      | 0  |       |
+|    | 분류사용여부  | ACTIVE_CATEGORY | Boolean | NUMBER |       | Y      | 0  |       |
+|    | 분류      | CATEGORY| String  | CLOB |       | Y      |    |       |
+|    | 관리자     |AUTHORITY | String  | VARCHAR2  |       | Y      | All |       |
 
-```
-## COMMENTS
-```
 
-```
+
+# BOARD_DATA
+| 키  | 논리       | 물리 | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값     | 코멘트   | 
+|:--:|----------|----|---------|-------|--|--------|---------|-------| 
+| pk | 순서       | SEQ | long    | NUMBER |  | Y      |         |       |
+|    | 회원       |  BID| String  | VARCHAR |  | Y      |         |       |
+|    | 비회원      | GID | String  | VARCHAR |  | Y      |         |  |
+|    | 사진       | POSTER | String  | VARCHAR |  | N      |         |       |
+|    | 회원순서     | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
+|    | 비회원 비밀번호 | GUEST_PASSWORD | String  | VARCHAR |  | Y      |         |       |
+|    | 분류       | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
+|    | 공지여부     | NOTICE | int     |  NUMBER |  | Y      | 0       |       |
+|    | 이름       | SUBJECT | String  | VARCHAR  |  | N      |         |       |
+|    | 파일       |CONTENT | String  |  CLOB    |  | N      |         |       |
+|    | 브라우저 종류 정보 |   UA | String  |  VARCHAR     |  | Y      |         |       |
+|    | 글 작성자 IP 주소 |  IP | String  |   VARCHAR    |  | Y      |         |       |
+|    | 작성일시     |  REG_DT | LocalDateTime |  DATE     |  | Y      | SYSDATE |       |
+|    | 수정일시     |  MOD_DT | LocalDateTime |   DATE    |  | Y      |         |       |
+
+
+# POKEMON
+ 키  | 논리       | 물리                | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값    | 코멘트   | 
+|:--:|----------|-------------------|---------|-------|--|-------|--------|-------| 
+| pk | 순서       | SEQ               | long    | NUMBER |  |       |        |       |
+|    | 이름       | NAME              | String  | VARCHAR |  | N     |        |       |
+|    | 몸무게      | WEIGHT            | int  | NUMBER |  |       | 0      |  |
+|    | 길이       | HEIGHT            | double  | NUMBER |  |       | 0      |       |
+|    | 기본경험치    | BASE_EXPERIENCE   | int    | NUMBER |  |       | 0      |       |
+|    | 앞면이미지    | FRONT_IMAGE       | String  | VARCHAR |  |       |        |       |
+|    | 뒷면이미지    | BACK_IMAGE        | String  | VARCHAR  |  |       |        |       |
+|    | 픽셀 앞면이미지 | PIXEL_FRONT_IMAGE | String     |  VARCHAR |  |       |        |       |
+|    | 픽셀 뒷면이미지 | PIXEL_BACK_IMAGE  | String  | VARCHAR |       |       |        |
+|    | 원본데이터    | RAW_DATA          | String  |  CLOB    |  |       |        |       |
+|    | 한국이름     | NAME_KR           | String  |  VARCHAR    |  |       |        |       |
+|    | 소개       | DESCRIPTION       | String  |   VARCHAR   |  |       |        |       |
+|    | 유형1      | TYPE1             | String |  VARCHAR    |  |       |  |       |
+|    | 유형2      | TYPE2             | String |   VARCHAR   |  |       |        |       |
+
+
+
+
+
+# POKEGACHA
+| 키  | 논리    | 물리         | 도메인    | 타입      | UNIQUE | NULL허용 | 기본값    | 코멘트   | 
+|:--:|-------|------------|--------|---------|--|---|--------|-------| 
+| pk | 이메일   | EMAIL      | String | VARCHAR  |  |   |        |       |
+|    | 순서    |SEQ      | long   | NUMBER  |  |   |        |       |
+|    | 한국이름  | NAME_KR        | String | VARCHAR |  |   |        |  |
+|    | 앞면이미지 | FRONT_IMAGE     | String | VARCHAR |  |   |        |       |
+|    | 닉네임   | INPUT_NICKNAME | String   | VARCHAR |  |   |        |       |
+
+
+
+
+# FILE_INFO
+| 키  | 논리          | 물리  | 도메인    | 타입      | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
+|:--:|-------------|-----|--------|---------|--|--------|---|-------| 
+| pk | 순서          | SEQ | long | NUMBER  |  |        |   |       |
+|    | 비회원         |GID  | String   | VARCHAR  |  | N      |   |       |
+|    | 위치          | LOCATION | String | VARCHAR |  |        |   |  |
+|    | 파일명         | FILE_NAME | String | VARCHAR |  | N      |   |       |
+|    | 파일 확장자      | EXTENSION | String   | VARCHAR |  |        |   |       |
+|    | 파일 형식       | CONTENT_TYPE |   String      | VARCHAR        |  |        |   |       |
+|    | 그룹 작업 완료 여부 |DONE |   int       |   NUMBER      |  |        | 0 |       |
+|    | 작성일시        | REG_DT | LocalDateTime    |  DATE       |  |        |  SYSDATE |       |
+
+# My_Pokemon
+| 키  | 논리   | 물리  | 도메인  | 타입      | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
+|:--:|------|-----|------|---------|--|--------|---|-------| 
+| fk | 회원번호 |USER_NO     | long |         |  | N      |   |       |
+| fk | 순서   |  SEQ   | long |         |  | N      |   |       |
+
+
 <BR>
+
 
 # 7. 역할 분담
 ![img_2.png](img_2.png)
