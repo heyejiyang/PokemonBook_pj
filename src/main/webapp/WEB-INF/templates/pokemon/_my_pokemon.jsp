@@ -9,8 +9,8 @@
             <input type="radio" name="seq" value="${item.seq}" id="seq_${item.seq}">
             <label for="seq_${item.seq}">
                 <img src="${item.frontImage}" alt="${item.nameKr}">
-                <div>${item.nameKr}</div>
             </label>
+               <div class="my-pokeNm">${item.nameKr}</div>
         </li>
     </c:forEach>
     </ul>

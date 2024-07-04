@@ -6,13 +6,9 @@
 <layout:main title="시원초이">
     <section class="layout-width">
 <div class="mypokemon-buttons">
-    <button type="button">
-        <a href="<c:url value='/pokemon/gacha' />" alt="TodayPokemon">오늘의 포켓몬 뽑기!</a>
-    </button>
 </div>
          <form name="frmSave" method="POST" action="${actionUrl}" target="ifrmProcess" autocomplete="off">
             <dl>
-             <dt>프로필 이미지</dt>
                 <dd>
                     <c:if test="${myProfile != null}">
                        <div class='profile'>
