@@ -21,7 +21,6 @@ public class PokemonSaveService {
         PokemonDetail detail = PokemonDetail.builder()
                 .seq(data.getId())
                 .name(data.getName())
-                .nameKr(data.getNameKr())
                 .weight(data.getWeight())
                 .height(data.getHeight())
                 .baseExperience(data.getBase_experience())
