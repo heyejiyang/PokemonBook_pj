@@ -9,7 +9,7 @@ window.addEventListener("DOMContentLoaded", function() {
 
     cursorIcon.onload = function() {
         cursorIcon.style.position = "absolute";
-
+        cursorIcon.style.zIndex = 10000;
         window.addEventListener("mousemove", function(e) {
             cursorIcon.style.left = (e.pageX + cursorIcon.width)   + "px";
             cursorIcon.style.top = (e.pageY + cursorIcon.height) + "px";
