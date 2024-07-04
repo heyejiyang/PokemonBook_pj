@@ -4,30 +4,34 @@
         "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="org.choongang.pokemon.mappers.PokemonMapper">
     <resultMap id="pokemonMap" type="org.choongang.pokemon.entities.PokemonDetail">
-        <result column="SEQ" property="seq" />
-        <result column="NUM" property="num" />
-        <result column="NAME" property="name" />
-        <result column="WEIGHT" property="weight" />
-        <result column="HEIGHT" property="height" />
-        <result column="BASE_EXPERIENCE" property="baseExperience" />
-        <result column="FRONT_IMAGE" property="frontImage" />
-        <result column="BACK_IMAGE" property="backImage" />
-        <result column="PIXEL_FRONT_IMAGE" property="pixelFrontImage" />
-        <result column="PIXEL_BACK_IMAGE" property="pixelBackImage" />
-        <result column="RAW_DATA" property="rawData" />
-        <result column="NAME_KR" property="nameKr" />
-        <result column="DESCRIPTION" property="description" />
-        <result column="TYPE1" property="type1" />
-        <result column="TYPE2" property="type2" />
+        <result column="SEQ" property="seq"/>
+        <result column="NUM" property="num"/>
+        <result column="NAME" property="name"/>
+        <result column="WEIGHT" property="weight"/>
+        <result column="HEIGHT" property="height"/>
+        <result column="BASE_EXPERIENCE" property="baseExperience"/>
+        <result column="FRONT_IMAGE" property="frontImage"/>
+        <result column="BACK_IMAGE" property="backImage"/>
+        <result column="PIXEL_FRONT_IMAGE" property="pixelFrontImage"/>
+        <result column="PIXEL_BACK_IMAGE" property="pixelBackImage"/>
+        <result column="RAW_DATA" property="rawData"/>
+        <result column="NAME_KR" property="nameKr"/>
+        <result column="DESCRIPTION" property="description"/>
+        <result column="TYPE1" property="type1"/>
+        <result column="TYPE2" property="type2"/>
     </resultMap>
 
     <insert id="register">
-        INSERT INTO POKEMON (SEQ, NAME, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, PIXEL_FRONT_IMAGE, PIXEL_BACK_IMAGE, RAW_DATA, NAME_KR, DESCRIPTION, TYPE1, TYPE2)
-        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage}, #{pixelFrontImage}, #{pixelBackImage}, #{rawData}, #{nameKr}, #{description}, #{type1}, #{type2})
+        INSERT INTO POKEMON (SEQ, NAME, WEIGHT, HEIGHT, BASE_EXPERIENCE, FRONT_IMAGE, BACK_IMAGE, PIXEL_FRONT_IMAGE,
+        PIXEL_BACK_IMAGE, RAW_DATA, NAME_KR, DESCRIPTION, TYPE1, TYPE2)
+        VALUES (#{seq}, #{name}, #{weight}, #{height}, #{baseExperience}, #{frontImage}, #{backImage},
+        #{pixelFrontImage}, #{pixelBackImage}, #{rawData}, #{nameKr}, #{description}, #{type1}, #{type2})
     </insert>
 
     <select id="get" resultMap="pokemonMap">
-        SELECT P.SEQ, ROWNUM NUM, P.NAME_KR, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P WHERE P.seq=#{seq}
+        SELECT P.SEQ, ROWNUM NUM, P.NAME, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE,
+        P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME_KR, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM
+        POKEMON P WHERE P.seq=#{seq}
     </select>
 
     <select id="getList" resultMap="pokemonMap">
@@ -36,7 +40,7 @@
         <where>
             <if test="skey != null and !skey.equals('')">
                 <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
-                P.NAME_KR  LIKE #{keyword}
+                P.NAME_KR LIKE #{keyword}
             </if>
         </where>
         ORDER BY P.seq
@@ -48,27 +52,7 @@
         ]]>
         </if>
     </select>
-    <!--    <select id="getList" resultMap="pokemonMap">-->
 
-    <!--        SELECT * FROM (SELECT P.SEQ, ROWNUM NUM, P.NAME, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE, P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM POKEMON P-->
-    <!--        <where>-->
-    <!--            <if test="skey != null and !skey.equals('')">-->
-    <!--                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>-->
-
-    <!--                 P.NAME_KR  LIKE #{keyword}-->
-
-
-    <!--            </if>-->
-    <!--        </where>-->
-    <!--        ORDER BY P.seq-->
-    <!--        ) P2-->
-    <!--        <if test="skey == null or skey == ''">-->
-    <!--            WHERE-->
-    <!--            <![CDATA[-->
-    <!--            P2.SEQ >= #{offset} AND P2.SEQ < #{endRows}-->
-    <!--        ]]>-->
-    <!--        </if>-->
-    <!--    </select>-->
     <!-- 포켓몬 랜덤 조회 -->
     <select id="getRandom" resultMap="pokemonMap">
         <![CDATA[
@@ -80,10 +64,40 @@
         SELECT COUNT(*) FROM POKEMON
         <where>
             <if test="skey != null and !skey.equals('')">
-                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'" />
+                <bind name="keyword" value="'%' + _parameter.getSkey() + '%'"/>
                 AND NAME || NAME_KR || DESCRIPTION LIKE #{keyword}
             </if>
         </where>
     </select>
 
+    <!-- 마이 포켓몬 목록 조회 -->
+    <select id="getMyPokemons" resultMap="pokemonMap">
+        SELECT P.SEQ, ROWNUM NUM, P.NAME, P.WEIGHT, P.HEIGHT, P.BASE_EXPERIENCE, P.FRONT_IMAGE,
+        P.BACK_IMAGE,P.PIXEL_FRONT_IMAGE, P.PIXEL_BACK_IMAGE, P.RAW_DATA, P.NAME_KR, P.DESCRIPTION, P.TYPE1, P.TYPE2 FROM MY_POKEMON M
+        INNER JOIN POKEMON P ON M.SEQ = P.SEQ
+        WHERE M.USER_NO=#{userNo} ORDER BY P.NAME_KR
+    </select>
+
+    <!-- 포켓몬 추가 -->
+    <insert id="registerMyPokemon">
+        INSERT INTO MY_POKEMON (USER_NO, SEQ) VALUES (#{userNo}, #{seq})
+    </insert>
+
+    <!-- 삭제 -->
+    <delete id="deleteMyPokemon">
+        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo} AND SEQ=#{seq}
+    </delete>
+
+    <!-- 전체 삭제 -->
+    <delete id="deleteAllMyPokemon">
+        DELETE FROM MY_POKEMON WHERE USER_NO=#{userNo}
+    </delete>
+
+    <select id="getMyPokemonSeqs" resultType="java.lang.Long">
+        SELECT SEQ FROM MY_POKEMON WHERE USER_NO=#{userNo}
+    </select>
+
+    <select id="myPokemonExists" resultType="int">
+        SELECT COUNT(*) FROM MY_POKEMON WHERE USER_NO=#{userNo} AND SEQ=#{seq}
+    </select>
 </mapper>

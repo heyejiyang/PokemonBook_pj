@@ -5,12 +5,18 @@ import lombok.RequiredArgsConstructor;
 import org.choongang.global.ListData;
 import org.choongang.global.Pagination;
 import org.choongang.global.config.annotations.*;
-import org.choongang.member.controllers.RequestJoin;
+import org.choongang.global.exceptions.UnAuthorizedException;
+import org.choongang.member.MemberUtil;
+import org.choongang.member.entities.Member;
+import org.choongang.member.controllers.RequestProfile;
+import org.choongang.member.services.ProfileService;
 import org.choongang.pokemon.entities.PokemonDetail;
 import org.choongang.pokemon.exceptions.PokemonNotFoundException;
+import org.choongang.pokemon.services.MyPokemonService;
 import org.choongang.pokemon.services.PokemonInfoService;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Controller
@@ -19,6 +25,10 @@ import java.util.Optional;
 public class PokemonController {
 
     private final PokemonInfoService infoService;
+    private final ProfileService profileService;
+    private final MyPokemonService pokemonService;
+
+    private final MemberUtil memberUtil;
     private final HttpServletRequest request;
 
     @GetMapping
@@ -54,17 +64,7 @@ public class PokemonController {
 
         return "pokemon/view";
     }
-
-
-    @GetMapping("/mypokemon")
-    public String mypokemon() {
-        commonProcess();
-
-        request.setAttribute("addCss", new String[] {"pokemon/mypokemon"});
-        return "pokemon/mypokemon";
-    }
-
-
+    /*
     @GetMapping("/gacha")
     public String gacha() {
         commonProcess();
@@ -72,7 +72,7 @@ public class PokemonController {
         request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/gacha";
     }
-
+    */
 
     @GetMapping("/gacharesult")
     public String gacharesult() {
@@ -90,11 +90,65 @@ public class PokemonController {
         return "pokemon/gacharesult";
     }
 
+    @GetMapping("/gacha")
+    public String gacha() {
 
+        return "pokemon/gacha";
+    }
+
+    @GetMapping("/popup")
+    public String popup() {
+
+        PokemonDetail data = infoService.getRandom().orElseThrow(PokemonNotFoundException::new);
+
+        pokemonService.add(data.getSeq()); // 발급 받은 포켓몬 저장
+
+        request.setAttribute("data", data);
+        request.setAttribute("addCss", List.of("popup"));
+
+        return "pokemon/popup";
+    }
+
+    @PostMapping("/popup")
+    public String popupPs(@RequestParam("mode") String mode, @RequestParam("seq") long seq) {
+        if (!memberUtil.isLogin()) {
+            throw new UnAuthorizedException();
+        }
+
+        mode = Objects.requireNonNullElse(mode, "update");
+        if (mode.equals("delete")) { // 개별 삭제
+            pokemonService.delete(seq);
+        } else if (mode.equals("delete-all")) { // 전체 비우기
+            pokemonService.deleteAll();
+        } else { // 프로필 변경
+            Member member = memberUtil.getMember();
+            RequestProfile form = new RequestProfile();
+            form.setMyPokemonSeq(seq);
+            form.setUserName(member.getUserName());
+            profileService.update(form);
+        }
+        String script = "parent.parent.location.reload();";
+        request.setAttribute("script", script);
+
+        return "commons/execute_script";
+    }
+
+    @GetMapping("/mypokemon")
+    public String mypokemon() {
+        commonProcess();
+
+        List<PokemonDetail> items = pokemonService.getList();
+
+        request.setAttribute("addCss", new String[] {"pokemon/_mypokemon"});
+        request.setAttribute("addScript", List.of("pokemon/info"));
+        request.setAttribute("items", items);
+
+        return "pokemon/mypokemon";
+    }
 
     private void commonProcess() {
         // commonProcess 메소드는 뷰에서 공통으로 사용될 CSS와 스크립트를 요청 속성에 저장.
         request.setAttribute("addCss", new String[] {"pokemon/style"});
-        request.setAttribute("addScript", List.of("pokemon/wishlist"));
+        request.setAttribute("addScript", List.of("pokemon/my"));
     }
 }
