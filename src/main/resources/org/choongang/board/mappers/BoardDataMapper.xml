@@ -71,8 +71,8 @@
     </select>
 
     <select id="getList" resultMap="boardDataMap">
-        SELECT * FROM (
-        SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        SELECT * FROM (SELECT ROWNUM NUM, D.* FROM (
+        SELECT B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
         LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
         <where>
             <if test="bId != null and !bId.equals('')">
@@ -103,10 +103,10 @@
             </if>
         </where>
         ORDER BY B.SEQ DESC
-        ) D
+        ) D)
         WHERE
         <![CDATA[
-        D.NUM >= #{offset} AND D.NUM < #{endRows}
+        NUM >= #{offset} AND NUM < #{endRows}
         ]]>
     </select>
 
@@ -148,8 +148,8 @@
     </select>
 
     <select id="getListWithoutBId" resultMap="boardDataMap">
-        SELECT * FROM (
-        SELECT ROWNUM NUM, B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
+        SELECT * FROM (SELECT ROWNUM NUM, D.* FROM (
+        SELECT B.*, M.EMAIL, M.USER_NAME FROM BOARD_DATA B
         LEFT JOIN MEMBER M ON M.USER_NO = B.MEMBER_SEQ
         <where>
             <if test="category != null and !category.equals('')">
@@ -175,11 +175,11 @@
             </if>
         </where>
         ORDER BY B.SEQ DESC
-        ) D
+        ) D)
         WHERE
         <![CDATA[
-        D.NUM >= #{offset} AND D.NUM < #{endRows}
-    ]]>
+        NUM >= #{offset} AND NUM < #{endRows}
+        ]]>
     </select>
 
 </mapper>

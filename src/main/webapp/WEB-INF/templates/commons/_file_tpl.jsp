@@ -1,7 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" %>
-<%@taglib prefix="c" uri="jakarta.tags.core" %>
-<c:url var="downloadUrl" value="/file/download"/>
-<c:url var="deleteUrl" value="/file/delete"/>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
+<c:url var="downloadUrl" value="/file/download" />
+<c:url var="deleteUrl" value="/file/delete" />
 <script type="text/html" id="attach-tpl">
     <span class="file-item" id="file-item-[seq]">
         <a href="${downloadUrl}/[seq]">
