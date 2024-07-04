@@ -33,6 +33,7 @@ public class BoardSaveService {
     private final BoardInfoService infoService;
     private final BoardAuthService authService;
 
+
     public Optional<BoardData> save(RequestBoardData form) {
 
         validator.check(form);
@@ -68,13 +69,12 @@ public class BoardSaveService {
         if (!memberUtil.isLogin()) {
             String hash = BCrypt.hashpw(form.getGuestPassword(), BCrypt.gensalt(12));
             data.setGuestPassword(hash);
-        }else{
+        } else {
             data.setGuestPassword("");
         }
 
         String category = data.getCategory();
-        data.setCategory(Objects.requireNonNullElse(category,""));
-
+        data.setCategory(Objects.requireNonNullElse(category, ""));
 
         if (mode.equals("update")) {
             mapper.modify(data);
@@ -85,7 +85,7 @@ public class BoardSaveService {
             }
         }
 
-        // 파일 업로드 완료 처리 (유지)
+        // 파일 업로드 완료 처리
         fileInfoMapper.updateDone(data.getGId());
 
         return infoService.get(data.getSeq());
