@@ -3,6 +3,8 @@
 <%@ taglib prefix="fmt" uri="jakarta.tags.fmt" %>
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
+<c:url var="logoUrl" value="/images/ball.png" />
+
 
 <layout:admin title="게시글 관리">
 
@@ -14,8 +16,10 @@
         </div>
     </div>
 
-    <h2> 게시글 목록</h2>
-
+    <div class="header">
+        <img src="${logoUrl}" alt="<fmt:message key='로고' />">
+        <h2>게시글 목록</h2>
+    </div>
     <section class="layout-width">
         <jsp:include page="/WEB-INF/templates/board/_footer.jsp"/>
     </section>

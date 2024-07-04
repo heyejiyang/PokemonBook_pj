@@ -1,7 +1,19 @@
+.header {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* img와 h2 사이의 간격 조정 */
+}
+
+.header h2 {
+    margin: 0;
+    font-size: 2rem; /* h2의 폰트 크기 조정, 필요에 따라 수정 */
+}
+
 /* 검색바 */
 .layout-width{
     display: flex;
     justify-content: flex-end; /* 오른쪽 정렬 */
+    margin-top: 20px;
     margin-bottom: 20px; /* 아래 컨텐츠와 간격 */
 }
 

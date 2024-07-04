@@ -32,6 +32,11 @@
     color: #fff;
 }
 
+.no-data {
+    text-align: center;
+    padding: 20px;
+    color: #999;
+}
 
 /* btn_right_box를 table-container와 함께 정렬(table-container 삭제) */
 .table-container {
