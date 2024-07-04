@@ -4,7 +4,11 @@
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <c:url var="logoUrl" value="/images/ghost.png" />
 <layout:main>
+    <jsp:attribute name="commonCss">
+    </jsp:attribute>
+    <jsp:body>
     <div class="admin401main">
+
         <div class="admin401">
         <div class="title401">
             <h1>ERROR: ${status} / 접근 권한이 없습니다.</h1>
@@ -25,4 +29,5 @@
         </div>
         </div>
     </div>
+    </jsp:body>
 </layout:main>

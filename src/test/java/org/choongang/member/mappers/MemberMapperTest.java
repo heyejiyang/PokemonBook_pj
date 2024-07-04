@@ -55,8 +55,6 @@ public class MemberMapperTest {
     @Test
     @DisplayName("회원 수정 테스트")
     void modifyTest() {
-        // 등록된 멤버 객체를 가져와서 수정 테스트에 사용
-//        assertNotNull(member); // 등록된 멤버 객체가 null이 아닌지 확인
 
         Faker faker = new Faker(Locale.ENGLISH);
 
@@ -85,11 +83,10 @@ public class MemberMapperTest {
 
     }
 
+    // 탈퇴 테스트
     @Test
     @DisplayName("회원 탈퇴 테스트")
     void withdrawTest() {
-        // 등록된 멤버 객체를 가져와서 탈퇴 테스트에 사용
-//        assertNotNull(member); // 등록된 멤버 객체가 null이 아닌지 확인(필수)
 
         Faker faker = new Faker(Locale.ENGLISH);
 
@@ -105,7 +102,6 @@ public class MemberMapperTest {
                 .email(member.getEmail()) // 기존 회원의 이메일로 설정
                 .password(member.getPassword()) // 기존 비번으로 설정
                 .build();
-
 
         // 회원 탈퇴
         int result = mapper.withdraw(member2);
