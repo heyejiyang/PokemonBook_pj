@@ -19,13 +19,13 @@
     font-size: 20px; /* 폰트 크기 20px */
     margin-top: 20px; /* 상단 여백 20px */
     padding: 10px 20px; /* 내부 여백 상하 10px, 좌우 20px */
-    background-color: #f0f0f0; /* 배경색 회색 */
-    border-radius: 10px; /* 모서리를 둥글게 10px 설정 */
-    color: #dbafc2; /* 텍스트 색상 진회색 */
-    box-shadow: 2px 2px 5px #333;
     border-radius: 10px;
     display: block;
+    background-color: #f0f0f0; /* 배경색 회색 */
+    border-radius: 10px; /* 모서리를 둥글게 10px 설정 */
+    box-shadow: 2px 2px 5px #333;
 }
+    color: #dbafc2; /* 텍스트 색상 진회색 */
 
 .pokemon-items {
     display: flex;

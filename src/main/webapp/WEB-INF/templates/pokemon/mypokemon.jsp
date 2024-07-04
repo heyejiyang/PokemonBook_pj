@@ -12,7 +12,7 @@ crossorigin="anonymous">
 <layout:main title="이진표">
     <section class="layout-width">
             <div class="button-wrapper">
-                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 800);">
+                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 700);">
                     랜덤 프로필 이미지
                 </button>
 

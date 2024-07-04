@@ -15,7 +15,7 @@
         ${data.nameKr}</div>
         <p class="ex">${fn:replace(data.description, '\\n', '<br>')}</p>
     </div>
-        <button type='submit' class="popup-button">저장</button>
+        <button type='submit' class="popup-button">확인</button>
     </section>
     </form>
 

@@ -12,6 +12,7 @@
                 <img src="${item.frontImage}" alt="${item.nameKr}">
             </label>
             <div class="my-pname">
+                    no.${item.seq}
                 <p>
                     ${item.nameKr}
                 </p>
