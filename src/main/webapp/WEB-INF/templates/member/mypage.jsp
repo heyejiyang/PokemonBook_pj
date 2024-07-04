@@ -41,6 +41,7 @@
                 </section>
             </body>
 
+<<<<<<< HEAD
             <div class="buttons">
 
                 <button type="button">
@@ -57,4 +58,18 @@
             </div>
         </section>
     </section>
+=======
+<div class="button-group">
+    <button type="button">
+        <a href="${modUrl}" alt="<fmt:message key="회원정보_수정하기" />">회원정보 수정하기</a>
+    </button>
+    <button type="button">
+        <a href="#" alt="<fmt:message key="작성글_조회하기" />">작성글 조회하기</a>
+    </button>
+    <button type="button">
+        <a href="<c:url value='/pokemon/mypokemon' />" alt="myPokemon">내 포켓몬 조회하기</a>
+    </button>
+</div>
+</section>
+>>>>>>> 56782416d8f50db45f9bca46431bbc5b126f1862
 </layout:main>
