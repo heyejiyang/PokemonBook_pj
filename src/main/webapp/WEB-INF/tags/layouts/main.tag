@@ -5,6 +5,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <%@ taglib prefix="util" tagdir="/WEB-INF/tags/utils" %>
 <%@ attribute name="title" %>
+<%@ attribute name="addScript" fragment="true" %>
 <fmt:setBundle basename="messages.commons" />
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
@@ -19,6 +20,13 @@
 <c:url var="storeUrl" value="https://www.pokemonstore.co.kr/" />
 <c:url var="footerUrl" value="/images/ft_logo.png" />
 <c:url var="store2Url" value="/images/a-store.png" />
+<c:url var="sns1Url" value="/images/icon_faceb.png" />
+<c:url var="sns2Url" value="/images/icon_youtube.png" />
+<c:url var="sns3Url" value="/images/icon_insta.png" />
+<c:url var="sns4Url" value="/images/icon_pokemon.png" />
+<c:url var="sns5Url" value="https://www.facebook.com/PokemonCoKr" />
+<c:url var="sns6Url" value="https://www.instagram.com/pokemon_korea_official/?igshid=OGQ5ZDc2ODk2ZA%3D%3D" />
+<c:url var="sns7Url" value="https://www.youtube.com/user/PokemonKoreaInc" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
@@ -103,6 +111,12 @@
                 <div class="bottom2">♡이용교 강사님 감사합니다 사랑합니다♡ 이번 프로젝트로 고생하셨습니다♡</div>
                 <div class="bottom2">@중앙 502호 3조@</div>
             </div>
+        <div class="sns">
+        <div class="sns-content"><a href="<c:url value="${sns5Url}" />" target="_blank"><img src="${sns1Url}"></a></div>
+        <div class="sns-content"><a href="<c:url value="${sns7Url}" />" target="_blank"><img src="${sns2Url}"></a></div>
+        <div class="sns-content"><a href="<c:url value="${sns6Url}" />" target="_blank"><img src="${sns3Url}"></a></div>
+            <div class="sns-content"><a href="${homeUrl}"><img src="${sns4Url}"></a></div>
+        </div>
         </section>
     </jsp:attribute>
     <jsp:attribute name="commonCss">
