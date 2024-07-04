@@ -27,7 +27,7 @@ main > .main-content h1 {
 }
 
 .member_list_table th {
-    background: #555;
+    background: #333;
     color: #fff;
 }
 
@@ -71,12 +71,16 @@ main > .main-content h1 {
 button {
     width: 100px;
     height: 30px;
-    background: #555;
+    background: #333;
     border: none;
     border-radius: 10px;
     font-weight: bold;
     color: white;
     cursor: pointer;
+}
+
+button:hover {
+    background: #d1180b;
 }
 
 .member_list_table input[type="checkbox"] {
