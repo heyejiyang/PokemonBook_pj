@@ -64,15 +64,6 @@ public class PokemonController {
 
         return "pokemon/view";
     }
-    /*
-    @GetMapping("/gacha")
-    public String gacha() {
-        commonProcess();
-
-        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
-        return "pokemon/gacha";
-    }
-    */
 
     @GetMapping("/gacharesult")
     public String gacharesult() {
@@ -93,6 +84,7 @@ public class PokemonController {
     @GetMapping("/gacha")
     public String gacha() {
 
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/gacha";
     }
 
@@ -104,8 +96,8 @@ public class PokemonController {
         pokemonService.add(data.getSeq()); // 발급 받은 포켓몬 저장
 
         request.setAttribute("data", data);
-        request.setAttribute("addCss", List.of("popup"));
 
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/popup";
     }
 
@@ -139,8 +131,8 @@ public class PokemonController {
 
         List<PokemonDetail> items = pokemonService.getList();
 
-        request.setAttribute("addCss", new String[] {"pokemon/_mypokemon"});
-        request.setAttribute("addScript", List.of("pokemon/info"));
+        request.setAttribute("addCss", new String[]{"pokemon/mypokemon"});
+        request.setAttribute("addScript", List.of("pokemon/mypokemon"));
         request.setAttribute("items", items);
 
         return "pokemon/mypokemon";
