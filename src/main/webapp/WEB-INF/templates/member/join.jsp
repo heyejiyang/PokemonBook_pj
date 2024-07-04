@@ -5,34 +5,49 @@
 <fmt:setBundle basename="messages.commons" />
 <fmt:message var="pageTitle" key='회원가입' />
 <c:url var="actionUrl" value="/member/join" />
+<c:url var="logoUrl" value="/images/img_email.png" />
 <c:url var="logoUrl" value="/images/book_logo4.png" />
+
+
 
 <layout:main title="${pageTitle}">
     <a href="<c:url value='/' />" class="logo-img">
         <img src="${logoUrl}" />
     </a>
     <section class="join-box">
+
         <h1>${pageTitle}</h1>
         <form name="frmJoin" method="POST" action="${actionUrl}" autocomplete="off" target="ifrmProcess">
 
-            <input type="text" name="email" placeholder="이메일 주소를 입력해주세요.">
-            <input type="password" name="password" placeholder="비밀번호">
-            <input type="password" name="confirmPassword" placeholder="위에 입력한 비밀번호와 동일한 비밀번호를 입력해주세요.">
-            <input type="text" name="userName" placeholder="이름을 입력해주세요.">
+
+            <input type="text" name="email" placeholder="이메일 주소를 입력해주세요."
+                   class="input-icon email">
+            <input type="password" name="password" placeholder="비밀번호"
+                 class="input-icon password">
+            <input type="password" name="confirmPassword" placeholder="위에 입력한 비밀번호와 동일한 비밀번호를 입력해주세요."
+                class="input-icon confirmPassword">
+            <input type="text" name="userName" placeholder="이름을 입력해주세요."
+                 class="input-icon userName">
 
             <div class="terms">
                 <div class="tit">
                     <fmt:message key="약관_동의" />
                 </div>
                 <textarea class="termsContent" readonly>
-                    01.고객의 개인정보 보호
+ 01.고객의 개인정보 보호
 
-                    ㈜포켓몬코리아(이하 "회사"라고 함)는 고객의 개인정보를 중요시하며, '개인정보보호법', '정보통신망 이용촉진 및 정보보호 등에 관한 법률' 등 개인정보와 관련된 법령을 준수하고 있습니다.
+㈜포켓몬코리아(이하 "회사"라고 함)는 고객의 개인정보를 중요시하며, '개인정보보호법', '정보통신망 이용촉진 및 정보보호 등에 관한 법률' 등 개인정보와 관련된 법령을 준수하고 있습니다.
 
-                    02. 개인정보의 수집·이용목적, 수집하는 개인정보의 항목 및 수집방법
+02. 개인정보의 수집·이용목적, 수집하는 개인정보의 항목 및 수집방법
 
-                    가. 개인정보의 수집·이용목적과 수집하는 개인정보의 항목
-                    ① 회사는 회원서비스(게임·포켓몬 카드 게임·애니메이션 소개, 포켓몬 상품 소개, 이벤트 응모 등을 비롯한 어플리케이션 서비스 등 현재 제공 중이거나 향후 제공 될 서비스) 등을 통하여 고객들에게 보다 더 향상된 양질의 서비스를 제공하기 위하여 고객 개인의 정보를 수집·이용하고 있습니다. 수집·이용정보항목과 수집·이용 목적은 아래와 같습니다.
+  가. 개인정보의 수집·이용목적과 수집하는 개인정보의 항목
+
+ ① 회사는 회원서비스
+(게임·포켓몬 카드 게임·애니메이션 소개, 포켓몬 상품 소개, 이벤트 응모 등을 비롯한 어플리케이션 서비스 등 현재 제공 중이거나 향후 제공 될 서비스)
+등을 통하여 고객들에게 보다 더 향상된 양질의 서비스를 제공하기 위하여
+고객 개인의 정보를 수집·이용하고 있습니다.
+수집·이용정보항목과 수집·이용 목적은 아래와 같습니다.
+
                     <수집·이용정보 항목>
 
                     - 성명, 성별, 생년월일, ID, 비밀번호, 주소, 이메일, 쿠키
@@ -109,6 +124,7 @@
 
                     회사는 고객이 좋은 정보를 안전하게 이용할 수 있도록 최선을 다하고 있습니다. 개인정보를 보호하는데 있어 고객에게 고지한 사항들에 반하는 사고가 발생할 경우 개인정보 보호책임자가 책임을 집니다.
                     고객 개인정보와 관련한 ID의 비밀번호에 대한 보안유지 책임은 해당 고객 자신에게 있습니다. 회사는 비밀번호에 대해 어떠한 방법으로도 고객에게 직접 질문하는 경우는 없으므로 타인에게 비밀번호가 유출되지 않도록 각별히 주의 바랍니다. 특히 '09. 개인정보 관련 기술/관리적 대책' 에서 명시한 것과 같이 공공장소에서 로그인한 경우에는 더욱 유의해야 합니다. 회사는 개인정보에 대한 의견수렴 및 불만처리를 담당하는 개인정보 보호책임자 및 담당자를 지정하고 있고, 연락처는 아래와 같습니다.
+
                     [개인정보 보호책임자]
                     이 름 : 임재범
                     소속 / 직위 : ㈜포켓몬코리아 / 대표이사
@@ -117,6 +133,11 @@
                     이름 : 이지혜
                     소속 / 직위 : ㈜포켓몬코리아 / 이사
                     이 메 일 : private02@pokemonkorea.co.kr
+                    [회원가입 페이지 담당자 ]
+                    이름: 유준범
+                    소속 / 직위 : 3조🥸 / 오른쪽3번째
+                    이메일 : byby5546@naver.com
+
                     12. 고지의 의무
 
                     현 '개인정보처리방침'의 내용에 추가, 삭제 및 수정이 있을 시에는 회사의 홈페이지 첫 화면의 '공지사항' 또는 별도의 창을 통해 고지합니다.
