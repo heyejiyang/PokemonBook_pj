@@ -257,13 +257,6 @@ public class PokemonInfoService {
 
         return Optional.ofNullable(data);
     }
-// 이게 기존껀데 둘 다 잘됌
-//    public Optional<PokemonDetail> getRandom() {
-//        PokemonDetail data = mapper.getRandom();
-//        convertRawData(data);
-//
-//        return Optional.ofNullable(data);
-//    }
 
     public List<Long> getSeqsByUserNo(long userNo) {
         return mapper.getMyPokemonSeqs(userNo);

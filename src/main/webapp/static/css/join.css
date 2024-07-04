@@ -1,5 +1,5 @@
 main {
-    background: #f7f7f7;
+    background: #e5e1fff7;
     min-height: 700px;
     display: flex;
     justify-content: center;
@@ -8,8 +8,9 @@ main {
 
 .join-box {
     width: 580px;
+     border-radius: 20px;
     margin: 30px auto 100px;
-    background: #fff;
+    background: #fbf3ff;
     padding: 55px;
 }
 
@@ -18,6 +19,7 @@ main {
     font-weight: 900;
     padding: 0;
     margin: 0 0 25px;
+    font-family : "Do Hyeon", sans-serif;
 }
 
 .logo-img {
@@ -29,10 +31,10 @@ main {
 .join-box input[type='text'],
 .join-box input[type='password'] {
     height: 60px;
-    border-radius: 0;
+    border-radius: 10px;
     border: 1px solid #bbb;
-    padding: 0 20px;
-    font-size: 18px;
+    padding: 0 20px 0 35px;
+    font-size: 16px;
     margin-bottom: 10px;
 }
 
@@ -87,3 +89,21 @@ input[type=checkbox] {
     color: #fff;
     font-weight: bold;
  }
+
+.input-icon.email {
+    background: #fff url("../images/img_email.png") no-repeat 10px center;
+}
+
+.input-icon.password {
+    background: #fff url("../images/img_password.png") no-repeat 10px center;
+
+}
+
+.input-icon.confirmPassword {
+      background: #fff url("../images/img_confirm.png") no-repeat 10px center;
+
+}
+
+.input-icon.userName {
+    background: #fff url("../images/img_username.png") no-repeat 10px center;
+}
