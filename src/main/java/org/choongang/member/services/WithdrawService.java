@@ -48,7 +48,7 @@ public class WithdrawService {
 
         int result = mapper.withdraw(member);
         if (result > 1) {
-            throw new AlertException("회원 탙뢰에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
+            throw new AlertException("회원 탙퇴에 실패하였습니다.", HttpServletResponse.SC_BAD_REQUEST);
         }
 
         //세션 데이터 업데이트(변경된 정보가 바로 반영될 수 있게 함)
