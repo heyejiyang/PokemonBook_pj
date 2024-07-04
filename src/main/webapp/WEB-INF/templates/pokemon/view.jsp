@@ -5,7 +5,7 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 
 <c:set var="heightInMeters" value="${data.height * 0.1}" />
-<c:set var="weightKilogram" value="${data.height * 0.1}" />
+<c:set var="weightKilogram" value="${data.weight * 0.1}" />
 
 <layout:main title="${data.nameKr}">
     <div class="navigation-arrows">
