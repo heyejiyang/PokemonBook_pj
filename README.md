@@ -3,11 +3,18 @@
 # 1. 프로젝트 소개
 ### 🔹 개요
 - 프로젝트명 : 포켓몬 도감 프로젝트
-
+  
+아직도 포켓몬이 존재한다고 믿고있는 예비 포켓몬 트레이너를 위한 도감입니다.
+차세대 한지우가 되는 것을 꿈꾸거나 포켓몬의 세계에 대해 호기심이 있는 경우, <br>
+이 가이드는 모험을 시작하는 데 필요한 모든 정보를 제공할 것입니다.<br>
+각 포켓몬의 고유한 능력, 특성에 대해 알아보세요.
 
 ### 🔹 기획 배경 및 기대 효과
 
-
+캠핑이 유행하는 요즘, <br>
+숲 속에는 때로는 귀엽고 때로는 사악하고 무서운 우리의 친구이자 적이자 동료인 포켓몬이 살아가고 있습니다.
+이 도감은 언제 어디서 어떻게 왜 누구랑 무엇을 하며 나타날지 모르는 상황을 대비해 각 속성과 특성을 미리 파악하여 대처 할 수 있도록 만든 도감입니다. <br>
+사건 사고가 많은 요즘 같은 날 오늘도 안전하고 무사하며 친구와 가족들을 보호할 수 있는, 안전 또 안전한 하루를 보내길 바랍니다.
 
 # 2. 개발 환경
 ![img.png](img.png)
@@ -17,8 +24,17 @@
 - GitHub
 - Oracle
 - Apache Tomcat
+  <br>
+  <img src="https://img.shields.io/badge/HTML5-E34F26?style=flat&logo=HTML5&logoColor=white" />
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
+  <img src="https://img.shields.io/badge/CSS3-1572B6?style=flat&logo=CSS3&logoColor=white" />
+  <img src="https://img.shields.io/badge/Gradle-02303A?style=flat&logo=Gradle&logoColor=white" />
+  <img src="https://img.shields.io/badge/Apache Tomcat-F8DC75?style=flat&logo=Apache Tomcat&logoColor=black" />
+  <br>
+  <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=Docker&logoColor=white" />
+  <img src="https://img.shields.io/badge/IntelliJ IDEA-000000?style=flat&logo=IntelliJ IDEA&logoColor=white" />
+  <img src="https://img.shields.io/badge/DBeaver-382923?style=flat&logo=DBeaver&logoColor=white" />
   <BR>
-
 # 3. UserFlow 작성
 <BR>
 
