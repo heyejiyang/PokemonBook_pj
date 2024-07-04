@@ -104,6 +104,7 @@ public class PokemonController {
         pokemonService.add(data.getSeq()); // 발급 받은 포켓몬 저장
 
         request.setAttribute("data", data);
+        request.setAttribute("addCss", List.of("popup"));
 
         return "pokemon/popup";
     }
@@ -138,6 +139,7 @@ public class PokemonController {
 
         List<PokemonDetail> items = pokemonService.getList();
 
+        request.setAttribute("addCss", new String[] {"pokemon/_mypokemon"});
         request.setAttribute("addScript", List.of("pokemon/info"));
         request.setAttribute("items", items);
 

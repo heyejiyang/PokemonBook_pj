@@ -17,7 +17,7 @@
                        </div>
                     </c:if>
                     <button type='button' id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 650);">
-                    랜덤 프로필 이미지
+                    랜덤 포켓몬 뽑기
                     </button>
                 </dd>
             </dl>

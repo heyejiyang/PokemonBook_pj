@@ -14,7 +14,9 @@
         </li>
     </c:forEach>
     </ul>
-    <button type="button" class="button-action" data-mode="delete">선택 삭제</button>
-    <button type="button" class="button-action" data-mode="delete-all">전체 비우기</button>
+    <div class="button-wrapper">
+        <button type="button" class="button-action" data-mode="delete">선택 삭제</button>
+        <button type="button" class="button-action" data-mode="delete-all">전체 비우기</button>
+    </div>
 </form>
 </c:if>
