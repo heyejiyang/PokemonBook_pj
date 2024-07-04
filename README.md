@@ -19,6 +19,7 @@
 
 
 # 2. 개발 환경 및 역할 분담
+
 ## 개발 환경
 ![img_7.png](img_7.png)
 - Intelli J
