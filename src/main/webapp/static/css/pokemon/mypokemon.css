@@ -3,12 +3,25 @@
             justify-content: center; /* 가로 중앙 정렬 */
             align-items: center; /* 세로 중앙 정렬 */
             height: 5%; /* 부모 요소의 전체 높이 사용 */
-            margin-top: 13px;
+            margin-top: 1px;
         }
 
+.layout-width{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+.my-pname{
+    display: flex;
+    justify-content: center; /* 가로 중앙 정렬 */
+    font-weight: bold;
+    font-size: 20px;
+    margin-top:20px;
+}
+
 .profile {
-            text-align: center; /* 프로필 이미지와 텍스트를 중앙 정렬 */
-        }
+    text-align: center; /* 프로필 이미지와 텍스트를 중앙 정렬 */
+}
 
 .pokemon-items {
     display: flex;
@@ -16,8 +29,8 @@
 }
 
 .pokemon-items .item {
-    width: calc(100% / 5);
-    padding: 5px;
+    width: calc( 100% / 5);
+    padding:  20px;
 }
 
 .pokemon-items input[type='radio'] {
@@ -25,7 +38,7 @@
 }
 
 .pokemon-items label {
-    padding: 10px;
+    padding: 50px;
     box-shadow: 2px 2px 5px #333;
     border-radius: 10px;
     cursor: pointer;

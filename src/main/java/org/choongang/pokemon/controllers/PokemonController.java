@@ -97,7 +97,7 @@ public class PokemonController {
 
         request.setAttribute("data", data);
 
-        request.setAttribute("addCss", new String[] {"pokemon/popup"});
+        request.setAttribute("addCss", new String[] {"pokemon/gacha"});
         return "pokemon/popup";
     }
 

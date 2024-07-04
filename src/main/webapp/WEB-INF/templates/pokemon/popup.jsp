@@ -4,17 +4,19 @@
 <%@ taglib prefix="layout" tagdir="/WEB-INF/tags/layouts" %>
 <layout:popup>
     <section class="popup-view">
+    <div class="background">
     <form method="post" action="<c:url value='/pokemon/popup' />" autocomplete="off" target="ifrmProcess">
         <input type="hidden" name="seq" value="${data.seq}">
         <img src="${data.frontImage}" alt="${data.nameKr}">
-
-<div class="popup_explain">
+    </div>
+    <div class="popup_explain">
         <div class="no">
         No.${data.seq}
         ${data.nameKr}</div>
         <p class="ex">${fn:replace(data.description, '\\n', '<br>')}</p>
-</div>
+    </div>
         <button type='submit' class="popup-button">저장</button>
-    </form>
     </section>
+    </form>
+
 </layout:popup>

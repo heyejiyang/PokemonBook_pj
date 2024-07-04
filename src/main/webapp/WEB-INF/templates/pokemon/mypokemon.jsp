@@ -12,9 +12,10 @@ crossorigin="anonymous">
 <layout:main title="이진표">
     <section class="layout-width">
             <div class="button-wrapper">
-                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 1000, 650);">
+                <button type='button' class="btn btn-info" id="generate-profile-image" onclick="commonLib.popup.open('${popupUrl}', 650, 800);">
                     랜덤 프로필 이미지
                 </button>
+
             </div>
          <jsp:include page="_my_pokemon.jsp" />
     </section>
