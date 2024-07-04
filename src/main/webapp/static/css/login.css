@@ -1,24 +1,22 @@
 .all-form {
-    margin: 30px 0;
+    /*margin: 30px 0; */
     display:flex;
     align-items: center;
     justify-content: center;
-    height: 800px;
-}
-
-h1 {
-    margin: 10px;
+    height: 700px;
+    background: #fbf3ff;
 }
 
 .form-box {
     display: block;
     align-items: center;
     justify-content: center;
-    width: 600px;
-    height: 500px;
-    /*border: 1px solid #414141;*/
-    padding: 10px 20px;
-    background: var(--white);
+    width: 620px;
+    height: 590px;
+    /*border: 1px solid #414141; */
+    border-radius: 20px;
+    padding: 20px 40px;
+    background: #dfe7ff;
 }
 
 .login-title {
@@ -26,21 +24,28 @@ h1 {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin: 20px 0 70px;
-    height: 70px;
+    margin: 40px 0 40px;
+    height: 140px;
 }
 
 .login-title h1 {
     font-weight: bold;
-    font-size: 2rem;
-    font-weight: 900;
+    font-size: 2.2rem;
+   font-family:"Do Hyeon", sans-serif;
     /*text-align: center;*/
 }
 
 
-.logo {
-    vertical-align: middle; /* 이미지를 가운데 정렬 */
-    width: 180px;
+.logo-img {
+    text-align: center;
+     margin-top: 30px;
+}
+
+.logo-img img {
+    width: 200px; /* 원하는 너비 */
+    height: auto; /* 비율에 맞게 높이 자동 조절 */
+
+
 }
 
 .div{
@@ -51,15 +56,24 @@ h1 {
 .email input,
 .pw input {
     height: 50px;
-    width: 100%;
+    width: 95%;
     cursor: pointer;
     margin-bottom: 20px;
-    font-size: 1.3rem;
 }
 
 .save-email {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
 }
+
+
+.email {
+
+}
+
+.pw {
+
+}
+
 
 input[type=checkbox] {
     transform : scale(1.5);
@@ -79,8 +93,8 @@ input[type=checkbox] {
     padding: 0 10px; /*좌우 패팅*/
     height: 50px;
     width: 95%;
-    background: var(--blue);
-    font-size: 1.3rem;
+    background: #1d1849d1;
+    font-size: 1.2rem;
     margin: 20px 0;
     cursor: pointer;
     transform: skew(-20deg);
@@ -94,13 +108,21 @@ input[type=checkbox] {
     display: flex;
     justify-content: center;
     align-items: center;
-    font-size: 1rem;
+    font-size: 12px;
 }
 
 .link-login > a {
     margin-top: 30px;
     padding: 10px 22px;
     border-radius: 38px;
-    background: #FFFFE9 ;
+    background: #f5f5f58a ;
 
+}
+
+.input-icon.email {
+    background: #fff url("../images/img_login2.png") no-repeat 10px center;
+}
+
+.input-icon.password {
+    background: #fff url("../images/img_loginPassword.png") no-repeat 10px center;
 }
