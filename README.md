@@ -150,8 +150,8 @@
 |    | 이메일    | EMAIL     | String        | VARCHAR | Y      | N      |         |       |
 |    | 비밀번호   | PASSWORD  | String        | VARCHAR |        | N      |         | 8자리이상 |
 |    | 회원이름   | USER_NAME | String        | VARCHAR |        | N      |         |       |
-|    | 회원타입   | USER_TYPE | USER_TYPE     | VARCHAR |        | Y      | USER    |       |
-|    | 포켓몬 순서 | MY_POKEMON_SEQ  | long          | NUMBER |        | Y      | 0       |       |
+|    | 회원유형   | USER_TYPE | USER_TYPE     | VARCHAR |        | Y      | USER    |       |
+|    | 나의 포켓몬 | MY_POKEMON_SEQ  | long          | NUMBER |        | Y      | 0       |       |
 |    | 생성일자   | REG_DT    | LocalDateTime | DATE  |        | Y      | SYSDATE |       |
 |    | 수정일자   | MDO_DT    | LocalDateTime | DATE  |        | Y      |         |       |
  
@@ -163,26 +163,15 @@
 | pk | 게시판 아이디 | BID | String  | VARCHAR |       | Y      |    |       |
 |    | 게시판 이름  | BNAME | String  | VARCHAR |       | N      |    |       |
 |    | 페이지 행 수 |ROWS_PER_PAGE | Int     | NUMBER |       | Y      | 20 |  |
-|    | 사용여부    | ACTIVE | Boolean | NUMBER |       | Y      | 0  |       |
-|    | 분류사용여부  | ACTIVE_CATEGORY | Boolean | NUMBER |       | Y      | 0  |       |
+|    | 게시판 사용여부    | ACTIVE | Boolean | NUMBER |       | Y      | 0  |       |
+|    | 분류 사용여부  | ACTIVE_CATEGORY | Boolean | NUMBER |       | Y      | 0  |       |
 |    | 분류      | CATEGORY| String  | CLOB |       | Y      |    |       |
-|    | 관리자     |AUTHORITY | String  | VARCHAR2  |       | Y      | All |       |
-
-
-
-# BOARD_DATA
-| 키  | 논리       | 물리 | 도메인     | 타입    | UNIQUE | NULL허용 | 기본값     | 코멘트   | 
-|:--:|----------|----|---------|-------|--|--------|---------|-------| 
-| pk | 순서       | SEQ | long    | NUMBER |  | Y      |         |       |
-|    | 회원       |  BID| String  | VARCHAR |  | Y      |         |       |
-|    | 비회원      | GID | String  | VARCHAR |  | Y      |         |  |
-|    | 사진       | POSTER | String  | VARCHAR |  | N      |         |       |
-|    | 회원순서     | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
+|    | 권한호 | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
 |    | 비회원 비밀번호 | GUEST_PASSWORD | String  | VARCHAR |  | Y      |         |       |
-|    | 분류       | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
+|    | 분류 | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
 |    | 공지여부     | NOTICE | int     |  NUMBER |  | Y      | 0       |       |
-|    | 이름       | SUBJECT | String  | VARCHAR  |  | N      |         |       |
-|    | 파일       |CONTENT | String  |  CLOB    |  | N      |         |       |
+|    | 제목       | SUBJECT | String  | VARCHAR  |  | N      |         |       |
+|    | 내용       |CONTENT | String  |  CLOB    |  | N      |         |       |
 |    | 브라우저 종류 정보 |   UA | String  |  VARCHAR     |  | Y      |         |       |
 |    | 글 작성자 IP 주소 |  IP | String  |   VARCHAR    |  | Y      |         |       |
 |    | 작성일시     |  REG_DT | LocalDateTime |  DATE     |  | Y      | SYSDATE |       |
@@ -202,7 +191,7 @@
 |    | 픽셀 앞면이미지 | PIXEL_FRONT_IMAGE | String     |  VARCHAR |  |       |        |       |
 |    | 픽셀 뒷면이미지 | PIXEL_BACK_IMAGE  | String  | VARCHAR |       |       |        |
 |    | 원본데이터    | RAW_DATA          | String  |  CLOB    |  |       |        |       |
-|    | 한국이름     | NAME_KR           | String  |  VARCHAR    |  |       |        |       |
+|    | 한글이름름     | NAME_KR           | String  |  VARCHAR    |  |       |        |       |
 |    | 소개       | DESCRIPTION       | String  |   VARCHAR   |  |       |        |       |
 |    | 유형1      | TYPE1             | String |  VARCHAR    |  |       |  |       |
 |    | 유형2      | TYPE2             | String |   VARCHAR   |  |       |        |       |
@@ -227,12 +216,12 @@
 | 키  | 논리          | 물리  | 도메인    | 타입      | UNIQUE | NULL허용 | 기본값 | 코멘트   | 
 |:--:|-------------|-----|--------|---------|--|--------|---|-------| 
 | pk | 순서          | SEQ | long | NUMBER  |  |        |   |       |
-|    | 비회원         |GID  | String   | VARCHAR  |  | N      |   |       |
+|    | 그룹 아이디    |GID  | String   | VARCHAR  |  | N      |   |       |
 |    | 위치          | LOCATION | String | VARCHAR |  |        |   |  |
 |    | 파일명         | FILE_NAME | String | VARCHAR |  | N      |   |       |
 |    | 파일 확장자      | EXTENSION | String   | VARCHAR |  |        |   |       |
 |    | 파일 형식       | CONTENT_TYPE |   String      | VARCHAR        |  |        |   |       |
-|    | 그룹 작업 완료 여부 |DONE |   int       |   NUMBER      |  |        | 0 |       |
+|    | 작업 완료 여부 | DONE |   int       |   NUMBER      |  |        | 0 |       |
 |    | 작성일시        | REG_DT | LocalDateTime    |  DATE       |  |        |  SYSDATE |       |
 
 # My_Pokemon
