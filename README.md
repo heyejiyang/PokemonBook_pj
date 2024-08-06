@@ -166,7 +166,7 @@
 |    | 게시판 사용여부    | ACTIVE | Boolean | NUMBER |       | Y      | 0  |       |
 |    | 분류 사용여부  | ACTIVE_CATEGORY | Boolean | NUMBER |       | Y      | 0  |       |
 |    | 분류      | CATEGORY| String  | CLOB |       | Y      |    |       |
-|    | 권한호 | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
+|    | 회원번번호 | MEMBER_SEQ | long    | VARCHAR |  | Y      | 0       |       |
 |    | 비회원 비밀번호 | GUEST_PASSWORD | String  | VARCHAR |  | Y      |         |       |
 |    | 분류 | CATEGORY | String  | VARCHAR  |  | Y      |         |       |
 |    | 공지여부     | NOTICE | int     |  NUMBER |  | Y      | 0       |       |
